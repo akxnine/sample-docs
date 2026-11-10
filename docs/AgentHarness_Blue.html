@@ -1,0 +1,2603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Architecture Infographics — 6-Poster Interactive Collection</title>
+  <!-- Google Fonts matching both the Editorial Serif (Pages 1-3) and Modern Geometric Sans (Pages 4-6) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --bg-paper: #f9f8f3;
+      --ink-dark: #141923;
+      --ink-body: #3e4c5e;
+      --ink-muted: #627084;
+      --blue-deep: #0f2c59;
+      --blue-dark: #1d4e89;
+      --blue-bright: #0b65c6;
+      --blue-mid: #6ea1d4;
+      --blue-sage: #bfd9f2;
+      --blue-pale: #e3eef9;
+      --yellow-bright: #f4c83a;
+      --yellow-vivid: #f9d423;
+      --yellow-header: #f8de6e;
+      --yellow-cream: #fbf4db;
+      --border-dash: #8996a6;
+    }
+
+    body {
+      background-color: #e1e7ef;
+      color: var(--ink-dark);
+      font-family: 'Source Serif 4', Georgia, serif;
+      -webkit-font-smoothing: antialiased;
+      margin: 0;
+      padding: 16px 10px 64px;
+    }
+
+    /* Editorial Poster Canvas (Pages 1, 2, 3) */
+    .poster-editorial {
+      max-width: 960px;
+      margin: 0 auto;
+      background-color: var(--bg-paper);
+      padding: 34px 32px 28px;
+      box-shadow: 0 14px 40px rgba(15, 28, 46, 0.09), 0 1px 3px rgba(0, 0, 0, 0.06);
+      border-radius: 4px;
+      position: relative;
+    }
+
+    /* Modern Geometric Poster Canvas (Pages 4, 5, 6) */
+    .poster-modern {
+      max-width: 920px;
+      margin: 0 auto;
+      background-color: #fbfcfe;
+      background-image:
+        radial-gradient(circle at 12% 38%, rgba(196, 224, 252, 0.42) 0%, transparent 45%),
+        radial-gradient(circle at 88% 75%, rgba(254, 243, 185, 0.38) 0%, transparent 45%),
+        radial-gradient(#cfd9e6 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 18px 18px;
+      padding: 40px 36px 36px;
+      box-shadow: 0 14px 40px rgba(15, 28, 46, 0.09), 0 1px 3px rgba(0, 0, 0, 0.06);
+      border-radius: 8px;
+      position: relative;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    /* Typography Utility Classes */
+    .font-display {
+      font-family: 'Fraunces', Georgia, serif;
+      letter-spacing: -0.022em;
+    }
+
+    .font-serif-body {
+      font-family: 'Source Serif 4', Georgia, serif;
+    }
+
+    .font-mono-tech {
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: -0.02em;
+    }
+
+    .font-modern {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      letter-spacing: -0.025em;
+    }
+
+    /* Highlighted "Engineering" Title Bar for Pages 4, 5, 6 */
+    .eng-highlight {
+      position: relative;
+      display: inline-block;
+      color: #0b65c6;
+      z-index: 1;
+    }
+    .eng-highlight::after {
+      content: "";
+      position: absolute;
+      left: -4px;
+      right: -4px;
+      bottom: 3px;
+      height: 13px;
+      background-color: #fae043;
+      z-index: -1;
+      border-radius: 2px;
+    }
+
+    /* Offset Card Shadows for Pages 4, 5, 6 */
+    .shadow-offset-blue {
+      box-shadow: 7px 7px 0px #0b65c6;
+    }
+    .shadow-offset-yellow {
+      box-shadow: 7px 7px 0px #f7cf2a;
+    }
+    .shadow-offset-blue-sm {
+      box-shadow: 5px 5px 0px #0b65c6;
+    }
+    .shadow-offset-yellow-sm {
+      box-shadow: 5px 5px 0px #f7cf2a;
+    }
+
+    /* Dashed Grid Dividers */
+    .dashed-b {
+      border-bottom: 1.5px dashed var(--border-dash);
+    }
+    .dashed-t {
+      border-top: 1.5px dashed var(--border-dash);
+    }
+
+    @media (min-width: 768px) {
+      .dashed-r-md {
+        border-right: 1.5px dashed var(--border-dash);
+      }
+    }
+
+    /* SVG Diagram Styling */
+    .svg-mono {
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: -0.015em;
+    }
+    .svg-serif {
+      font-family: 'Source Serif 4', Georgia, serif;
+    }
+    .svg-modern {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    /* Interactive Ball Filtering & Pulse Animation (Page 2) */
+    .signal-ball {
+      transition: opacity 0.25s ease, transform 0.25s ease, filter 0.25s ease;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+    .ball-dimmed {
+      opacity: 0.16 !important;
+    }
+    .ball-active-glow {
+      filter: drop-shadow(0 0 6px rgba(11, 101, 198, 0.85));
+      transform: scale(1.28);
+    }
+
+    @keyframes pulseFlow {
+      0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 0px rgba(29, 78, 137, 0));
+      }
+      50% {
+        transform: scale(1.22);
+        filter: drop-shadow(0 0 6px rgba(244, 197, 52, 0.9));
+      }
+    }
+
+    .balls-animating .signal-ball {
+      animation: pulseFlow 2.1s infinite ease-in-out;
+    }
+    .balls-animating .ball-decision { animation-delay: 0.5s; }
+    .balls-animating .ball-rereason { animation-delay: 1.0s; }
+    .balls-animating .ball-result { animation-delay: 1.5s; }
+
+    .legend-card {
+      transition: all 0.15s ease;
+    }
+    .legend-card:hover {
+      background-color: #eef3f9;
+    }
+    .legend-card.active-filter {
+      background-color: #e3eef9;
+      outline: 1.5px solid #1d4e89;
+    }
+
+    /* Loop Step Interactive Card Styling (Page 5) */
+    .loop-step-card {
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .loop-step-card:hover {
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= FLOATING TOP NAVIGATION BAR (ALL 6 PAGES + STACKED) ================= -->
+  <nav class="max-w-[960px] mx-auto mb-4 bg-white/95 backdrop-blur px-3.5 py-2.5 rounded-lg shadow-sm border border-[#c5d1e0] text-xs font-mono-tech sticky top-2 z-50">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="text-[#526071] mr-1 font-semibold">Poster:</span>
+        <button id="nav-p1" onclick="switchPoster('p1')" class="nav-btn px-2.5 py-1.5 rounded bg-[#edf2f8] text-[#141923] hover:bg-[#d8e4f2] transition cursor-pointer">
+          1. Agent Harness
+        </button>
+        <button id="nav-p2" onclick="switchPoster('p2')" class="nav-btn px-2.5 py-1.5 rounded bg-[#edf2f8] text-[#141923] hover:bg-[#d8e4f2] transition cursor-pointer">
+          2. Self-Evolving
+        </button>
+        <button id="nav-p3" onclick="switchPoster('p3')" class="nav-btn px-2.5 py-1.5 rounded bg-[#edf2f8] text-[#141923] hover:bg-[#d8e4f2] transition cursor-pointer">
+          3. Understanding MoE
+        </button>
+        <button id="nav-p4" onclick="switchPoster('p4')" class="nav-btn px-2.5 py-1.5 rounded bg-[#edf2f8] text-[#141923] hover:bg-[#d8e4f2] transition cursor-pointer">
+          4. Harness Eng
+        </button>
+        <button id="nav-p5" onclick="switchPoster('p5')" class="nav-btn px-2.5 py-1.5 rounded bg-[#edf2f8] text-[#141923] hover:bg-[#d8e4f2] transition cursor-pointer">
+          5. Loop Eng
+        </button>
+        <button id="nav-p6" onclick="switchPoster('p6')" class="nav-btn px-2.5 py-1.5 rounded bg-[#edf2f8] text-[#141923] hover:bg-[#d8e4f2] transition cursor-pointer">
+          6. Graph Eng
+        </button>
+        <button id="nav-all" onclick="switchPoster('all')" class="nav-btn px-2.5 py-1.5 rounded bg-[#1d4e89] text-white font-semibold transition cursor-pointer">
+          All 6 Stacked
+        </button>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- =========================================================================
+       PAGE 1: WHAT IS AN AGENT HARNESS?
+       ========================================================================= -->
+  <article id="poster-p1" class="poster-editorial mb-12">
+    <!-- HEADER -->
+    <header class="dashed-b pb-5">
+      <h1 class="font-display text-[38px] sm:text-[53px] font-bold leading-[1.05] text-[#141923] tracking-tight mb-2.5">
+        What Is an Agent Harness?
+      </h1>
+      <p class="font-serif-body text-[18px] sm:text-[22.5px] leading-snug text-[#425061]">
+        Everything around the model that turns it into an agent.
+        <strong class="font-bold text-[#1d4e89]">Save this for later.</strong>
+      </p>
+    </header>
+
+    <!-- MAIN 2-COLUMN GRID -->
+    <div class="grid grid-cols-1 md:grid-cols-2">
+
+      <!-- CELL 1 (TOP LEFT): The loop: think, act, observe -->
+      <section class="dashed-b dashed-r-md py-5 md:pr-7 flex flex-col justify-between">
+        <div>
+          <div class="font-mono-tech text-[11.5px] text-[#627084] mb-2.5">
+            turn 1: model asks for a tool
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 items-center my-1">
+            <!-- Left Circular Loop SVG Diagram -->
+            <div class="sm:col-span-6 flex justify-center">
+              <svg viewBox="0 0 230 185" class="w-full max-w-[235px] h-auto overflow-visible" aria-label="The Agent Loop Diagram">
+                <circle cx="115" cy="94" r="62" fill="none" stroke="#768599" stroke-width="1.35" stroke-dasharray="3.5 3.5" />
+                <line x1="138" y1="94" x2="152" y2="94" stroke="#768599" stroke-width="1.1" />
+                <polygon points="139,91.8 134,94 139,96.2" fill="#768599" />
+                <text x="111" y="97.5" text-anchor="middle" class="font-mono-tech" font-size="10.5" fill="#627084">answer</text>
+
+                <!-- TOP NODE: model -->
+                <g transform="translate(115, 29)">
+                  <rect x="-35" y="-12" width="70" height="23" rx="11.5" fill="#ffffff" stroke="#18202c" stroke-width="1.2" />
+                  <text x="0" y="3.5" text-anchor="middle" class="font-mono-tech" font-size="11" fill="#18202c">model</text>
+                  <circle cx="-1" cy="-0.5" r="5.5" fill="#f4c534" fill-opacity="0.88" stroke="#18202c" stroke-width="1" />
+                </g>
+
+                <!-- RIGHT NODE: tool call -->
+                <g transform="translate(182, 94)">
+                  <rect x="-38" y="-12" width="76" height="23" rx="11.5" fill="#ffffff" stroke="#18202c" stroke-width="1.2" />
+                  <text x="0" y="3.5" text-anchor="middle" class="font-mono-tech" font-size="10.5" fill="#18202c">tool call</text>
+                </g>
+
+                <!-- BOTTOM NODE: harness runs -->
+                <g transform="translate(115, 160)">
+                  <rect x="-48" y="-12" width="96" height="23" rx="11.5" fill="#ffffff" stroke="#18202c" stroke-width="1.2" />
+                  <text x="0" y="3.5" text-anchor="middle" class="font-mono-tech" font-size="10.5" fill="#18202c">harness runs</text>
+                </g>
+
+                <!-- LEFT NODE: result -->
+                <g transform="translate(46, 94)">
+                  <rect x="-32" y="-12" width="64" height="23" rx="11.5" fill="#f4c534" stroke="#18202c" stroke-width="1.2" />
+                  <text x="0" y="3.5" text-anchor="middle" class="font-mono-tech" font-size="10.5" font-weight="500" fill="#141923">result</text>
+                </g>
+              </svg>
+            </div>
+
+            <!-- Right Pseudo-code Box -->
+            <div class="sm:col-span-6 flex flex-col">
+              <div class="bg-[#e6eff8] border border-[#b3cae5] rounded-[3px] py-2.5 px-3 font-mono-tech text-[11.5px] leading-[1.65] text-[#141923]">
+                <div>while not done:</div>
+                <div class="pl-3.5">out = llm(ctx)</div>
+                <div class="pl-3.5">if out.tool_call:</div>
+                <div class="pl-7">r = run(out)</div>
+                <div class="-mx-2 px-2 bg-[#f4c534] rounded-[4px] font-medium text-[#141923]">
+                  <span class="pl-7">ctx.append(r)</span>
+                </div>
+                <div class="pl-3.5">else: return out</div>
+              </div>
+              <div class="font-mono-tech text-[10px] text-[#627084] mt-1.5 pl-0.5">
+                the harness, in 6 lines
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-3">
+          <h2 class="font-display text-[22px] font-bold text-[#141923] leading-snug mb-1">
+            The loop: think, act, observe
+          </h2>
+          <p class="font-serif-body text-[15px] leading-[1.42] text-[#425061]">
+            The model only writes text. The harness runs the tool calls it asks for and feeds the results back in.
+          </p>
+        </div>
+      </section>
+
+      <!-- CELL 2 (TOP RIGHT): Context: what the model sees -->
+      <section class="dashed-b py-5 md:pl-7 flex flex-col justify-between">
+        <div>
+          <div class="flex items-end justify-between font-mono-tech text-[11.5px] text-[#627084] mb-1">
+            <span>context window (e.g. 200K tokens)</span>
+            <span class="text-[#141923] font-medium pr-3">64% used</span>
+          </div>
+
+          <div class="relative pt-1 pb-1">
+            <div class="absolute right-[10.5%] top-0 bottom-0 border-l-[1.5px] border-dashed border-[#2b3648] z-10 pointer-events-none"></div>
+            <div class="w-full h-[34px] border-[1.3px] border-[#18202c] bg-white flex overflow-hidden rounded-[2px]">
+              <div class="h-full w-[4.2%] bg-[#111622] border-r border-white/20"></div>
+              <div class="h-full w-[7.8%] bg-[#1d4e89] border-r border-white/30"></div>
+              <div class="h-full w-[6.2%] bg-[#6ea1d4] border-r border-white/40"></div>
+              <div class="h-full w-[5.2%] bg-[#c5dcf2] border-r border-white/50"></div>
+              <div class="h-full w-[6.4%] bg-[#f7dc6f] border-r border-white/50"></div>
+              <div class="h-full w-[5.2%] bg-[#c5dcf2] border-r border-white/50"></div>
+              <div class="h-full w-[6.6%] bg-[#f7dc6f] border-r border-white/50"></div>
+              <div class="h-full w-[4.6%] bg-[#c5dcf2] border-r border-white/50"></div>
+              <div class="h-full w-[11.4%] bg-[#f7dc6f] border-r border-white/50"></div>
+              <div class="h-full w-[4.4%] bg-[#c5dcf2] border-r border-white/50"></div>
+              <div class="h-full w-[4.8%] bg-[#f7dc6f]"></div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between font-mono-tech text-[10.5px] text-[#2b3648] mt-1 mb-3.5">
+            <span>turn 4: messages + results pile up</span>
+            <span class="pr-0.5 text-[#526071]">compact here</span>
+          </div>
+
+          <div class="grid grid-cols-3 gap-y-2 gap-x-2 font-mono-tech text-[10.5px] text-[#526071] mb-3">
+            <div class="flex items-center gap-1.5">
+              <span class="w-3 h-3 bg-[#111622] inline-block rounded-[1px] shrink-0"></span>
+              <span>system prompt</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <span class="w-3 h-3 bg-[#1d4e89] inline-block rounded-[1px] shrink-0"></span>
+              <span>tool schemas</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <span class="w-3 h-3 bg-[#6ea1d4] inline-block rounded-[1px] shrink-0"></span>
+              <span>memory files</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <span class="w-3 h-3 bg-[#c5dcf2] inline-block rounded-[1px] shrink-0"></span>
+              <span>messages</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <span class="w-3 h-3 bg-[#f7dc6f] inline-block rounded-[1px] shrink-0"></span>
+              <span>tool results</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <span class="w-3 h-3 bg-[#fdf3c7] border border-[#4a5768] inline-block rounded-[1px] shrink-0"></span>
+              <span>summary</span>
+            </div>
+          </div>
+
+          <div class="font-mono-tech text-[10px] text-[#627084]">
+            rebuilt and re-sent on every single turn
+          </div>
+        </div>
+
+        <div class="mt-3">
+          <h2 class="font-display text-[22px] font-bold text-[#141923] leading-snug mb-1">
+            Context: what the model sees
+          </h2>
+          <p class="font-serif-body text-[15px] leading-[1.42] text-[#425061]">
+            The harness rebuilds the prompt every turn. Near the limit, old turns are summarized (compaction).
+          </p>
+        </div>
+      </section>
+
+      <!-- CELL 3 (MIDDLE LEFT): Tools: schemas in, JSON calls out -->
+      <section class="dashed-b dashed-r-md py-5 md:pr-7 flex flex-col justify-between">
+        <div>
+          <div class="grid grid-cols-12 gap-3.5 items-start">
+            <div class="col-span-5">
+              <div class="font-mono-tech text-[11px] text-[#627084] mb-2">
+                available tools
+              </div>
+              <div class="flex flex-col gap-1.5 font-mono-tech text-[11.5px]" id="toolList">
+                <button data-tool="read_file" class="tool-btn text-left px-2.5 py-1.5 rounded-[4px] bg-[#f4c534] border border-[#806e20] text-[#141923] font-medium cursor-pointer transition">
+                  read_file
+                </button>
+                <button data-tool="edit_file" class="tool-btn text-left px-2.5 py-1.5 rounded-[4px] bg-[#e3eef9] border border-[#b5cce6] text-[#1e293b] hover:bg-[#d2e4f6] cursor-pointer transition">
+                  edit_file
+                </button>
+                <button data-tool="bash" class="tool-btn text-left px-2.5 py-1.5 rounded-[4px] bg-[#e3eef9] border border-[#b5cce6] text-[#1e293b] hover:bg-[#d2e4f6] cursor-pointer transition">
+                  bash
+                </button>
+                <button data-tool="web_search" class="tool-btn text-left px-2.5 py-1.5 rounded-[4px] bg-[#e3eef9] border border-[#b5cce6] text-[#1e293b] hover:bg-[#d2e4f6] cursor-pointer transition">
+                  web_search
+                </button>
+                <button data-tool="mcp: github" class="tool-btn text-left px-2.5 py-1.5 rounded-[4px] bg-[#e3eef9] border border-[#b5cce6] text-[#1e293b] hover:bg-[#d2e4f6] cursor-pointer transition">
+                  mcp: github
+                </button>
+              </div>
+            </div>
+
+            <div class="col-span-7">
+              <div class="font-mono-tech text-[11px] text-[#627084] mb-2">
+                model output
+              </div>
+
+              <div class="bg-white border-[1.3px] border-[#18202c] rounded-[3px] p-2.5 font-mono-tech text-[11px] leading-[1.55] text-[#141923]">
+                <div>{ "type": "tool_use",</div>
+                <div class="pl-3">"name": "<span id="jsonToolName">read_file</span>",</div>
+                <div class="pl-3">"input": {</div>
+                <div class="pl-6" id="jsonToolInput">"path": "src/app.py"</div>
+                <div class="pl-3">} }</div>
+              </div>
+
+              <div class="flex items-center justify-center gap-1.5 my-1.5 font-mono-tech text-[10.5px] text-[#526071]">
+                <svg width="10" height="14" viewBox="0 0 10 14" fill="none" class="inline-block">
+                  <line x1="5" y1="0" x2="5" y2="11" stroke="#2b3648" stroke-width="1.2"/>
+                  <path d="M1.5 8.5L5 12L8.5 8.5" stroke="#2b3648" stroke-width="1.2" fill="none"/>
+                </svg>
+                <span>harness runs it</span>
+              </div>
+
+              <div id="jsonToolResult" class="bg-[#1d4e89] text-white font-mono-tech text-[11.5px] px-3 py-1.5 rounded-[2px]">
+                result: 200 lines returned
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4">
+          <h2 class="font-display text-[22px] font-bold text-[#141923] leading-snug mb-1">
+            Tools: schemas in, JSON calls out
+          </h2>
+          <p class="font-serif-body text-[15px] leading-[1.42] text-[#425061]">
+            Each tool is a name, a description and a JSON schema. The model picks one, the harness executes it.
+          </p>
+        </div>
+      </section>
+
+      <!-- CELL 4 (MIDDLE RIGHT): Permissions and sandboxing -->
+      <section class="dashed-b py-5 md:pl-7 flex flex-col justify-between">
+        <div>
+          <div class="font-mono-tech text-[11px] text-[#627084] mb-1">
+            incoming tool calls
+          </div>
+
+          <div class="w-full my-1">
+            <svg viewBox="0 0 395 154" class="w-full h-auto overflow-visible" aria-label="Permissions and Sandboxing Diagram">
+              <line x1="2" y1="77" x2="180" y2="77" stroke="#8996a6" stroke-width="1.25" />
+              <path d="M 244 70 C 262 70, 260 26, 276 26" fill="none" stroke="#a6b5c7" stroke-width="1.25" />
+              <line x1="244" y1="77" x2="276" y2="77" stroke="#a6b5c7" stroke-width="1.25" />
+              <path d="M 244 84 C 262 84, 260 128, 276 128" fill="none" stroke="#a6b5c7" stroke-width="1.25" />
+
+              <rect x="180" y="53" width="64" height="48" rx="4" fill="#1d4e89" />
+              <text x="212" y="74" text-anchor="middle" class="font-mono-tech" font-size="10.5" fill="#ffffff">policy</text>
+              <text x="212" y="88" text-anchor="middle" class="font-mono-tech" font-size="10.5" fill="#ffffff">check</text>
+
+              <g transform="translate(276, 6)">
+                <rect x="0" y="0" width="116" height="40" rx="3.5" fill="#ffffff" stroke="#1d4e89" stroke-width="1.25" />
+                <rect x="8" y="12" width="10" height="10" rx="1" fill="#1d4e89" />
+                <text x="25" y="17" class="font-mono-tech" font-size="11" font-weight="500" fill="#141923">allow</text>
+                <text x="25" y="30" class="font-mono-tech" font-size="9.5" fill="#627084">runs now</text>
+              </g>
+
+              <g transform="translate(276, 57)">
+                <rect x="0" y="0" width="116" height="40" rx="3.5" fill="#fae27a" stroke="#d5b848" stroke-width="1.2" />
+                <rect x="8" y="14" width="10" height="10" rx="1" fill="#f2bf26" />
+                <text x="25" y="17" class="font-mono-tech" font-size="11" font-weight="500" fill="#141923">ask user</text>
+                <text x="25" y="30" class="font-mono-tech" font-size="9.5" fill="#63582c">approve?</text>
+              </g>
+
+              <g transform="translate(276, 108)">
+                <rect x="0" y="0" width="116" height="40" rx="3.5" fill="#ffffff" stroke="#9e2a2b" stroke-width="1.25" />
+                <rect x="8" y="14" width="10" height="10" rx="1" fill="#141923" />
+                <text x="25" y="17" class="font-mono-tech" font-size="11" font-weight="500" fill="#141923">deny</text>
+                <text x="25" y="30" class="font-mono-tech" font-size="9.5" fill="#627084">blocked</text>
+              </g>
+            </svg>
+          </div>
+
+          <div class="font-mono-tech text-[10px] text-[#627084] mt-0.5">
+            runs inside a sandbox: limited files and network
+          </div>
+        </div>
+
+        <div class="mt-3">
+          <h2 class="font-display text-[22px] font-bold text-[#141923] leading-snug mb-1">
+            Permissions and sandboxing
+          </h2>
+          <p class="font-serif-body text-[15px] leading-[1.42] text-[#425061]">
+            Every call passes a policy: reads run, risky writes ask first, dangerous commands are blocked outright.
+          </p>
+        </div>
+      </section>
+
+      <!-- CELL 5 (BOTTOM LEFT): Memory outlives the context -->
+      <section class="dashed-b dashed-r-md py-5 md:pr-7 flex flex-col justify-between">
+        <div>
+          <div class="font-mono-tech text-[11px] text-[#627084] mb-2">
+            three sessions, one task
+          </div>
+
+          <div class="w-full my-1">
+            <svg viewBox="0 0 405 142" class="w-full h-auto overflow-visible" aria-label="Memory Outlives Context Timeline">
+              <text x="145" y="13" text-anchor="middle" class="font-mono-tech" font-size="9.5" fill="#627084">session 1</text>
+              <text x="242" y="13" text-anchor="middle" class="font-mono-tech" font-size="9.5" fill="#627084">session 2</text>
+              <text x="342" y="13" text-anchor="middle" class="font-mono-tech" font-size="9.5" fill="#627084">session 3</text>
+
+              <text x="0" y="37" class="font-mono-tech" font-size="10.5" font-weight="500" fill="#18202c">context</text>
+              <text x="0" y="49" class="font-mono-tech" font-size="9.5" fill="#627084">resets</text>
+
+              <rect x="96" y="27" width="98" height="22" fill="#e3eef9" />
+              <rect x="194" y="27" width="28" height="22" fill="#f7dc6f" />
+              <rect x="223" y="27" width="66" height="22" fill="#e3eef9" />
+              <rect x="290" y="27" width="108" height="22" fill="#e3eef9" />
+
+              <text x="0" y="75" class="font-mono-tech" font-size="10.5" font-weight="500" fill="#18202c">to-do file</text>
+              <text x="0" y="87" class="font-mono-tech" font-size="9.5" fill="#627084">this task</text>
+
+              <rect x="96" y="65" width="126" height="22" fill="#6ea1d4" />
+              <rect x="223" y="65" width="175" height="22" fill="#e3eef9" />
+
+              <text x="0" y="113" class="font-mono-tech" font-size="10.5" font-weight="500" fill="#18202c">memory file</text>
+              <text x="0" y="125" class="font-mono-tech" font-size="9.5" fill="#627084">forever</text>
+
+              <rect x="96" y="103" width="82" height="22" fill="#e3eef9" />
+              <rect x="178" y="103" width="12" height="22" fill="#1d4e89" />
+              <rect x="223" y="103" width="175" height="22" fill="#e3eef9" />
+
+              <line x1="194" y1="21" x2="194" y2="132" stroke="#4a5768" stroke-width="1.2" stroke-dasharray="2.5 2.5" />
+              <line x1="222.5" y1="21" x2="222.5" y2="132" stroke="#141923" stroke-width="1.5" />
+              <line x1="290" y1="21" x2="290" y2="132" stroke="#4a5768" stroke-width="1.2" stroke-dasharray="2.5 2.5" />
+            </svg>
+          </div>
+
+          <div class="font-mono-tech text-[10px] text-[#627084] text-center mt-0.5">
+            agent writes notes before each session ends
+          </div>
+        </div>
+
+        <div class="mt-3">
+          <h2 class="font-display text-[22px] font-bold text-[#141923] leading-snug mb-1">
+            Memory outlives the context
+          </h2>
+          <p class="font-serif-body text-[15px] leading-[1.42] text-[#425061]">
+            Context resets each session. To-do files and memory files persist, so the agent picks up where it left off.
+          </p>
+        </div>
+      </section>
+
+      <!-- CELL 6 (BOTTOM RIGHT): Subagents: split the work -->
+      <section class="dashed-b py-5 md:pl-7 flex flex-col justify-between">
+        <div>
+          <div class="font-mono-tech text-[11px] text-[#627084] mb-1">
+            lead agent
+          </div>
+
+          <div class="w-full my-1">
+            <svg viewBox="0 0 400 156" class="w-full h-auto overflow-visible" aria-label="Subagents Split Work Diagram">
+              <path d="M 104 68 C 145 68, 145 25, 190 25" fill="none" stroke="#a6b5c7" stroke-width="1.3" />
+              <line x1="104" y1="77" x2="190" y2="77" stroke="#a6b5c7" stroke-width="1.3" />
+              <path d="M 104 86 C 145 86, 145 129, 190 129" fill="none" stroke="#a6b5c7" stroke-width="1.3" />
+
+              <g transform="translate(2, 48)">
+                <rect x="0" y="0" width="102" height="58" rx="3.5" fill="#1d4e89" />
+                <text x="51" y="23" text-anchor="middle" class="font-mono-tech" font-size="11.5" fill="#ffffff">lead</text>
+                <text x="51" y="37" text-anchor="middle" class="font-mono-tech" font-size="11.5" fill="#ffffff">agent</text>
+                <rect x="8" y="46" width="14" height="6" fill="#f4c534" />
+                <rect x="22" y="46" width="72" height="6" fill="#7cb0e3" opacity="0.65" />
+              </g>
+
+              <text x="4" y="122" class="font-mono-tech" font-size="9.5" fill="#627084">lead context</text>
+              <text x="4" y="134" class="font-mono-tech" font-size="9.5" fill="#627084">stays small</text>
+
+              <g transform="translate(190, 4)">
+                <rect x="0" y="0" width="130" height="42" rx="3.5" fill="#faedb8" stroke="#18202c" stroke-width="1.25" />
+                <text x="10" y="18" class="font-mono-tech" font-size="11" font-weight="500" fill="#141923">search code</text>
+                <rect x="10" y="27" width="48" height="7" fill="#f5d35b" />
+                <rect x="58" y="27" width="60" height="7" fill="#dceaf8" />
+              </g>
+              <text x="329" y="21" class="font-mono-tech" font-size="9.5" fill="#627084">own fresh</text>
+              <text x="329" y="33" class="font-mono-tech" font-size="9.5" fill="#627084">context</text>
+
+              <g transform="translate(190, 56)">
+                <rect x="0" y="0" width="130" height="42" rx="3.5" fill="#faedb8" stroke="#18202c" stroke-width="1.25" />
+                <text x="10" y="18" class="font-mono-tech" font-size="11" font-weight="500" fill="#141923">read docs</text>
+                <rect x="10" y="27" width="48" height="7" fill="#f5d35b" />
+                <rect x="58" y="27" width="60" height="7" fill="#dceaf8" />
+              </g>
+
+              <g transform="translate(190, 108)">
+                <rect x="0" y="0" width="130" height="42" rx="3.5" fill="#faedb8" stroke="#18202c" stroke-width="1.25" />
+                <text x="10" y="18" class="font-mono-tech" font-size="11" font-weight="500" fill="#141923">run tests</text>
+                <rect x="10" y="27" width="48" height="7" fill="#f5d35b" />
+                <rect x="58" y="27" width="60" height="7" fill="#dceaf8" />
+              </g>
+              <text x="329" y="125" class="font-mono-tech" font-size="9.5" fill="#627084">returns a</text>
+              <text x="329" y="137" class="font-mono-tech" font-size="9.5" fill="#627084">summary</text>
+            </svg>
+          </div>
+        </div>
+
+        <div class="mt-3">
+          <h2 class="font-display text-[22px] font-bold text-[#141923] leading-snug mb-1">
+            Subagents: split the work
+          </h2>
+          <p class="font-serif-body text-[15px] leading-[1.42] text-[#425061]">
+            A lead agent hands focused tasks to subagents with fresh context, then merges their short summaries.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <!-- CLEAN FULL-WIDTH TECHNICAL SUMMARY BAR (NO SOCIAL PROMO) -->
+    <footer class="pt-5 pb-1 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <div class="flex-1 max-w-[540px]">
+        <div class="font-mono-tech text-[11px] text-[#627084] mb-2.5">
+          same task, same model:
+        </div>
+
+        <div class="flex items-center justify-between gap-3 mb-2.5">
+          <span class="font-display font-bold text-[15px] text-[#141923] w-14 shrink-0">Model</span>
+          <div class="flex items-center gap-[4px] flex-1">
+            <span class="h-[19px] flex-1 bg-[#1d4e89] rounded-[1px]"></span>
+            <span class="h-[19px] flex-1 bg-[#e3eef9] rounded-[1px]"></span>
+            <span class="h-[19px] flex-1 bg-[#e3eef9] rounded-[1px]"></span>
+            <span class="h-[19px] flex-1 bg-[#e3eef9] rounded-[1px]"></span>
+            <span class="h-[19px] flex-1 bg-[#e3eef9] rounded-[1px]"></span>
+            <span class="h-[19px] flex-1 bg-[#e3eef9] rounded-[1px]"></span>
+            <span class="h-[19px] flex-1 bg-[#e3eef9] rounded-[1px]"></span>
+            <span class="h-[19px] flex-1 bg-[#e3eef9] rounded-[1px]"></span>
+            <span class="h-[19px] flex-1 bg-[#e3eef9] rounded-[1px]"></span>
+            <span class="h-[19px] flex-1 bg-[#e3eef9] rounded-[1px]"></span>
+            <span class="h-[19px] flex-1 bg-[#e3eef9] rounded-[1px]"></span>
+            <span class="h-[19px] flex-1 bg-[#e3eef9] rounded-[1px]"></span>
+            <span class="h-[19px] flex-1 bg-[#e3eef9] rounded-[1px]"></span>
+            <span class="h-[19px] flex-1 bg-[#e3eef9] rounded-[1px]"></span>
+          </div>
+          <span class="font-mono-tech text-[11px] text-[#334155] w-[72px] text-right shrink-0">1 reply</span>
+        </div>
+
+        <div class="flex items-center justify-between gap-3">
+          <span class="font-display font-bold text-[15px] text-[#141923] w-14 shrink-0">Agent</span>
+          <div class="flex items-center gap-[4px] flex-1">
+            <span class="h-[19px] flex-1 bg-[#1d4e89] rounded-[1px]"></span>
+            <span class="h-[19px] flex-1 bg-[#f4c534] rounded-[1px]"></span>
+            <span class="h-[19px] flex-1 bg-[#1d4e89] rounded-[1px]"></span>
+            <span class="h-[19px] flex-1 bg-[#f4c534] rounded-[1px]"></span>
+            <span class="h-[19px] flex-1 bg-[#1d4e89] rounded-[1px]"></span>
+            <span class="h-[19px] flex-1 bg-[#f4c534] rounded-[1px]"></span>
+            <span class="h-[19px] flex-1 bg-[#1d4e89] rounded-[1px]"></span>
+            <span class="h-[19px] flex-1 bg-[#f4c534] rounded-[1px]"></span>
+            <span class="h-[19px] flex-1 bg-[#1d4e89] rounded-[1px]"></span>
+            <span class="h-[19px] flex-1 bg-[#f4c534] rounded-[1px]"></span>
+            <span class="h-[19px] flex-1 bg-[#e3eef9] rounded-[1px]"></span>
+            <span class="h-[19px] flex-1 bg-[#e3eef9] rounded-[1px]"></span>
+            <span class="h-[19px] flex-1 bg-[#e3eef9] rounded-[1px]"></span>
+            <span class="h-[19px] flex-1 bg-[#e3eef9] rounded-[1px]"></span>
+          </div>
+          <span class="font-mono-tech text-[11px] text-[#334155] w-[72px] text-right shrink-0">until done</span>
+        </div>
+      </div>
+
+      <p class="font-serif-body text-[16px] font-semibold text-[#1d4e89] sm:text-right">
+        Agent = model + harness. Model thinks, harness acts.
+      </p>
+    </footer>
+  </article>
+
+
+  <!-- =========================================================================
+       PAGE 2: THE SELF-EVOLVING AGENT HARNESS
+       ========================================================================= -->
+  <article id="poster-p2" class="poster-editorial balls-animating mb-12">
+    <!-- HEADER -->
+    <header class="dashed-b pb-4 flex flex-wrap items-end justify-between gap-2">
+      <div>
+        <h1 class="font-display text-[33px] sm:text-[49px] font-bold leading-[1.04] text-[#141923] tracking-tight mb-2">
+          The Self-Evolving Agent Harness
+        </h1>
+        <p class="font-serif-body text-[17px] sm:text-[21.5px] leading-snug text-[#425061]">
+          An agent that fixes its own failures, without breaking what works.
+          <strong class="font-bold text-[#1d4e89]">Save this.</strong>
+        </p>
+      </div>
+      <button onclick="toggleBallPulse()" class="px-2.5 py-1.5 rounded border border-[#b0c2d6] bg-[#fdfcf7] text-[#141923] hover:bg-[#e3eef9] transition cursor-pointer flex items-center gap-1.5 font-mono-tech text-[11px]">
+        <span class="w-2 h-2 rounded-full bg-[#f4c83a] border border-[#141923] inline-block"></span>
+        <span id="pulseBtnText">Pause Ball Pulse</span>
+      </button>
+    </header>
+
+    <!-- MAIN ARCHITECTURE DIAGRAM (HIGH-PRECISION VECTOR SVG) -->
+    <section class="my-3 w-full overflow-x-auto">
+      <div class="min-w-[780px] w-full">
+        <svg id="selfEvolvingSvg" viewBox="0 0 920 795" class="w-full h-auto select-none" aria-label="The Self-Evolving Agent Harness Architecture Flowchart">
+          <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+              <path d="M 1 1.5 L 8.5 5 L 1 8.5 z" fill="#18202c" />
+            </marker>
+            <filter id="cardShadow" x="-2%" y="-2%" width="104%" height="106%">
+              <feDropShadow dx="0" dy="1.5" stdDeviation="1.2" flood-color="#141923" flood-opacity="0.06" />
+            </filter>
+          </defs>
+
+          <!-- 1. CONNECTOR LINES & PATHS -->
+          <line x1="460" y1="30" x2="460" y2="56" stroke="#18202c" stroke-width="1.4" marker-end="url(#arrow)" />
+          <line x1="460" y1="126" x2="460" y2="195" stroke="#18202c" stroke-width="1.4" marker-end="url(#arrow)" />
+          <line x1="460" y1="312" x2="460" y2="352" stroke="#18202c" stroke-width="1.4" marker-end="url(#arrow)" />
+
+          <!-- Left Reinforced Feedback Curved Loop -->
+          <path d="M 255 110 C 287 110, 287 166, 255 166" fill="none" stroke="#18202c" stroke-width="1.35" marker-start="url(#arrow)" marker-end="url(#arrow)" />
+          <text x="276" y="182" class="svg-mono" font-size="9.5" fill="#425061">Reinforced</text>
+          <text x="282" y="194" class="svg-mono" font-size="9.5" fill="#425061">Feedback</text>
+
+          <!-- Dashed Trajectory Curve Left -->
+          <path d="M 55 235 C 32 340, 34 455, 58 552" fill="none" stroke="#3e4c5e" stroke-width="1.3" stroke-dasharray="3.5 3.5" marker-end="url(#arrow)" />
+
+          <!-- Left Diamond "Goal achieved?" -> Yes -> Reasoning Engine -->
+          <path d="M 226 300 L 296 300 L 296 232 L 330 232" fill="none" stroke="#18202c" stroke-width="1.4" marker-end="url(#arrow)" />
+          <text x="262" y="293" class="svg-mono" font-size="10.5" font-weight="600" fill="#18202c">Yes</text>
+
+          <!-- Left Diamond "Goal achieved?" -> No -> Planning Module -->
+          <line x1="176" y1="337" x2="176" y2="386" stroke="#18202c" stroke-width="1.4" marker-end="url(#arrow)" />
+          <text x="155" y="366" class="svg-mono" font-size="10.5" font-weight="600" fill="#18202c">No</text>
+
+          <!-- Center Diamond "Can Answer Directly?" -> No -> Planning Module -->
+          <line x1="395" y1="414" x2="296" y2="414" stroke="#18202c" stroke-width="1.4" marker-end="url(#arrow)" />
+          <text x="352" y="405" class="svg-mono" font-size="10.5" font-weight="600" fill="#18202c">No</text>
+
+          <!-- Center Diamond "Can Answer Directly?" -> Yes -> Output -->
+          <line x1="525" y1="414" x2="582" y2="414" stroke="#18202c" stroke-width="1.4" marker-end="url(#arrow)" />
+          <text x="537" y="405" class="svg-mono" font-size="10.5" font-weight="600" fill="#18202c">Yes</text>
+          <text x="615" y="418" class="svg-mono" font-size="11.5" font-weight="500" fill="#18202c">Output</text>
+
+          <!-- Center Diamond "Can Answer Directly?" -> Results -> Protected Competence -->
+          <line x1="460" y1="476" x2="460" y2="516" stroke="#18202c" stroke-width="1.4" marker-end="url(#arrow)" />
+          <text x="468" y="502" class="svg-mono" font-size="11" font-weight="500" fill="#18202c">Results</text>
+
+          <!-- Planning Module -> Down & Right into Protected Competence -->
+          <path d="M 178 486 L 178 544 L 336 544" fill="none" stroke="#18202c" stroke-width="1.4" marker-end="url(#arrow)" />
+
+          <!-- Self-Improvement Loop -> Up into Planning Module -->
+          <line x1="118" y1="555" x2="118" y2="486" stroke="#18202c" stroke-width="1.4" marker-end="url(#arrow)" />
+
+          <!-- Reasoning Engine <-> Real Generalization -->
+          <path d="M 480 195 L 480 175 L 656 175" fill="none" stroke="#18202c" stroke-width="1.3" marker-end="url(#arrow)" />
+          <line x1="656" y1="220" x2="582" y2="220" stroke="#18202c" stroke-width="1.35" marker-end="url(#arrow)" />
+          <line x1="656" y1="242" x2="582" y2="242" stroke="#18202c" stroke-width="1.35" marker-start="url(#arrow)" marker-end="url(#arrow)" />
+
+          <!-- Curved Re-reasoning Arc -->
+          <path d="M 732 396 C 722 315, 655 274, 582 268" fill="none" stroke="#18202c" stroke-width="1.35" marker-end="url(#arrow)" />
+
+          <!-- Curved Arc: Protected Competence -> No -> Right Diamond -->
+          <path d="M 580 546 C 642 546, 688 515, 710 472" fill="none" stroke="#18202c" stroke-width="1.35" marker-end="url(#arrow)" />
+          <text x="655" y="535" class="svg-mono" font-size="10.5" font-weight="600" fill="#18202c">No</text>
+
+          <!-- Right Diamond "Goal achieved?" -> Yes -> Final Output Box -->
+          <line x1="784" y1="440" x2="846" y2="440" stroke="#18202c" stroke-width="1.4" marker-end="url(#arrow)" />
+          <text x="790" y="427" class="svg-mono" font-size="10.5" font-weight="600" fill="#18202c">Yes</text>
+
+          <!-- Real Generalization Right Exit -> Stepped path down to Final Output Box -->
+          <path d="M 896 205 L 912 205 L 912 372 L 862 372 L 862 421" fill="none" stroke="#18202c" stroke-width="1.35" marker-end="url(#arrow)" />
+
+          <!-- Protected Competence -> Right to The Result -->
+          <line x1="580" y1="612" x2="628" y2="612" stroke="#18202c" stroke-width="1.4" marker-end="url(#arrow)" />
+
+          <!-- Protected Competence -> Down to Observability Layer -->
+          <line x1="460" y1="686" x2="460" y2="718" stroke="#18202c" stroke-width="1.4" marker-end="url(#arrow)" />
+
+          <!-- The Result -> Down & Left into Observability Layer -->
+          <path d="M 692 664 L 692 737 L 580 737" fill="none" stroke="#18202c" stroke-width="1.4" marker-end="url(#arrow)" />
+
+          <!-- Observability Layer -> Left & Up into The Self-Improvement Loop -->
+          <path d="M 340 737 L 222 737 L 222 682" fill="none" stroke="#18202c" stroke-width="1.4" marker-end="url(#arrow)" />
+
+          <!-- 2. DIAGRAM CARDS, BOXES & DIAMONDS -->
+          <!-- TOP LEFT CARD: Precise Error Signals -->
+          <g transform="translate(16, 48)" filter="url(#cardShadow)">
+            <rect x="0" y="0" width="238" height="187" rx="7" fill="#fdfcf7" stroke="#18202c" stroke-width="1.5" />
+            <path d="M 0 7 A 7 7 0 0 1 7 0 L 231 0 A 7 7 0 0 1 238 7 L 238 28 L 0 28 Z" fill="#f8de6e" stroke="#18202c" stroke-width="1.5" />
+            <text x="119" y="18.5" text-anchor="middle" class="svg-mono" font-size="12" font-weight="600" fill="#141923">Precise Error Signals</text>
+
+            <text x="8" y="43" class="svg-mono" font-size="9.3" fill="#3e4c5e">Find where the agent actually went</text>
+            <text x="8" y="55" class="svg-mono" font-size="9.3" fill="#3e4c5e">wrong.</text>
+
+            <rect x="8" y="62" width="62" height="19" rx="4" fill="#faefc2" stroke="#8a7a3a" stroke-width="1" />
+            <text x="39" y="75" text-anchor="middle" class="svg-mono" font-size="10" font-weight="600" fill="#141923">τ_fail</text>
+
+            <text x="119" y="73" text-anchor="middle" class="svg-mono" font-size="8.2" fill="#3e4c5e">First Divergence</text>
+            <line x1="119" y1="76" x2="119" y2="85" stroke="#18202c" stroke-width="1.1" />
+
+            <line x1="22" y1="95" x2="216" y2="95" stroke="#18202c" stroke-width="1.3" />
+            <circle cx="22" cy="95" r="5" fill="#ffffff" stroke="#18202c" stroke-width="1.3" />
+            <text x="22" y="109" text-anchor="middle" class="svg-mono" font-size="7.5" fill="#526071">Step 1</text>
+            <path d="M 48 92.5 L 53 95 L 48 97.5" fill="none" stroke="#18202c" stroke-width="1.1" />
+            <circle cx="70" cy="95" r="5" fill="#ffffff" stroke="#18202c" stroke-width="1.3" />
+            <text x="70" y="109" text-anchor="middle" class="svg-mono" font-size="7.5" fill="#526071">Step 2</text>
+            <path d="M 96 92.5 L 101 95 L 96 97.5" fill="none" stroke="#18202c" stroke-width="1.1" />
+            <circle cx="119" cy="95" r="5.5" fill="#f4c83a" stroke="#18202c" stroke-width="1.4" />
+            <text x="119" y="109" text-anchor="middle" class="svg-mono" font-size="7.5" font-weight="600" fill="#141923">Step 3</text>
+            <path d="M 145 92.5 L 150 95 L 145 97.5" fill="none" stroke="#18202c" stroke-width="1.1" />
+            <circle cx="168" cy="95" r="5.5" fill="#f7dc6f" stroke="#18202c" stroke-width="1.3" />
+            <text x="168" y="109" text-anchor="middle" class="svg-mono" font-size="7.5" fill="#526071">Step 4</text>
+            <path d="M 193 92.5 L 198 95 L 193 97.5" fill="none" stroke="#18202c" stroke-width="1.1" />
+            <circle cx="216" cy="95" r="5" fill="#ffffff" stroke="#18202c" stroke-width="1.3" />
+            <text x="216" y="109" text-anchor="middle" class="svg-mono" font-size="7.5" fill="#526071">...</text>
+
+            <line x1="22" y1="101" x2="22" y2="138" stroke="#8996a6" stroke-width="1" stroke-dasharray="2 2" />
+            <line x1="70" y1="101" x2="70" y2="138" stroke="#8996a6" stroke-width="1" stroke-dasharray="2 2" />
+            <line x1="119" y1="101" x2="119" y2="138" stroke="#8996a6" stroke-width="1" stroke-dasharray="2 2" />
+
+            <rect x="8" y="114" width="62" height="19" rx="4" fill="#e1eaf5" stroke="#627084" stroke-width="1" />
+            <text x="39" y="127" text-anchor="middle" class="svg-mono" font-size="10" font-weight="600" fill="#141923">τ_ref</text>
+
+            <line x1="22" y1="143" x2="216" y2="143" stroke="#18202c" stroke-width="1.3" />
+            <circle cx="22" cy="143" r="4.5" fill="#141923" />
+            <text x="22" y="156" text-anchor="middle" class="svg-mono" font-size="7.5" fill="#526071">Step 1</text>
+            <path d="M 48 140.5 L 53 143 L 48 145.5" fill="none" stroke="#18202c" stroke-width="1.1" />
+            <circle cx="70" cy="143" r="4.5" fill="#141923" />
+            <text x="70" y="156" text-anchor="middle" class="svg-mono" font-size="7.5" fill="#526071">Step 2</text>
+            <path d="M 96 140.5 L 101 143 L 96 145.5" fill="none" stroke="#18202c" stroke-width="1.1" />
+            <circle cx="119" cy="143" r="4.5" fill="#141923" />
+            <text x="119" y="156" text-anchor="middle" class="svg-mono" font-size="7.5" fill="#526071">Step 3</text>
+            <path d="M 145 140.5 L 150 143 L 145 145.5" fill="none" stroke="#18202c" stroke-width="1.1" />
+            <circle cx="168" cy="143" r="4.5" fill="#141923" />
+            <text x="168" y="156" text-anchor="middle" class="svg-mono" font-size="7.5" fill="#526071">Step 4</text>
+            <path d="M 193 140.5 L 198 143 L 193 145.5" fill="none" stroke="#18202c" stroke-width="1.1" />
+            <circle cx="216" cy="143" r="4.8" fill="#ffffff" stroke="#18202c" stroke-width="1.3" />
+
+            <text x="8" y="170" class="svg-mono" font-size="7.7" fill="#3e4c5e">Terminal failure says WHAT happened. Reference</text>
+            <text x="8" y="180" class="svg-mono" font-size="7.7" fill="#3e4c5e">alignment helps identify WHERE it broke.</text>
+          </g>
+
+          <!-- TOP CENTER: Input Node + Perception Layer -->
+          <circle cx="460" cy="9" r="4.5" fill="#141923" />
+          <circle cx="460" cy="21" r="9" fill="#141923" />
+          <circle cx="460" cy="25" r="4.2" fill="#1d4e89" stroke="#141923" stroke-width="1" />
+          <text x="430" y="43" text-anchor="end" class="svg-mono" font-size="11.5" font-weight="500" fill="#141923">Input</text>
+
+          <g transform="translate(335, 58)" filter="url(#cardShadow)">
+            <rect x="0" y="3" width="22" height="62" rx="3" fill="#bfd9f2" stroke="#5b87b5" stroke-width="1.2" />
+            <text x="14.5" y="34" text-anchor="middle" transform="rotate(-90 14.5 34)" class="svg-mono" font-size="11" font-weight="600" fill="#141923">Input</text>
+            <rect x="22" y="0" width="215" height="68" rx="6" fill="#fdfcf7" stroke="#18202c" stroke-width="1.5" />
+            <text x="129.5" y="23" text-anchor="middle" class="svg-mono" font-size="12" font-weight="600" fill="#141923">Perception Layer</text>
+            <line x1="22" y1="36" x2="237" y2="36" stroke="#8996a6" stroke-width="1.2" stroke-dasharray="3 3" />
+            <text x="129.5" y="55" text-anchor="middle" class="svg-mono" font-size="11" fill="#3e4c5e">Perceive</text>
+          </g>
+
+          <!-- CENTER: Reasoning Engine / LLM -->
+          <g transform="translate(335, 196)" filter="url(#cardShadow)">
+            <rect x="0" y="3" width="22" height="110" rx="3" fill="#f8de6e" stroke="#b59b35" stroke-width="1.2" />
+            <text x="14.5" y="58" text-anchor="middle" transform="rotate(-90 14.5 58)" class="svg-mono" font-size="11" font-weight="600" fill="#141923">Think</text>
+            <rect x="22" y="0" width="215" height="116" rx="6" fill="#fdfcf7" stroke="#18202c" stroke-width="1.5" />
+            <text x="129.5" y="19" text-anchor="middle" class="svg-mono" font-size="12" font-weight="600" fill="#141923">Reasoning Engine /</text>
+            <text x="129.5" y="34" text-anchor="middle" class="svg-mono" font-size="12" font-weight="600" fill="#141923">LLM</text>
+            <line x1="22" y1="43" x2="237" y2="43" stroke="#8996a6" stroke-width="1.2" stroke-dasharray="3 3" />
+            <text x="32" y="60" class="svg-mono" font-size="10.2" fill="#3e4c5e">Chain-of-Thought / ReAct /</text>
+            <text x="32" y="75" class="svg-mono" font-size="10.2" fill="#3e4c5e">Plan-and-Execute</text>
+            <text x="32" y="93" class="svg-mono" font-size="10.2" fill="#3e4c5e">Task → Execute → Trajectory</text>
+            <text x="32" y="107" class="svg-mono" font-size="10.2" fill="#3e4c5e">→ Evaluate</text>
+          </g>
+
+          <!-- LEFT DIAMOND: Goal achieved ? -->
+          <g transform="translate(176, 300)">
+            <polygon points="0,-38 50,0 0,38 -50,0" fill="#d3e6f8" stroke="#18202c" stroke-width="1.5" />
+            <text x="0" y="-8" text-anchor="middle" class="svg-mono" font-size="10.5" font-weight="500" fill="#141923">Goal</text>
+            <text x="0" y="5" text-anchor="middle" class="svg-mono" font-size="10.5" font-weight="500" fill="#141923">achieved</text>
+            <text x="0" y="18" text-anchor="middle" class="svg-mono" font-size="10.5" font-weight="500" fill="#141923">?</text>
+          </g>
+
+          <!-- LEFT MIDDLE: Planning Module -->
+          <g transform="translate(80, 386)" filter="url(#cardShadow)">
+            <rect x="0" y="3" width="22" height="94" rx="3" fill="#bfd9f2" stroke="#5b87b5" stroke-width="1.2" />
+            <text x="14.5" y="50" text-anchor="middle" transform="rotate(-90 14.5 50)" class="svg-mono" font-size="11" font-weight="600" fill="#141923">Plan</text>
+            <rect x="22" y="0" width="194" height="100" rx="6" fill="#fdfcf7" stroke="#18202c" stroke-width="1.5" />
+            <text x="119" y="23" text-anchor="middle" class="svg-mono" font-size="12" font-weight="600" fill="#141923">Planning Module</text>
+            <line x1="22" y1="36" x2="216" y2="36" stroke="#8996a6" stroke-width="1.2" stroke-dasharray="3 3" />
+            <text x="32" y="54" class="svg-mono" font-size="10.2" fill="#3e4c5e">Breaks the goal into sub-</text>
+            <text x="32" y="68" class="svg-mono" font-size="10.2" fill="#3e4c5e">sub-tasks</text>
+            <text x="32" y="86" class="svg-mono" font-size="10.2" fill="#3e4c5e">Step 1 → Step 2 → Step 3</text>
+          </g>
+
+          <!-- CENTER DIAMOND: Can Answer Directly? -->
+          <g transform="translate(460, 414)">
+            <polygon points="0,-60 66,0 0,60 -66,0" fill="#d3e6f8" stroke="#18202c" stroke-width="1.5" />
+            <text x="0" y="-10" text-anchor="middle" class="svg-mono" font-size="11" font-weight="500" fill="#141923">Can</text>
+            <text x="0" y="5" text-anchor="middle" class="svg-mono" font-size="11" font-weight="500" fill="#141923">Answer</text>
+            <text x="0" y="20" text-anchor="middle" class="svg-mono" font-size="11" font-weight="500" fill="#141923">Directly?</text>
+          </g>
+
+          <!-- TOP RIGHT CARD: Real Generalization -->
+          <g transform="translate(656, 48)" filter="url(#cardShadow)">
+            <rect x="0" y="0" width="240" height="238" rx="7" fill="#fdfcf7" stroke="#18202c" stroke-width="1.5" />
+            <path d="M 0 7 A 7 7 0 0 1 7 0 L 233 0 A 7 7 0 0 1 240 7 L 240 28 L 0 28 Z" fill="#bfd9f2" stroke="#18202c" stroke-width="1.5" />
+            <text x="120" y="18.5" text-anchor="middle" class="svg-mono" font-size="12" font-weight="600" fill="#141923">Real Generalization</text>
+            <text x="8" y="43" class="svg-mono" font-size="9.5" fill="#3e4c5e">Learn patterns, not benchmark</text>
+            <text x="8" y="55" class="svg-mono" font-size="9.5" fill="#3e4c5e">hacks.</text>
+            <rect x="6" y="62" width="228" height="122" rx="3" fill="none" stroke="#8996a6" stroke-width="1.1" stroke-dasharray="2.5 2.5" />
+            <text x="12" y="75" class="svg-mono" font-size="8.6" font-weight="500" fill="#3e4c5e">Systematic Failure Patterns (from</text>
+            <text x="12" y="85" class="svg-mono" font-size="8.6" font-weight="500" fill="#3e4c5e">clustered errors)</text>
+
+            <g transform="translate(33, 107)">
+              <circle cx="0" cy="0" r="16" fill="#e3eef9" stroke="#1d4e89" stroke-width="1.1" stroke-dasharray="2.5 2" />
+              <circle cx="-5" cy="-5" r="2.6" fill="#1d4e89" />
+              <circle cx="5" cy="-4" r="2.6" fill="#1d4e89" />
+              <circle cx="-6" cy="4" r="2.6" fill="#1d4e89" />
+              <circle cx="4" cy="5" r="2.6" fill="#1d4e89" />
+              <circle cx="0" cy="0" r="2.4" fill="#1d4e89" />
+              <text x="0" y="25" text-anchor="middle" class="svg-mono" font-size="7.2" fill="#3e4c5e">Tool Usage</text>
+              <text x="0" y="34" text-anchor="middle" class="svg-mono" font-size="7.2" fill="#3e4c5e">Errors</text>
+            </g>
+
+            <g transform="translate(91, 107)">
+              <circle cx="0" cy="0" r="16" fill="#e3eef9" stroke="#1d4e89" stroke-width="1.1" stroke-dasharray="2.5 2" />
+              <circle cx="-5" cy="-4" r="2.6" fill="#1d4e89" />
+              <circle cx="5" cy="-4" r="2.6" fill="#1d4e89" />
+              <circle cx="-4" cy="5" r="2.6" fill="#1d4e89" />
+              <circle cx="5" cy="5" r="2.6" fill="#1d4e89" />
+              <text x="0" y="25" text-anchor="middle" class="svg-mono" font-size="7.2" fill="#3e4c5e">Reasoning</text>
+              <text x="0" y="34" text-anchor="middle" class="svg-mono" font-size="7.2" fill="#3e4c5e">Mistakes</text>
+            </g>
+
+            <g transform="translate(152, 107)">
+              <circle cx="0" cy="0" r="16" fill="#e3eef9" stroke="#1d4e89" stroke-width="1.1" stroke-dasharray="2.5 2" />
+              <circle cx="-5" cy="-3" r="2.6" fill="#1d4e89" />
+              <circle cx="4" cy="-5" r="2.6" fill="#1d4e89" />
+              <circle cx="0" cy="5" r="2.6" fill="#1d4e89" />
+              <circle cx="6" cy="3" r="2.6" fill="#1d4e89" />
+              <text x="0" y="25" text-anchor="middle" class="svg-mono" font-size="7.2" fill="#3e4c5e">Planning /</text>
+              <text x="0" y="34" text-anchor="middle" class="svg-mono" font-size="7.2" fill="#3e4c5e">Premature Stop</text>
+            </g>
+
+            <g transform="translate(207, 107)">
+              <circle cx="0" cy="0" r="14" fill="#fdf6d4" stroke="#b59b35" stroke-width="1" stroke-dasharray="2 2" />
+              <circle cx="0" cy="0" r="4" fill="#f4c83a" />
+              <text x="0" y="25" text-anchor="middle" class="svg-mono" font-size="7.2" fill="#3e4c5e">One-off</text>
+              <text x="0" y="34" text-anchor="middle" class="svg-mono" font-size="7.2" fill="#3e4c5e">Case</text>
+            </g>
+
+            <text x="12" y="156" class="svg-mono" font-size="7.5" fill="#3e4c5e">Group failed traces by root cause so the</text>
+            <text x="12" y="166" class="svg-mono" font-size="7.5" fill="#3e4c5e">optimizer can target systematic weaknesses,</text>
+            <text x="12" y="176" class="svg-mono" font-size="7.5" fill="#3e4c5e">not individual errors.</text>
+
+            <text x="8" y="196" class="svg-mono" font-size="7.7" fill="#526071">Shortcut = hardcoded answers / leaked</text>
+            <text x="8" y="206" class="svg-mono" font-size="7.7" fill="#526071">training data / prompt bloat</text>
+            <text x="8" y="220" class="svg-mono" font-size="7.7" font-weight="500" fill="#1d4e89">Generalizable fix = addresses the shared</text>
+            <text x="8" y="230" class="svg-mono" font-size="7.7" font-weight="500" fill="#1d4e89">failure mode</text>
+          </g>
+
+          <!-- RIGHT MIDDLE DIAMOND: Goal achieved ? + Final Output Icon -->
+          <g transform="translate(732, 440)">
+            <polygon points="0,-44 52,0 0,44 -52,0" fill="#d3e6f8" stroke="#18202c" stroke-width="1.5" />
+            <text x="0" y="-9" text-anchor="middle" class="svg-mono" font-size="10.5" font-weight="500" fill="#141923">Goal</text>
+            <text x="0" y="5" text-anchor="middle" class="svg-mono" font-size="10.5" font-weight="500" fill="#141923">achieved</text>
+            <text x="0" y="19" text-anchor="middle" class="svg-mono" font-size="10.5" font-weight="500" fill="#141923">?</text>
+          </g>
+
+          <rect x="850" y="427" width="19" height="24" rx="4" fill="#fdfcf7" stroke="#18202c" stroke-width="1.5" />
+          <text x="860" y="467" text-anchor="middle" class="svg-mono" font-size="11.5" font-weight="500" fill="#141923">Output</text>
+
+          <!-- BOTTOM LEFT CARD: The Self-Improvement Loop -->
+          <g transform="translate(16, 555)" filter="url(#cardShadow)">
+            <rect x="0" y="0" width="240" height="126" rx="7" fill="#fdfcf7" stroke="#18202c" stroke-width="1.5" />
+            <path d="M 0 7 A 7 7 0 0 1 7 0 L 233 0 A 7 7 0 0 1 240 7 L 240 36 L 0 36 Z" fill="#bfd9f2" stroke="#18202c" stroke-width="1.5" />
+            <text x="120" y="15" text-anchor="middle" class="svg-mono" font-size="10.5" font-weight="600" fill="#141923">The Self-Improvement Loop</text>
+            <text x="120" y="29" text-anchor="middle" class="svg-mono" font-size="9.5" fill="#18202c">(Integrated and Self-Improving)</text>
+            <text x="120" y="54" text-anchor="middle" class="svg-mono" font-size="11" font-weight="500" fill="#3e4c5e">Self-Update Unit</text>
+
+            <rect x="8" y="64" width="114" height="52" rx="3" fill="none" stroke="#627084" stroke-width="1.1" stroke-dasharray="2.5 2.5" />
+            <text x="14" y="84" class="svg-mono" font-size="8.3" fill="#3e4c5e">Self-Rewrite: Prompts,</text>
+            <text x="14" y="97" class="svg-mono" font-size="8.3" fill="#3e4c5e">Tools, Logic</text>
+
+            <rect x="128" y="64" width="104" height="52" rx="3" fill="none" stroke="#627084" stroke-width="1.1" stroke-dasharray="2.5 2.5" />
+            <text x="180" y="92" text-anchor="middle" class="svg-mono" font-size="8.3" fill="#3e4c5e">Update Checkpoints</text>
+          </g>
+
+          <!-- BOTTOM CENTER CARD: Protected Competence + Observability Layer -->
+          <g transform="translate(340, 518)" filter="url(#cardShadow)">
+            <rect x="0" y="0" width="240" height="168" rx="7" fill="#fbf3d9" stroke="#18202c" stroke-width="1.5" />
+            <path d="M 0 7 A 7 7 0 0 1 7 0 L 233 0 A 7 7 0 0 1 240 7 L 240 28 L 0 28 Z" fill="#bfd9f2" stroke="#18202c" stroke-width="1.5" />
+            <text x="120" y="18.5" text-anchor="middle" class="svg-mono" font-size="12" font-weight="600" fill="#141923">Protected Competence</text>
+            <text x="120" y="43" text-anchor="middle" class="svg-mono" font-size="9.5" fill="#3e4c5e">Every update must earn its way in</text>
+
+            <rect x="50" y="51" width="140" height="21" rx="3.5" fill="#f7dc6f" stroke="#18202c" stroke-width="1.2" />
+            <text x="120" y="65" text-anchor="middle" class="svg-mono" font-size="8.8" font-weight="500" fill="#141923">Candidate harness update</text>
+            <line x1="120" y1="72" x2="120" y2="81" stroke="#18202c" stroke-width="1.2" marker-end="url(#arrow)" />
+
+            <rect x="46" y="82" width="148" height="21" rx="3.5" fill="#ffffff" stroke="#18202c" stroke-width="1.2" />
+            <text x="120" y="96" text-anchor="middle" class="svg-mono" font-size="8.8" fill="#141923">Gate 1: Quality Gate</text>
+            <line x1="120" y1="103" x2="120" y2="112" stroke="#18202c" stroke-width="1.2" marker-end="url(#arrow)" />
+
+            <rect x="46" y="113" width="148" height="21" rx="3.5" fill="#ffffff" stroke="#18202c" stroke-width="1.2" />
+            <text x="120" y="127" text-anchor="middle" class="svg-mono" font-size="8.8" fill="#141923">Gate 2: Performance Gate</text>
+
+            <line x1="88" y1="134" x2="66" y2="145" stroke="#18202c" stroke-width="1.2" marker-end="url(#arrow)" />
+            <line x1="152" y1="134" x2="174" y2="145" stroke="#18202c" stroke-width="1.2" marker-end="url(#arrow)" />
+
+            <rect x="30" y="146" width="58" height="17" rx="3" fill="#bfd9f2" stroke="#18202c" stroke-width="1.2" />
+            <text x="59" y="158" text-anchor="middle" class="svg-mono" font-size="9" font-weight="500" fill="#141923">Reject</text>
+
+            <rect x="152" y="146" width="58" height="17" rx="3" fill="#f7dc6f" stroke="#18202c" stroke-width="1.2" />
+            <text x="181" y="158" text-anchor="middle" class="svg-mono" font-size="9" font-weight="500" fill="#141923">Accept</text>
+          </g>
+
+          <!-- Observability Layer Bar -->
+          <g transform="translate(340, 718)" filter="url(#cardShadow)">
+            <rect x="0" y="0" width="240" height="38" rx="6" fill="#f8de6e" stroke="#18202c" stroke-width="1.5" />
+            <text x="120" y="23.5" text-anchor="middle" class="svg-mono" font-size="12" font-weight="600" fill="#141923">Observability Layer</text>
+          </g>
+
+          <!-- BOTTOM RIGHT CARD: The Result: Reliable Self-Evolution -->
+          <g transform="translate(630, 560)" filter="url(#cardShadow)">
+            <rect x="0" y="0" width="268" height="126" rx="7" fill="#fdfcf7" stroke="#18202c" stroke-width="1.5" />
+            <path d="M 0 7 A 7 7 0 0 1 7 0 L 261 0 A 7 7 0 0 1 268 7 L 268 26 L 0 26 Z" fill="#f8de6e" stroke="#18202c" stroke-width="1.5" />
+            <text x="134" y="17.5" text-anchor="middle" class="svg-mono" font-size="10.2" font-weight="600" fill="#141923">The Result: Reliable Self-Evolution</text>
+
+            <path d="M 98 48 L 62 64" fill="none" stroke="#18202c" stroke-width="1.2" />
+            <path d="M 170 48 L 205 64" fill="none" stroke="#18202c" stroke-width="1.2" />
+            <path d="M 205 88 L 170 105" fill="none" stroke="#18202c" stroke-width="1.2" />
+            <path d="M 62 88 L 98 105" fill="none" stroke="#18202c" stroke-width="1.2" />
+
+            <text x="134" y="79" text-anchor="middle" class="svg-mono" font-size="7.8" fill="#526071">Trusted Improvement</text>
+
+            <rect x="96" y="34" width="76" height="26" rx="3" fill="#fdfcf7" stroke="#627084" stroke-width="1.1" />
+            <text x="134" y="45" text-anchor="middle" class="svg-mono" font-size="8" font-weight="500" fill="#141923">Precise</text>
+            <text x="134" y="55" text-anchor="middle" class="svg-mono" font-size="8" font-weight="500" fill="#141923">Diagnosis</text>
+
+            <rect x="14" y="62" width="66" height="27" rx="3" fill="#faf0c8" stroke="#8a7a3a" stroke-width="1.1" />
+            <text x="47" y="73.5" text-anchor="middle" class="svg-mono" font-size="8" font-weight="500" fill="#141923">Validated</text>
+            <text x="47" y="83.5" text-anchor="middle" class="svg-mono" font-size="8" font-weight="500" fill="#141923">Updates</text>
+
+            <rect x="180" y="65" width="78" height="21" rx="3" fill="#faf0c8" stroke="#8a7a3a" stroke-width="1.1" />
+            <text x="219" y="78.5" text-anchor="middle" class="svg-mono" font-size="8" font-weight="500" fill="#141923">Generalization</text>
+
+            <rect x="96" y="92" width="76" height="27" rx="3" fill="#faf0c8" stroke="#8a7a3a" stroke-width="1.1" />
+            <text x="134" y="103.5" text-anchor="middle" class="svg-mono" font-size="8" font-weight="500" fill="#141923">Regression</text>
+            <text x="134" y="113.5" text-anchor="middle" class="svg-mono" font-size="8" font-weight="500" fill="#141923">Protection</text>
+
+            <circle cx="88" cy="52" r="5" fill="#141923" class="signal-ball ball-decision" />
+            <circle cx="195" cy="56" r="5" fill="#ffffff" stroke="#141923" stroke-width="1.4" class="signal-ball ball-rereason" />
+            <circle cx="204" cy="96" r="5" fill="#1d4e89" class="signal-ball ball-result" />
+            <circle cx="72" cy="94" r="5" fill="#1d4e89" class="signal-ball ball-result" />
+            <circle cx="90" cy="108" r="5" fill="#f4c83a" stroke="#141923" stroke-width="1.3" class="signal-ball ball-task" />
+          </g>
+
+          <!-- 3. SIGNAL BALLS ON FLOWCHART PATHS -->
+          <g id="ballsTask">
+            <circle cx="460" cy="147" r="6" fill="#f4c83a" stroke="#141923" stroke-width="1.5" class="signal-ball ball-task" />
+            <circle cx="460" cy="322" r="6" fill="#f4c83a" stroke="#141923" stroke-width="1.5" class="signal-ball ball-task" />
+            <circle cx="600" cy="242" r="5.5" fill="#f4c83a" stroke="#141923" stroke-width="1.4" class="signal-ball ball-task" />
+            <circle cx="595" cy="612" r="6" fill="#f4c83a" stroke="#141923" stroke-width="1.5" class="signal-ball ball-task" />
+            <circle cx="460" cy="696" r="6" fill="#f4c83a" stroke="#141923" stroke-width="1.5" class="signal-ball ball-task" />
+            <circle cx="692" cy="708" r="6" fill="#f4c83a" stroke="#141923" stroke-width="1.5" class="signal-ball ball-task" />
+            <circle cx="308" cy="737" r="6" fill="#f4c83a" stroke="#141923" stroke-width="1.5" class="signal-ball ball-task" />
+          </g>
+
+          <g id="ballsDecision">
+            <circle cx="272" cy="112" r="6" fill="#141923" class="signal-ball ball-decision" />
+            <circle cx="47" cy="296" r="6" fill="#141923" class="signal-ball ball-decision" />
+            <circle cx="40" cy="422" r="6" fill="#141923" class="signal-ball ball-decision" />
+            <circle cx="268" cy="300" r="6" fill="#141923" class="signal-ball ball-decision" />
+            <circle cx="176" cy="352" r="6" fill="#141923" class="signal-ball ball-decision" />
+            <circle cx="384" cy="414" r="6" fill="#141923" class="signal-ball ball-decision" />
+          </g>
+
+          <g id="ballsRereason">
+            <circle cx="645" cy="220" r="5.5" fill="#ffffff" stroke="#141923" stroke-width="1.6" class="signal-ball ball-rereason" />
+            <circle cx="716" cy="348" r="6" fill="#ffffff" stroke="#141923" stroke-width="1.6" class="signal-ball ball-rereason" />
+          </g>
+
+          <g id="ballsResult">
+            <circle cx="536" cy="414" r="6" fill="#1d4e89" class="signal-ball ball-result" />
+            <circle cx="460" cy="511" r="6" fill="#1d4e89" class="signal-ball ball-result" />
+            <circle cx="178" cy="515" r="5.5" fill="#1d4e89" class="signal-ball ball-result" />
+            <circle cx="256" cy="544" r="6" fill="#1d4e89" class="signal-ball ball-result" />
+            <circle cx="585" cy="546" r="5.5" fill="#1d4e89" class="signal-ball ball-result" />
+            <circle cx="792" cy="440" r="6" fill="#1d4e89" class="signal-ball ball-result" />
+            <circle cx="912" cy="240" r="6" fill="#1d4e89" class="signal-ball ball-result" />
+            <circle cx="912" cy="366" r="6" fill="#1d4e89" class="signal-ball ball-result" />
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <!-- LEGEND BOX: WHAT EACH BALL CARRIES -->
+    <section class="mt-2 mb-4 border border-[#bcc8d6] bg-[#f4f6fa] rounded-[6px] px-4 py-3.5">
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+        <div class="font-mono-tech text-[11px] font-medium text-[#3e4c5e] tracking-tight">
+          WHAT EACH BALL CARRIES (all move at the same time)
+        </div>
+        <div class="font-mono-tech text-[10px] text-[#627084]">
+          Click any ball category below to isolate its path
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        <button onclick="filterBalls('task')" id="filter-task" class="legend-card text-left p-2 rounded-[4px] cursor-pointer">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="w-4 h-4 rounded-full bg-[#f4c83a] border-[1.6px] border-[#141923] inline-block shrink-0"></span>
+            <span class="font-mono-tech text-[12px] font-semibold text-[#141923]">Task &amp; trace flow</span>
+          </div>
+          <p class="font-mono-tech text-[10px] leading-[1.38] text-[#526071] pl-6">
+            input, reasoning, traces into observability
+          </p>
+        </button>
+
+        <button onclick="filterBalls('decision')" id="filter-decision" class="legend-card text-left p-2 rounded-[4px] cursor-pointer">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="w-4 h-4 rounded-full bg-[#141923] inline-block shrink-0"></span>
+            <span class="font-mono-tech text-[12px] font-semibold text-[#141923]">Decisions &amp; diagnosis</span>
+          </div>
+          <p class="font-mono-tech text-[10px] leading-[1.38] text-[#526071] pl-6">
+            routing choices, error signals, the improvement cycle
+          </p>
+        </button>
+
+        <button onclick="filterBalls('rereason')" id="filter-rereason" class="legend-card text-left p-2 rounded-[4px] cursor-pointer">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="w-4 h-4 rounded-full bg-white border-[1.8px] border-[#141923] inline-block shrink-0"></span>
+            <span class="font-mono-tech text-[12px] font-semibold text-[#141923]">Re-reasoning signals</span>
+          </div>
+          <p class="font-mono-tech text-[10px] leading-[1.38] text-[#526071] pl-6">
+            back to the reasoning engine from goal checks &amp; generalization
+          </p>
+        </button>
+
+        <button onclick="filterBalls('result')" id="filter-result" class="legend-card text-left p-2 rounded-[4px] cursor-pointer">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="w-4 h-4 rounded-full bg-[#1d4e89] inline-block shrink-0"></span>
+            <span class="font-mono-tech text-[12px] font-semibold text-[#141923]">Results &amp; outputs</span>
+          </div>
+          <p class="font-mono-tech text-[10px] leading-[1.38] text-[#526071] pl-6">
+            plans, results, accepted updates, final output
+          </p>
+        </button>
+      </div>
+    </section>
+
+    <!-- CLEAN TECHNICAL READING ORDER SUMMARY (NO SOCIAL PROMO) -->
+    <footer class="dashed-t pt-3.5 pb-1 text-center">
+      <div class="font-mono-tech text-[11.5px] text-[#3e4c5e]">
+        Read it top to bottom: <strong class="text-[#141923]">perceive, think, plan, protect, observe, improve.</strong>
+      </div>
+    </footer>
+  </article>
+
+
+  <!-- =========================================================================
+       PAGE 3: UNDERSTANDING MoE (MIXTURE-OF-EXPERTS)
+       ========================================================================= -->
+  <article id="poster-p3" class="poster-editorial mb-12">
+    <!-- HEADER -->
+    <header class="dashed-b pb-5">
+      <h1 class="font-display text-[38px] sm:text-[53px] font-bold leading-[1.05] text-[#141923] tracking-tight mb-2.5">
+        Understanding MoE
+      </h1>
+      <p class="font-serif-body text-[18px] sm:text-[22.5px] leading-snug text-[#425061]">
+        Mixture-of-Experts: giant models that use only a few experts per token.
+        <strong class="font-bold text-[#1d4e89]">Save this.</strong>
+      </p>
+    </header>
+
+    <!-- 6-PANEL DASHED GRID -->
+    <div class="grid grid-cols-1 md:grid-cols-2">
+
+      <!-- PANEL 1 (TOP LEFT): 1. Dense vs MoE -->
+      <section class="dashed-b dashed-r-md py-5 md:pr-7 flex flex-col justify-between">
+        <div>
+          <svg viewBox="0 0 410 185" class="w-full h-auto overflow-visible" aria-label="Dense FFN vs MoE Layer">
+            <!-- Left: dense FFN -->
+            <text x="82" y="13" text-anchor="middle" class="svg-mono" font-size="10.5" fill="#425061">dense FFN</text>
+            <line x1="82" y1="22" x2="82" y2="45" stroke="#18202c" stroke-width="1.3" />
+            <polygon points="79.5,43 82,48 84.5,43" fill="#18202c" />
+
+            <!-- Yellow Dense Matrix Block -->
+            <rect x="20" y="50" width="124" height="82" rx="7" fill="#f5cc2c" stroke="#18202c" stroke-width="1.4" />
+            <!-- 4x6 grid of deep cobalt blue weight dots -->
+            <g fill="#1d4e89">
+              <!-- Row 1 -->
+              <circle cx="38" cy="66" r="3.6" /><circle cx="56" cy="66" r="3.6" /><circle cx="74" cy="66" r="3.6" /><circle cx="92" cy="66" r="3.6" /><circle cx="110" cy="66" r="3.6" /><circle cx="128" cy="66" r="3.6" />
+              <!-- Row 2 -->
+              <circle cx="38" cy="83" r="3.6" /><circle cx="56" cy="83" r="3.6" /><circle cx="74" cy="83" r="3.6" /><circle cx="92" cy="83" r="3.6" /><circle cx="110" cy="83" r="3.6" /><circle cx="128" cy="83" r="3.6" />
+              <!-- Row 3 -->
+              <circle cx="38" cy="100" r="3.6" /><circle cx="56" cy="100" r="3.6" /><circle cx="74" cy="100" r="3.6" /><circle cx="92" cy="100" r="3.6" /><circle cx="110" cy="100" r="3.6" /><circle cx="128" cy="100" r="3.6" />
+              <!-- Row 4 -->
+              <circle cx="38" cy="117" r="3.6" /><circle cx="56" cy="117" r="3.6" /><circle cx="74" cy="117" r="3.6" /><circle cx="92" cy="117" r="3.6" /><circle cx="110" cy="117" r="3.6" /><circle cx="128" cy="117" r="3.6" />
+            </g>
+
+            <!-- Output Arrow & Token Circle -->
+            <line x1="82" y1="132" x2="82" y2="156" stroke="#18202c" stroke-width="1.3" />
+            <polygon points="79.5,154 82,159 84.5,154" fill="#18202c" />
+            <circle cx="82" cy="164" r="5.5" fill="#faeb9c" stroke="#18202c" stroke-width="1.3" />
+            <text x="82" y="180" text-anchor="middle" class="svg-mono" font-size="9.5" fill="#627084">all weights, every token</text>
+
+            <!-- Right: MoE layer (8 experts, top-2) -->
+            <text x="292" y="13" text-anchor="middle" class="svg-mono" font-size="10.5" fill="#425061">MoE layer (8 experts, top-2)</text>
+            <line x1="292" y1="22" x2="292" y2="39" stroke="#18202c" stroke-width="1.3" />
+            <polygon points="289.5,37 292,42 294.5,37" fill="#18202c" />
+
+            <!-- Router Black Pill -->
+            <rect x="252" y="43" width="80" height="23" rx="6" fill="#141923" />
+            <text x="292" y="58" text-anchor="middle" class="svg-mono" font-size="10.5" font-weight="500" fill="#ffffff">router</text>
+
+            <!-- Fan-out Lines from Router to 8 Experts -->
+            <line x1="275" y1="66" x2="201" y2="92" stroke="#bcc8d6" stroke-width="1.1" />
+            <line x1="280" y1="66" x2="227" y2="92" stroke="#bcc8d6" stroke-width="1.1" />
+            <line x1="285" y1="66" x2="253" y2="92" stroke="#18202c" stroke-width="1.5" />
+            <line x1="289" y1="66" x2="279" y2="92" stroke="#bcc8d6" stroke-width="1.1" />
+            <line x1="295" y1="66" x2="305" y2="92" stroke="#bcc8d6" stroke-width="1.1" />
+            <line x1="299" y1="66" x2="331" y2="92" stroke="#bcc8d6" stroke-width="1.1" />
+            <line x1="304" y1="66" x2="357" y2="92" stroke="#bcc8d6" stroke-width="1.1" />
+            <line x1="309" y1="66" x2="383" y2="92" stroke="#18202c" stroke-width="1.5" />
+
+            <!-- 8 Expert Capsules (E1..E8, with E3 and E8 yellow) -->
+            <g transform="translate(191, 93)">
+              <rect x="0" y="0" width="20" height="42" rx="3.5" fill="#ffffff" stroke="#768599" stroke-width="1.2" />
+              <text x="10" y="54" text-anchor="middle" class="svg-mono" font-size="8.5" fill="#627084">E1</text>
+
+              <rect x="26" y="0" width="20" height="42" rx="3.5" fill="#ffffff" stroke="#768599" stroke-width="1.2" />
+              <text x="36" y="54" text-anchor="middle" class="svg-mono" font-size="8.5" fill="#627084">E2</text>
+
+              <rect x="52" y="0" width="20" height="42" rx="3.5" fill="#f5cc2c" stroke="#141923" stroke-width="1.4" />
+              <text x="62" y="54" text-anchor="middle" class="svg-mono" font-size="8.5" font-weight="600" fill="#141923">E3</text>
+
+              <rect x="78" y="0" width="20" height="42" rx="3.5" fill="#ffffff" stroke="#768599" stroke-width="1.2" />
+              <text x="88" y="54" text-anchor="middle" class="svg-mono" font-size="8.5" fill="#627084">E4</text>
+
+              <rect x="104" y="0" width="20" height="42" rx="3.5" fill="#ffffff" stroke="#768599" stroke-width="1.2" />
+              <text x="114" y="54" text-anchor="middle" class="svg-mono" font-size="8.5" fill="#627084">E5</text>
+
+              <rect x="130" y="0" width="20" height="42" rx="3.5" fill="#ffffff" stroke="#768599" stroke-width="1.2" />
+              <text x="140" y="54" text-anchor="middle" class="svg-mono" font-size="8.5" fill="#627084">E6</text>
+
+              <rect x="156" y="0" width="20" height="42" rx="3.5" fill="#ffffff" stroke="#768599" stroke-width="1.2" />
+              <text x="166" y="54" text-anchor="middle" class="svg-mono" font-size="8.5" fill="#627084">E7</text>
+
+              <rect x="182" y="0" width="20" height="42" rx="3.5" fill="#f5cc2c" stroke="#141923" stroke-width="1.4" />
+              <text x="192" y="54" text-anchor="middle" class="svg-mono" font-size="8.5" font-weight="600" fill="#141923">E8</text>
+            </g>
+
+            <text x="292" y="166" text-anchor="middle" class="svg-mono" font-size="9.5" fill="#627084">2 of 8 experts run</text>
+          </svg>
+        </div>
+
+        <div class="mt-3">
+          <h2 class="font-display text-[22px] font-bold text-[#141923] leading-snug mb-1">
+            1. Dense vs MoE
+          </h2>
+          <p class="font-serif-body text-[15px] leading-[1.42] text-[#425061]">
+            A dense layer runs every weight for every token. An MoE layer runs only the 2 experts the router picks.
+          </p>
+        </div>
+      </section>
+
+      <!-- PANEL 2 (TOP RIGHT): 2. The router picks top-k -->
+      <section class="dashed-b py-5 md:pl-7 flex flex-col justify-between">
+        <div>
+          <div class="font-mono-tech text-[11px] text-[#627084] mb-2">
+            router scores for one token (softmax)
+          </div>
+
+          <svg viewBox="0 0 410 165" class="w-full h-auto overflow-visible" aria-label="Router Softmax Scores Bar Chart">
+            <!-- 8 Background Tracks & Bars -->
+            <!-- E1: 0.13 -->
+            <rect x="8" y="18" width="24" height="96" fill="#e6eff8" />
+            <rect x="8" y="82" width="24" height="32" fill="#c7dcf2" />
+            <text x="20" y="77" text-anchor="middle" class="svg-mono" font-size="8.5" fill="#768599">0.13</text>
+            <text x="20" y="127" text-anchor="middle" class="svg-mono" font-size="9" fill="#627084">E1</text>
+
+            <!-- E2: 0.02 -->
+            <rect x="40" y="18" width="24" height="96" fill="#e6eff8" />
+            <rect x="40" y="108" width="24" height="6" fill="#c7dcf2" />
+            <text x="52" y="104" text-anchor="middle" class="svg-mono" font-size="8.5" fill="#768599">0.02</text>
+            <text x="52" y="127" text-anchor="middle" class="svg-mono" font-size="9" fill="#627084">E2</text>
+
+            <!-- E3: 0.07 -->
+            <rect x="72" y="18" width="24" height="96" fill="#e6eff8" />
+            <rect x="72" y="96" width="24" height="18" fill="#c7dcf2" />
+            <text x="84" y="92" text-anchor="middle" class="svg-mono" font-size="8.5" fill="#768599">0.07</text>
+            <text x="84" y="127" text-anchor="middle" class="svg-mono" font-size="9" fill="#627084">E3</text>
+
+            <!-- E4: 0.37 (TOP-1 ACTIVE YELLOW) -->
+            <rect x="104" y="18" width="24" height="96" fill="#e6eff8" />
+            <rect x="104" y="23" width="24" height="91" fill="#f5cc2c" />
+            <text x="116" y="17" text-anchor="middle" class="svg-mono" font-size="9" font-weight="700" fill="#141923">0.37</text>
+            <text x="116" y="127" text-anchor="middle" class="svg-mono" font-size="9" font-weight="600" fill="#141923">E4</text>
+
+            <!-- E5: 0.01 -->
+            <rect x="136" y="18" width="24" height="96" fill="#e6eff8" />
+            <rect x="136" y="110" width="24" height="4" fill="#c7dcf2" />
+            <text x="148" y="106" text-anchor="middle" class="svg-mono" font-size="8.5" fill="#768599">0.01</text>
+            <text x="148" y="127" text-anchor="middle" class="svg-mono" font-size="9" fill="#627084">E5</text>
+
+            <!-- E6: 0.05 -->
+            <rect x="168" y="18" width="24" height="96" fill="#e6eff8" />
+            <rect x="168" y="101" width="24" height="13" fill="#c7dcf2" />
+            <text x="180" y="97" text-anchor="middle" class="svg-mono" font-size="8.5" fill="#768599">0.05</text>
+            <text x="180" y="127" text-anchor="middle" class="svg-mono" font-size="9" fill="#627084">E6</text>
+
+            <!-- E7: 0.28 (TOP-2 ACTIVE YELLOW) -->
+            <rect x="200" y="18" width="24" height="96" fill="#e6eff8" />
+            <rect x="200" y="44" width="24" height="70" fill="#f5cc2c" />
+            <text x="212" y="39" text-anchor="middle" class="svg-mono" font-size="9" font-weight="700" fill="#141923">0.28</text>
+            <text x="212" y="127" text-anchor="middle" class="svg-mono" font-size="9" font-weight="600" fill="#141923">E7</text>
+
+            <!-- E8: 0.07 -->
+            <rect x="232" y="18" width="24" height="96" fill="#e6eff8" />
+            <rect x="232" y="106" width="24" height="8" fill="#c7dcf2" />
+            <text x="244" y="102" text-anchor="middle" class="svg-mono" font-size="8.5" fill="#768599">0.07</text>
+            <text x="244" y="127" text-anchor="middle" class="svg-mono" font-size="9" fill="#627084">E8</text>
+
+            <!-- Baseline -->
+            <line x1="4" y1="114" x2="262" y2="114" stroke="#4a5768" stroke-width="1.2" />
+            <text x="4" y="150" class="svg-mono" font-size="9.2" fill="#627084">other 6 experts: weight 0, never computed</text>
+
+            <!-- Right-Side Formula Column -->
+            <text x="276" y="16" class="svg-mono" font-size="10.2" font-weight="600" fill="#18202c">3. mix outputs</text>
+            <text x="276" y="38" class="svg-mono" font-size="9.5" fill="#526071">renormalize top-2:</text>
+            <text x="276" y="55" class="svg-mono" font-size="10.5" font-weight="600" fill="#141923">E4: 0.57</text>
+            <text x="276" y="72" class="svg-mono" font-size="10.5" font-weight="600" fill="#141923">E7: 0.43</text>
+
+            <text x="276" y="96" class="svg-mono" font-size="9.5" fill="#526071">output =</text>
+            <text x="276" y="111" class="svg-mono" font-size="9.8" font-weight="500" fill="#141923">0.57 × E4(x)</text>
+            <text x="276" y="126" class="svg-mono" font-size="9.8" font-weight="500" fill="#141923">+ 0.43 × E7(x)</text>
+          </svg>
+        </div>
+
+        <div class="mt-3">
+          <h2 class="font-display text-[22px] font-bold text-[#141923] leading-snug mb-1">
+            2. The router picks top-k
+          </h2>
+          <p class="font-serif-body text-[15px] leading-[1.42] text-[#425061]">
+            A small linear layer scores all experts, softmax turns scores into weights, and only the top 2 are kept.
+          </p>
+        </div>
+      </section>
+
+      <!-- PANEL 3 (MIDDLE LEFT): 3. Where MoE lives -->
+      <section class="dashed-b dashed-r-md py-5 md:pr-7 flex flex-col justify-between">
+        <div>
+          <svg viewBox="0 0 410 182" class="w-full h-auto overflow-visible" aria-label="Where MoE Lives in Transformer Block">
+            <!-- Vertical Spine Line -->
+            <line x1="160" y1="2" x2="160" y2="176" stroke="#18202c" stroke-width="1.3" />
+
+            <!-- Outer Dashed Transformer Layer Container -->
+            <rect x="52" y="16" width="216" height="142" rx="8" fill="none" stroke="#627084" stroke-width="1.3" stroke-dasharray="4 3" />
+            <text x="276" y="29" class="svg-mono" font-size="10" fill="#526071">× N layers</text>
+
+            <!-- self-attention (dense) -->
+            <rect x="86" y="24" width="148" height="24" rx="5" fill="#f7dc6f" stroke="#18202c" stroke-width="1.25" />
+            <text x="160" y="39.5" text-anchor="middle" class="svg-mono" font-size="10" font-weight="500" fill="#141923">self-attention (dense)</text>
+            <circle cx="160" cy="36" r="5" fill="#f4c534" stroke="#141923" stroke-width="1.1" />
+
+            <!-- add & norm 1 -->
+            <rect x="86" y="54" width="148" height="18" rx="4" fill="#ffffff" stroke="#526071" stroke-width="1.1" />
+            <text x="160" y="66.5" text-anchor="middle" class="svg-mono" font-size="9.5" fill="#425061">add &amp; norm</text>
+
+            <!-- router (black pill) -->
+            <rect x="86" y="79" width="148" height="21" rx="5" fill="#141923" />
+            <text x="160" y="93" text-anchor="middle" class="svg-mono" font-size="10" font-weight="500" fill="#ffffff">router</text>
+
+            <!-- 8 mini expert blocks inside transformer layer -->
+            <g transform="translate(86, 106)">
+              <rect x="0" y="0" width="16" height="22" rx="2" fill="#ffffff" stroke="#768599" stroke-width="1.1" />
+              <rect x="18.8" y="0" width="16" height="22" rx="2" fill="#c5dcf2" stroke="#1d4e89" stroke-width="1.2" />
+              <rect x="37.6" y="0" width="16" height="22" rx="2" fill="#ffffff" stroke="#768599" stroke-width="1.1" />
+              <rect x="56.4" y="0" width="16" height="22" rx="2" fill="#ffffff" stroke="#768599" stroke-width="1.1" />
+              <rect x="75.2" y="0" width="16" height="22" rx="2" fill="#ffffff" stroke="#768599" stroke-width="1.1" />
+              <rect x="94" y="0" width="16" height="22" rx="2" fill="#c5dcf2" stroke="#1d4e89" stroke-width="1.2" />
+              <rect x="112.8" y="0" width="16" height="22" rx="2" fill="#ffffff" stroke="#768599" stroke-width="1.1" />
+              <rect x="131.6" y="0" width="16" height="22" rx="2" fill="#ffffff" stroke="#768599" stroke-width="1.1" />
+            </g>
+
+            <!-- Right Annotation for MoE FFN -->
+            <text x="278" y="114" class="svg-mono" font-size="9.5" font-weight="500" fill="#2b3648">MoE FFN</text>
+            <text x="278" y="126" class="svg-mono" font-size="9" fill="#627084">(was a dense</text>
+            <text x="278" y="137" class="svg-mono" font-size="9" fill="#627084">FFN)</text>
+
+            <!-- add & norm 2 -->
+            <rect x="86" y="134" width="148" height="18" rx="4" fill="#ffffff" stroke="#526071" stroke-width="1.1" />
+            <text x="160" y="146.5" text-anchor="middle" class="svg-mono" font-size="9.5" fill="#425061">add &amp; norm</text>
+
+            <text x="2" y="172" class="svg-mono" font-size="9.5" fill="#627084">Mixtral: MoE in every layer</text>
+          </svg>
+        </div>
+
+        <div class="mt-3">
+          <h2 class="font-display text-[22px] font-bold text-[#141923] leading-snug mb-1">
+            3. Where MoE lives
+          </h2>
+          <p class="font-serif-body text-[15px] leading-[1.42] text-[#425061]">
+            It replaces the feed-forward block inside each transformer layer. Attention stays dense and shared.
+          </p>
+        </div>
+      </section>
+
+      <!-- PANEL 4 (MIDDLE RIGHT): 4. Total vs active parameters -->
+      <section class="dashed-b py-5 md:pl-7 flex flex-col justify-between">
+        <div>
+          <div class="font-mono-tech text-[11px] text-[#627084] mb-2.5">
+            billions of parameters (log scale)
+          </div>
+
+          <div class="space-y-2.5 font-mono-tech">
+            <!-- Model 1: Mixtral 8x7B -->
+            <div>
+              <div class="flex justify-between text-[10.5px] mb-1">
+                <span class="font-semibold text-[#141923]">Mixtral 8x7B</span>
+                <span class="text-[9.5px] text-[#627084]">8 experts, top-2</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-[38%] h-[16px] bg-[#c9dff5] border border-[#567699] rounded-[2px] overflow-hidden flex">
+                  <div class="w-[64%] h-full bg-[#f5cc2c]"></div>
+                </div>
+                <span class="text-[10px] text-[#1e293b]">46.7B / 12.9B active</span>
+              </div>
+            </div>
+
+            <!-- Model 2: Qwen3-235B-A22B -->
+            <div>
+              <div class="flex justify-between text-[10.5px] mb-1">
+                <span class="font-semibold text-[#141923]">Qwen3-235B-A22B</span>
+                <span class="text-[9.5px] text-[#627084]">128 experts, top-8</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-[54%] h-[16px] bg-[#c9dff5] border border-[#567699] rounded-[2px] overflow-hidden flex">
+                  <div class="w-[46%] h-full bg-[#f5cc2c]"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Model 3: Llama 4 Maverick -->
+            <div>
+              <div class="flex justify-between text-[10.5px] mb-1">
+                <span class="font-semibold text-[#141923]">Llama 4 Maverick</span>
+                <span class="text-[9.5px] text-[#627084]">128 experts + shared</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-[59%] h-[16px] bg-[#c9dff5] border border-[#567699] rounded-[2px] overflow-hidden flex">
+                  <div class="w-[36%] h-full bg-[#f5cc2c]"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Model 4: DeepSeek-V3 -->
+            <div>
+              <div class="flex justify-between text-[10.5px] mb-1">
+                <span class="font-semibold text-[#141923]">DeepSeek-V3</span>
+                <span class="text-[9.5px] text-[#627084]">256 experts, top-8</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="w-[64%] h-[16px] bg-[#c9dff5] border border-[#567699] rounded-[2px] overflow-hidden flex">
+                  <div class="w-[43%] h-full bg-[#f5cc2c]"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Legend -->
+            <div class="flex items-center gap-5 pt-1 text-[10px] text-[#526071]">
+              <div class="flex items-center gap-1.5">
+                <span class="w-3 h-3 bg-[#c9dff5] border border-[#567699] inline-block rounded-[1px]"></span>
+                <span>total</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="w-3 h-3 bg-[#f5cc2c] inline-block rounded-[1px]"></span>
+                <span>active per token</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-3">
+          <h2 class="font-display text-[22px] font-bold text-[#141923] leading-snug mb-1">
+            4. Total vs active parameters
+          </h2>
+          <p class="font-serif-body text-[15px] leading-[1.42] text-[#425061]">
+            Huge on disk, small per token. The model knows a lot but only pays compute for the experts it uses.
+          </p>
+        </div>
+      </section>
+
+      <!-- PANEL 5 (BOTTOM LEFT): 5. Keep the experts balanced -->
+      <section class="dashed-b dashed-r-md py-5 md:pr-7 flex flex-col justify-between">
+        <div>
+          <svg viewBox="0 0 410 175" class="w-full h-auto overflow-visible" aria-label="Expert Balancing Auxiliary Loss Histograms">
+            <!-- Headers -->
+            <text x="86" y="13" text-anchor="middle" class="svg-mono" font-size="10.5" fill="#2b3648">no balancing</text>
+            <text x="308" y="13" text-anchor="middle" class="svg-mono" font-size="10.5" fill="#2b3648">with aux loss</text>
+
+            <!-- Left Histogram: no balancing (8 experts, 1 & 2 overloaded) -->
+            <g transform="translate(2, 26)">
+              <!-- Background tracks -->
+              <rect x="0" y="0" width="16" height="92" fill="#e6eff8" />
+              <rect x="21" y="0" width="16" height="92" fill="#e6eff8" />
+              <rect x="42" y="0" width="16" height="92" fill="#e6eff8" />
+              <rect x="63" y="0" width="16" height="92" fill="#e6eff8" />
+              <rect x="84" y="0" width="16" height="92" fill="#e6eff8" />
+              <rect x="105" y="0" width="16" height="92" fill="#e6eff8" />
+              <rect x="126" y="0" width="16" height="92" fill="#e6eff8" />
+              <rect x="147" y="0" width="16" height="92" fill="#e6eff8" />
+
+              <!-- Foreground Dark Bars -->
+              <rect x="0" y="6" width="16" height="86" fill="#111622" />
+              <rect x="21" y="34" width="16" height="58" fill="#111622" />
+              <rect x="42" y="66" width="16" height="26" fill="#111622" />
+              <rect x="63" y="75" width="16" height="17" fill="#111622" />
+              <rect x="84" y="78" width="16" height="14" fill="#111622" />
+              <rect x="105" y="83" width="16" height="9" fill="#111622" />
+              <rect x="126" y="86" width="16" height="6" fill="#111622" />
+              <rect x="147" y="88" width="16" height="4" fill="#111622" />
+
+              <line x1="-2" y1="92" x2="166" y2="92" stroke="#2b3648" stroke-width="1.2" />
+              <!-- Labels 1..8 -->
+              <text x="8" y="104" text-anchor="middle" class="svg-mono" font-size="8.5" fill="#627084">1</text>
+              <text x="29" y="104" text-anchor="middle" class="svg-mono" font-size="8.5" fill="#627084">2</text>
+              <text x="50" y="104" text-anchor="middle" class="svg-mono" font-size="8.5" fill="#627084">3</text>
+              <text x="71" y="104" text-anchor="middle" class="svg-mono" font-size="8.5" fill="#627084">4</text>
+              <text x="92" y="104" text-anchor="middle" class="svg-mono" font-size="8.5" fill="#627084">5</text>
+              <text x="113" y="104" text-anchor="middle" class="svg-mono" font-size="8.5" fill="#627084">6</text>
+              <text x="134" y="104" text-anchor="middle" class="svg-mono" font-size="8.5" fill="#627084">7</text>
+              <text x="155" y="104" text-anchor="middle" class="svg-mono" font-size="8.5" fill="#627084">8</text>
+            </g>
+
+            <!-- Fair Share Dashed Line across both charts -->
+            <line x1="0" y1="92" x2="392" y2="92" stroke="#4a5768" stroke-width="1.1" stroke-dasharray="2.5 2.5" />
+            <text x="196" y="99" text-anchor="middle" class="svg-mono" font-size="8.5" fill="#627084">fair</text>
+            <text x="196" y="109" text-anchor="middle" class="svg-mono" font-size="8.5" fill="#627084">share</text>
+
+            <!-- Right Histogram: with aux loss (balanced cobalt blue bars) -->
+            <g transform="translate(224, 26)">
+              <rect x="0" y="0" width="16" height="92" fill="#e6eff8" />
+              <rect x="21" y="0" width="16" height="92" fill="#e6eff8" />
+              <rect x="42" y="0" width="16" height="92" fill="#e6eff8" />
+              <rect x="63" y="0" width="16" height="92" fill="#e6eff8" />
+              <rect x="84" y="0" width="16" height="92" fill="#e6eff8" />
+              <rect x="105" y="0" width="16" height="92" fill="#e6eff8" />
+              <rect x="126" y="0" width="16" height="92" fill="#e6eff8" />
+              <rect x="147" y="0" width="16" height="92" fill="#e6eff8" />
+
+              <!-- Balanced Cobalt Blue Bars -->
+              <rect x="0" y="68" width="16" height="24" fill="#1d4e89" />
+              <rect x="21" y="70" width="16" height="22" fill="#1d4e89" />
+              <rect x="42" y="72" width="16" height="20" fill="#1d4e89" />
+              <rect x="63" y="76" width="16" height="16" fill="#1d4e89" />
+              <rect x="84" y="77" width="16" height="15" fill="#1d4e89" />
+              <rect x="105" y="79" width="16" height="13" fill="#1d4e89" />
+              <rect x="126" y="83" width="16" height="9" fill="#1d4e89" />
+              <rect x="147" y="86" width="16" height="6" fill="#1d4e89" />
+
+              <line x1="-2" y1="92" x2="166" y2="92" stroke="#2b3648" stroke-width="1.2" />
+              <text x="8" y="104" text-anchor="middle" class="svg-mono" font-size="8.5" fill="#627084">1</text>
+              <text x="29" y="104" text-anchor="middle" class="svg-mono" font-size="8.5" fill="#627084">2</text>
+              <text x="50" y="104" text-anchor="middle" class="svg-mono" font-size="8.5" fill="#627084">3</text>
+              <text x="71" y="104" text-anchor="middle" class="svg-mono" font-size="8.5" fill="#627084">4</text>
+              <text x="92" y="104" text-anchor="middle" class="svg-mono" font-size="8.5" fill="#627084">5</text>
+              <text x="113" y="104" text-anchor="middle" class="svg-mono" font-size="8.5" fill="#627084">6</text>
+              <text x="134" y="104" text-anchor="middle" class="svg-mono" font-size="8.5" fill="#627084">7</text>
+              <text x="155" y="104" text-anchor="middle" class="svg-mono" font-size="8.5" fill="#627084">8</text>
+            </g>
+
+            <!-- Captions -->
+            <text x="2" y="148" class="svg-mono" font-size="9.5" fill="#627084">share of tokens per expert (illustrative)</text>
+            <text x="2" y="162" class="svg-mono" font-size="9.5" font-weight="500" fill="#18202c">aux loss = alpha × N × sum(f_i × P_i)</text>
+          </svg>
+        </div>
+
+        <div class="mt-3">
+          <h2 class="font-display text-[22px] font-bold text-[#141923] leading-snug mb-1">
+            5. Keep the experts balanced
+          </h2>
+          <p class="font-serif-body text-[15px] leading-[1.42] text-[#425061]">
+            Left alone, the router overloads a few favourites. An auxiliary balancing loss spreads tokens evenly.
+          </p>
+        </div>
+      </section>
+
+      <!-- PANEL 6 (BOTTOM RIGHT): 6. The catch: memory -->
+      <section class="dashed-b py-5 md:pl-7 flex flex-col justify-between">
+        <div>
+          <div class="font-mono-tech text-[10.5px] text-[#627084] mb-2.5">
+            Mixtral 8x7B in 16-bit, per token
+          </div>
+
+          <div class="space-y-3 font-mono-tech">
+            <!-- Bar 1: GPU memory needed -->
+            <div>
+              <div class="flex justify-between text-[10.5px] mb-1">
+                <span class="font-semibold text-[#141923]">GPU memory needed</span>
+                <span class="text-[9.5px] text-[#627084]">all 46.7B weights × 2 bytes</span>
+              </div>
+              <div class="w-full h-[18px] bg-[#e6eff8] rounded-[2px] flex items-center">
+                <div class="w-[82%] h-full bg-[#111622] rounded-l-[2px]"></div>
+                <span class="pl-2 text-[10px] font-semibold text-[#141923]">~93 GB</span>
+              </div>
+            </div>
+
+            <!-- Bar 2: compute per token -->
+            <div>
+              <div class="flex justify-between text-[10.5px] mb-1">
+                <span class="font-semibold text-[#141923]">compute per token</span>
+                <span class="text-[9.5px] text-[#627084]">12.9B active × 2 FLOPs</span>
+              </div>
+              <div class="w-full h-[18px] bg-[#e6eff8] rounded-[2px] flex items-center">
+                <div class="w-[22.5%] h-full bg-[#1d4e89] rounded-l-[2px]"></div>
+                <span class="pl-2 text-[10px] font-semibold text-[#141923]">~26 GFLOPs</span>
+              </div>
+            </div>
+
+            <!-- Bar 3: a dense 46.7B model -->
+            <div>
+              <div class="flex justify-between text-[10.5px] mb-1">
+                <span class="text-[#2b3648]">a dense 46.7B model</span>
+                <span class="text-[9.5px] text-[#627084]">46.7B × 2 FLOPs</span>
+              </div>
+              <div class="w-full h-[18px] bg-[#e6eff8] rounded-[2px] flex items-center">
+                <div class="w-[68%] h-full bg-[#6ea1d4] rounded-l-[2px]"></div>
+              </div>
+            </div>
+
+            <div class="text-[9.5px] leading-[1.45] text-[#627084] pt-1">
+              <div>MoE: compute of a ~13B model,</div>
+              <div>memory of a ~47B one. Experts often span GPUs.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-3">
+          <h2 class="font-display text-[22px] font-bold text-[#141923] leading-snug mb-1">
+            6. The catch: memory
+          </h2>
+          <p class="font-serif-body text-[15px] leading-[1.42] text-[#425061]">
+            Compute scales with active parameters, but every expert still has to sit in GPU memory.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <!-- CLEAN FULL-WIDTH TOKEN ROUTING HEATMAP FOOTER (NO SOCIAL PROMO) -->
+    <footer class="pt-5 pb-1 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div class="flex-1 max-w-[540px]">
+        <div class="font-mono-tech text-[11px] text-[#627084] mb-2">
+          each token picks its own 2 of 8 experts
+        </div>
+
+        <!-- 6x8 Routing Matrix Table -->
+        <div class="font-mono-tech text-[10px]">
+          <!-- Column Headers E1..E8 -->
+          <div class="grid grid-cols-9 gap-1 mb-1 text-center text-[#627084]">
+            <div></div>
+            <div>E1</div><div>E2</div><div>E3</div><div>E4</div><div>E5</div><div>E6</div><div>E7</div><div>E8</div>
+          </div>
+          <!-- Row 1: The (E2, E6) -->
+          <div class="grid grid-cols-9 gap-1 mb-1 items-center">
+            <div class="text-[#141923] font-medium">The</div>
+            <div class="h-3.5 bg-[#e6eff8] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#1d4e89] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#e6eff8] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#e6eff8] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#e6eff8] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#1d4e89] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#e6eff8] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#e6eff8] rounded-[2px]"></div>
+          </div>
+          <!-- Row 2: cat (E4, E7) -->
+          <div class="grid grid-cols-9 gap-1 mb-1 items-center">
+            <div class="text-[#141923] font-medium">cat</div>
+            <div class="h-3.5 bg-[#e6eff8] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#e6eff8] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#e6eff8] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#1d4e89] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#e6eff8] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#e6eff8] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#1d4e89] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#e6eff8] rounded-[2px]"></div>
+          </div>
+          <!-- Row 3: sat (E1, E4) -->
+          <div class="grid grid-cols-9 gap-1 mb-1 items-center">
+            <div class="text-[#141923] font-medium">sat</div>
+            <div class="h-3.5 bg-[#1d4e89] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#e6eff8] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#e6eff8] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#1d4e89] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#e6eff8] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#e6eff8] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#e6eff8] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#e6eff8] rounded-[2px]"></div>
+          </div>
+          <!-- Row 4: on (E3, E8) -->
+          <div class="grid grid-cols-9 gap-1 mb-1 items-center">
+            <div class="text-[#141923] font-medium">on</div>
+            <div class="h-3.5 bg-[#e6eff8] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#e6eff8] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#1d4e89] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#e6eff8] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#e6eff8] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#e6eff8] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#e6eff8] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#1d4e89] rounded-[2px]"></div>
+          </div>
+          <!-- Row 5: the (E5, E7 highlighted yellow) -->
+          <div class="grid grid-cols-9 gap-1 mb-1 items-center">
+            <div class="text-[#141923] font-medium">the</div>
+            <div class="h-3.5 bg-[#e6eff8] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#e6eff8] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#e6eff8] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#e6eff8] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#f5cc2c] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#e6eff8] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#f5cc2c] rounded-[2px]"></div>
+            <div class="h-3.5 bg-[#e6eff8] rounded-[2px]"></div>
+          </div>
+          <!-- Row 6: mat (E2, E6 faded) -->
+          <div class="grid grid-cols-9 gap-1 items-center">
+            <div class="text-[#627084]">mat</div>
+            <div class="h-3 bg-[#eff5fb] rounded-[2px]"></div>
+            <div class="h-3 bg-[#8ab8e6] rounded-[2px]"></div>
+            <div class="h-3 bg-[#eff5fb] rounded-[2px]"></div>
+            <div class="h-3 bg-[#eff5fb] rounded-[2px]"></div>
+            <div class="h-3 bg-[#eff5fb] rounded-[2px]"></div>
+            <div class="h-3 bg-[#8ab8e6] rounded-[2px]"></div>
+            <div class="h-3 bg-[#eff5fb] rounded-[2px]"></div>
+            <div class="h-3 bg-[#eff5fb] rounded-[2px]"></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="font-serif-body text-[15.5px] font-semibold text-[#2b3648] md:text-right">
+        Different tokens, different experts. (illustrative routing)
+      </p>
+    </footer>
+  </article>
+
+
+  <!-- =========================================================================
+       PAGE 4: HARNESS ENGINEERING (THE SCAFFOLD · HARNESS)
+       ========================================================================= -->
+  <article id="poster-p4" class="poster-modern mb-12">
+    <!-- TOP HEADER -->
+    <header class="text-center mb-7">
+      <div class="font-mono-tech text-[12.5px] font-bold tracking-[0.22em] uppercase mb-2">
+        <span class="text-[#0b65c6]">THE SCAFFOLD</span>
+        <span class="text-[#7c899b] mx-1">·</span>
+        <span class="text-[#141923]">HARNESS</span>
+      </div>
+
+      <h1 class="font-modern text-[40px] sm:text-[58px] font-extrabold leading-[1.06] text-[#111622] mb-5">
+        Harness <span class="eng-highlight">Engineering</span>
+      </h1>
+
+      <!-- Formula Pills: [Agent] = [Model] + [Harness] -->
+      <div class="flex flex-wrap items-center justify-center gap-3 mb-5 font-modern font-bold text-[18px]">
+        <span class="px-6 py-1.5 rounded-full bg-white border-[2px] border-[#141923] text-[#141923] shadow-sm">
+          Agent
+        </span>
+        <span class="text-[#8996a6] text-2xl font-semibold">=</span>
+        <span class="px-6 py-1.5 rounded-full bg-[#fae033] border-[2px] border-[#141923] text-[#141923] shadow-sm">
+          Model
+        </span>
+        <span class="text-[#8996a6] text-2xl font-semibold">+</span>
+        <span class="px-6 py-1.5 rounded-full bg-[#111622] border-[2px] border-[#111622] text-[#fae033] shadow-sm">
+          Harness
+        </span>
+      </div>
+
+      <p class="font-modern text-[16.5px] sm:text-[19px] leading-[1.45] text-[#5e6d82] max-w-[650px] mx-auto font-medium">
+        The model reasons. The harness decides <strong class="text-[#111622] font-bold">what it sees</strong>, <strong class="text-[#111622] font-bold">what it can touch</strong>, and <strong class="text-[#111622] font-bold">how its work gets checked.</strong>
+      </p>
+    </header>
+
+    <!-- MAIN HARNESS CONTAINER BOX -->
+    <section class="relative bg-white border-[2px] border-[#141923] rounded-[22px] shadow-offset-blue p-4 sm:p-6 my-4">
+      <!-- Top-Left Badge: THE HARNESS -->
+      <div class="absolute -top-3.5 left-6 bg-[#111622] text-[#fae033] font-mono-tech text-[11.5px] font-bold tracking-[0.14em] px-4 py-1 rounded-full">
+        THE HARNESS
+      </div>
+
+      <!-- Top-Center Pill: USER TASK ↓ -->
+      <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-white border-[1.8px] border-[#141923] text-[#141923] font-mono-tech text-[12px] font-bold tracking-[0.1em] px-5 py-1 rounded-full shadow-sm">
+        USER TASK ↓
+      </div>
+
+      <!-- High-Precision Vector Diagram of the Harness Scaffold -->
+      <div class="w-full overflow-x-auto pt-2">
+        <div class="min-w-[740px]">
+          <svg viewBox="0 0 820 495" class="w-full h-auto select-none" aria-label="Harness Engineering Scaffold Diagram">
+            <defs>
+              <radialGradient id="modelGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#fae033" stop-opacity="0.38" />
+                <stop offset="100%" stop-color="#fae033" stop-opacity="0" />
+              </radialGradient>
+            </defs>
+
+            <!-- Soft Yellow Glow Behind Center MODEL -->
+            <circle cx="410" cy="240" r="145" fill="url(#modelGlow)" />
+
+            <!-- ===========================================================
+                 1. TOP ROW BAND: GUIDES what it follows
+                 =========================================================== -->
+            <rect x="8" y="20" width="804" height="84" rx="14" fill="#f5f8fc" stroke="#d8e2ee" stroke-width="1.2" stroke-dasharray="3 3" />
+            <text x="24" y="48" class="svg-mono" font-size="12" font-weight="700" letter-spacing="0.12em" fill="#0b65c6">GUIDES</text>
+            <text x="24" y="65" class="svg-mono" font-size="10.5" fill="#68778c">what it follows</text>
+
+            <!-- Guide 1: System prompt -->
+            <g transform="translate(160, 32)">
+              <rect x="0" y="0" width="156" height="56" rx="10" fill="#ffffff" stroke="#bfd0e3" stroke-width="1.3" />
+              <text x="14" y="24" class="svg-modern" font-size="14" font-weight="700" fill="#141923">System prompt</text>
+              <text x="14" y="42" class="svg-mono" font-size="10.5" fill="#68778c">role + rules</text>
+            </g>
+
+            <!-- Guide 2: AGENTS.md -->
+            <g transform="translate(465, 32)">
+              <rect x="0" y="0" width="144" height="56" rx="10" fill="#ffffff" stroke="#bfd0e3" stroke-width="1.3" />
+              <text x="14" y="24" class="svg-modern" font-size="14" font-weight="700" fill="#141923">AGENTS.md</text>
+              <text x="14" y="42" class="svg-mono" font-size="10.5" fill="#68778c">team conventions</text>
+            </g>
+
+            <!-- Guide 3: Constraints -->
+            <g transform="translate(623, 32)">
+              <rect x="0" y="0" width="140" height="56" rx="10" fill="#ffffff" stroke="#bfd0e3" stroke-width="1.3" />
+              <text x="14" y="24" class="svg-modern" font-size="14" font-weight="700" fill="#141923">Constraints</text>
+              <text x="14" y="42" class="svg-mono" font-size="10.5" fill="#68778c">hard limits</text>
+            </g>
+
+            <!-- Top User Task Spine into MODEL -->
+            <circle cx="410" cy="11" r="14" fill="none" stroke="#bfd0e3" stroke-width="1" />
+            <rect x="403" y="4" width="14" height="14" rx="3.5" transform="rotate(15 410 11)" fill="#fae033" stroke="#141923" stroke-width="1.5" />
+            <line x1="410" y1="25" x2="410" y2="155" stroke="#141923" stroke-width="1.6" />
+
+            <!-- Dashed Connectors from GUIDES into MODEL -->
+            <path d="M 238 88 C 238 128, 335 125, 350 155" fill="none" stroke="#8996a6" stroke-width="1.3" stroke-dasharray="3.5 3.5" />
+            <circle cx="300" cy="127" r="3.2" fill="#0b65c6" />
+
+            <path d="M 537 88 C 537 125, 475 125, 462 155" fill="none" stroke="#8996a6" stroke-width="1.3" stroke-dasharray="3.5 3.5" />
+            <circle cx="474" cy="136" r="3.2" fill="#0b65c6" />
+
+            <path d="M 693 88 C 693 134, 510 124, 488 155" fill="none" stroke="#8996a6" stroke-width="1.3" stroke-dasharray="3.5 3.5" />
+
+            <!-- ===========================================================
+                 2. MIDDLE LEFT COLUMN: CONTEXT what it sees
+                 =========================================================== -->
+            <text x="18" y="138" class="svg-mono" font-size="12" font-weight="700" letter-spacing="0.12em" fill="#0b65c6">CONTEXT</text>
+            <text x="114" y="138" class="svg-mono" font-size="10.5" fill="#68778c">what it sees</text>
+
+            <!-- Context 1: Memory -->
+            <g transform="translate(14, 150)">
+              <rect x="0" y="0" width="196" height="54" rx="10" fill="#ffffff" stroke="#bfd0e3" stroke-width="1.3" />
+              <text x="15" y="23" class="svg-modern" font-size="14" font-weight="700" fill="#141923">Memory</text>
+              <text x="15" y="41" class="svg-mono" font-size="10.5" fill="#68778c">past sessions</text>
+            </g>
+
+            <!-- Context 2: Retrieval -->
+            <g transform="translate(14, 212)">
+              <rect x="0" y="0" width="196" height="54" rx="10" fill="#ffffff" stroke="#bfd0e3" stroke-width="1.3" />
+              <text x="15" y="23" class="svg-modern" font-size="14" font-weight="700" fill="#141923">Retrieval</text>
+              <text x="15" y="41" class="svg-mono" font-size="10.5" fill="#68778c">the right docs</text>
+            </g>
+
+            <!-- Context 3: Files & state -->
+            <g transform="translate(14, 274)">
+              <rect x="0" y="0" width="196" height="54" rx="10" fill="#ffffff" stroke="#bfd0e3" stroke-width="1.3" />
+              <text x="15" y="23" class="svg-modern" font-size="14" font-weight="700" fill="#141923">Files &amp; state</text>
+              <text x="15" y="41" class="svg-mono" font-size="10.5" fill="#68778c">the working set</text>
+            </g>
+
+            <!-- Connectors from CONTEXT to MODEL -->
+            <path d="M 210 177 C 255 177, 265 234, 308 238" fill="none" stroke="#8996a6" stroke-width="1.3" />
+            <line x1="210" y1="239" x2="308" y2="239" stroke="#8996a6" stroke-width="1.3" />
+            <circle cx="221" cy="239" r="3.8" fill="#fae033" stroke="#141923" stroke-width="1.1" />
+            <path d="M 210 301 C 255 301, 265 244, 308 240" fill="none" stroke="#8996a6" stroke-width="1.3" />
+            <circle cx="241" cy="281" r="3.2" fill="#0b65c6" />
+
+            <!-- ===========================================================
+                 3. CENTER CORE: MODEL (reasons + decides | READING)
+                 =========================================================== -->
+            <g transform="translate(309, 155)">
+              <rect x="0" y="0" width="202" height="162" rx="18" fill="#f9d71c" stroke="#141923" stroke-width="2.2" />
+              <text x="101" y="68" text-anchor="middle" class="svg-modern" font-size="38" font-weight="800" letter-spacing="-0.03em" fill="#111622">MODEL</text>
+              <text x="101" y="92" text-anchor="middle" class="svg-mono" font-size="12" font-weight="500" fill="#3a3512">reasons + decides</text>
+
+              <rect x="51" y="106" width="100" height="26" rx="13" fill="#111622" />
+              <text x="101" y="123" text-anchor="middle" class="svg-mono" font-size="11" font-weight="700" letter-spacing="0.14em" fill="#fae033">READING</text>
+            </g>
+
+            <!-- ===========================================================
+                 4. MIDDLE RIGHT COLUMN: TOOLS what it touches
+                 =========================================================== -->
+            <text x="580" y="138" class="svg-mono" font-size="12" font-weight="700" letter-spacing="0.12em" fill="#0b65c6">TOOLS</text>
+            <text x="645" y="138" class="svg-mono" font-size="10.5" fill="#68778c">what it touches</text>
+
+            <!-- Connector between MODEL and TOOLS -->
+            <line x1="511" y1="239" x2="580" y2="239" stroke="#141923" stroke-width="1.6" />
+
+            <!-- Tool 1: Tool registry -->
+            <g transform="translate(580, 150)">
+              <rect x="0" y="0" width="196" height="54" rx="10" fill="#ffffff" stroke="#bfd0e3" stroke-width="1.3" />
+              <text x="15" y="23" class="svg-modern" font-size="14" font-weight="700" fill="#141923">Tool registry</text>
+              <text x="15" y="41" class="svg-mono" font-size="10.5" fill="#68778c">what it can call</text>
+            </g>
+
+            <!-- Tool 2: Sandbox -->
+            <g transform="translate(580, 212)">
+              <rect x="0" y="0" width="196" height="54" rx="10" fill="#ffffff" stroke="#bfd0e3" stroke-width="1.3" />
+              <text x="15" y="23" class="svg-modern" font-size="14" font-weight="700" fill="#141923">Sandbox</text>
+              <text x="15" y="41" class="svg-mono" font-size="10.5" fill="#68778c">safe execution</text>
+            </g>
+
+            <!-- Tool 3: Permissions -->
+            <g transform="translate(580, 274)">
+              <rect x="0" y="0" width="196" height="54" rx="10" fill="#ffffff" stroke="#bfd0e3" stroke-width="1.3" />
+              <text x="15" y="23" class="svg-modern" font-size="14" font-weight="700" fill="#141923">Permissions</text>
+              <text x="15" y="41" class="svg-mono" font-size="10.5" fill="#68778c">ask before risky</text>
+            </g>
+
+            <!-- Vertical line from Permissions down into Traces -->
+            <line x1="678" y1="328" x2="678" y2="380" stroke="#141923" stroke-width="1.6" />
+
+            <!-- ===========================================================
+                 5. BOTTOM ROW BAND: SENSORS how it gets checked
+                 =========================================================== -->
+            <text x="18" y="352" class="svg-mono" font-size="12" font-weight="700" letter-spacing="0.12em" fill="#0b65c6">SENSORS</text>
+            <text x="108" y="352" class="svg-mono" font-size="10.5" fill="#68778c">how it gets checked</text>
+
+            <rect x="8" y="364" width="804" height="82" rx="14" fill="#f5f8fc" stroke="#d8e2ee" stroke-width="1.2" stroke-dasharray="3 3" />
+
+            <!-- Sensor 1: Tests & evals -->
+            <g transform="translate(26, 378)">
+              <rect x="0" y="0" width="168" height="54" rx="10" fill="#ffffff" stroke="#bfd0e3" stroke-width="1.3" />
+              <text x="15" y="23" class="svg-modern" font-size="14" font-weight="700" fill="#141923">Tests &amp; evals</text>
+              <text x="15" y="41" class="svg-mono" font-size="10.5" fill="#68778c">did it work?</text>
+            </g>
+
+            <!-- Horizontal connector between Tests & evals, Output checks, Traces -->
+            <line x1="194" y1="405" x2="438" y2="405" stroke="#141923" stroke-width="1.6" />
+            <line x1="608" y1="405" x2="626" y2="405" stroke="#141923" stroke-width="1.6" />
+
+            <!-- Sensor 2: Output checks -->
+            <g transform="translate(438, 378)">
+              <rect x="0" y="0" width="170" height="54" rx="10" fill="#ffffff" stroke="#bfd0e3" stroke-width="1.3" />
+              <text x="15" y="23" class="svg-modern" font-size="14" font-weight="700" fill="#141923">Output checks</text>
+              <text x="15" y="41" class="svg-mono" font-size="10.5" fill="#68778c">schema + lint</text>
+            </g>
+
+            <!-- Sensor 3: Traces -->
+            <g transform="translate(626, 378)">
+              <rect x="0" y="0" width="144" height="54" rx="10" fill="#ffffff" stroke="#bfd0e3" stroke-width="1.3" />
+              <text x="15" y="23" class="svg-modern" font-size="14" font-weight="700" fill="#141923">Traces</text>
+              <text x="15" y="41" class="svg-mono" font-size="10.5" fill="#68778c">log every step</text>
+            </g>
+
+            <!-- Dashed Yellow Retry Loop: Output checks -> MODEL -->
+            <path d="M 352 405 L 352 456 L 392 456 L 392 317" fill="none" stroke="#e5c530" stroke-width="1.4" stroke-dasharray="4 4" />
+            <text x="415" y="468" text-anchor="middle" class="svg-mono" font-size="10.5" fill="#b59722">↺ retry w/ feedback</text>
+
+            <!-- Stepped Exit Line: Tests & evals -> VERIFIED OUTPUT -->
+            <path d="M 110 432 L 110 472 L 240 472 L 240 495" fill="none" stroke="#141923" stroke-width="1.6" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Bottom Pill Overlapping Border: ✓ VERIFIED OUTPUT -->
+      <div class="absolute -bottom-4 left-28 sm:left-40 bg-[#c7e0f8] border-[1.8px] border-[#141923] text-[#0f2c59] font-mono-tech text-[12px] font-bold tracking-[0.1em] px-5 py-1.5 rounded-full shadow-sm">
+        ✓ VERIFIED OUTPUT
+      </div>
+    </section>
+
+    <!-- BOTTOM TAGLINE (NO SOCIAL FOOTER) -->
+    <footer class="text-center mt-10 pt-2">
+      <p class="font-modern text-[22px] sm:text-[26px] font-extrabold tracking-tight">
+        <span class="text-[#111622]">Same model.</span>
+        <span class="text-[#8e9cad] mx-1">Better harness.</span>
+        <span class="text-[#0b65c6]">Better agent.</span>
+      </p>
+    </footer>
+  </article>
+
+
+  <!-- =========================================================================
+       PAGE 5: LOOP ENGINEERING (THE CYCLE · LOOP)
+       ========================================================================= -->
+  <article id="poster-p5" class="poster-modern mb-12">
+    <!-- TOP HEADER -->
+    <header class="text-center mb-6">
+      <div class="font-mono-tech text-[12.5px] font-bold tracking-[0.22em] uppercase mb-2">
+        <span class="text-[#0b65c6]">THE CYCLE</span>
+        <span class="text-[#7c899b] mx-1">·</span>
+        <span class="text-[#141923]">LOOP</span>
+      </div>
+
+      <h1 class="font-modern text-[40px] sm:text-[58px] font-extrabold leading-[1.06] text-[#111622] mb-5">
+        Loop <span class="eng-highlight">Engineering</span>
+      </h1>
+
+      <!-- Code Banner Pill -->
+      <div class="inline-block bg-[#111622] text-white font-mono-tech text-[13px] sm:text-[15.5px] px-6 py-2.5 rounded-full shadow-md mb-5">
+        <span class="text-[#fae033] font-semibold">while</span>
+        <span> (</span><span class="text-[#6bb8ff]">!goal_met</span><span>) { observe → reason → act → check }</span>
+      </div>
+
+      <p class="font-modern text-[16.5px] sm:text-[19px] leading-[1.45] text-[#5e6d82] max-w-[650px] mx-auto font-medium">
+        Stop prompting every step. Design the loop: <strong class="text-[#111622] font-bold">a clear goal</strong>, <strong class="text-[#111622] font-bold">a check after every pass</strong>, and <strong class="text-[#111622] font-bold">a hard stop.</strong>
+      </p>
+    </header>
+
+    <!-- CENTER INTERACTIVE CIRCULAR LOOP DIAGRAM -->
+    <section class="my-2 w-full overflow-x-auto">
+      <div class="min-w-[720px] max-w-[840px] mx-auto">
+        <svg id="loopEngSvg" viewBox="0 0 820 455" class="w-full h-auto select-none" aria-label="Loop Engineering 5-Stage Cycle Diagram">
+          <defs>
+            <radialGradient id="ringGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="55%" stop-color="#fae033" stop-opacity="0" />
+              <stop offset="80%" stop-color="#fae033" stop-opacity="0.32" />
+              <stop offset="100%" stop-color="#fae033" stop-opacity="0" />
+            </radialGradient>
+          </defs>
+
+          <!-- Soft Yellow Halo Ring -->
+          <circle cx="410" cy="245" r="172" fill="url(#ringGlow)" />
+
+          <!-- Outer Soft Cream Ring Track -->
+          <circle cx="410" cy="245" r="142" fill="none" stroke="#f2ebd4" stroke-width="26" />
+
+          <!-- Dashed Full Circle Path -->
+          <circle cx="410" cy="245" r="142" fill="none" stroke="#627084" stroke-width="1.6" stroke-dasharray="3.5 5.5" />
+
+          <!-- Directional Arrowheads along the Ring -->
+          <!-- Top-right arrow -->
+          <path d="M 486 121 L 494 123 L 489 130" fill="none" stroke="#141923" stroke-width="1.6" />
+          <!-- Bottom-right arrow -->
+          <path d="M 545 285 L 543 294 L 536 288" fill="none" stroke="#141923" stroke-width="1.6" />
+          <!-- Bottom arrow -->
+          <path d="M 416 383 L 408 387 L 416 391" fill="none" stroke="#141923" stroke-width="1.6" />
+          <!-- Bottom-left arrow -->
+          <path d="M 271 290 L 274 282 L 281 288" fill="none" stroke="#141923" stroke-width="1.6" />
+          <!-- Top-left arrow -->
+          <path d="M 317 136 L 326 134 L 323 143" fill="none" stroke="#141923" stroke-width="1.6" />
+
+          <!-- Active Blue Arc from 12 o'clock (01 OBSERVE) to 2 o'clock (02 REASON) -->
+          <path id="loopActiveArc" d="M 410 103 A 142 142 0 0 1 545 201" fill="none" stroke="#0b65c6" stroke-width="5.5" stroke-linecap="round" />
+
+          <!-- Dashed Blue Exit Path from 10 o'clock (05 DECIDE) to DONE ✓ -->
+          <line x1="274" y1="204" x2="152" y2="85" stroke="#0b65c6" stroke-width="1.8" stroke-dasharray="4.5 4.5" />
+          <text x="200" y="102" class="svg-mono" font-size="10.5" font-weight="500" fill="#0b65c6">exit when goal met</text>
+
+          <!-- Top-Left Pill: DONE ✓ -->
+          <g transform="translate(56, 46)">
+            <rect x="0" y="0" width="98" height="36" rx="18" fill="#ffffff" stroke="#141923" stroke-width="1.6" />
+            <text x="49" y="23" text-anchor="middle" class="svg-mono" font-size="12.5" font-weight="700" letter-spacing="0.08em" fill="#141923">DONE ✓</text>
+          </g>
+
+          <!-- Ring Node Dots (5 positions) -->
+          <!-- Node 1 (Top 12:00) -->
+          <circle cx="410" cy="103" r="7.5" fill="#0b65c6" stroke="#141923" stroke-width="1.6" />
+          <!-- Node 2 (Right 2:00) + Active Yellow Bullseye -->
+          <circle cx="541" cy="190" r="8" fill="#0b65c6" stroke="#141923" stroke-width="1.6" />
+          <g id="loopHeadMarker" transform="translate(550, 215)">
+            <circle cx="0" cy="0" r="10.5" fill="#fae033" stroke="#141923" stroke-width="1.8" />
+            <circle cx="0" cy="0" r="2.8" fill="#141923" />
+          </g>
+          <!-- Node 3 (Bottom-Right 4:30) -->
+          <circle cx="495" cy="358" r="7.5" fill="#ffffff" stroke="#141923" stroke-width="1.8" />
+          <!-- Node 4 (Bottom-Left 7:30) -->
+          <circle cx="325" cy="358" r="7.5" fill="#ffffff" stroke="#141923" stroke-width="1.8" />
+          <!-- Node 5 (Top-Left 10:00) -->
+          <circle cx="274" cy="204" r="7.5" fill="#ffffff" stroke="#141923" stroke-width="1.8" />
+
+          <!-- Center White Circle: ITERATION 03/10 -->
+          <circle cx="410" cy="245" r="98" fill="#ffffff" stroke="#141923" stroke-width="1.8" />
+          <text x="410" y="196" text-anchor="middle" class="svg-mono" font-size="10.5" font-weight="600" letter-spacing="0.16em" fill="#8e9cad">ITERATION</text>
+          <text x="398" y="246" text-anchor="middle" class="svg-modern" font-size="54" font-weight="800" fill="#111622" id="loopIterNum">03</text>
+          <text x="446" y="245" text-anchor="middle" class="svg-mono" font-size="14" font-weight="600" fill="#8e9cad">/10</text>
+          <text x="410" y="268" text-anchor="middle" class="svg-mono" font-size="10" fill="#5e6d82" id="loopGoalText">goal: tests passing 8/12</text>
+
+          <!-- Progress Bar inside Center Circle -->
+          <rect x="348" y="278" width="124" height="9" rx="4.5" fill="#edf2f8" stroke="#141923" stroke-width="1.1" />
+          <rect id="loopProgressBar" x="349" y="279" width="84" height="7" rx="3.5" fill="#0b65c6" />
+
+          <!-- 3 Small Status Dots inside Center Circle -->
+          <circle cx="397" cy="301" r="3.5" fill="#fae033" stroke="#141923" stroke-width="1.1" />
+          <circle cx="410" cy="301" r="3.5" fill="#fae033" stroke="#141923" stroke-width="1.1" />
+          <circle cx="423" cy="301" r="3.5" fill="#ffffff" stroke="#141923" stroke-width="1.1" />
+
+          <!-- ===============================================================
+               5 STAGE CARDS AROUND THE RING (CLICKABLE TO STEP LOOP)
+               =============================================================== -->
+
+          <!-- CARD 01: OBSERVE (Top) -->
+          <g transform="translate(335, 28)" onclick="setLoopStep(1)" class="loop-step-card">
+            <rect x="0" y="0" width="150" height="66" rx="10" fill="#fdf3be" stroke="#141923" stroke-width="1.5" />
+            <text x="14" y="19" class="svg-mono" font-size="10" font-weight="700" fill="#0b65c6">01</text>
+            <text x="14" y="39" class="svg-modern" font-size="16" font-weight="800" fill="#111622">OBSERVE</text>
+            <text x="14" y="55" class="svg-mono" font-size="10" fill="#5e6d82">state + errors</text>
+          </g>
+
+          <!-- CARD 02: REASON (Right) -->
+          <g transform="translate(585, 136)" onclick="setLoopStep(2)" class="loop-step-card">
+            <rect x="0" y="0" width="156" height="66" rx="10" fill="#fdf3be" stroke="#141923" stroke-width="1.5" />
+            <text x="14" y="19" class="svg-mono" font-size="10" font-weight="700" fill="#0b65c6">02</text>
+            <text x="14" y="39" class="svg-modern" font-size="16" font-weight="800" fill="#111622">REASON</text>
+            <text x="14" y="55" class="svg-mono" font-size="10" fill="#5e6d82">plan the next move</text>
+          </g>
+
+          <!-- CARD 03: ACT (Bottom-Right) -->
+          <g transform="translate(546, 336)" onclick="setLoopStep(3)" class="loop-step-card">
+            <rect x="0" y="0" width="156" height="66" rx="10" fill="#ffffff" stroke="#c5d3e3" stroke-width="1.4" />
+            <text x="14" y="19" class="svg-mono" font-size="10" font-weight="700" fill="#0b65c6">03</text>
+            <text x="14" y="39" class="svg-modern" font-size="16" font-weight="800" fill="#111622">ACT</text>
+            <text x="14" y="55" class="svg-mono" font-size="10" fill="#5e6d82">edit · run · tools</text>
+          </g>
+
+          <!-- CARD 04: CHECK (Bottom-Left) -->
+          <g transform="translate(106, 336)" onclick="setLoopStep(4)" class="loop-step-card">
+            <rect x="0" y="0" width="156" height="66" rx="10" fill="#ffffff" stroke="#c5d3e3" stroke-width="1.4" />
+            <text x="14" y="19" class="svg-mono" font-size="10" font-weight="700" fill="#0b65c6">04</text>
+            <text x="14" y="39" class="svg-modern" font-size="16" font-weight="800" fill="#111622">CHECK</text>
+            <text x="14" y="55" class="svg-mono" font-size="10" fill="#5e6d82">tests · evals</text>
+          </g>
+
+          <!-- CARD 05: DECIDE (Left) + LOOP ↺ Badge -->
+          <g transform="translate(72, 136)" onclick="setLoopStep(5)" class="loop-step-card">
+            <rect x="0" y="0" width="156" height="66" rx="10" fill="#ffffff" stroke="#c5d3e3" stroke-width="1.4" />
+            <text x="14" y="19" class="svg-mono" font-size="10" font-weight="700" fill="#0b65c6">05</text>
+            <text x="14" y="39" class="svg-modern" font-size="16" font-weight="800" fill="#111622">DECIDE</text>
+            <text x="14" y="55" class="svg-mono" font-size="10" fill="#5e6d82">met? stop : loop</text>
+
+            <!-- Black Badge: LOOP ↺ -->
+            <rect x="94" y="-11" width="64" height="22" rx="11" fill="#111622" />
+            <text x="126" y="4" text-anchor="middle" class="svg-mono" font-size="10" font-weight="700" fill="#fae033">LOOP ↺</text>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <!-- TWO BOTTOM SIDE-BY-SIDE CARDS: STOP CONDITIONS & MEMORY BETWEEN LAPS -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-3">
+      <!-- Left Card: STOP CONDITIONS (Yellow Offset Shadow) -->
+      <div class="bg-white border-[2px] border-[#141923] rounded-[16px] shadow-offset-yellow-sm p-5">
+        <div class="font-mono-tech text-[12px] font-bold tracking-[0.14em] text-[#0b65c6] uppercase mb-3.5">
+          STOP CONDITIONS
+        </div>
+        <div class="space-y-3">
+          <div class="flex items-center gap-3">
+            <span class="w-6 h-6 rounded-[6px] bg-[#111622] text-[#fae033] font-mono-tech text-xs font-bold flex items-center justify-center shrink-0">✓</span>
+            <span class="font-modern text-[15px] text-[#141923]">
+              <strong class="font-bold">Goal:</strong> <span class="font-mono-tech text-[13.5px] text-[#334155]">all tests passing</span>
+            </span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-6 h-6 rounded-[6px] bg-[#111622] text-[#fae033] font-mono-tech text-xs font-bold flex items-center justify-center shrink-0">↺</span>
+            <span class="font-modern text-[15px] text-[#141923]">
+              <strong class="font-bold">Max</strong> <span class="font-mono-tech text-[13.5px] text-[#334155]">10 laps / 30 min</span>
+            </span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-6 h-6 rounded-[6px] bg-[#111622] text-[#fae033] font-mono-tech text-xs font-bold flex items-center justify-center shrink-0">$</span>
+            <span class="font-modern text-[15px] text-[#141923]">
+              <strong class="font-bold">Hard</strong> <span class="font-mono-tech text-[13.5px] text-[#334155]">token budget</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Card: MEMORY BETWEEN LAPS (Blue Offset Shadow) -->
+      <div class="bg-white border-[2px] border-[#141923] rounded-[16px] shadow-offset-blue-sm p-5">
+        <div class="font-mono-tech text-[12px] font-bold tracking-[0.14em] text-[#0b65c6] uppercase mb-3.5">
+          MEMORY BETWEEN LAPS
+        </div>
+        <div class="space-y-3">
+          <div class="flex items-center gap-3">
+            <span class="w-6 h-6 rounded-[6px] bg-[#111622] text-[#fae033] font-mono-tech text-xs font-bold flex items-center justify-center shrink-0">✎</span>
+            <span class="font-modern text-[15px] text-[#141923]">
+              <span class="font-mono-tech text-[13.5px] text-[#334155]">progress.md</span> <strong class="font-bold">what's done</strong>
+            </span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-6 h-6 rounded-[6px] bg-[#111622] text-[#fae033] font-mono-tech text-xs font-bold flex items-center justify-center shrink-0">⑂</span>
+            <span class="font-modern text-[15px] text-[#141923]">
+              <strong class="font-bold">A</strong> <span class="font-mono-tech text-[13.5px] text-[#334155]">git commit</span> <strong class="font-bold">per lap</strong>
+            </span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-6 h-6 rounded-[6px] bg-[#111622] text-[#fae033] font-mono-tech text-xs font-bold flex items-center justify-center shrink-0">○</span>
+            <span class="font-modern text-[15px] text-[#141923]">
+              <strong class="font-bold">Fresh context each lap</strong>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOTTOM TAGLINE (NO SOCIAL FOOTER) -->
+    <footer class="text-center mt-8 pt-2">
+      <p class="font-modern text-[22px] sm:text-[26px] font-extrabold tracking-tight">
+        <span class="text-[#111622]">The prompt starts it.</span>
+        <span class="text-[#0b65c6] ml-1">The loop finishes it.</span>
+      </p>
+    </footer>
+  </article>
+
+
+  <!-- =========================================================================
+       PAGE 6: GRAPH ENGINEERING (THE MAP · GRAPH)
+       ========================================================================= -->
+  <article id="poster-p6" class="poster-modern mb-8">
+    <!-- TOP HEADER -->
+    <header class="text-center mb-5">
+      <div class="font-mono-tech text-[12.5px] font-bold tracking-[0.22em] uppercase mb-2">
+        <span class="text-[#0b65c6]">THE MAP</span>
+        <span class="text-[#7c899b] mx-1">·</span>
+        <span class="text-[#141923]">GRAPH</span>
+      </div>
+
+      <h1 class="font-modern text-[40px] sm:text-[58px] font-extrabold leading-[1.06] text-[#111622] mb-4">
+        Graph <span class="eng-highlight">Engineering</span>
+      </h1>
+
+      <p class="font-modern text-[16.5px] sm:text-[19px] leading-[1.45] text-[#5e6d82] max-w-[680px] mx-auto font-medium mb-5">
+        <strong class="text-[#111622] font-bold">Nodes</strong> do the work. <strong class="text-[#111622] font-bold">Edges</strong> decide what runs next. <strong class="text-[#111622] font-bold">Shared state</strong> carries everything between them.
+      </p>
+
+      <!-- 6-PILL NODE TYPE LEGEND -->
+      <div class="flex flex-wrap items-center justify-center gap-2 font-modern text-[12.5px] font-semibold text-[#141923]">
+        <span class="px-3 py-1 rounded-full bg-white border border-[#d6e0ec] shadow-2xs flex items-center gap-1.5">
+          <span class="w-3.5 h-3.5 rounded-[3px] bg-[#fdf0a6] border-[1.4px] border-[#141923] inline-block"></span>
+          <span>LLM</span>
+        </span>
+        <span class="px-3 py-1 rounded-full bg-white border border-[#d6e0ec] shadow-2xs flex items-center gap-1.5">
+          <span class="w-3.5 h-3.5 rounded-[3px] bg-white border-[1.4px] border-[#141923] inline-block"></span>
+          <span>Tool</span>
+        </span>
+        <span class="px-3 py-1 rounded-full bg-white border border-[#d6e0ec] shadow-2xs flex items-center gap-1.5">
+          <span class="w-3.5 h-3.5 rounded-[3px] bg-white border-[1.4px] border-dashed border-[#0b65c6] inline-block"></span>
+          <span>Human</span>
+        </span>
+        <span class="px-3 py-1 rounded-full bg-white border border-[#d6e0ec] shadow-2xs flex items-center gap-1.5">
+          <span class="w-2.5 h-2.5 rotate-45 bg-[#141923] inline-block"></span>
+          <span>Router</span>
+        </span>
+        <span class="px-3 py-1 rounded-full bg-white border border-[#d6e0ec] shadow-2xs flex items-center gap-1.5">
+          <span class="w-3.5 h-3.5 rounded-[3px] bg-[#141923] inline-block"></span>
+          <span>Eval</span>
+        </span>
+        <span class="px-3 py-1 rounded-full bg-white border border-[#d6e0ec] shadow-2xs flex items-center gap-1.5">
+          <span class="w-3.5 h-3.5 rounded-[3px] bg-[#141923] flex items-center justify-center">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#fae033]"></span>
+          </span>
+          <span>Checkpoint</span>
+        </span>
+      </div>
+    </header>
+
+    <!-- MAIN SUPPORT AGENT GRAPH CONTAINER -->
+    <section class="relative bg-white border-[2px] border-[#141923] rounded-[22px] shadow-offset-yellow p-4 sm:p-6 my-4">
+      <!-- Top-Left Pill Badge: EXAMPLE · SUPPORT AGENT -->
+      <div class="absolute -top-3.5 left-6 bg-[#111622] text-[#fae033] font-mono-tech text-[11px] font-bold tracking-[0.14em] px-4 py-1 rounded-full">
+        EXAMPLE · SUPPORT AGENT
+      </div>
+
+      <div class="w-full overflow-x-auto pt-2">
+        <div class="min-w-[740px]">
+          <svg viewBox="0 0 820 450" class="w-full h-auto select-none" aria-label="Support Agent Graph Engineering Flowchart">
+            <defs>
+              <marker id="gArrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 1 1.5 L 8 5 L 1 8.5" fill="none" stroke="#141923" stroke-width="1.6" />
+              </marker>
+            </defs>
+
+            <!-- 1. START NODE -->
+            <g transform="translate(366, 8)">
+              <rect x="0" y="0" width="88" height="30" rx="15" fill="#111622" />
+              <text x="44" y="19.5" text-anchor="middle" class="svg-mono" font-size="11.5" font-weight="700" letter-spacing="0.12em" fill="#fae033">START</text>
+            </g>
+            <line x1="410" y1="38" x2="410" y2="56" stroke="#141923" stroke-width="1.5" marker-end="url(#gArrow)" />
+
+            <!-- 2. CLASSIFY TICKET (LLM) -->
+            <g transform="translate(340, 58)">
+              <rect x="0" y="0" width="140" height="46" rx="10" fill="#fcf3c4" stroke="#6c6438" stroke-width="1.3" />
+              <text x="70" y="20" text-anchor="middle" class="svg-modern" font-size="14" font-weight="700" fill="#141923">Classify ticket</text>
+              <text x="70" y="36" text-anchor="middle" class="svg-mono" font-size="10" fill="#5e6d82">llm · sets intent</text>
+            </g>
+
+            <!-- Checkpoint #1 + Diamond Router -->
+            <line x1="410" y1="104" x2="410" y2="132" stroke="#141923" stroke-width="1.5" />
+            <!-- Checkpoint Icon -->
+            <rect x="401" y="111" width="18" height="18" rx="4" fill="#111622" />
+            <circle cx="410" cy="120" r="3.5" fill="#fae033" />
+
+            <!-- Black Diamond Router -->
+            <polygon points="410,132 436,158 410,184 384,158" fill="#111622" />
+            <text x="336" y="182" text-anchor="middle" class="svg-mono" font-size="10" fill="#68778c">route(state.intent) →</text>
+
+            <!-- ===========================================================
+                 LEFT BRANCH: refund
+                 =========================================================== -->
+            <path d="M 384 158 L 150 158 L 150 212" fill="none" stroke="#141923" stroke-width="1.5" marker-end="url(#gArrow)" />
+            <rect x="228" y="148" width="56" height="19" rx="9.5" fill="#eff4fa" />
+            <text x="256" y="161" text-anchor="middle" class="svg-mono" font-size="10.5" fill="#4a5768">refund</text>
+
+            <!-- Check policy (Tool) -->
+            <g transform="translate(86, 214)">
+              <rect x="0" y="0" width="128" height="46" rx="10" fill="#ffffff" stroke="#627084" stroke-width="1.3" />
+              <text x="64" y="20" text-anchor="middle" class="svg-modern" font-size="14" font-weight="700" fill="#141923">Check policy</text>
+              <text x="64" y="36" text-anchor="middle" class="svg-mono" font-size="10" fill="#5e6d82">tool · eligible?</text>
+            </g>
+
+            <!-- Line + Checkpoint #2 -->
+            <line x1="150" y1="260" x2="150" y2="290" stroke="#141923" stroke-width="1.5" marker-end="url(#gArrow)" />
+            <rect x="141" y="266" width="18" height="18" rx="4" fill="#111622" />
+            <circle cx="150" cy="275" r="3.5" fill="#fae033" />
+
+            <!-- || Human approval (interrupt · waits) -->
+            <g transform="translate(68, 292)">
+              <rect x="0" y="0" width="164" height="46" rx="10" fill="#ffffff" stroke="#3b82d6" stroke-width="1.4" stroke-dasharray="4 3" />
+              <text x="15" y="21" class="svg-mono" font-size="12" font-weight="700" fill="#0b65c6">||</text>
+              <text x="34" y="21" class="svg-modern" font-size="14" font-weight="700" fill="#141923">Human approval</text>
+              <text x="82" y="36" text-anchor="middle" class="svg-mono" font-size="10" fill="#5e6d82">interrupt · waits</text>
+            </g>
+
+            <line x1="150" y1="338" x2="150" y2="366" stroke="#141923" stroke-width="1.5" marker-end="url(#gArrow)" />
+
+            <!-- Issue refund (Tool) -->
+            <g transform="translate(90, 368)">
+              <rect x="0" y="0" width="120" height="46" rx="10" fill="#ffffff" stroke="#627084" stroke-width="1.3" />
+              <text x="60" y="20" text-anchor="middle" class="svg-modern" font-size="14" font-weight="700" fill="#141923">Issue refund</text>
+              <text x="60" y="36" text-anchor="middle" class="svg-mono" font-size="10" fill="#5e6d82">tool · payments</text>
+            </g>
+
+            <!-- Left branch into END -->
+            <path d="M 150 414 L 150 434 L 372 434" fill="none" stroke="#141923" stroke-width="1.5" marker-end="url(#gArrow)" />
+
+            <!-- ===========================================================
+                 CENTER CALLOUT NOTE: INCOMING TICKET · RUN 2
+                 =========================================================== -->
+            <g transform="translate(252, 244)">
+              <rect x="0" y="0" width="250" height="68" rx="10" fill="#f9fbfe" stroke="#bfd0e3" stroke-width="1.2" stroke-dasharray="3 3" />
+              <text x="14" y="19" class="svg-mono" font-size="9.5" font-weight="700" letter-spacing="0.08em" fill="#0b65c6">INCOMING TICKET · RUN 2</text>
+              <text x="14" y="39" class="svg-modern" font-size="13.5" font-weight="700" fill="#141923">“How do I export my data to</text>
+              <text x="14" y="56" class="svg-modern" font-size="13.5" font-weight="700" fill="#141923">CSV?”</text>
+            </g>
+
+            <!-- ===========================================================
+                 RIGHT BRANCH: question (parallel split)
+                 =========================================================== -->
+            <path d="M 436 158 L 698 158 L 698 212" fill="none" stroke="#141923" stroke-width="1.5" marker-end="url(#gArrow)" />
+            <line x1="526" y1="158" x2="526" y2="212" stroke="#141923" stroke-width="1.5" marker-end="url(#gArrow)" />
+
+            <rect x="462" y="136" width="68" height="19" rx="9.5" fill="#eff4fa" />
+            <text x="496" y="149" text-anchor="middle" class="svg-mono" font-size="10.5" fill="#4a5768">question</text>
+
+            <rect x="572" y="172" width="78" height="19" rx="9.5" fill="#eff4fa" />
+            <text x="611" y="185" text-anchor="middle" class="svg-mono" font-size="10" fill="#5e6d82">parallel ↓</text>
+
+            <!-- Search docs (Tool) -->
+            <g transform="translate(466, 214)">
+              <rect x="0" y="0" width="120" height="46" rx="10" fill="#ffffff" stroke="#627084" stroke-width="1.3" />
+              <text x="60" y="20" text-anchor="middle" class="svg-modern" font-size="14" font-weight="700" fill="#141923">Search docs</text>
+              <text x="60" y="36" text-anchor="middle" class="svg-mono" font-size="10" fill="#5e6d82">tool · retrieval</text>
+            </g>
+
+            <!-- Past tickets (Tool) -->
+            <g transform="translate(640, 214)">
+              <rect x="0" y="0" width="116" height="46" rx="10" fill="#ffffff" stroke="#627084" stroke-width="1.3" />
+              <text x="58" y="20" text-anchor="middle" class="svg-modern" font-size="14" font-weight="700" fill="#141923">Past tickets</text>
+              <text x="58" y="36" text-anchor="middle" class="svg-mono" font-size="10" fill="#5e6d82">tool · history</text>
+            </g>
+
+            <!-- Merge lines into Draft reply -->
+            <path d="M 526 260 L 526 280 L 698 280 L 698 260" fill="none" stroke="#141923" stroke-width="1.5" />
+            <line x1="612" y1="280" x2="612" y2="292" stroke="#141923" stroke-width="1.5" />
+
+            <!-- Draft reply (Active LLM node with blue glow & token square) -->
+            <g transform="translate(548, 292)">
+              <rect x="-4" y="-4" width="136" height="54" rx="13" fill="none" stroke="#b3d4f7" stroke-width="4" />
+              <rect x="0" y="0" width="128" height="46" rx="10" fill="#f7dc52" stroke="#141923" stroke-width="1.6" />
+              <text x="64" y="20" text-anchor="middle" class="svg-modern" font-size="14" font-weight="700" fill="#141923">Draft reply</text>
+              <text x="64" y="36" text-anchor="middle" class="svg-mono" font-size="10" fill="#4d4619">llm · merges both</text>
+              <!-- Active Yellow Token Square on Top Border -->
+              <rect x="57" y="-7" width="14" height="14" rx="3.5" fill="#fae033" stroke="#141923" stroke-width="1.5" />
+            </g>
+
+            <!-- Line + Checkpoint #3 -->
+            <line x1="612" y1="338" x2="612" y2="368" stroke="#141923" stroke-width="1.5" marker-end="url(#gArrow)" />
+            <rect x="603" y="344" width="18" height="18" rx="4" fill="#111622" />
+            <circle cx="612" cy="353" r="3.5" fill="#fae033" />
+
+            <!-- Quality check (Eval - Solid Dark Navy) -->
+            <g transform="translate(542, 368)">
+              <rect x="0" y="0" width="140" height="46" rx="10" fill="#111622" />
+              <text x="70" y="20" text-anchor="middle" class="svg-modern" font-size="14" font-weight="700" fill="#ffffff">Quality check</text>
+              <text x="70" y="36" text-anchor="middle" class="svg-mono" font-size="10" fill="#9ba8ba">eval · score ≥ 0.85</text>
+            </g>
+
+            <!-- Dashed Orange Retry Loop from Quality check back to Draft reply -->
+            <path d="M 682 391 L 768 391 L 768 315 L 688 315" fill="none" stroke="#e5b822" stroke-width="1.6" stroke-dasharray="4.5 4.5" />
+            <path d="M 694 311 L 687 315 L 694 319" fill="none" stroke="#141923" stroke-width="1.5" />
+            <rect x="744" y="343" width="48" height="19" rx="9.5" fill="#f7fafe" />
+            <text x="768" y="356" text-anchor="middle" class="svg-mono" font-size="10" fill="#68778c">retry</text>
+
+            <!-- Right branch into END -->
+            <path d="M 612 414 L 612 434 L 448 434" fill="none" stroke="#141923" stroke-width="1.5" marker-end="url(#gArrow)" />
+
+            <!-- END NODE -->
+            <g transform="translate(376, 419)">
+              <rect x="0" y="0" width="68" height="30" rx="15" fill="#ffffff" stroke="#141923" stroke-width="1.6" />
+              <text x="34" y="19.5" text-anchor="middle" class="svg-mono" font-size="11.5" font-weight="700" letter-spacing="0.1em" fill="#141923">END</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- DARK SHARED STATE BAR -->
+    <section class="bg-[#111622] text-white rounded-[18px] p-4 sm:p-5 mt-6 shadow-md">
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-3 font-mono-tech">
+        <span class="text-[11.5px] font-bold tracking-[0.16em] text-[#fae033]">SHARED STATE</span>
+        <span class="text-[11px] text-[#8996a6]">checkpoint #3 · saved</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 font-mono-tech">
+        <!-- State 1: intent -->
+        <div class="bg-[#192130] border border-[#2b374b] rounded-[10px] p-3">
+          <div class="text-[10px] text-[#7c8c9e] mb-1">intent</div>
+          <div class="text-[13px] font-medium text-white">"question"</div>
+        </div>
+
+        <!-- State 2: context -->
+        <div class="bg-[#192130] border border-[#2b374b] rounded-[10px] p-3">
+          <div class="text-[10px] text-[#7c8c9e] mb-1">context</div>
+          <div class="text-[13px] font-medium text-white">docs: 2 · tickets: 3</div>
+        </div>
+
+        <!-- State 3: review (highlighted border) -->
+        <div class="bg-[#1e293b] border border-[#4b7bba] rounded-[10px] p-3">
+          <div class="text-[10px] text-[#94a8c4] mb-1">review</div>
+          <div class="text-[13px] font-medium text-white">v1 · score 0.62 ✕</div>
+        </div>
+
+        <!-- State 4: result -->
+        <div class="bg-[#192130] border border-[#2b374b] rounded-[10px] p-3">
+          <div class="text-[10px] text-[#7c8c9e] mb-1">result</div>
+          <div class="text-[13px] font-medium text-[#7c8c9e]">—</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOTTOM TAGLINE (NO SOCIAL FOOTER) -->
+    <footer class="text-center mt-8 pt-1">
+      <p class="font-modern text-[22px] sm:text-[26px] font-extrabold tracking-tight">
+        <span class="text-[#111622]">Prompts suggest.</span>
+        <span class="text-[#0b65c6] ml-1">Edges enforce.</span>
+      </p>
+    </footer>
+  </article>
+
+
+  <!-- ================= INTERACTIVE SCRIPTS ================= -->
+  <script>
+    // 1. Poster Switcher (Pages 1..6 or All 6 Stacked)
+    const posterIds = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6'];
+
+    function switchPoster(target) {
+      const activeBtnClass = 'nav-btn px-2.5 py-1.5 rounded bg-[#1d4e89] text-white font-semibold transition cursor-pointer';
+      const inactiveBtnClass = 'nav-btn px-2.5 py-1.5 rounded bg-[#edf2f8] text-[#141923] hover:bg-[#d8e4f2] transition cursor-pointer';
+
+      posterIds.forEach(id => {
+        const el = document.getElementById('poster-' + id);
+        const btn = document.getElementById('nav-' + id);
+        if (target === 'all' || target === id) {
+          el.classList.remove('hidden');
+        } else {
+          el.classList.add('hidden');
+        }
+        if (btn) {
+          btn.className = (target === id) ? activeBtnClass : inactiveBtnClass;
+        }
+      });
+
+      const allBtn = document.getElementById('nav-all');
+      if (allBtn) {
+        allBtn.className = (target === 'all') ? activeBtnClass : inactiveBtnClass;
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // 2. Page 1: Interactive Tool Schema Switcher
+    const toolPayloads = {
+      'read_file': {
+        input: '"path": "src/app.py"',
+        result: 'result: 200 lines returned'
+      },
+      'edit_file': {
+        input: '"path": "src/app.py", "diff": "+4 -1"',
+        result: 'result: file updated successfully'
+      },
+      'bash': {
+        input: '"cmd": "pytest tests/ -q"',
+        result: 'result: 14 passed in 0.42s'
+      },
+      'web_search': {
+        input: '"query": "MCP spec JSON-RPC"',
+        result: 'result: 5 top snippets returned'
+      },
+      'mcp: github': {
+        input: '"repo": "org/agent", "pr": 42',
+        result: 'result: PR #42 checks passing'
+      }
+    };
+
+    document.querySelectorAll('.tool-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const selected = btn.getAttribute('data-tool');
+        const payload = toolPayloads[selected];
+
+        document.querySelectorAll('.tool-btn').forEach((b) => {
+          b.className = 'tool-btn text-left px-2.5 py-1.5 rounded-[4px] bg-[#e3eef9] border border-[#b5cce6] text-[#1e293b] hover:bg-[#d2e4f6] cursor-pointer transition';
+        });
+
+        btn.className = 'tool-btn text-left px-2.5 py-1.5 rounded-[4px] bg-[#f4c534] border border-[#806e20] text-[#141923] font-medium cursor-pointer transition';
+
+        document.getElementById('jsonToolName').textContent = selected;
+        document.getElementById('jsonToolInput').textContent = payload.input;
+        document.getElementById('jsonToolResult').textContent = payload.result;
+      });
+    });
+
+    // 3. Page 2: Interactive Signal Ball Category Filter
+    let currentFilter = null;
+    function filterBalls(type) {
+      const allBalls = document.querySelectorAll('.signal-ball');
+      const legendCards = document.querySelectorAll('.legend-card');
+
+      if (currentFilter === type) {
+        currentFilter = null;
+        allBalls.forEach(b => b.classList.remove('ball-dimmed', 'ball-active-glow'));
+        legendCards.forEach(c => c.classList.remove('active-filter'));
+        return;
+      }
+
+      currentFilter = type;
+      legendCards.forEach(c => c.classList.remove('active-filter'));
+      const activeCard = document.getElementById('filter-' + type);
+      if (activeCard) activeCard.classList.add('active-filter');
+
+      allBalls.forEach(b => {
+        if (b.classList.contains('ball-' + type)) {
+          b.classList.remove('ball-dimmed');
+          b.classList.add('ball-active-glow');
+        } else {
+          b.classList.remove('ball-active-glow');
+          b.classList.add('ball-dimmed');
+        }
+      });
+    }
+
+    let isPulsing = true;
+    function toggleBallPulse() {
+      const poster2 = document.getElementById('poster-p2');
+      const btnText = document.getElementById('pulseBtnText');
+      isPulsing = !isPulsing;
+      poster2.classList.toggle('balls-animating', isPulsing);
+      btnText.textContent = isPulsing ? 'Pause Ball Pulse' : 'Pulse All Signal Balls';
+    }
+
+    // 4. Page 5: Interactive Loop Step Selector (Click any of the 01..05 cards)
+    const loopStates = {
+      1: { iter: '01', tests: 'goal: tests passing 4/12', barWidth: 42, marker: 'translate(410, 103)' },
+      2: { iter: '03', tests: 'goal: tests passing 8/12', barWidth: 84, marker: 'translate(550, 215)' },
+      3: { iter: '04', tests: 'goal: running edit + pytest', barWidth: 94, marker: 'translate(495, 358)' },
+      4: { iter: '05', tests: 'goal: tests passing 11/12', barWidth: 112, marker: 'translate(325, 358)' },
+      5: { iter: '06', tests: 'goal: all 12/12 tests passing!', barWidth: 122, marker: 'translate(274, 204)' }
+    };
+
+    function setLoopStep(step) {
+      const state = loopStates[step];
+      if (!state) return;
+      document.getElementById('loopIterNum').textContent = state.iter;
+      document.getElementById('loopGoalText').textContent = state.tests;
+      document.getElementById('loopProgressBar').setAttribute('width', state.barWidth);
+      document.getElementById('loopHeadMarker').setAttribute('transform', state.marker);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,2211 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Microsoft Agent Fabric — Interactive Architecture & Engineering Infographic</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            obsidian: '#070a12',
+            slate950: '#0b0f19',
+            fabric: {
+              teal: '#00bfa5',
+              cyan: '#06b6d4',
+              blue: '#3b82f6',
+              violet: '#8b5cf6',
+              amber: '#f59e0b',
+              emerald: '#10b981',
+              rose: '#f43f5e'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #070a12;
+      color: #f1f5f9;
+      background-image: 
+        radial-gradient(circle at 15% 10%, rgba(0, 191, 165, 0.08), transparent 30%),
+        radial-gradient(circle at 85% 25%, rgba(59, 130, 246, 0.08), transparent 30%),
+        radial-gradient(circle at 50% 80%, rgba(139, 92, 246, 0.07), transparent 35%),
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+    }
+
+    .glass-card {
+      background: rgba(15, 23, 42, 0.72);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(148, 163, 184, 0.14);
+    }
+
+    .glass-card-hover {
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card-hover:hover {
+      border-color: rgba(0, 191, 165, 0.45);
+      box-shadow: 0 12px 32px -10px rgba(0, 191, 165, 0.18);
+      transform: translateY(-2px);
+    }
+
+    .glow-teal {
+      box-shadow: 0 0 25px -4px rgba(0, 191, 165, 0.35);
+    }
+    .glow-blue {
+      box-shadow: 0 0 25px -4px rgba(59, 130, 246, 0.35);
+    }
+    .glow-violet {
+      box-shadow: 0 0 25px -4px rgba(139, 92, 246, 0.35);
+    }
+
+    @keyframes pulseFlow {
+      0%, 100% { opacity: 0.35; transform: scale(0.98); }
+      50% { opacity: 1; transform: scale(1.03); }
+    }
+    .animate-pulse-flow {
+      animation: pulseFlow 2.4s infinite ease-in-out;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #070a12;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #00bfa5;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="min-h-screen antialiased selection:bg-teal-500/30 selection:text-teal-200">
+
+  <!-- TOP STICKY NAVIGATION & CONTROL BAR -->
+  <header class="sticky top-0 z-50 border-b border-slate-800/80 bg-[#070a12]/90 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
+        <!-- Brand Header -->
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-teal-400 via-cyan-500 to-blue-600 p-[1px] shadow-lg shadow-teal-500/20">
+              <div class="w-full h-full bg-slate-950 rounded-[11px] flex items-center justify-center">
+                <svg class="w-6 h-6 text-teal-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-mono uppercase tracking-widest text-teal-400 font-semibold">Architecture Blueprint</span>
+                <span class="px-2 py-0.5 text-[10px] font-mono bg-teal-500/15 text-teal-300 border border-teal-500/30 rounded-full">v2026 Enterprise Edition</span>
+              </div>
+              <h1 class="text-base sm:text-lg font-bold tracking-tight text-white">Microsoft Agent Fabric Masterclass</h1>
+            </div>
+          </div>
+
+          <!-- Mobile Search Toggle -->
+          <button id="resetSearchBtn" onclick="resetFilter()" class="hidden text-xs font-mono text-teal-400 border border-teal-500/30 px-2.5 py-1 rounded-lg">
+            Reset Filter
+          </button>
+        </div>
+
+        <!-- Search & View Mode Controls -->
+        <div class="flex flex-wrap items-center gap-2.5">
+          <div class="relative flex-1 sm:w-64">
+            <svg class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+            <input 
+              id="globalSearch" 
+              type="text" 
+              oninput="filterSections(this.value)"
+              placeholder="Filter topics (e.g., RLS, SKILL.md, NL2DAX, Subagent)..." 
+              class="w-full pl-9 pr-3 py-1.5 text-xs bg-slate-900/90 border border-slate-700/80 rounded-lg text-slate-100 placeholder-slate-400 focus:outline-none focus:border-teal-400 transition"
+            />
+          </div>
+
+          <!-- Quick Jump Simulator Button -->
+          <a href="#sec-tandem" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-gradient-to-r from-teal-500/20 to-blue-500/20 text-teal-300 border border-teal-500/40 hover:border-teal-400 transition">
+            <span class="w-2 h-2 rounded-full bg-teal-400 animate-ping"></span>
+            Live Trace Simulator
+          </a>
+
+          <!-- Expand/Collapse All Cheat Sheet Mode -->
+          <button onclick="scrollToTop()" class="px-2.5 py-1.5 rounded-lg text-xs font-medium bg-slate-800/80 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">
+            Top ↑
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick-Jump Section Pills -->
+      <nav class="flex items-center gap-1.5 overflow-x-auto no-scrollbar pt-2.5 pb-1 mt-2 border-t border-slate-800/60 text-xs">
+        <a href="#sec-how" class="shrink-0 px-2.5 py-1 rounded-md bg-slate-900 hover:bg-teal-500/20 hover:text-teal-300 border border-slate-800 text-slate-300 transition">1. How It Works</a>
+        <a href="#sec-guardrails" class="shrink-0 px-2.5 py-1 rounded-md bg-slate-900 hover:bg-teal-500/20 hover:text-teal-300 border border-slate-800 text-slate-300 transition">2. Guardrails</a>
+        <a href="#sec-when-why" class="shrink-0 px-2.5 py-1 rounded-md bg-slate-900 hover:bg-teal-500/20 hover:text-teal-300 border border-slate-800 text-slate-300 transition">3. When & Why</a>
+        <a href="#sec-tools" class="shrink-0 px-2.5 py-1 rounded-md bg-slate-900 hover:bg-teal-500/20 hover:text-teal-300 border border-slate-800 text-slate-300 transition">4. What Are Tools?</a>
+        <a href="#sec-agents" class="shrink-0 px-2.5 py-1 rounded-md bg-slate-900 hover:bg-teal-500/20 hover:text-teal-300 border border-slate-800 text-slate-300 transition">5. Agents & Subagents</a>
+        <a href="#sec-tandem" class="shrink-0 px-2.5 py-1 rounded-md bg-slate-900 hover:bg-teal-500/20 hover:text-teal-300 border border-slate-800 text-slate-300 transition">6. Working in Tandem</a>
+        <a href="#sec-skills" class="shrink-0 px-2.5 py-1 rounded-md bg-slate-900 hover:bg-teal-500/20 hover:text-teal-300 border border-slate-800 text-slate-300 transition">7. Skills (SKILL.md)</a>
+        <a href="#sec-practices" class="shrink-0 px-2.5 py-1 rounded-md bg-slate-900 hover:bg-teal-500/20 hover:text-teal-300 border border-slate-800 text-slate-300 transition">8. Best Practices</a>
+        <a href="#sec-missed" class="shrink-0 px-2.5 py-1 rounded-md bg-slate-900 hover:bg-teal-500/20 hover:text-teal-300 border border-slate-800 text-slate-300 transition">9. Hidden Gems</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-14">
+
+    <!-- HERO BANNER: UNIFIED MENTAL MODEL -->
+    <section class="relative rounded-3xl overflow-hidden border border-slate-800 bg-gradient-to-br from-slate-900/95 via-[#0b1324] to-slate-950 p-6 sm:p-10 shadow-2xl">
+      <div class="absolute -top-24 -right-24 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-7 space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/30 text-teal-300 text-xs font-mono">
+            <span>ONE UNIFIED ECOSYSTEM</span>
+            <span class="text-slate-500">•</span>
+            <span>FABRIC DATA AGENTS + MICROSOFT AGENT FRAMEWORK</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+            From Raw OneLake Data to <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-cyan-300 to-blue-400">Governed Multi-Agent Intelligence</span>
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            <strong>Microsoft Agent Fabric</strong> unites two tightly coupled architectural layers: 
+            <strong>(1) Microsoft Fabric Data Agents</strong>—enterprise conversational systems that ground generative AI directly in OneLake Lakehouses, Warehouses, Power BI Semantic Models, KQL Eventhouses, and Ontologies; and 
+            <strong>(2) The Microsoft Agent Framework</strong>—the orchestration runtime powering hierarchical <strong>Agents</strong>, domain <strong>Subagents</strong>, deterministic <strong>Tools</strong>, and progressive <strong>Skills (<code>SKILL.md</code>)</strong> across Azure AI Foundry and Copilot Studio.
+          </p>
+
+          <!-- Key Telemetry Badges -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+            <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+              <div class="text-xs font-mono text-slate-400">Scoped Data Sources</div>
+              <div class="text-xl font-extrabold text-teal-400 mt-0.5">Up to 5 / Agent</div>
+              <div class="text-[11px] text-slate-400">Lakehouse, PBI, KQL, WH</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+              <div class="text-xs font-mono text-slate-400">Access Posture</div>
+              <div class="text-xl font-extrabold text-blue-400 mt-0.5">100% Read-Only</div>
+              <div class="text-[11px] text-slate-400">User Identity Passthrough</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+              <div class="text-xs font-mono text-slate-400">Query Engines</div>
+              <div class="text-xl font-extrabold text-violet-400 mt-0.5">SQL • DAX • KQL</div>
+              <div class="text-[11px] text-slate-400">+ Graph / Ontology</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+              <div class="text-xs font-mono text-slate-400">Skill Overhead</div>
+              <div class="text-xl font-extrabold text-amber-400 mt-0.5">~100 Tokens</div>
+              <div class="text-[11px] text-slate-400">Progressive Disclosure</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Stack Mini-Map -->
+        <div class="lg:col-span-5">
+          <div class="rounded-2xl bg-slate-950/90 border border-slate-800 p-4 space-y-2.5 shadow-inner">
+            <div class="text-xs font-mono uppercase tracking-wider text-slate-400 text-center pb-1">The 4-Layer Agent Fabric Stack</div>
+            
+            <div class="p-3 rounded-xl bg-gradient-to-r from-violet-950/70 to-indigo-950/70 border border-violet-500/40 flex items-center justify-between">
+              <div>
+                <div class="text-[10px] font-mono uppercase text-violet-300">Layer 4 • Consumption & Multi-Agent Plane</div>
+                <div class="text-xs font-bold text-white">M365 Copilot • Copilot Studio • Azure AI Foundry</div>
+              </div>
+              <span class="px-2 py-0.5 text-[10px] font-mono bg-violet-500/20 text-violet-200 rounded">Orchestrator</span>
+            </div>
+
+            <div class="p-3 rounded-xl bg-gradient-to-r from-amber-950/60 to-orange-950/60 border border-amber-500/40 flex items-center justify-between">
+              <div>
+                <div class="text-[10px] font-mono uppercase text-amber-300">Layer 3 • Portable Domain Expertise</div>
+                <div class="text-xs font-bold text-white">Agent Skills (SKILL.md) • SOPs • Scripts & References</div>
+              </div>
+              <span class="px-2 py-0.5 text-[10px] font-mono bg-amber-500/20 text-amber-200 rounded">On-Demand</span>
+            </div>
+
+            <div class="p-3 rounded-xl bg-gradient-to-r from-teal-950/70 to-emerald-950/70 border border-teal-500/40 flex items-center justify-between">
+              <div>
+                <div class="text-[10px] font-mono uppercase text-teal-300">Layer 2 • Specialized Subagents & Tools</div>
+                <div class="text-xs font-bold text-white">Fabric Data Agents • NL2SQL / NL2DAX / NL2KQL • MCP</div>
+              </div>
+              <span class="px-2 py-0.5 text-[10px] font-mono bg-teal-500/20 text-teal-200 rounded">Deterministic</span>
+            </div>
+
+            <div class="p-3 rounded-xl bg-gradient-to-r from-blue-950/70 to-slate-900 border border-blue-500/40 flex items-center justify-between">
+              <div>
+                <div class="text-[10px] font-mono uppercase text-blue-300">Layer 1 • Unified Data & Governance Foundation</div>
+                <div class="text-xs font-bold text-white">OneLake • Purview DLP • Entra ID RBAC / RLS / CLS</div>
+              </div>
+              <span class="px-2 py-0.5 text-[10px] font-mono bg-blue-500/20 text-blue-200 rounded">Zero-Copy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 1: HOW IT WORKS (6-STAGE INTERACTIVE PIPELINE)
+         ===================================================================== -->
+    <section id="sec-how" class="infographic-section scroll-mt-28 space-y-6" data-keywords="how it works pipeline nl2sql nl2dax nl2kql parsing schema discovery validation">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-800 pb-4">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-teal-400 font-semibold">Section 01 • Core Execution Architecture</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">How Microsoft Agent Fabric Works (End-to-End Pipeline)</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-400 max-w-md">
+          Click any of the 6 execution stages below to inspect the internal engine mechanics, security checks, and live wire payloads.
+        </p>
+      </div>
+
+      <!-- Interactive 6-Stage Horizontal Flow Selector -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3" id="pipelineStages">
+        <!-- Populated/Managed interactively via JS -->
+        <button onclick="selectStage(0)" id="stage-btn-0" class="stage-btn text-left p-3.5 rounded-2xl border transition-all bg-teal-500/15 border-teal-400 glow-teal">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-mono font-bold text-teal-300">STAGE 01</span>
+            <span class="w-2 h-2 rounded-full bg-teal-400"></span>
+          </div>
+          <div class="font-bold text-sm text-white">Question Parsing & RAI Check</div>
+          <div class="text-[11px] text-slate-400 mt-1">Azure OpenAI Assistants & Prompt Shields</div>
+        </button>
+
+        <button onclick="selectStage(1)" id="stage-btn-1" class="stage-btn text-left p-3.5 rounded-2xl border transition-all bg-slate-900/80 border-slate-800 hover:border-slate-700">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-mono font-bold text-blue-400">STAGE 02</span>
+            <span class="w-2 h-2 rounded-full bg-slate-600"></span>
+          </div>
+          <div class="font-bold text-sm text-white">Identity & Purview Gate</div>
+          <div class="text-[11px] text-slate-400 mt-1">OAuth2 Passthrough, RLS/CLS & Read-Only</div>
+        </button>
+
+        <button onclick="selectStage(2)" id="stage-btn-2" class="stage-btn text-left p-3.5 rounded-2xl border transition-all bg-slate-900/80 border-slate-800 hover:border-slate-700">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-mono font-bold text-violet-400">STAGE 03</span>
+            <span class="w-2 h-2 rounded-full bg-slate-600"></span>
+          </div>
+          <div class="font-bold text-sm text-white">Source & Schema Discovery</div>
+          <div class="text-[11px] text-slate-400 mt-1">Evaluates up to 5 Scoped Data Sources</div>
+        </button>
+
+        <button onclick="selectStage(3)" id="stage-btn-3" class="stage-btn text-left p-3.5 rounded-2xl border transition-all bg-slate-900/80 border-slate-800 hover:border-slate-700">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-mono font-bold text-amber-400">STAGE 04</span>
+            <span class="w-2 h-2 rounded-full bg-slate-600"></span>
+          </div>
+          <div class="font-bold text-sm text-white">Tool Routing & Query Gen</div>
+          <div class="text-[11px] text-slate-400 mt-1">NL2SQL, NL2DAX, NL2KQL + Few-Shot Grounding</div>
+        </button>
+
+        <button onclick="selectStage(4)" id="stage-btn-4" class="stage-btn text-left p-3.5 rounded-2xl border transition-all bg-slate-900/80 border-slate-800 hover:border-slate-700">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-mono font-bold text-rose-400">STAGE 05</span>
+            <span class="w-2 h-2 rounded-full bg-slate-600"></span>
+          </div>
+          <div class="font-bold text-sm text-white">Query Validation & Safety Gate</div>
+          <div class="text-[11px] text-slate-400 mt-1">AST Syntax Check, Zero-Mutation Gate</div>
+        </button>
+
+        <button onclick="selectStage(5)" id="stage-btn-5" class="stage-btn text-left p-3.5 rounded-2xl border transition-all bg-slate-900/80 border-slate-800 hover:border-slate-700">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-mono font-bold text-emerald-400">STAGE 06</span>
+            <span class="w-2 h-2 rounded-full bg-slate-600"></span>
+          </div>
+          <div class="font-bold text-sm text-white">Execution & Grounded Answer</div>
+          <div class="text-[11px] text-slate-400 mt-1">OneLake Compute & Cited Synthesis</div>
+        </button>
+      </div>
+
+      <!-- Dynamic Stage Inspector Panel -->
+      <div class="glass-card rounded-2xl p-6 border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+        <div class="lg:col-span-7 space-y-4">
+          <div class="flex items-center gap-3">
+            <span id="stageDetailBadge" class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-teal-500/20 text-teal-300 border border-teal-500/30">STAGE 01 OF 06</span>
+            <h3 id="stageDetailTitle" class="text-xl font-bold text-white">Question Parsing, Intent Disambiguation & RAI Screening</h3>
+          </div>
+          <p id="stageDetailDesc" class="text-slate-300 text-sm leading-relaxed">
+            When a user submits a natural language prompt, the session is initialized via the Azure OpenAI Assistant protocol inside Fabric. Before touching any data metadata, Azure AI Content Safety screens for prompt injection, jailbreaks, and policy violations. The orchestrator resolves conversation history and rewrites ambiguous pronouns into an explicit analytical query.
+          </p>
+          <div id="stageDetailBullets" class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+            <!-- Dynamic bullets -->
+          </div>
+        </div>
+        <div class="lg:col-span-5">
+          <div class="rounded-xl bg-slate-950 border border-slate-800 overflow-hidden">
+            <div class="px-4 py-2 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
+              <span class="text-xs font-mono text-slate-400" id="stageCodeHeader">internal_trace_stage_01.json</span>
+              <span class="text-[11px] font-mono text-teal-400">Live Engine Telemetry</span>
+            </div>
+            <pre id="stageCodeBlock" class="p-4 text-xs font-mono text-teal-300 overflow-x-auto leading-relaxed"></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 2: MULTI-LAYER GUARDRAILS & SECURITY ARCHITECTURE
+         ===================================================================== -->
+    <section id="sec-guardrails" class="infographic-section scroll-mt-28 space-y-6" data-keywords="guardrails security rls cls ols purview dlp read-only identity passthrough approval middleware">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-800 pb-4">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-rose-400 font-semibold">Section 02 • Zero-Trust Defense-in-Depth</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">6-Layer Guardrails & Governance Architecture</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-400 max-w-md">
+          Agent Fabric never bypasses underlying data security. Every query executes inside a concentric 6-ring security boundary.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        <!-- Concentric Visual Shield Diagram -->
+        <div class="lg:col-span-5 glass-card rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden">
+          <div>
+            <div class="text-xs font-mono uppercase text-rose-400 font-semibold">Defense-in-Depth Topology</div>
+            <h3 class="text-lg font-bold text-white mt-1">Concentric Security Rings</h3>
+            <p class="text-xs text-slate-400 mt-1">From outer prompt intake down to inner OneLake parquet blocks.</p>
+          </div>
+
+          <!-- Concentric Rings SVG Diagram -->
+          <div class="my-6 flex items-center justify-center">
+            <svg viewBox="0 0 360 360" class="w-full max-w-[310px] h-auto">
+              <!-- Ring 1: Outer RAI & Prompt Shields -->
+              <circle cx="180" cy="180" r="168" fill="rgba(244, 63, 94, 0.05)" stroke="#f43f5e" stroke-width="1.5" stroke-dasharray="5 3"/>
+              <text x="180" y="26" text-anchor="middle" fill="#fda4af" font-size="9.5" font-family="JetBrains Mono" font-weight="600">1. AZURE AI CONTENT SAFETY &amp; RAI</text>
+
+              <!-- Ring 2: Agent Framework Middleware -->
+              <circle cx="180" cy="180" r="136" fill="rgba(245, 158, 11, 0.06)" stroke="#f59e0b" stroke-width="1.5"/>
+              <text x="180" y="58" text-anchor="middle" fill="#fcd34d" font-size="9.5" font-family="JetBrains Mono" font-weight="600">2. TOOL APPROVAL &amp; SANDBOX HARNESS</text>
+
+              <!-- Ring 3: Scoped Source Boundary -->
+              <circle cx="180" cy="180" r="104" fill="rgba(139, 92, 246, 0.07)" stroke="#8b5cf6" stroke-width="1.5"/>
+              <text x="180" y="90" text-anchor="middle" fill="#c4b5fd" font-size="9.5" font-family="JetBrains Mono" font-weight="600">3. SCOPED CURATED TABLES (MAX 5 SOURCES)</text>
+
+              <!-- Ring 4: Read-Only Gate -->
+              <circle cx="180" cy="180" r="74" fill="rgba(59, 130, 246, 0.09)" stroke="#3b82f6" stroke-width="1.5"/>
+              <text x="180" y="121" text-anchor="middle" fill="#93c5fd" font-size="9.5" font-family="JetBrains Mono" font-weight="600">4. STRICT READ-ONLY ENGINE</text>
+
+              <!-- Ring 5: Identity & Purview Core -->
+              <circle cx="180" cy="180" r="44" fill="rgba(0, 191, 165, 0.2)" stroke="#00bfa5" stroke-width="2"/>
+              <text x="180" y="175" text-anchor="middle" fill="#ffffff" font-size="10" font-family="Inter" font-weight="800">ENTRA ID</text>
+              <text x="180" y="189" text-anchor="middle" fill="#5eead4" font-size="8.5" font-family="JetBrains Mono" font-weight="600">RLS • CLS • DLP</text>
+            </svg>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-rose-500/10 border border-rose-500/30 text-xs text-rose-200 flex items-start gap-2.5">
+            <svg class="w-5 h-5 text-rose-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+            </svg>
+            <div>
+              <strong>Zero Privilege Escalation Guarantee:</strong> Even if a prompt instructs the agent to summarize Executive Payroll, the underlying SQL/DAX/KQL engine rejects or masks rows based on the calling user's Entra ID token.
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 Detailed Guardrail Cards -->
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="glass-card glass-card-hover rounded-2xl p-5 border-l-4 border-l-teal-400">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono text-teal-400 font-bold">01 • IDENTITY PASSTHROUGH</span>
+              <span class="px-2 py-0.5 text-[10px] font-mono bg-teal-500/15 text-teal-300 rounded">OAuth2 OBO</span>
+            </div>
+            <h4 class="text-base font-bold text-white mt-1.5">Strict User Context & RLS/CLS/OLS</h4>
+            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+              Fabric Data Agents execute all queries using the calling user's Microsoft Entra ID identity (On-Behalf-Of flow). Row-Level Security (RLS), Column-Level Security (CLS), and Object-Level Security (OLS) configured in Lakehouse, Warehouse, or Power BI are enforced natively.
+            </p>
+          </div>
+
+          <div class="glass-card glass-card-hover rounded-2xl p-5 border-l-4 border-l-blue-400">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono text-blue-400 font-bold">02 • DATA MUTATION LOCK</span>
+              <span class="px-2 py-0.5 text-[10px] font-mono bg-blue-500/15 text-blue-300 rounded">Immutable</span>
+            </div>
+            <h4 class="text-base font-bold text-white mt-1.5">100% Read-Only Query Gate</h4>
+            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+              Connections to Fabric data sources are hard-locked to read-only operations. Any generated SQL, DAX, or KQL containing DDL/DML mutations (<code>DROP</code>, <code>DELETE</code>, <code>UPDATE</code>, <code>INSERT</code>, <code>ALTER</code>, <code>.drop</code>) is blocked at the syntax validator before reaching compute.
+            </p>
+          </div>
+
+          <div class="glass-card glass-card-hover rounded-2xl p-5 border-l-4 border-l-violet-400">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono text-violet-400 font-bold">03 • PURVIEW GOVERNANCE</span>
+              <span class="px-2 py-0.5 text-[10px] font-mono bg-violet-500/15 text-violet-300 rounded">DLP + Labels</span>
+            </div>
+            <h4 class="text-base font-bold text-white mt-1.5">Microsoft Purview Sensitivity & DLP</h4>
+            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+              Data Agents inherit Microsoft Purview sensitivity labels (e.g., <em>Highly Confidential</em>) and Data Loss Prevention (DLP) policies. Audit logs track every user prompt, generated query, accessed semantic object, and synthesized response.
+            </p>
+          </div>
+
+          <div class="glass-card glass-card-hover rounded-2xl p-5 border-l-4 border-l-amber-400">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono text-amber-400 font-bold">04 • CURATED SCOPE BOUNDARY</span>
+              <span class="px-2 py-0.5 text-[10px] font-mono bg-amber-500/15 text-amber-300 rounded">Schema Whitelist</span>
+            </div>
+            <h4 class="text-base font-bold text-white mt-1.5">Explicit Table & Column Whitelisting</h4>
+            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+              Creators explicitly check which tables, views, or semantic measures are visible in the Agent Explorer. Unchecked tables in the same Lakehouse are invisible to the agent's schema discovery and forbidden during query validation.
+            </p>
+          </div>
+
+          <div class="glass-card glass-card-hover rounded-2xl p-5 border-l-4 border-l-rose-400">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono text-rose-400 font-bold">05 • CONTENT SAFETY & RAI</span>
+              <span class="px-2 py-0.5 text-[10px] font-mono bg-rose-500/15 text-rose-300 rounded">Prompt Shields</span>
+            </div>
+            <h4 class="text-base font-bold text-white mt-1.5">Jailbreak & Groundedness Verification</h4>
+            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+              Built-in Azure AI Content Safety filters block indirect prompt injections embedded inside database text columns and verify that synthesized numerical answers are strictly grounded in the returned query result set.
+            </p>
+          </div>
+
+          <div class="glass-card glass-card-hover rounded-2xl p-5 border-l-4 border-l-emerald-400">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono text-emerald-400 font-bold">06 • HARNESS MIDDLEWARE</span>
+              <span class="px-2 py-0.5 text-[10px] font-mono bg-emerald-500/15 text-emerald-300 rounded">HITL + Sandbox</span>
+            </div>
+            <h4 class="text-base font-bold text-white mt-1.5">Tool Approval & Script Sandboxing</h4>
+            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+              In the Microsoft Agent Framework, <code>ToolApprovalMiddleware</code> auto-approves read-only tools (<code>ReadOnlyToolsAutoApprovalRule</code>) while requiring human-in-the-loop (HITL) approval and isolated container sandboxes for script execution (<code>run_skill_script</code>).
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 3: WHEN TO USE & WHY TO USE (STRATEGIC DECISION MATRIX)
+         ===================================================================== -->
+    <section id="sec-when-why" class="infographic-section scroll-mt-28 space-y-6" data-keywords="when to use why to use decision matrix anti-patterns use cases roi">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-800 pb-4">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-blue-400 font-semibold">Section 03 • Strategic Decision Matrix</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">Why Use It & When to Use It (vs. Alternatives)</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-400 max-w-md">
+          Understand the strategic value drivers of Agent Fabric and recognize where it excels vs. where a different pattern belongs.
+        </p>
+      </div>
+
+      <!-- WHY USE: 4 Strategic Value Pillars -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="glass-card rounded-2xl p-5 border border-teal-500/25">
+          <div class="w-9 h-9 rounded-lg bg-teal-500/15 border border-teal-500/30 flex items-center justify-center text-teal-400 font-bold font-mono text-sm mb-3">01</div>
+          <h3 class="font-bold text-white text-base">Zero-Copy OneLake Grounding</h3>
+          <p class="text-xs text-slate-300 mt-1.5 leading-relaxed">
+            No ETL duplication into external vector stores for structured data. Query petabyte-scale Delta tables, KQL streams, and Power BI models directly in place.
+          </p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-5 border border-blue-500/25">
+          <div class="w-9 h-9 rounded-lg bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-blue-400 font-bold font-mono text-sm mb-3">02</div>
+          <h3 class="font-bold text-white text-base">Semantic KPI Consistency</h3>
+          <p class="text-xs text-slate-300 mt-1.5 leading-relaxed">
+            By pairing NL2DAX with Power BI Semantic Models, every user gets the exact same governed definition of "Net Revenue" or "Churn" as executive dashboards.
+          </p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-5 border border-violet-500/25">
+          <div class="w-9 h-9 rounded-lg bg-violet-500/15 border border-violet-500/30 flex items-center justify-center text-violet-400 font-bold font-mono text-sm mb-3">03</div>
+          <h3 class="font-bold text-white text-base">Multi-Engine Polyglot Synthesis</h3>
+          <p class="text-xs text-slate-300 mt-1.5 leading-relaxed">
+            A single agent can correlate historical ERP rows (SQL), real-time IoT telemetry (KQL), and financial measures (DAX) without manual user joins.
+          </p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-5 border border-amber-500/25">
+          <div class="w-9 h-9 rounded-lg bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 font-bold font-mono text-sm mb-3">04</div>
+          <h3 class="font-bold text-white text-base">Write Once, Publish Everywhere</h3>
+          <p class="text-xs text-slate-300 mt-1.5 leading-relaxed">
+            Publish a Fabric Data Agent once and consume it as a plug-and-play Subagent or Tool inside Copilot Studio, Azure AI Foundry, and Microsoft 365 Copilot.
+          </p>
+        </div>
+      </div>
+
+      <!-- WHEN TO USE VS WHEN NOT TO USE MATRIX -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Ideal Use Cases -->
+        <div class="glass-card rounded-2xl p-6 border border-emerald-500/30">
+          <div class="flex items-center gap-2.5 mb-4">
+            <span class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-sm">✓</span>
+            <div>
+              <h3 class="text-lg font-bold text-white">When to Use Microsoft Agent Fabric</h3>
+              <p class="text-xs text-emerald-300 font-mono">High-Fit Enterprise Scenarios</p>
+            </div>
+          </div>
+          <ul class="space-y-3 text-xs sm:text-sm text-slate-200">
+            <li class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 flex items-start gap-3">
+              <span class="text-emerald-400 font-mono font-bold mt-0.5">01</span>
+              <div>
+                <strong class="text-white">Self-Service Cross-Domain Analytics:</strong> Business users need ad-hoc answers across Lakehouses, Warehouses, and Power BI models without writing SQL/DAX/KQL.
+              </div>
+            </li>
+            <li class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 flex items-start gap-3">
+              <span class="text-emerald-400 font-mono font-bold mt-0.5">02</span>
+              <div>
+                <strong class="text-white">Strict Row/Column Security Environments:</strong> Regulated Finance, Healthcare, or HR datasets where every query must honor per-user RLS/CLS and Purview DLP.
+              </div>
+            </li>
+            <li class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 flex items-start gap-3">
+              <span class="text-emerald-400 font-mono font-bold mt-0.5">03</span>
+              <div>
+                <strong class="text-white">Real-Time Operational Triage:</strong> Correlating live Eventhouse KQL telemetry streams with historical supply chain or maintenance records in OneLake.
+              </div>
+            </li>
+            <li class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 flex items-start gap-3">
+              <span class="text-emerald-400 font-mono font-bold mt-0.5">04</span>
+              <div>
+                <strong class="text-white">Multi-Agent Enterprise Copilots:</strong> Exposing governed enterprise data as a specialized domain subagent inside Azure AI Foundry or Copilot Studio workflows.
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Anti-Patterns / Choose Alternative -->
+        <div class="glass-card rounded-2xl p-6 border border-rose-500/30">
+          <div class="flex items-center gap-2.5 mb-4">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 text-rose-400 flex items-center justify-center font-bold text-sm">✕</span>
+            <div>
+              <h3 class="text-lg font-bold text-white">When to Choose an Alternative Pattern</h3>
+              <p class="text-xs text-rose-300 font-mono">Anti-Patterns & Architectural Alternatives</p>
+            </div>
+          </div>
+          <ul class="space-y-3 text-xs sm:text-sm text-slate-200">
+            <li class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 flex items-start gap-3">
+              <span class="text-rose-400 font-mono font-bold mt-0.5">01</span>
+              <div>
+                <strong class="text-white">Transactional OLTP Write-Backs (CRUD):</strong> Fabric Data Agents are strictly Read-Only. <em>Alternative:</em> Pair your orchestrator agent with a dedicated REST/MCP Action Tool or Power Automate flow for writes.
+              </div>
+            </li>
+            <li class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 flex items-start gap-3">
+              <span class="text-rose-400 font-mono font-bold mt-0.5">02</span>
+              <div>
+                <strong class="text-white">100% Unstructured Document Search Only:</strong> If you only have PDFs/Word docs and zero tabular/graph data in OneLake. <em>Alternative:</em> Use Azure AI Search Vector/Hybrid RAG directly.
+              </div>
+            </li>
+            <li class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 flex items-start gap-3">
+              <span class="text-rose-400 font-mono font-bold mt-0.5">03</span>
+              <div>
+                <strong class="text-white">Sub-50ms Hard Real-Time Control Loops:</strong> High-frequency trading or PLC machine shutoffs cannot wait for LLM reasoning latency. <em>Alternative:</em> Use Fabric Eventstreams + Activator deterministic rules.
+              </div>
+            </li>
+            <li class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 flex items-start gap-3">
+              <span class="text-rose-400 font-mono font-bold mt-0.5">04</span>
+              <div>
+                <strong class="text-white">Bulk ETL Data Pipelines:</strong> Never use conversational agents to move or transform millions of rows. <em>Alternative:</em> Use Fabric Data Factory pipelines or Spark Notebooks.
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 4: WHAT ARE TOOLS? (DETERMINISTIC EXECUTION PRIMITIVES)
+         ===================================================================== -->
+    <section id="sec-tools" class="infographic-section scroll-mt-28 space-y-6" data-keywords="what are tools nl2sql nl2dax nl2kql graph ontology mcp function tools code interpreter">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-800 pb-4">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-teal-400 font-semibold">Section 04 • Deterministic Execution Primitives</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">What Are Tools in Microsoft Agent Fabric?</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-400 max-w-md">
+          <strong>Tools</strong> are atomic, schema-typed capabilities invoked by an Agent to query data, run calculations, or interact with external APIs deterministically.
+        </p>
+      </div>
+
+      <!-- Two Categories of Tools -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Left: Native Fabric Data Agent Query Tools -->
+        <div class="lg:col-span-6 glass-card rounded-2xl p-6 border border-teal-500/30 space-y-4">
+          <div class="flex items-center justify-between">
+            <div>
+              <span class="text-xs font-mono uppercase text-teal-400 font-bold">Category A • Built-In Fabric Data Tools</span>
+              <h3 class="text-xl font-bold text-white">Native Analytical Query Engines</h3>
+            </div>
+            <span class="px-2.5 py-1 text-xs font-mono bg-teal-500/15 text-teal-300 border border-teal-500/30 rounded-lg">Managed by Fabric</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="font-mono font-bold text-sm text-teal-400">NL2SQL Tool</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 bg-slate-800 text-slate-300 rounded">T-SQL / Spark SQL</span>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Translates natural language into optimized T-SQL queries against <strong>Fabric Lakehouses</strong> (SQL Analytics Endpoint) and <strong>Fabric Data Warehouses</strong>.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="font-mono font-bold text-sm text-amber-400">NL2DAX Tool</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 bg-slate-800 text-slate-300 rounded">Power BI Semantic</span>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Generates validated <strong>DAX queries</strong> against Power BI Semantic Models, preserving verified business measures, hierarchies, and calculation groups.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="font-mono font-bold text-sm text-cyan-400">NL2KQL Tool</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 bg-slate-800 text-slate-300 rounded">Eventhouse / RTI</span>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Generates high-speed <strong>Kusto Query Language (KQL)</strong> queries for Real-Time Intelligence Eventhouses to analyze streaming logs, IoT, and time-series data in place.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="font-mono font-bold text-sm text-violet-400">Ontology / Graph Tool</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 bg-slate-800 text-slate-300 rounded">GQL / Entity Graph</span>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Traverses semantic relationships, business entities, and multi-hop graph topologies across <strong>Fabric Ontologies</strong> and Microsoft Graph.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Microsoft Agent Framework Extensibility Tools -->
+        <div class="lg:col-span-6 glass-card rounded-2xl p-6 border border-blue-500/30 space-y-4">
+          <div class="flex items-center justify-between">
+            <div>
+              <span class="text-xs font-mono uppercase text-blue-400 font-bold">Category B • Agent Framework & Foundry Tools</span>
+              <h3 class="text-xl font-bold text-white">Programmable & External Action Tools</h3>
+            </div>
+            <span class="px-2.5 py-1 text-xs font-mono bg-blue-500/15 text-blue-300 border border-blue-500/30 rounded-lg">C# / Python / MCP</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="font-mono font-bold text-sm text-blue-400">Function Tools (AIFunction)</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 bg-slate-800 text-slate-300 rounded">In-Process</span>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Strongly-typed C# (<code>AIFunctionFactory.Create</code>) or Python functions decorated with JSON Schema descriptions for custom business logic or API calls.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="font-mono font-bold text-sm text-emerald-400">MCP Tools</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 bg-slate-800 text-slate-300 rounded">Model Context Protocol</span>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Standardized client-server tool protocol allowing agents to discover and invoke remote enterprise tools, databases, and SaaS connectors dynamically.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="font-mono font-bold text-sm text-rose-400">Sandboxed Script Runner</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 bg-slate-800 text-slate-300 rounded">Code Interpreter</span>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Executes Python (<code>.py</code>), PowerShell (<code>.ps1</code>), or C# scripts inside isolated containers for statistical modeling, forecasting, or file validation.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="font-mono font-bold text-sm text-amber-400">OpenAPI & Logic Apps</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 bg-slate-800 text-slate-300 rounded">1,400+ Connectors</span>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Triggers external workflows in ServiceNow, SAP, Salesforce, or Jira when an analytical insight from Fabric requires downstream action.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 5: WHAT ARE AGENTS & SUBAGENTS? (HIERARCHICAL INTELLIGENCE)
+         ===================================================================== -->
+    <section id="sec-agents" class="infographic-section scroll-mt-28 space-y-6" data-keywords="what are agents subagents orchestrator connected agents handoff fan-out">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-800 pb-4">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-violet-400 font-semibold">Section 05 • Hierarchical Multi-Agent Topology</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">What Are Agents vs. Subagents?</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-400 max-w-md">
+          Instead of cramming 60 tables and 15 tools into a single bloated agent, Microsoft Agent Fabric uses modular <strong>Orchestrator Agents</strong> and specialized <strong>Subagents</strong>.
+        </p>
+      </div>
+
+      <!-- Comparison Cards: Primary Agent vs Subagent -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        <div class="lg:col-span-5 space-y-4">
+          <div class="glass-card rounded-2xl p-5 border-t-4 border-t-violet-500">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono uppercase text-violet-400 font-bold">Tier 1 • Root Orchestrator</span>
+              <span class="px-2 py-0.5 text-[10px] font-mono bg-violet-500/20 text-violet-200 rounded">Foundry / Copilot Studio</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mt-1">Primary / Orchestrator Agent</h3>
+            <p class="text-xs text-slate-300 mt-1.5 leading-relaxed">
+              The user-facing intelligence that owns the conversation thread, global memory, intent decomposition, multi-step planning, and final response synthesis.
+            </p>
+            <ul class="mt-3 space-y-1.5 text-xs text-slate-300 font-mono">
+              <li>• Decomposes complex cross-domain prompts</li>
+              <li>• Routes sub-tasks to specialist Subagents</li>
+              <li>• Loads cross-cutting Skills (<code>SKILL.md</code>)</li>
+              <li>• Synthesizes outputs into executive narratives</li>
+            </ul>
+          </div>
+
+          <div class="glass-card rounded-2xl p-5 border-t-4 border-t-teal-500">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono uppercase text-teal-400 font-bold">Tier 2 • Domain Specialists</span>
+              <span class="px-2 py-0.5 text-[10px] font-mono bg-teal-500/20 text-teal-200 rounded">Fabric Data Agents</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mt-1">Subagents (Domain Specialists)</h3>
+            <p class="text-xs text-slate-300 mt-1.5 leading-relaxed">
+              Focused, autonomous agents encapsulated with their own system prompt, domain glossary, golden few-shot examples, and a curated set of up to 5 Fabric data sources.
+            </p>
+            <ul class="mt-3 space-y-1.5 text-xs text-slate-300 font-mono">
+              <li>• Isolated context window (prevents schema pollution)</li>
+              <li>• Independently versioned, evaluated & governed</li>
+              <li>• Exposed via Connected Agent / Agent-as-a-Tool</li>
+              <li>• Example: <em>Finance PBI Agent</em>, <em>IoT Eventhouse Agent</em></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Visual Multi-Agent Topology SVG Diagram -->
+        <div class="lg:col-span-7 glass-card rounded-2xl p-6 flex flex-col justify-between">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+            <div>
+              <span class="text-xs font-mono uppercase text-violet-400 font-semibold">Architectural Blueprint</span>
+              <h3 class="text-lg font-bold text-white">Orchestrator + Federated Fabric Subagents</h3>
+            </div>
+            <div class="flex gap-2 text-[11px] font-mono">
+              <span class="px-2 py-0.5 rounded bg-violet-500/20 text-violet-300 border border-violet-500/30">Connected Agents</span>
+              <span class="px-2 py-0.5 rounded bg-teal-500/20 text-teal-300 border border-teal-500/30">Isolated Schemas</span>
+            </div>
+          </div>
+
+          <!-- Interactive SVG Topology -->
+          <div class="w-full overflow-x-auto py-2">
+            <svg viewBox="0 0 680 320" class="w-full min-w-[540px] h-auto">
+              <defs>
+                <linearGradient id="gradOrch" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#4c1d95"/>
+                  <stop offset="100%" stop-color="#1e1b4b"/>
+                </linearGradient>
+                <linearGradient id="gradSub" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#0f766e"/>
+                  <stop offset="100%" stop-color="#0f172a"/>
+                </linearGradient>
+              </defs>
+
+              <!-- Connector Lines -->
+              <path d="M340 85 L125 160" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="5 4" fill="none"/>
+              <path d="M340 85 L340 160" stroke="#00bfa5" stroke-width="2" stroke-dasharray="5 4" fill="none"/>
+              <path d="M340 85 L555 160" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5 4" fill="none"/>
+
+              <!-- Tool Lines -->
+              <path d="M125 230 L125 265" stroke="#14b8a6" stroke-width="1.5" fill="none"/>
+              <path d="M340 230 L340 265" stroke="#f59e0b" stroke-width="1.5" fill="none"/>
+              <path d="M555 230 L555 265" stroke="#38bdf8" stroke-width="1.5" fill="none"/>
+
+              <!-- Root Orchestrator Node -->
+              <rect x="190" y="15" width="300" height="70" rx="14" fill="url(#gradOrch)" stroke="#a78bfa" stroke-width="2"/>
+              <text x="340" y="40" text-anchor="middle" fill="#ddd6fe" font-size="10" font-family="JetBrains Mono" font-weight="700">PRIMARY ORCHESTRATOR AGENT</text>
+              <text x="340" y="58" text-anchor="middle" fill="#ffffff" font-size="13" font-family="Inter" font-weight="800">Enterprise Supply &amp; Finance Copilot</text>
+              <text x="340" y="74" text-anchor="middle" fill="#c4b5fd" font-size="9.5" font-family="JetBrains Mono">Planner + Memory + Progressive Skills (SKILL.md)</text>
+
+              <!-- Subagent 1: Finance -->
+              <rect x="20" y="160" width="210" height="72" rx="12" fill="url(#gradSub)" stroke="#2dd4bf" stroke-width="1.5"/>
+              <text x="125" y="182" text-anchor="middle" fill="#5eead4" font-size="9.5" font-family="JetBrains Mono" font-weight="700">FABRIC SUBAGENT A</text>
+              <text x="125" y="200" text-anchor="middle" fill="#ffffff" font-size="12" font-family="Inter" font-weight="700">Finance Semantic Agent</text>
+              <text x="125" y="218" text-anchor="middle" fill="#94a3b8" font-size="9" font-family="JetBrains Mono">Scope: P&amp;L Model + GL Warehouse</text>
+
+              <!-- Subagent 2: Supply Chain -->
+              <rect x="235" y="160" width="210" height="72" rx="12" fill="url(#gradSub)" stroke="#2dd4bf" stroke-width="1.5"/>
+              <text x="340" y="182" text-anchor="middle" fill="#5eead4" font-size="9.5" font-family="JetBrains Mono" font-weight="700">FABRIC SUBAGENT B</text>
+              <text x="340" y="200" text-anchor="middle" fill="#ffffff" font-size="12" font-family="Inter" font-weight="700">Supply Chain Lakehouse Agent</text>
+              <text x="340" y="218" text-anchor="middle" fill="#94a3b8" font-size="9" font-family="JetBrains Mono">Scope: ERP Lakehouse + Ontology</text>
+
+              <!-- Subagent 3: Real-Time IoT -->
+              <rect x="450" y="160" width="210" height="72" rx="12" fill="url(#gradSub)" stroke="#2dd4bf" stroke-width="1.5"/>
+              <text x="555" y="182" text-anchor="middle" fill="#5eead4" font-size="9.5" font-family="JetBrains Mono" font-weight="700">FABRIC SUBAGENT C</text>
+              <text x="555" y="200" text-anchor="middle" fill="#ffffff" font-size="12" font-family="Inter" font-weight="700">Telemetry Eventhouse Agent</text>
+              <text x="555" y="218" text-anchor="middle" fill="#94a3b8" font-size="9" font-family="JetBrains Mono">Scope: Cold-Chain KQL Database</text>
+
+              <!-- Leaf Tool Nodes -->
+              <rect x="35" y="265" width="180" height="40" rx="8" fill="#090d16" stroke="#f59e0b" stroke-width="1.2"/>
+              <text x="125" y="289" text-anchor="middle" fill="#fcd34d" font-size="10.5" font-family="JetBrains Mono" font-weight="600">Tool: NL2DAX + NL2SQL</text>
+
+              <rect x="250" y="265" width="180" height="40" rx="8" fill="#090d16" stroke="#10b981" stroke-width="1.2"/>
+              <text x="340" y="289" text-anchor="middle" fill="#6ee7b7" font-size="10.5" font-family="JetBrains Mono" font-weight="600">Tool: NL2SQL + GQL Graph</text>
+
+              <rect x="465" y="265" width="180" height="40" rx="8" fill="#090d16" stroke="#38bdf8" stroke-width="1.2"/>
+              <text x="555" y="289" text-anchor="middle" fill="#7dd3fc" font-size="10.5" font-family="JetBrains Mono" font-weight="600">Tool: NL2KQL (Real-Time)</text>
+            </svg>
+          </div>
+
+          <!-- 4 Orchestration Patterns Footer -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-3 border-t border-slate-800/80 text-xs">
+            <div class="p-2.5 rounded-lg bg-slate-900/90 border border-slate-800">
+              <div class="font-mono font-bold text-violet-300">1. Connected Agent</div>
+              <div class="text-[11px] text-slate-400 mt-0.5">Invoked as a stateless tool call by parent.</div>
+            </div>
+            <div class="p-2.5 rounded-lg bg-slate-900/90 border border-slate-800">
+              <div class="font-mono font-bold text-teal-300">2. Handoff Routing</div>
+              <div class="text-[11px] text-slate-400 mt-0.5">Transfers dialog control to specialist.</div>
+            </div>
+            <div class="p-2.5 rounded-lg bg-slate-900/90 border border-slate-800">
+              <div class="font-mono font-bold text-blue-300">3. Concurrent Fan-Out</div>
+              <div class="text-[11px] text-slate-400 mt-0.5">Queries multiple Data Agents in parallel.</div>
+            </div>
+            <div class="p-2.5 rounded-lg bg-slate-900/90 border border-slate-800">
+              <div class="font-mono font-bold text-amber-300">4. Sequential Pipeline</div>
+              <div class="text-[11px] text-slate-400 mt-0.5">Output of Agent A feeds Agent B + Skill.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 6: HOW TOOLS, AGENTS & SUBAGENTS WORK IN TANDEM (SIMULATOR)
+         ===================================================================== -->
+    <section id="sec-tandem" class="infographic-section scroll-mt-28 space-y-6" data-keywords="tandem simulator orchestration trace sequence how tools agents subagents work together">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-800 pb-4">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-emerald-400 font-semibold">Section 06 • Interactive Multi-Agent Trace Simulator</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">How Agents, Subagents, Skills & Tools Work in Tandem</h2>
+        </div>
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="text-xs font-mono text-slate-400">Select Scenario:</span>
+          <button onclick="loadScenario(0)" id="scen-btn-0" class="px-3 py-1.5 rounded-lg text-xs font-mono font-semibold bg-teal-500/20 text-teal-300 border border-teal-400">
+            1. Margin Drop Root-Cause
+          </button>
+          <button onclick="loadScenario(1)" id="scen-btn-1" class="px-3 py-1.5 rounded-lg text-xs font-mono font-semibold bg-slate-900 text-slate-300 border border-slate-700 hover:border-slate-500">
+            2. Cold-Chain IoT Spoilage
+          </button>
+          <button onclick="loadScenario(2)" id="scen-btn-2" class="px-3 py-1.5 rounded-lg text-xs font-mono font-semibold bg-slate-900 text-slate-300 border border-slate-700 hover:border-slate-500">
+            3. Customer Churn & Risk Audit
+          </button>
+        </div>
+      </div>
+
+      <!-- Simulator Console -->
+      <div class="glass-card rounded-3xl p-6 border border-teal-500/30 space-y-6">
+        <!-- Top Prompt Bar & Playback Controls -->
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 p-4 rounded-2xl bg-slate-950/90 border border-slate-800">
+          <div class="space-y-1">
+            <div class="text-[11px] font-mono uppercase text-teal-400 flex items-center gap-2">
+              <span>USER EXECUTIVE PROMPT</span>
+              <span class="px-2 py-0.5 bg-slate-800 text-slate-300 rounded" id="simEntraBadge">Identity: cfo_emea@contoso.com (RLS: EMEA_Only)</span>
+            </div>
+            <div id="simPromptText" class="text-sm sm:text-base font-bold text-white">
+              "Why did our Q4 Gross Margin drop in EMEA, and did factory machine downtime contribute to expedited freight costs?"
+            </div>
+          </div>
+          <div class="flex items-center gap-2 shrink-0">
+            <button onclick="prevSimStep()" class="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono border border-slate-700 transition">
+              ← Prev Step
+            </button>
+            <button onclick="nextSimStep()" class="px-4 py-2 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-xs font-mono transition shadow-lg shadow-teal-500/20">
+              Next Step →
+            </button>
+            <button onclick="autoPlaySim()" id="autoPlayBtn" class="px-3 py-2 rounded-xl bg-blue-500/20 hover:bg-blue-500/30 text-blue-300 text-xs font-mono border border-blue-500/40 transition">
+              ▶ Auto-Trace
+            </button>
+          </div>
+        </div>
+
+        <!-- 6-Step Tandem Execution Track -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5" id="simStepNodes">
+          <!-- Populated dynamically via JS -->
+        </div>
+
+        <!-- Active Step Deep Inspector -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+          <div class="lg:col-span-6 p-5 rounded-2xl bg-slate-900/90 border border-slate-800 flex flex-col justify-between space-y-4">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span id="simStepActorBadge" class="px-2.5 py-1 rounded-md text-xs font-mono font-bold bg-violet-500/20 text-violet-300 border border-violet-500/30">
+                  ACTOR: ROOT ORCHESTRATOR AGENT
+                </span>
+                <span id="simStepLatency" class="text-xs font-mono text-slate-400">Latency: 340ms</span>
+              </div>
+              <h4 id="simStepHeadline" class="text-lg font-bold text-white">Intent Decomposition & Progressive Skill Match</h4>
+              <p id="simStepExplanation" class="text-xs sm:text-sm text-slate-300 leading-relaxed"></p>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-950 border border-slate-800 space-y-1.5">
+              <div class="text-[11px] font-mono uppercase text-teal-400 font-semibold">Active Guardrail & Context Check</div>
+              <div id="simStepGuardrail" class="text-xs text-slate-300 font-mono"></div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 rounded-2xl bg-slate-950 border border-slate-800 overflow-hidden flex flex-col">
+            <div class="px-4 py-2.5 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
+              <span id="simPayloadTitle" class="text-xs font-mono text-slate-300 font-semibold">Wire Payload / Generated Query</span>
+              <button onclick="copySimPayload()" id="copySimBtn" class="text-[11px] font-mono px-2.5 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-teal-300 border border-slate-700 transition">
+                Copy Payload
+              </button>
+            </div>
+            <pre id="simPayloadCode" class="p-4 text-xs font-mono text-cyan-300 overflow-x-auto leading-relaxed flex-1"></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 7: HOW TO USE SKILLS & WHEN TO USE SKILLS (SKILL.md)
+         ===================================================================== -->
+    <section id="sec-skills" class="infographic-section scroll-mt-28 space-y-6" data-keywords="skills skill.md progressive disclosure agentskillsprovider load_skill read_skill_resource run_skill_script">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-800 pb-4">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-amber-400 font-semibold">Section 07 • Progressive Disclosure Domain Packages</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">How & When to Use Agent Skills (<code>SKILL.md</code>)</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-400 max-w-md">
+          <strong>Agent Skills</strong> are portable directories containing a <code>SKILL.md</code> manifest, reference assets, and scripts that load <em>progressively on demand</em> instead of bloating the system prompt.
+        </p>
+      </div>
+
+      <!-- 4-Phase Progressive Disclosure Funnel -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="glass-card rounded-2xl p-5 border-t-4 border-t-amber-400 relative">
+          <div class="flex items-center justify-between text-xs font-mono mb-2">
+            <span class="text-amber-400 font-bold">PHASE 1 • ADVERTISE</span>
+            <span class="px-2 py-0.5 rounded bg-amber-500/15 text-amber-300">~100 Tokens</span>
+          </div>
+          <h3 class="text-base font-bold text-white">Frontmatter Discovery</h3>
+          <p class="text-xs text-slate-300 mt-1.5 leading-relaxed">
+            At startup, <code>AgentSkillsProvider</code> scans configured skill directories and injects only the YAML <code>name</code> and <code>description</code> into the system prompt.
+          </p>
+          <div class="mt-3 text-[11px] font-mono text-amber-300/90 bg-slate-950 p-2 rounded border border-slate-800">
+            Cost: Minimal context footprint even with 30+ installed skills.
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl p-5 border-t-4 border-t-teal-400 relative">
+          <div class="flex items-center justify-between text-xs font-mono mb-2">
+            <span class="text-teal-400 font-bold">PHASE 2 • LOAD</span>
+            <span class="px-2 py-0.5 rounded bg-teal-500/15 text-teal-300">&lt; 5,000 Tokens</span>
+          </div>
+          <h3 class="text-base font-bold text-white"><code>load_skill(skill_name)</code></h3>
+          <p class="text-xs text-slate-300 mt-1.5 leading-relaxed">
+            When a user's prompt matches the skill's description, the LLM calls the built-in <code>load_skill</code> tool to pull the full Markdown SOP body of <code>SKILL.md</code>.
+          </p>
+          <div class="mt-3 text-[11px] font-mono text-teal-300/90 bg-slate-950 p-2 rounded border border-slate-800">
+            Recommendation: Keep SKILL.md under 500 lines.
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl p-5 border-t-4 border-t-blue-400 relative">
+          <div class="flex items-center justify-between text-xs font-mono mb-2">
+            <span class="text-blue-400 font-bold">PHASE 3 • RESOURCES</span>
+            <span class="px-2 py-0.5 rounded bg-blue-500/15 text-blue-300">On-Demand I/O</span>
+          </div>
+          <h3 class="text-base font-bold text-white"><code>read_skill_resource</code></h3>
+          <p class="text-xs text-slate-300 mt-1.5 leading-relaxed">
+            If the SOP requires specific tax tables, JSON schemas, or policy templates, the agent invokes <code>read_skill_resource</code> to fetch files from <code>references/</code> or <code>assets/</code>.
+          </p>
+          <div class="mt-3 text-[11px] font-mono text-blue-300/90 bg-slate-950 p-2 rounded border border-slate-800">
+            Supports: .md, .json, .yaml, .csv, .xml, .txt (2–3 levels deep).
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl p-5 border-t-4 border-t-rose-400 relative">
+          <div class="flex items-center justify-between text-xs font-mono mb-2">
+            <span class="text-rose-400 font-bold">PHASE 4 • SCRIPTS</span>
+            <span class="px-2 py-0.5 rounded bg-rose-500/15 text-rose-300">HITL Guarded</span>
+          </div>
+          <h3 class="text-base font-bold text-white"><code>run_skill_script</code></h3>
+          <p class="text-xs text-slate-300 mt-1.5 leading-relaxed">
+            For deterministic math or validation, the agent invokes <code>run_skill_script</code> on <code>scripts/*.py</code> or <code>*.ps1</code>, gated by <code>ToolApprovalMiddleware</code>.
+          </p>
+          <div class="mt-3 text-[11px] font-mono text-rose-300/90 bg-slate-950 p-2 rounded border border-slate-800">
+            Security: Path traversal &amp; symlink escapes strictly blocked.
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Code & Architecture Explorer for Skills -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        <!-- Left: 4-Way Architectural Comparison Matrix -->
+        <div class="lg:col-span-6 glass-card rounded-2xl p-6 space-y-4">
+          <div>
+            <span class="text-xs font-mono uppercase text-amber-400 font-semibold">Decision Guide</span>
+            <h3 class="text-lg font-bold text-white">Instructions vs. Skills vs. Tools vs. Subagents</h3>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs">
+              <thead>
+                <tr class="border-b border-slate-800 text-slate-400 font-mono">
+                  <th class="py-2.5 pr-2">Primitive</th>
+                  <th class="py-2.5 px-2">Loaded When?</th>
+                  <th class="py-2.5 px-2">Token Cost</th>
+                  <th class="py-2.5 pl-2">When to Use</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800/70 text-slate-200">
+                <tr>
+                  <td class="py-3 pr-2 font-bold text-teal-300 font-mono">Agent Instructions</td>
+                  <td class="py-3 px-2">Every Turn (Always On)</td>
+                  <td class="py-3 px-2 font-mono text-rose-300">100% Upfront</td>
+                  <td class="py-3 pl-2">Core persona, global tone, universal fiscal calendar, and top-level routing rules.</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-2 font-bold text-amber-300 font-mono">Skills (SKILL.md)</td>
+                  <td class="py-3 px-2">Progressively On-Demand</td>
+                  <td class="py-3 px-2 font-mono text-emerald-300">~100 tokens idle</td>
+                  <td class="py-3 pl-2">Reusable domain SOPs, audit checklists, multi-step analytical methodologies, bundled scripts.</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-2 font-bold text-blue-300 font-mono">Tools (NL2SQL/MCP)</td>
+                  <td class="py-3 px-2">Schema in Prompt; Runs on Call</td>
+                  <td class="py-3 px-2 font-mono text-amber-300">Schema per tool</td>
+                  <td class="py-3 pl-2">Deterministic database queries (SQL/DAX/KQL), API fetches, or exact computations.</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-2 font-bold text-violet-300 font-mono">Subagents</td>
+                  <td class="py-3 px-2">Delegated via Orchestrator</td>
+                  <td class="py-3 px-2 font-mono text-emerald-300">Isolated Context</td>
+                  <td class="py-3 pl-2">When crossing domain boundaries (>5 Fabric sources) or isolating distinct RBAC/schema scopes.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Right: Multi-Tab Code & Folder Structure Preview -->
+        <div class="lg:col-span-6 glass-card rounded-2xl overflow-hidden flex flex-col border border-slate-800">
+          <div class="px-4 py-2.5 bg-slate-900 border-b border-slate-800 flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-1.5">
+              <button onclick="switchSkillTab('manifest')" id="skill-tab-manifest" class="px-2.5 py-1 rounded text-xs font-mono font-semibold bg-amber-500/20 text-amber-300 border border-amber-500/40">
+                1. SKILL.md
+              </button>
+              <button onclick="switchSkillTab('csharp')" id="skill-tab-csharp" class="px-2.5 py-1 rounded text-xs font-mono font-semibold bg-slate-800 text-slate-400 hover:text-white">
+                2. C# Setup
+              </button>
+              <button onclick="switchSkillTab('python')" id="skill-tab-python" class="px-2.5 py-1 rounded text-xs font-mono font-semibold bg-slate-800 text-slate-400 hover:text-white">
+                3. Python Setup
+              </button>
+            </div>
+            <button onclick="copySkillCode()" id="copySkillBtn" class="text-[11px] font-mono px-2.5 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-amber-300 border border-slate-700 transition">
+              Copy Code
+            </button>
+          </div>
+          <pre id="skillCodeDisplay" class="p-4 text-xs font-mono text-amber-200/95 overflow-x-auto leading-relaxed flex-1 bg-slate-950"></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 8: BEST DESIGN PRACTICES (THE 8 GOLDEN RULES)
+         ===================================================================== -->
+    <section id="sec-practices" class="infographic-section scroll-mt-28 space-y-6" data-keywords="best design practices golden rules schema pruning instructions few-shot examples semantic model evaluation">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-800 pb-4">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-teal-400 font-semibold">Section 08 • Production Engineering Playbook</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">8 Best Design Practices for Microsoft Agent Fabric</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-400 max-w-md">
+          Battle-tested architectural patterns to maximize NL2SQL/DAX/KQL accuracy, minimize token latency, and prevent hallucinations.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Practice 1 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-5 flex flex-col justify-between space-y-3">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-teal-400 font-bold">
+              <span>RULE 01 • SCHEMA HYGIENE</span>
+              <span>≤ 5 Sources</span>
+            </div>
+            <h3 class="text-base font-bold text-white mt-1">Curate & Prune Schema Scope</h3>
+            <p class="text-xs text-slate-300 mt-1.5 leading-relaxed">
+              Only check the specific tables, views, and columns required for the domain. Exposing 200 staging tables degrades NL2SQL routing accuracy and inflates prompt tokens.
+            </p>
+          </div>
+          <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800 text-[11px] font-mono">
+            <div class="text-emerald-400">✓ DO: Expose 8–15 curated Gold Star-Schema tables.</div>
+            <div class="text-rose-400 mt-0.5">✕ AVOID: Selecting raw Bronze ingestion tables.</div>
+          </div>
+        </div>
+
+        <!-- Practice 2 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-5 flex flex-col justify-between space-y-3">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-blue-400 font-bold">
+              <span>RULE 02 • GLOSSARY GROUNDING</span>
+              <span>Agent Instructions</span>
+            </div>
+            <h3 class="text-base font-bold text-white mt-1">Encode Acronym & Fiscal Rules</h3>
+            <p class="text-xs text-slate-300 mt-1.5 leading-relaxed">
+              Use Fabric Data Agent instructions to define company-specific terminology (e.g., "FY26 starts July 1", "Active Customer = Status_Code IN (1,4)"), and preferred table routing.
+            </p>
+          </div>
+          <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800 text-[11px] font-mono">
+            <div class="text-emerald-400">✓ DO: Map business terms to exact column names.</div>
+            <div class="text-rose-400 mt-0.5">✕ AVOID: Vague prose without column references.</div>
+          </div>
+        </div>
+
+        <!-- Practice 3 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-5 flex flex-col justify-between space-y-3">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-violet-400 font-bold">
+              <span>RULE 03 • FEW-SHOT SEEDING</span>
+              <span>Example Queries</span>
+            </div>
+            <h3 class="text-base font-bold text-white mt-1">Seed Golden Few-Shot Pairs</h3>
+            <p class="text-xs text-slate-300 mt-1.5 leading-relaxed">
+              Provide 10–25 verified Question-to-SQL/KQL/DAX examples in the Data Agent configuration covering complex multi-table joins, window functions, and time-intelligence.
+            </p>
+          </div>
+          <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800 text-[11px] font-mono">
+            <div class="text-emerald-400">✓ DO: Seed edge-case joins &amp; YoY calculations.</div>
+            <div class="text-rose-400 mt-0.5">✕ AVOID: Relying zero-shot on cryptic legacy schemas.</div>
+          </div>
+        </div>
+
+        <!-- Practice 4 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-5 flex flex-col justify-between space-y-3">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-amber-400 font-bold">
+              <span>RULE 04 • SEMANTIC LAYER FIRST</span>
+              <span>NL2DAX Priority</span>
+            </div>
+            <h3 class="text-base font-bold text-white mt-1">Use Semantic Models for KPIs</h3>
+            <p class="text-xs text-slate-300 mt-1.5 leading-relaxed">
+              Never force an LLM to reinvent complex accounting formulas in raw SQL when a validated Power BI Semantic Model measure already exists. Route KPI queries to NL2DAX.
+            </p>
+          </div>
+          <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800 text-[11px] font-mono">
+            <div class="text-emerald-400">✓ DO: Query verified DAX measures for Margin/ARR.</div>
+            <div class="text-rose-400 mt-0.5">✕ AVOID: Ad-hoc SQL math on unaggregated ledgers.</div>
+          </div>
+        </div>
+
+        <!-- Practice 5 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-5 flex flex-col justify-between space-y-3">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-emerald-400 font-bold">
+              <span>RULE 05 • CONTEXT BUDGETING</span>
+              <span>SKILL.md</span>
+            </div>
+            <h3 class="text-base font-bold text-white mt-1">Offload Runbooks to Skills</h3>
+            <p class="text-xs text-slate-300 mt-1.5 leading-relaxed">
+              Move specialized audit workflows, compliance checklists, and statistical scripts out of the global system prompt and into modular <code>SKILL.md</code> packages.
+            </p>
+          </div>
+          <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800 text-[11px] font-mono">
+            <div class="text-emerald-400">✓ DO: Keep SKILL.md &lt;500 lines + reference files.</div>
+            <div class="text-rose-400 mt-0.5">✕ AVOID: 15,000-token monolithic system prompts.</div>
+          </div>
+        </div>
+
+        <!-- Practice 6 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-5 flex flex-col justify-between space-y-3">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-rose-400 font-bold">
+              <span>RULE 06 • DOMAIN FEDERATION</span>
+              <span>Subagent Topology</span>
+            </div>
+            <h3 class="text-base font-bold text-white mt-1">Split by Domain into Subagents</h3>
+            <p class="text-xs text-slate-300 mt-1.5 leading-relaxed">
+              Build dedicated Fabric Data Agents per business domain (Finance, Supply Chain, HR, Telemetry) and compose them via an Azure AI Foundry or Copilot Studio Orchestrator.
+            </p>
+          </div>
+          <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800 text-[11px] font-mono">
+            <div class="text-emerald-400">✓ DO: 3 focused Data Agents federated by 1 Root.</div>
+            <div class="text-rose-400 mt-0.5">✕ AVOID: Mixing unrelated schemas in 1 agent.</div>
+          </div>
+        </div>
+
+        <!-- Practice 7 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-5 flex flex-col justify-between space-y-3">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-cyan-400 font-bold">
+              <span>RULE 07 • RBAC VERIFICATION</span>
+              <span>Multi-Persona QA</span>
+            </div>
+            <h3 class="text-base font-bold text-white mt-1">Test with Restricted Personas</h3>
+            <p class="text-xs text-slate-300 mt-1.5 leading-relaxed">
+              Developers often test agents using Workspace Admin accounts. Always test with low-privilege service test accounts to verify RLS, CLS, and Power BI Read permissions.
+            </p>
+          </div>
+          <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800 text-[11px] font-mono">
+            <div class="text-emerald-400">✓ DO: Validate graceful handling of RLS-empty rows.</div>
+            <div class="text-rose-400 mt-0.5">✕ AVOID: Testing only with Admin / Owner tokens.</div>
+          </div>
+        </div>
+
+        <!-- Practice 8 -->
+        <div class="glass-card glass-card-hover rounded-2xl p-5 flex flex-col justify-between space-y-3">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-purple-400 font-bold">
+              <span>RULE 08 • AUTOMATED EVALS</span>
+              <span>Fabric SDK CI/CD</span>
+            </div>
+            <h3 class="text-base font-bold text-white mt-1">Run Golden Evaluation Suites</h3>
+            <p class="text-xs text-slate-300 mt-1.5 leading-relaxed">
+              Use the Fabric Data Agent Python SDK and Foundry Evaluators to run automated batch evaluations (SQL equivalence, groundedness, latency) before promoting across stages.
+            </p>
+          </div>
+          <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800 text-[11px] font-mono">
+            <div class="text-emerald-400">✓ DO: Gate deployment pipelines on ≥92% accuracy.</div>
+            <div class="text-rose-400 mt-0.5">✕ AVOID: Manual "vibe-check" prompt edits in Prod.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 9: CRITICAL DETAILS YOU MIGHT HAVE MISSED (HIDDEN GEMS)
+         ===================================================================== -->
+    <section id="sec-missed" class="infographic-section scroll-mt-28 space-y-6" data-keywords="missed details hidden gems read permission build permission eventhouse capacity f-sku evaluation sdk git">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-800 pb-4">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-amber-400 font-semibold">Section 09 • Architectural Nuances & Gotchas</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">6 Critical Details Engineers Often Miss</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-400 max-w-md">
+          Key licensing, permission, real-time querying, and lifecycle nuances that separate smooth enterprise rollouts from troubleshooting bottlenecks.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="glass-card rounded-2xl p-5 border border-teal-500/30 space-y-2">
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono bg-teal-500/15 text-teal-300">
+            <span>GEM #1 • POWER BI PERMISSIONS</span>
+          </div>
+          <h3 class="text-base font-bold text-white">Only "Read" Permission Needed on Semantic Models</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Historically, querying a Power BI Semantic Model required granting users <em>Build</em> permission (which also let them build their own reports). With Fabric Data Agents, end-users only need <strong>Read</strong> permission on the Semantic Model to ask natural language questions!
+          </p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-5 border border-cyan-500/30 space-y-2">
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono bg-cyan-500/15 text-cyan-300">
+            <span>GEM #2 • ZERO-MOVEMENT REAL-TIME KQL</span>
+          </div>
+          <h3 class="text-base font-bold text-white">In-Place Eventhouse Streaming Queries</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            When you attach an Eventhouse KQL database to a Fabric Data Agent, queries execute <strong>in-place</strong> against live streaming ingestion tables with sub-second indexing—no batch copy or mirroring lag required.
+          </p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-5 border border-violet-500/30 space-y-2">
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono bg-violet-500/15 text-violet-300">
+            <span>GEM #3 • DIAGNOSTIC QUERY TRANSPARENCY</span>
+          </div>
+          <h3 class="text-base font-bold text-white">Full Intermediate Step & Query Inspection</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Every response generated by a Fabric Data Agent includes an expandable execution trace showing the exact <strong>generated SQL, DAX, or KQL code</strong> and intermediate tool outputs so analysts can verify auditability.
+          </p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-5 border border-amber-500/30 space-y-2">
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono bg-amber-500/15 text-amber-300">
+            <span>GEM #4 • PROGRAMMATIC SDK & CI/CD</span>
+          </div>
+          <h3 class="text-base font-bold text-white">Fabric Data Agent Python SDK & Git ALM</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            You don't have to configure Data Agents solely by clicking in the browser UI. You can programmatically create, configure, seed few-shot examples, and run batch evaluations via the <code>fabric-data-agent-sdk</code> inside Fabric Notebooks and Git-integrated workspaces.
+          </p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-5 border border-blue-500/30 space-y-2">
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono bg-blue-500/15 text-blue-300">
+            <span>GEM #5 • MULTI-CHANNEL PUBLISHING</span>
+          </div>
+          <h3 class="text-base font-bold text-white">Native Consumption in Foundry & Copilot Studio</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            A published Fabric Data Agent generates a stable endpoint URL and metadata contract. In <strong>Azure AI Foundry</strong> or <strong>Microsoft Copilot Studio</strong>, you attach it in 2 clicks as a connected knowledge/agent resource with zero custom glue code.
+          </p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-5 border border-rose-500/30 space-y-2">
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono bg-rose-500/15 text-rose-300">
+            <span>GEM #6 • CAPACITY & TENANT SWITCHES</span>
+          </div>
+          <h3 class="text-base font-bold text-white">Paid F-SKU Capacity & Tenant Admin Prerequisites</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Creating and querying Fabric Data Agents requires a paid Fabric Capacity (F2 or higher) or Trial capacity, plus Tenant Admin enablement for Copilot/Azure OpenAI switches and cross-geo processing if your capacity region differs from the AOAI host region.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER SUMMARY -->
+    <footer class="border-t border-slate-800/80 pt-8 pb-12 text-center space-y-2">
+      <div class="text-xs font-mono text-teal-400">MICROSOFT AGENT FABRIC • ARCHITECTURAL REFERENCE INFOGRAPHIC</div>
+      <p class="text-xs text-slate-500">
+        Covers Microsoft Fabric Data Agents (Lakehouse, Warehouse, Power BI Semantic Models, Eventhouse KQL, Ontologies) &amp; Microsoft Agent Framework (Agents, Subagents, Tools, and <code>SKILL.md</code> Progressive Disclosure).
+      </p>
+    </footer>
+
+  </main>
+
+  <!-- INTERACTIVE JAVASCRIPT ENGINE -->
+  <script>
+    // =========================================================================
+    // 1. STAGE PIPELINE DATA (SECTION 1: HOW IT WORKS)
+    // =========================================================================
+    const pipelineData = [
+      {
+        badge: "STAGE 01 OF 06 • INTAKE & RAI",
+        title: "Question Parsing, Intent Disambiguation & RAI Screening",
+        desc: "When a user submits a natural language prompt, the session is initialized via the Azure OpenAI Assistant protocol inside Microsoft Fabric. Before touching any schema metadata, Azure AI Content Safety screens for prompt injection, jailbreaks, and policy violations. The orchestrator resolves multi-turn conversation history and rewrites ambiguous pronouns into an explicit analytical query.",
+        bullets: [
+          " Screens input via Azure AI Content Safety Prompt Shields",
+          " Resolves multi-turn thread context & fiscal date references",
+          " Checks tenant Copilot & Fabric Capacity (F-SKU) switches",
+          " Normalizes analytical intent before schema discovery"
+        ],
+        header: "trace_stage_01_intake.json",
+        code: `{
+  "stage": "01_QuestionParsingAndValidation",
+  "session_id": "fab-agt-9941-88a",
+  "raw_prompt": "How did our Q4 EMEA margin compare to plan?",
+  "rewritten_intent": "Compare Actual Gross Margin % vs Budget Gross Margin % for region 'EMEA' in Fiscal Quarter 'FY26-Q4'",
+  "rai_safety_check": {
+    "prompt_shield_status": "PASSED",
+    "jailbreak_detected": false,
+    "pii_redaction": "NONE_REQUIRED"
+  }
+}`
+      },
+      {
+        badge: "STAGE 02 OF 06 • ZERO-TRUST IDENTITY",
+        title: "Identity Passthrough & Microsoft Purview Governance Gate",
+        desc: "Microsoft Agent Fabric enforces strict On-Behalf-Of (OBO) identity passthrough. The agent never uses a privileged god-mode service account to query data. Instead, the requesting user's Entra ID token is bound to the session, ensuring downstream Row-Level Security (RLS), Column-Level Security (CLS), Object-Level Security (OLS), and Purview DLP policies are enforced.",
+        bullets: [
+          " Binds user's Microsoft Entra ID OAuth2 token (OBO flow)",
+          " Evaluates Microsoft Purview Sensitivity Labels & DLP policies",
+          " Enforces Read-Only connection gate across all attached sources",
+          " Verifies user has at least 'Read' permission on target items"
+        ],
+        header: "trace_stage_02_identity_gate.json",
+        code: `{
+  "stage": "02_IdentityAndGovernanceGate",
+  "principal": "analyst_emea@contoso.com",
+  "entra_oid": "7f9c2d10-44b1-4a8e-9b22-11908a6c4e12",
+  "access_mode": "STRICT_READ_ONLY",
+  "purview_policy": {
+    "sensitivity_label": "Confidential \\\\ Finance Internal",
+    "dlp_action": "ALLOW_WITH_AUDIT"
+  },
+  "security_predicates": {
+    "RLS_Filter": "DimRegion[RegionCode] = 'EMEA'",
+    "CLS_MaskedColumns": ["EmployeeSSN", "BankRoutingNumber"]
+  }
+}`
+      },
+      {
+        badge: "STAGE 03 OF 06 • SCHEMA DISCOVERY",
+        title: "Curated Data Source & Schema Discovery (Up to 5 Sources)",
+        desc: "The agent inspects the curated metadata of up to 5 attached Fabric data sources (Lakehouses, Warehouses, Power BI Semantic Models, Eventhouse KQL databases, and Ontologies). Only the specific tables, views, columns, and semantic measures explicitly selected by the creator in the Data Agent Explorer are visible to the model.",
+        bullets: [
+          " Evaluates up to 5 attached sources per Fabric Data Agent",
+          " Inspects whitelisted tables, column types, and PK/FK joins",
+          " Reads Power BI Semantic Model measures, relationships & descriptions",
+          " Applies creator-defined Agent Instructions & business glossary"
+        ],
+        header: "trace_stage_03_schema_discovery.json",
+        code: `{
+  "stage": "03_SchemaAndSourceDiscovery",
+  "attached_sources_count": 3,
+  "candidate_sources": [
+    {
+      "type": "PowerBISemanticModel",
+      "name": "Enterprise_Finance_Cube",
+      "permission_required": "Read (Build NOT required)",
+      "matched_objects": ["Measures.[Gross Margin %]", "Measures.[Budget GM %]", "DimGeography[Region]"]
+    },
+    {
+      "type": "Lakehouse",
+      "name": "SupplyChain_Gold_LH",
+      "matched_objects": ["dbo.fact_freight_expedites", "dbo.dim_carrier"]
+    },
+    {
+      "type": "EventhouseKQL",
+      "name": "Factory_Telemetry_KQL",
+      "matched_objects": ["MachineDowntimeEvents"]
+    }
+  ]
+}`
+      },
+      {
+        badge: "STAGE 04 OF 06 • TOOL ROUTING & QUERY GEN",
+        title: "Tool Selection & Grounded Query Generation (SQL / DAX / KQL)",
+        desc: "Based on the target source type, the agent selects the matching specialized tool: NL2DAX for Power BI Semantic Models, NL2SQL for Lakehouses/Warehouses, NL2KQL for Eventhouse Real-Time Intelligence, or Graph/Ontology tools. It retrieves the most relevant Golden Few-Shot examples configured by the author to synthesize an accurate query.",
+        bullets: [
+          " Routes KPI questions to NL2DAX to preserve governed measures",
+          " Routes tabular joins to NL2SQL and streaming logs to NL2KQL",
+          " Injects top-k matching Few-Shot example queries into context",
+          " Can load progressive Agent Skills (SKILL.md) for complex SOPs"
+        ],
+        header: "trace_stage_04_query_generation.dax",
+        code: `// Tool Selected: NL2DAX -> Target: Enterprise_Finance_Cube
+// Grounded via Golden Few-Shot Example #4 (Quarterly Variance)
+EVALUATE
+SUMMARIZECOLUMNS(
+    'DimGeography'[Region],
+    'DimCalendar'[FiscalQuarter],
+    FILTER(
+        ALL('DimCalendar'),
+        'DimCalendar'[FiscalQuarter] = "FY26-Q4"
+    ),
+    "Actual_GM_Pct", [Gross Margin %],
+    "Budget_GM_Pct", [Budget GM %],
+    "Variance_Bps", ([Gross Margin %] - [Budget GM %]) * 10000
+)`
+      },
+      {
+        badge: "STAGE 05 OF 06 • VALIDATION GATE",
+        title: "Deterministic Query Validation & Zero-Mutation Safety Gate",
+        desc: "Before executing against Fabric compute, the generated SQL, DAX, or KQL query passes through a deterministic validation gate. The parser verifies syntax validity, confirms no unapproved tables or columns are referenced, and guarantees zero DDL/DML data mutation commands exist.",
+        bullets: [
+          " Parses AST to verify valid T-SQL, DAX, or KQL syntax",
+          " Blocks DROP, DELETE, UPDATE, INSERT, ALTER, or .drop commands",
+          " Confirms all referenced tables/columns are in the curated whitelist",
+          " If syntax error occurs, triggers self-correction loop automatically"
+        ],
+        header: "trace_stage_05_validation.json",
+        code: `{
+  "stage": "05_QueryValidationAndSafetyGate",
+  "tool": "NL2DAX",
+  "ast_syntax_valid": true,
+  "mutation_check": "PASSED_READ_ONLY",
+  "ForbiddenKeywordsScanned": ["DROP", "DELETE", "UPDATE", "INSERT", "ALTER"],
+  "schema_boundary_check": "PASSED_ALL_OBJECTS_WHITELISTED",
+  "execution_approved": true
+}`
+      },
+      {
+        badge: "STAGE 06 OF 06 • EXECUTION & SYNTHESIS",
+        title: "OneLake Compute Execution & Grounded Answer Synthesis",
+        desc: "The validated query executes directly against the native Fabric compute engine (Analysis Services engine for DAX, SQL Endpoint for Lakehouse, Kusto engine for Eventhouse) under the user's Entra ID credentials. The structured result table is returned to the LLM, which synthesizes a clear executive summary alongside the transparent diagnostic query.",
+        bullets: [
+          " Executes zero-copy against OneLake / Analysis Services / KQL engines",
+          " Enforces user RLS/CLS at the storage/engine layer",
+          " Verifies numerical groundedness against returned dataset rows",
+          " Attaches expandable generated query & citation trace for audit"
+        ],
+        header: "trace_stage_06_response.json",
+        code: `{
+  "stage": "06_ExecutionAndSynthesis",
+  "compute_engine": "Fabric_Analysis_Services_VertiPaq",
+  "rows_returned": 1,
+  "result_payload": {
+    "Region": "EMEA",
+    "FiscalQuarter": "FY26-Q4",
+    "Actual_GM_Pct": 0.412,
+    "Budget_GM_Pct": 0.445,
+    "Variance_Bps": -330
+  },
+  "grounded_summary": "In FY26-Q4, EMEA Actual Gross Margin was 41.2% vs. a Budget of 44.5% (-330 bps variance). RLS Policy [EMEA_Only] applied."
+}`
+      }
+    ];
+
+    function selectStage(idx) {
+      const data = pipelineData[idx];
+      document.getElementById('stageDetailBadge').textContent = data.badge;
+      document.getElementById('stageDetailTitle').textContent = data.title;
+      document.getElementById('stageDetailDesc').textContent = data.desc;
+      document.getElementById('stageCodeHeader').textContent = data.header;
+      document.getElementById('stageCodeBlock').textContent = data.code;
+
+      const bulletsContainer = document.getElementById('stageDetailBullets');
+      bulletsContainer.innerHTML = data.bullets.map(b => `
+        <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs text-slate-200 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-teal-400 shrink-0"></span>
+          <span>${b}</span>
+        </div>
+      `).join('');
+
+      for (let i = 0; i < 6; i++) {
+        const btn = document.getElementById(`stage-btn-${i}`);
+        if (i === idx) {
+          btn.className = "stage-btn text-left p-3.5 rounded-2xl border transition-all bg-teal-500/15 border-teal-400 glow-teal";
+        } else {
+          btn.className = "stage-btn text-left p-3.5 rounded-2xl border transition-all bg-slate-900/80 border-slate-800 hover:border-slate-700";
+        }
+      }
+    }
+
+    // =========================================================================
+    // 2. MULTI-AGENT TANDEM SIMULATOR DATA (SECTION 6)
+    // =========================================================================
+    const scenarios = [
+      {
+        name: "Margin Drop Root-Cause",
+        userIdentity: "Identity: cfo_emea@contoso.com (RLS: EMEA_Only)",
+        prompt: '"Why did our Q4 Gross Margin drop in EMEA, and did factory machine downtime contribute to expedited freight costs?"',
+        steps: [
+          {
+            stepLabel: "01 • Root Orchestrator",
+            actor: "ACTOR: ROOT ORCHESTRATOR AGENT (FOUNDRY)",
+            latency: "Latency: 290ms",
+            headline: "Decomposes Multi-Domain Prompt & Matches Skill",
+            explanation: "The Root Orchestrator recognizes that answering this prompt requires three capabilities: (1) Financial Margin KPIs from the Finance Subagent, (2) Factory downtime logs from the Real-Time KQL Subagent, (3) Freight costs from the Supply Chain Lakehouse Subagent, plus the 'variance-root-cause' progressive Skill.",
+            guardrail: "Entra ID Token Verified • OBO Context Bound • Prompt Shield: CLEAN",
+            payloadTitle: "orchestrator_plan.json",
+            payload: `{
+  "plan_id": "plan-q4-margin-emea",
+  "matched_skill": "skills/variance-root-cause/SKILL.md (~95 tokens advertised)",
+  "parallel_subagent_calls": [
+    "Subagent_A: Finance_Semantic_Data_Agent",
+    "Subagent_B: Factory_Eventhouse_KQL_Agent",
+    "Subagent_C: SupplyChain_Lakehouse_Agent"
+  ]
+}`
+          },
+          {
+            stepLabel: "02 • Load Skill (SKILL.md)",
+            actor: "ACTOR: AGENT SKILLS PROVIDER",
+            latency: "Latency: 110ms",
+            headline: "Progressive Disclosure: Calls load_skill('variance-root-cause')",
+            explanation: "Instead of bloating every conversation turn with 4,000 tokens of accounting audit rules, the Orchestrator invokes `load_skill('variance-root-cause')` on demand to load the standard operating procedure for correlating COGS spikes with operational downtime.",
+            guardrail: "Path Validation: Verified inside ./skills/variance-root-cause • Symlink Check: PASSED",
+            payloadTitle: "load_skill_response.md",
+            payload: `---
+name: variance-root-cause
+description: Standard methodology for decomposing Gross Margin variance across Price, Volume, Mix, and Expedited Freight.
+---
+## Step-by-Step Audit Procedure
+1. Query governed [Gross Margin %] and [Freight Variance $] from Finance Semantic Model via NL2DAX.
+2. Query unplanned outage hours from Factory Eventhouse KQL where duration > 60 mins.
+3. Correlate outage dates with Air-Freight expedite shipments within a +72h window.`
+          },
+          {
+            stepLabel: "03 • Subagent A (NL2DAX)",
+            actor: "ACTOR: FINANCE FABRIC DATA AGENT",
+            latency: "Latency: 620ms",
+            headline: "Finance Subagent Invokes NL2DAX Against Power BI Model",
+            explanation: "Subagent A receives the sub-question for EMEA Q4 Margin. Using only 'Read' permission on the Enterprise Finance Semantic Model, it generates a validated DAX query that respects the user's EMEA Row-Level Security predicate.",
+            guardrail: "RLS Enforced: Region = 'EMEA' • Read-Only Connection • Semantic Measures Preserved",
+            payloadTitle: "finance_subagent_nl2dax.dax",
+            payload: `EVALUATE
+SUMMARIZECOLUMNS(
+    'DimPlant'[PlantName],
+    FILTER('DimGeography', 'DimGeography'[Region] = "EMEA"),
+    FILTER('DimCalendar', 'DimCalendar'[FiscalQuarter] = "FY26-Q4"),
+    "Actual_GM_Pct", [Gross Margin %],
+    "Budget_GM_Pct", [Budget GM %],
+    "Expedited_Freight_USD", [Expedited Air Freight $]
+)
+// Result: Munich Plant GM dropped -410 bps; Expedited Air Freight spiked +$1.42M`
+          },
+          {
+            stepLabel: "04 • Subagent B (NL2KQL)",
+            actor: "ACTOR: TELEMETRY EVENTHOUSE SUBAGENT",
+            latency: "Latency: 480ms",
+            headline: "Telemetry Subagent Invokes NL2KQL on Real-Time Eventhouse",
+            explanation: "In parallel, Subagent B queries the Real-Time Intelligence Eventhouse in-place using NL2KQL to inspect unplanned machine downtime at the Munich plant during Q4.",
+            guardrail: "Zero-Movement KQL Execution • Read-Only Query Gate (No .drop/.delete)",
+            payloadTitle: "telemetry_subagent_nl2kql.kql",
+            payload: `MachineDowntimeEvents
+| where PlantCode == "DE-MUC-01"
+| where Timestamp between (datetime(2026-10-01) .. datetime(2026-12-31))
+| where StoppageType == "Unplanned_Thermal_Fault"
+| summarize TotalDowntimeHours = sum(DurationMinutes) / 60.0,
+            IncidentCount = count()
+          by LineId, bin(Timestamp, 7d)
+| order by TotalDowntimeHours desc
+// Result: Line-3 had 68.5 hrs unplanned downtime in Nov Wk 2`
+          },
+          {
+            stepLabel: "05 • Subagent C (NL2SQL)",
+            actor: "ACTOR: SUPPLY CHAIN LAKEHOUSE SUBAGENT",
+            latency: "Latency: 540ms",
+            headline: "Supply Chain Subagent Joins Lakehouse Freight Tables via NL2SQL",
+            explanation: "Subagent C queries the OneLake Supply Chain Lakehouse SQL Analytics Endpoint to verify whether the November Week 2 downtime at Munich directly triggered emergency air-freight shipments.",
+            guardrail: "Whitelisted Gold Tables Only • Purview Sensitivity Label Inherited",
+            payloadTitle: "supply_chain_nl2sql.sql",
+            payload: `SELECT 
+    s.plant_code,
+    s.shipment_mode,
+    COUNT(s.shipment_id) AS expedited_shipments,
+    SUM(s.freight_cost_usd - s.standard_ocean_cost_usd) AS excess_cost_usd
+FROM dbo.fact_shipments s
+INNER JOIN dbo.dim_production_batch b ON s.batch_id = b.batch_id
+WHERE s.plant_code = 'DE-MUC-01'
+  AND s.ship_date BETWEEN '2026-11-08' AND '2026-11-22'
+  AND s.shipment_mode = 'CHARTER_AIR_EXPEDITE'
+GROUP BY s.plant_code, s.shipment_mode;
+-- Result: 19 Charter Air shipments = $1.31M excess cost`
+          },
+          {
+            stepLabel: "06 • Grounded Synthesis",
+            actor: "ACTOR: ROOT ORCHESTRATOR AGENT",
+            latency: "Latency: 410ms",
+            headline: "Cross-Engine Grounded Synthesis & Audit Citation",
+            explanation: "The Root Orchestrator combines the deterministic outputs from NL2DAX, NL2KQL, and NL2SQL following the `variance-root-cause` Skill format, delivering a cited, executive-ready answer.",
+            guardrail: "Groundedness Check: 100% Numerical Match • Full Query Trace Attached",
+            payloadTitle: "final_executive_response.json",
+            payload: `{
+  "executive_summary": "EMEA Q4 Gross Margin fell 330 bps below plan (41.2% vs 44.5%), driven primarily by the Munich Plant (-410 bps).",
+  "root_cause_chain": [
+    "1. [Eventhouse KQL]: Munich Line-3 experienced 68.5 hours of unplanned thermal downtime between Nov 8–15.",
+    "2. [Lakehouse SQL]: To meet customer SLAs after the outage, 19 batches were switched from Ocean to Charter Air, adding $1.31M in excess freight.",
+    "3. [Power BI DAX]: Total EMEA expedited freight hit $1.42M, accounting for 92% of the Q4 gross margin variance."
+  ],
+  "citations_attached": ["Enterprise_Finance_Cube (DAX)", "Factory_Telemetry_KQL (KQL)", "SupplyChain_Gold_LH (SQL)"]
+}`
+          }
+        ]
+      },
+      {
+        name: "Cold-Chain IoT Spoilage",
+        userIdentity: "Identity: qa_director@contoso.com (RLS: Global_QA)",
+        prompt: '"Which pharmaceutical vaccine lots had cold-chain temperature excursions > 8°C in the last 24 hours, and what is the financial inventory value at risk?"',
+        steps: [
+          {
+            stepLabel: "01 • Root Orchestrator",
+            actor: "ACTOR: ROOT ORCHESTRATOR AGENT",
+            latency: "Latency: 260ms",
+            headline: "Routes Real-Time IoT Stream + ERP Valuation Subagents",
+            explanation: "The Orchestrator splits the request into a real-time streaming query (Eventhouse KQL Subagent) and an inventory valuation lookup (ERP Warehouse SQL Subagent), while advertising the `cold-chain-compliance` Skill.",
+            guardrail: "Entra ID OBO Passthrough • GxP Audit Logging Active",
+            payloadTitle: "orchestrator_plan_coldchain.json",
+            payload: `{
+  "plan_id": "plan-coldchain-excursion",
+  "matched_skill": "skills/gxp-cold-chain-audit/SKILL.md",
+  "sequence": [
+    "Step 1: Query live reefer truck sensors in Eventhouse via NL2KQL",
+    "Step 2: Pass affected LotIDs to ERP Warehouse Agent via NL2SQL",
+    "Step 3: Run compliance classification script via run_skill_script"
+  ]
+}`
+          },
+          {
+            stepLabel: "02 • Subagent A (NL2KQL)",
+            actor: "ACTOR: REAL-TIME TELEMETRY DATA AGENT",
+            latency: "Latency: 390ms",
+            headline: "In-Place KQL Query Detects Live Reefer Excursion Lots",
+            explanation: "The Telemetry Subagent runs an in-place KQL query over the streaming Eventhouse table `ColdChainTelemetry` for the trailing 24 hours.",
+            guardrail: "Zero-Movement KQL • Read-Only Enforcement",
+            payloadTitle: "cold_chain_excursion.kql",
+            payload: `ColdChainTelemetry
+| where IngestionTime > ago(24h)
+| where TempCelsius > 8.0
+| summarize MaxTempC = max(TempCelsius),
+            ExcursionMinutes = count() * 5
+          by LotNumber, CarrierId, RouteCode
+| where ExcursionMinutes >= 15
+// Result: Lot 'VX-9082' (11.4°C for 45m) and Lot 'VX-9104' (9.2°C for 20m)`
+          },
+          {
+            stepLabel: "03 • Subagent B (NL2SQL)",
+            actor: "ACTOR: ERP DATA WAREHOUSE SUBAGENT",
+            latency: "Latency: 450ms",
+            headline: "Warehouse Subagent Calculates Inventory Value at Risk",
+            explanation: "Passing Lot numbers `VX-9082` and `VX-9104` from Step 2, the Warehouse Subagent queries the Fabric Data Warehouse via NL2SQL to retrieve lot value and customer destination.",
+            guardrail: "Whitelisted Views Only • CLS Masks Supplier Unit Margin",
+            payloadTitle: "inventory_valuation.sql",
+            payload: `SELECT 
+    lot_number,
+    product_name,
+    quantity_vials,
+    total_lot_value_usd,
+    destination_hospital
+FROM dbo.vw_active_vaccine_inventory
+WHERE lot_number IN ('VX-9082', 'VX-9104');
+-- Result: VX-9082 ($480,000) and VX-9104 ($215,000) = $695,000 Total Risk`
+          },
+          {
+            stepLabel: "04 • Load Skill & Resource",
+            actor: "ACTOR: AGENT SKILLS PROVIDER",
+            latency: "Latency: 140ms",
+            headline: "Loads WHO/FDA Stability Matrix via read_skill_resource",
+            explanation: "The agent calls `load_skill('gxp-cold-chain-audit')` and `read_skill_resource` to read `references/thermal_stability_thresholds.json` to determine whether the lots can be salvaged or must be quarantined.",
+            guardrail: "Resource Path Whitelisted • Read-Only Local Asset Fetch",
+            payloadTitle: "references/thermal_stability_thresholds.json",
+            payload: `{
+  "vaccine_class": "mRNA-Lipid",
+  "max_allowable_temp_c": 8.0,
+  "grace_period_minutes_under_10c": 30,
+  "mandatory_quarantine_above_10c": true
+}`
+          },
+          {
+            stepLabel: "05 • Sandboxed Script",
+            actor: "ACTOR: SKILL SCRIPT RUNNER",
+            latency: "Latency: 310ms",
+            headline: "Executes Deterministic Kinetic Degradation Script",
+            explanation: "The agent invokes `run_skill_script` on `scripts/mean_kinetic_temp.py` inside a sandboxed container to compute the exact Mean Kinetic Temperature (MKT) for FDA reporting.",
+            guardrail: "ToolApprovalMiddleware: Approved • Container Timeout: 5s",
+            payloadTitle: "run_skill_script_output.json",
+            payload: `{
+  "script": "scripts/mean_kinetic_temp.py",
+  "inputs": {"lots": ["VX-9082", "VX-9104"]},
+  "results": {
+    "VX-9082": {"MKT_Celsius": 10.6, "disposition": "MANDATORY_QUARANTINE"},
+    "VX-9104": {"MKT_Celsius": 8.4, "disposition": "SALVAGEABLE_WITH_QA_SIGN_OFF"}
+  }
+}`
+          },
+          {
+            stepLabel: "06 • Grounded Synthesis",
+            actor: "ACTOR: ROOT ORCHESTRATOR AGENT",
+            latency: "Latency: 350ms",
+            headline: "Delivers GxP Action Report with Quarantine Disposition",
+            explanation: "The Orchestrator presents the unified table showing $695,000 total inventory exposed, separating mandatory quarantine ($480K) from salvageable stock ($215K).",
+            guardrail: "100% Grounded in KQL + SQL + Deterministic Python MKT Output",
+            payloadTitle: "final_gxp_summary.json",
+            payload: `{
+  "total_value_exposed_usd": 695000,
+  "quarantine_required": {
+    "lot": "VX-9082",
+    "value_usd": 480000,
+    "reason": "Reached 11.4°C for 45 mins (MKT 10.6°C exceeds 10°C hard cap)"
+  },
+  "salvageable_under_grace_period": {
+    "lot": "VX-9104",
+    "value_usd": 215000,
+    "reason": "9.2°C for 20 mins is within the 30-min <10°C stability grace window"
+  }
+}`
+          }
+        ]
+      },
+      {
+        name: "Customer Churn & Risk Audit",
+        userIdentity: "Identity: vp_cs_na@contoso.com (RLS: North_America)",
+        prompt: '"Which Enterprise SaaS accounts renewing in Q1 have declining product telemetry AND open Sev-1 support tickets?"',
+        steps: [
+          {
+            stepLabel: "01 • Root Orchestrator",
+            actor: "ACTOR: ROOT ORCHESTRATOR AGENT",
+            latency: "Latency: 275ms",
+            headline: "Plans Cross-Graph + Telemetry + Semantic ARR Query",
+            explanation: "The Orchestrator coordinates the Revenue Power BI Subagent (ARR renewals), the Product Eventhouse Subagent (weekly active usage drops), and the Customer Ontology Graph Tool.",
+            guardrail: "Entra ID Token: North_America Scope • Purview DLP: Active",
+            payloadTitle: "churn_audit_plan.json",
+            payload: `{
+  "plan_id": "plan-q1-renewal-risk",
+  "subagents": [
+    "Revenue_Semantic_Agent (NL2DAX)",
+    "Product_Usage_Eventhouse_Agent (NL2KQL)",
+    "Customer360_Ontology_Agent (Graph/GQL)"
+  ]
+}`
+          },
+          {
+            stepLabel: "02 • Subagent A (NL2DAX)",
+            actor: "ACTOR: REVENUE SEMANTIC DATA AGENT",
+            latency: "Latency: 510ms",
+            headline: "Queries Q1 Renewing Accounts > $250K ARR via NL2DAX",
+            explanation: "Fetches North America Enterprise accounts renewing in Q1 using governed ARR measures in the Power BI Semantic Model.",
+            guardrail: "RLS Applied: Territory = 'NA' • Read Permission Only",
+            payloadTitle: "q1_renewals.dax",
+            payload: `EVALUATE
+FILTER(
+    SUMMARIZECOLUMNS(
+        'DimAccount'[AccountId],
+        'DimAccount'[AccountName],
+        'DimAccount'[RenewalDate],
+        "Annual_Contract_Value", [Total ARR $]
+    ),
+    [Total ARR $] >= 250000 &&
+    'DimAccount'[RenewalQuarter] = "FY27-Q1"
+)
+// Returns 14 Enterprise NA accounts totaling $6.8M ARR`
+          },
+          {
+            stepLabel: "03 • Subagent B (NL2KQL)",
+            actor: "ACTOR: PRODUCT TELEMETRY EVENTHOUSE AGENT",
+            latency: "Latency: 430ms",
+            headline: "Computes 30-Day Active Seat Drop via Eventhouse NL2KQL",
+            explanation: "Evaluates product clickstream telemetry in Eventhouse to identify which of those 14 accounts dropped >25% in Daily Active Users (DAU).",
+            guardrail: "In-Place KQL Execution • Zero Data Movement",
+            payloadTitle: "usage_decline.kql",
+            payload: `SaaSTelemetryEvents
+| where AccountId in ("ACC-104", "ACC-219", "ACC-388", "ACC-502")
+| evaluate activity_metrics(UserId, Timestamp, ago(60d), now(), 30d, AccountId)
+| extend MoM_DAU_Change_Pct = (dcount_current - dcount_prev) * 100.0 / dcount_prev
+| where MoM_DAU_Change_Pct <= -25.0
+// Identifies 3 accounts with steep usage drop: ACC-104 (-42%), ACC-388 (-31%)`
+          },
+          {
+            stepLabel: "04 • Subagent C (Ontology)",
+            actor: "ACTOR: CUSTOMER 360 ONTOLOGY AGENT",
+            latency: "Latency: 460ms",
+            headline: "Traverses Fabric Ontology Graph for Open Sev-1 Tickets",
+            explanation: "Uses the Fabric Ontology Graph tool to traverse relationships between `Account` -> `SupportEscalation` -> `ExecutiveSponsor`.",
+            guardrail: "Object-Level Security Verified • Read-Only Graph Traversal",
+            payloadTitle: "ontology_traversal.gql",
+            payload: `MATCH (a:Account)-[:HAS_TICKET]->(t:SupportTicket)
+WHERE a.accountId IN ['ACC-104', 'ACC-388']
+  AND t.severity = 'Sev-1'
+  AND t.status = 'OPEN'
+RETURN a.accountName, t.ticketId, t.summary, t.daysOpen
+// Matches: ACC-104 (Apex Global, $820K ARR) & ACC-388 (Vertex Corp, $540K ARR)`
+          },
+          {
+            stepLabel: "05 • Load Playbook Skill",
+            actor: "ACTOR: AGENT SKILLS PROVIDER",
+            latency: "Latency: 120ms",
+            headline: "Loads 'executive-save-playbook' Skill via load_skill",
+            explanation: "Loads the standardized Customer Success intervention matrix from `skills/executive-save-playbook/SKILL.md` to map risk tiers to concrete save actions.",
+            guardrail: "Progressive Context Cost: 820 tokens loaded on demand",
+            payloadTitle: "skills/executive-save-playbook/SKILL.md",
+            payload: `## Red-Zone Renewal Intervention Rules
+- If ARR > $500K AND Usage Drop > 30% AND Open Sev-1 > 5 days:
+  1. Assign VP Engineering Swarm Sponsor within 24 hours.
+  2. Pause automated renewal uplift notice.
+  3. Schedule Architecture Health Briefing.`
+          },
+          {
+            stepLabel: "06 • Grounded Synthesis",
+            actor: "ACTOR: ROOT ORCHESTRATOR AGENT",
+            latency: "Latency: 380ms",
+            headline: "Synthesizes Ranked Renewal Risk Matrix & Action Plan",
+            explanation: "Combines Power BI ARR, Eventhouse DAU telemetry, and Ontology Sev-1 ticket data into an actionable executive table.",
+            guardrail: "All Metrics Grounded & Cited • Zero Hallucinated Accounts",
+            payloadTitle: "renewal_risk_output.json",
+            payload: `{
+  "at_risk_arr_total_usd": 1360000,
+  "red_zone_accounts": [
+    {
+      "account": "Apex Global (ACC-104)",
+      "arr_usd": 820000,
+      "dau_trend_30d": "-42%",
+      "open_sev1": "INC-9921 (SSO Timeout - 9 days open)",
+      "recommended_action": "Assign VP Eng Swarm + Pause auto-uplift"
+    },
+    {
+      "account": "Vertex Corp (ACC-388)",
+      "arr_usd": 540000,
+      "dau_trend_30d": "-31%",
+      "open_sev1": "INC-9984 (API Throttling - 6 days open)",
+      "recommended_action": "Assign VP Eng Swarm + Architecture Briefing"
+    }
+  ]
+}`
+          }
+        ]
+      }
+    ];
+
+    let currentScenarioIdx = 0;
+    let currentStepIdx = 0;
+    let autoPlayInterval = null;
+
+    function loadScenario(scenIdx) {
+      stopAutoPlay();
+      currentScenarioIdx = scenIdx;
+      currentStepIdx = 0;
+
+      for (let i = 0; i < 3; i++) {
+        const btn = document.getElementById(`scen-btn-${i}`);
+        if (i === scenIdx) {
+          btn.className = "px-3 py-1.5 rounded-lg text-xs font-mono font-semibold bg-teal-500/20 text-teal-300 border border-teal-400";
+        } else {
+          btn.className = "px-3 py-1.5 rounded-lg text-xs font-mono font-semibold bg-slate-900 text-slate-300 border border-slate-700 hover:border-slate-500";
+        }
+      }
+
+      const scen = scenarios[scenIdx];
+      document.getElementById('simEntraBadge').textContent = scen.userIdentity;
+      document.getElementById('simPromptText').textContent = scen.prompt;
+      renderSimStepNodes();
+      renderActiveSimStep();
+    }
+
+    function renderSimStepNodes() {
+      const scen = scenarios[currentScenarioIdx];
+      const container = document.getElementById('simStepNodes');
+      container.innerHTML = scen.steps.map((s, idx) => {
+        const isActive = idx === currentStepIdx;
+        const isCompleted = idx < currentStepIdx;
+        let classes = "p-3 rounded-xl border text-left transition-all ";
+        if (isActive) {
+          classes += "bg-teal-500/20 border-teal-400 glow-teal";
+        } else if (isCompleted) {
+          classes += "bg-emerald-950/30 border-emerald-500/40";
+        } else {
+          classes += "bg-slate-900/80 border-slate-800 hover:border-slate-700";
+        }
+        return `
+          <button onclick="selectSimStep(${idx})" class="${classes}">
+            <div class="flex items-center justify-between text-[11px] font-mono">
+              <span class="${isActive ? 'text-teal-300 font-bold' : isCompleted ? 'text-emerald-400' : 'text-slate-400'}">${s.stepLabel}</span>
+              <span class="w-2 h-2 rounded-full ${isActive ? 'bg-teal-400 animate-ping' : isCompleted ? 'bg-emerald-400' : 'bg-slate-700'}"></span>
+            </div>
+            <div class="text-xs font-bold text-white mt-1 truncate">${s.headline}</div>
+          </button>
+        `;
+      }).join('');
+    }
+
+    function renderActiveSimStep() {
+      const step = scenarios[currentScenarioIdx].steps[currentStepIdx];
+      document.getElementById('simStepActorBadge').textContent = step.actor;
+      document.getElementById('simStepLatency').textContent = step.latency;
+      document.getElementById('simStepHeadline').textContent = step.headline;
+      document.getElementById('simStepExplanation').textContent = step.explanation;
+      document.getElementById('simStepGuardrail').textContent = step.guardrail;
+      document.getElementById('simPayloadTitle').textContent = step.payloadTitle;
+      document.getElementById('simPayloadCode').textContent = step.payload;
+    }
+
+    function selectSimStep(idx) {
+      stopAutoPlay();
+      currentStepIdx = idx;
+      renderSimStepNodes();
+      renderActiveSimStep();
+    }
+
+    function nextSimStep() {
+      const maxSteps = scenarios[currentScenarioIdx].steps.length;
+      currentStepIdx = (currentStepIdx + 1) % maxSteps;
+      renderSimStepNodes();
+      renderActiveSimStep();
+    }
+
+    function prevSimStep() {
+      stopAutoPlay();
+      const maxSteps = scenarios[currentScenarioIdx].steps.length;
+      currentStepIdx = (currentStepIdx - 1 + maxSteps) % maxSteps;
+      renderSimStepNodes();
+      renderActiveSimStep();
+    }
+
+    function autoPlaySim() {
+      const btn = document.getElementById('autoPlayBtn');
+      if (autoPlayInterval) {
+        stopAutoPlay();
+      } else {
+        btn.textContent = "⏸ Pause Trace";
+        autoPlayInterval = setInterval(() => {
+          nextSimStep();
+        }, 2600);
+      }
+    }
+
+    function stopAutoPlay() {
+      if (autoPlayInterval) {
+        clearInterval(autoPlayInterval);
+        autoPlayInterval = null;
+      }
+      const btn = document.getElementById('autoPlayBtn');
+      if (btn) btn.textContent = "▶ Auto-Trace";
+    }
+
+    // =========================================================================
+    // 3. SKILL.md CODE TABS (SECTION 7)
+    // =========================================================================
+    const skillTabsData = {
+      manifest: `# Directory Tree:
+# skills/
+# └── fabric-variance-audit/
+#     ├── SKILL.md
+#     ├── references/
+#     │   └── fiscal_calendar_rules.md
+#     └── scripts/
+#         └── zscore_outlier_check.py
+
+---
+name: fabric-variance-audit
+description: Standardized financial and operational variance audit methodology across Fabric Semantic Models (DAX) and Lakehouses (SQL). Use when asked to explain margin, revenue, or cost anomalies.
+license: MIT
+metadata:
+  author: enterprise-data-architecture
+  version: "2.1.0"
+---
+
+# Fabric Variance Audit Methodology
+
+## 1. KPI Grounding Rule
+Always query governed measures in the **Power BI Semantic Model** via \`NL2DAX\` first before querying raw Lakehouse tables.
+
+## 2. Reference Lookup
+Call \`read_skill_resource\` on \`references/fiscal_calendar_rules.md\` to resolve 4-4-5 retail calendar cutoffs.
+
+## 3. Statistical Outlier Verification
+When variance exceeds ±250 bps, invoke \`run_skill_script\` on \`scripts/zscore_outlier_check.py\`.`,
+
+      csharp: `using System;
+using System.IO;
+using Azure.AI.OpenAI;
+using Azure.Identity;
+using Microsoft.Agents.AI;
+using OpenAI.Responses;
+
+// 1. Discover portable Agent Skills from local/repo directories
+// Advertises only ~100 tokens per skill (name + description) at startup!
+var skillsProvider = new AgentSkillsProvider(
+    Path.Combine(AppContext.BaseDirectory, "skills")
+);
+
+// 2. Build the Agent with progressive disclosure tools:
+// Automatically registers load_skill, read_skill_resource, and run_skill_script
+AIAgent agent = new AzureOpenAIClient(
+        new Uri(endpoint), 
+        new DefaultAzureCredential())
+    .GetResponsesClient()
+    .AsAIAgent(new ChatClientAgentOptions
+    {
+        Name = "EnterpriseFabricOrchestrator",
+        ChatOptions = new()
+        {
+            Instructions = "You coordinate Fabric Data Subagents and domain skills."
+        },
+        AIContextProviders = [skillsProvider]
+    });
+
+// 3. Run query — agent loads SKILL.md on demand when needed
+AgentResponse response = await agent.RunAsync(
+    "Run a Q4 EMEA margin variance audit across our Finance and Factory Data Agents."
+);`,
+
+      python: `from pathlib import Path
+from azure.identity import DefaultAzureCredential
+from microsoft.agents.ai import Agent, AgentSkillsProvider
+from microsoft.agents.ai.middleware import (
+    ToolApprovalMiddleware,
+    ReadOnlyToolsAutoApprovalRule
+)
+
+# 1. Initialize Progressive Disclosure Skills Provider
+skills_provider = AgentSkillsProvider(
+    skills_directory=Path("./skills")
+)
+
+# 2. Enforce Guardrails: Auto-approve read-only tools (load_skill, NL2SQL, NL2DAX),
+#    but require approval/sandboxing for script execution (run_skill_script)
+approval_middleware = ToolApprovalMiddleware(
+    rules=[ReadOnlyToolsAutoApprovalRule()]
+)
+
+# 3. Create Orchestrator connected to Fabric Data Agent Subagents + Skills
+orchestrator = Agent(
+    name="EnterpriseFabricOrchestrator",
+    instructions="Synthesize insights across Fabric Data Agents using verified skills.",
+    context_providers=[skills_provider],
+    middleware=[approval_middleware]
+)`
+    };
+
+    let currentSkillTab = 'manifest';
+
+    function switchSkillTab(tabKey) {
+      currentSkillTab = tabKey;
+      document.getElementById('skillCodeDisplay').textContent = skillTabsData[tabKey];
+
+      ['manifest', 'csharp', 'python'].forEach(k => {
+        const btn = document.getElementById(`skill-tab-${k}`);
+        if (k === tabKey) {
+          btn.className = "px-2.5 py-1 rounded text-xs font-mono font-semibold bg-amber-500/20 text-amber-300 border border-amber-500/40";
+        } else {
+          btn.className = "px-2.5 py-1 rounded text-xs font-mono font-semibold bg-slate-800 text-slate-400 hover:text-white";
+        }
+      });
+    }
+
+    // =========================================================================
+    // 4. CLIPBOARD HELPERS & SEARCH FILTER
+    // =========================================================================
+    function copyTextFallback(text, buttonId, defaultLabel) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        const btn = document.getElementById(buttonId);
+        btn.textContent = "✓ Copied!";
+        setTimeout(() => { btn.textContent = defaultLabel; }, 1800);
+      } catch (e) {
+        console.error(e);
+      }
+      document.body.removeChild(textarea);
+    }
+
+    function copySimPayload() {
+      const code = document.getElementById('simPayloadCode').textContent;
+      copyTextFallback(code, 'copySimBtn', 'Copy Payload');
+    }
+
+    function copySkillCode() {
+      const code = document.getElementById('skillCodeDisplay').textContent;
+      copyTextFallback(code, 'copySkillBtn', 'Copy Code');
+    }
+
+    function filterSections(query) {
+      const normalized = query.trim().toLowerCase();
+      const sections = document.querySelectorAll('.infographic-section');
+      const resetBtn = document.getElementById('resetSearchBtn');
+
+      if (!normalized) {
+        sections.forEach(s => s.classList.remove('hidden'));
+        resetBtn.classList.add('hidden');
+        return;
+      }
+
+      resetBtn.classList.remove('hidden');
+      sections.forEach(sec => {
+        const text = (sec.innerText + ' ' + (sec.dataset.keywords || '')).toLowerCase();
+        if (text.includes(normalized)) {
+          sec.classList.remove('hidden');
+        } else {
+          sec.classList.add('hidden');
+        }
+      });
+    }
+
+    function resetFilter() {
+      const input = document.getElementById('globalSearch');
+      input.value = '';
+      filterSections('');
+    }
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Initialize all interactive views on window load
+    window.onload = function() {
+      selectStage(0);
+      loadScenario(0);
+      switchSkillTab('manifest');
+    };
+  </script>
+</body>
+</html>
