@@ -1,0 +1,5197 @@
+{
+  "org": {
+    "name": "IG Wealth PRO Surveillance (POC sandbox)",
+    "exported_at": "2026-11-03T07:30:00",
+    "api_version": "62.0",
+    "note": "Synthetic Salesforce export for the POC; aligned with data/statements, data/master-pro and data/client-extract."
+  },
+  "advisors": [
+    {
+      "Id": "005Hs0000001001",
+      "PRO_ID__c": "PRO-1001",
+      "Name": "David Chen",
+      "Email": "david.chen@igwealth-pro.ca",
+      "Rep_Code__c": "BR-014",
+      "Branch__c": "Toronto — Bay St. Branch",
+      "Title": "Senior Portfolio Manager",
+      "Branch_Manager__c": "Catherine Ng (Branch Manager)",
+      "Registration__c": "CIRO Approved Person",
+      "Pre_Clearance_Required__c": true,
+      "Outside_Accounts_On_Register__c": 20
+    },
+    {
+      "Id": "005Hs0000001002",
+      "PRO_ID__c": "PRO-1002",
+      "Name": "Priya Patel-Sharma",
+      "Email": "priya.patel@igwealth-pro.ca",
+      "Rep_Code__c": "BR-022",
+      "Branch__c": "Toronto — Midtown",
+      "Title": "VP, Investment Advisory",
+      "Branch_Manager__c": "Catherine Ng (Branch Manager)",
+      "Registration__c": "CIRO Approved Person",
+      "Pre_Clearance_Required__c": true,
+      "Outside_Accounts_On_Register__c": 13
+    },
+    {
+      "Id": "005Hs0000001003",
+      "PRO_ID__c": "PRO-1003",
+      "Name": "Marc-André Tremblay",
+      "Email": "ma.tremblay@igwealth-pro.ca",
+      "Rep_Code__c": "BR-031",
+      "Branch__c": "Montréal — Centre-Ville",
+      "Title": "Wealth Planning Director",
+      "Branch_Manager__c": "Luc Bergeron (Directeur de succursale)",
+      "Registration__c": "CIRO Approved Person",
+      "Pre_Clearance_Required__c": true,
+      "Outside_Accounts_On_Register__c": 19
+    },
+    {
+      "Id": "005Hs0000001004",
+      "PRO_ID__c": "PRO-1004",
+      "Name": "Jonathan Vance",
+      "Email": "jonathan.vance@igwealth-pro.ca",
+      "Rep_Code__c": "BR-019",
+      "Branch__c": "Toronto — North York",
+      "Title": "Executive Financial Consultant",
+      "Branch_Manager__c": "Catherine Ng (Branch Manager)",
+      "Registration__c": "CIRO Approved Person",
+      "Pre_Clearance_Required__c": true,
+      "Outside_Accounts_On_Register__c": 20
+    },
+    {
+      "Id": "005Hs0000001005",
+      "PRO_ID__c": "PRO-1005",
+      "Name": "Émilie Bouchard",
+      "Email": "emilie.bouchard@igwealth-pro.ca",
+      "Rep_Code__c": "BR-044",
+      "Branch__c": "Québec — Sainte-Foy",
+      "Title": "Regional Compliance Officer",
+      "Branch_Manager__c": "Isabelle Roy (Directrice de succursale)",
+      "Registration__c": "CIRO Approved Person",
+      "Pre_Clearance_Required__c": true,
+      "Outside_Accounts_On_Register__c": 7
+    },
+    {
+      "Id": "005Hs0000001006",
+      "PRO_ID__c": "PRO-1006",
+      "Name": "Sarah MacKinnon",
+      "Email": "sarah.mackinnon@igwealth-pro.ca",
+      "Rep_Code__c": "BR-061",
+      "Branch__c": "Halifax — Maritime Centre",
+      "Title": "Associate Investment Counselor",
+      "Branch_Manager__c": "Ian MacLeod (Branch Manager)",
+      "Registration__c": "CIRO Approved Person",
+      "Pre_Clearance_Required__c": true,
+      "Outside_Accounts_On_Register__c": 12
+    },
+    {
+      "Id": "005Hs0000001007",
+      "PRO_ID__c": "PRO-1007",
+      "Name": "Robert Kowalski",
+      "Email": "robert.kowalski@igwealth-pro.ca",
+      "Rep_Code__c": "BR-075",
+      "Branch__c": "Calgary — Bankers Hall",
+      "Title": "Private Wealth Advisor",
+      "Branch_Manager__c": "Dana Whitford (Branch Manager)",
+      "Registration__c": "CIRO Approved Person",
+      "Pre_Clearance_Required__c": true,
+      "Outside_Accounts_On_Register__c": 8
+    },
+    {
+      "Id": "005Hs0000001008",
+      "PRO_ID__c": "PRO-1008",
+      "Name": "Jean-François Gagnon",
+      "Email": "jf.gagnon@igwealth-pro.ca",
+      "Rep_Code__c": "BR-045",
+      "Branch__c": "Québec — Grande Allée",
+      "Title": "Senior Quantitative Analyst",
+      "Branch_Manager__c": "Isabelle Roy (Directrice de succursale)",
+      "Registration__c": "CIRO Approved Person",
+      "Pre_Clearance_Required__c": true,
+      "Outside_Accounts_On_Register__c": 11
+    },
+    {
+      "Id": "005Hs0000001009",
+      "PRO_ID__c": "PRO-1009",
+      "Name": "Elena Rostova",
+      "Email": "elena.rostova@igwealth-pro.ca",
+      "Rep_Code__c": "BR-088",
+      "Branch__c": "Vancouver — Bentall Centre",
+      "Title": "Director, Equity Research",
+      "Branch_Manager__c": "Grace Liu (Branch Manager)",
+      "Registration__c": "CIRO Approved Person",
+      "Pre_Clearance_Required__c": true,
+      "Outside_Accounts_On_Register__c": 21
+    },
+    {
+      "Id": "005Hs000000100A",
+      "PRO_ID__c": "PRO-1010",
+      "Name": "Michael O'Connor",
+      "Email": "michael.oconnor@igwealth-pro.ca",
+      "Rep_Code__c": "BR-052",
+      "Branch__c": "Ottawa — Constitution Sq.",
+      "Title": "Fixed Income Trader",
+      "Branch_Manager__c": "Paul Desrosiers (Branch Manager)",
+      "Registration__c": "CIRO Approved Person",
+      "Pre_Clearance_Required__c": true,
+      "Outside_Accounts_On_Register__c": 7
+    }
+  ],
+  "clients": [
+    {
+      "Id": "001Hs0000001009",
+      "Client_ID__c": "BR-CL-8001",
+      "Name": "MAPLE LEAF PENSION PLAN",
+      "Segment__c": "Institutional Pension",
+      "Account_Number__c": "440-19283-10",
+      "Fee_Program__c": "Fee-Based Discretionary",
+      "Risk_Profile__c": "Moderate",
+      "Investment_Objective__c": "Balanced growth & income",
+      "Time_Horizon__c": "10+ years",
+      "Investment_Knowledge__c": "Sophisticated",
+      "KYC_Last_Reviewed__c": "2026-06-08",
+      "Discretionary_Mandate_On_File__c": true,
+      "Primary_Rep_Code__c": "BR-045",
+      "Served_By_Rep_Codes__c": [
+        "BR-014",
+        "BR-019",
+        "BR-022",
+        "BR-031",
+        "BR-044",
+        "BR-045",
+        "BR-052",
+        "BR-061",
+        "BR-075",
+        "BR-088"
+      ]
+    },
+    {
+      "Id": "001Hs0000001006",
+      "Client_ID__c": "BR-CL-8002",
+      "Name": "ONTARIO HEALTHCARE ENDOWMENT",
+      "Segment__c": "Endowment / Foundation",
+      "Account_Number__c": "440-29384-11",
+      "Fee_Program__c": "Fee-Based Discretionary",
+      "Risk_Profile__c": "Moderate",
+      "Investment_Objective__c": "Long-term growth",
+      "Time_Horizon__c": "10+ years",
+      "Investment_Knowledge__c": "Sophisticated",
+      "KYC_Last_Reviewed__c": "2026-02-11",
+      "Discretionary_Mandate_On_File__c": true,
+      "Primary_Rep_Code__c": "BR-044",
+      "Served_By_Rep_Codes__c": [
+        "BR-014",
+        "BR-019",
+        "BR-022",
+        "BR-031",
+        "BR-044",
+        "BR-045",
+        "BR-052",
+        "BR-061",
+        "BR-075",
+        "BR-088"
+      ]
+    },
+    {
+      "Id": "001Hs000000100C",
+      "Client_ID__c": "BR-CL-8003",
+      "Name": "DR. ARTHUR & HELEN FINCH",
+      "Segment__c": "High-Net-Worth Joint",
+      "Account_Number__c": "440-38491-22",
+      "Fee_Program__c": "Advisory Commission",
+      "Risk_Profile__c": "Balanced",
+      "Investment_Objective__c": "Growth",
+      "Time_Horizon__c": "5-10 years",
+      "Investment_Knowledge__c": "Good",
+      "KYC_Last_Reviewed__c": "2026-06-21",
+      "Discretionary_Mandate_On_File__c": false,
+      "Primary_Rep_Code__c": "BR-075",
+      "Served_By_Rep_Codes__c": [
+        "BR-014",
+        "BR-019",
+        "BR-022",
+        "BR-031",
+        "BR-044",
+        "BR-045",
+        "BR-052",
+        "BR-061",
+        "BR-075",
+        "BR-088"
+      ]
+    },
+    {
+      "Id": "001Hs0000001003",
+      "Client_ID__c": "BR-CL-8004",
+      "Name": "NORTHERN HORIZON HOLDINGS LTD.",
+      "Segment__c": "Corporate Treasury",
+      "Account_Number__c": "440-49102-18",
+      "Fee_Program__c": "Fee-Based Discretionary",
+      "Risk_Profile__c": "Conservative",
+      "Investment_Objective__c": "Capital preservation",
+      "Time_Horizon__c": "1-3 years",
+      "Investment_Knowledge__c": "Good",
+      "KYC_Last_Reviewed__c": "2026-03-09",
+      "Discretionary_Mandate_On_File__c": true,
+      "Primary_Rep_Code__c": "BR-088",
+      "Served_By_Rep_Codes__c": [
+        "BR-014",
+        "BR-019",
+        "BR-022",
+        "BR-031",
+        "BR-044",
+        "BR-045",
+        "BR-052",
+        "BR-061",
+        "BR-075",
+        "BR-088"
+      ]
+    },
+    {
+      "Id": "001Hs0000001001",
+      "Client_ID__c": "BR-CL-8005",
+      "Name": "MARGARET & THOMAS STERLING",
+      "Segment__c": "High-Net-Worth Joint",
+      "Account_Number__c": "440-50291-14",
+      "Fee_Program__c": "Fee-Based Managed",
+      "Risk_Profile__c": "Balanced",
+      "Investment_Objective__c": "Growth",
+      "Time_Horizon__c": "5-10 years",
+      "Investment_Knowledge__c": "Good",
+      "KYC_Last_Reviewed__c": "2026-03-17",
+      "Discretionary_Mandate_On_File__c": false,
+      "Primary_Rep_Code__c": "BR-052",
+      "Served_By_Rep_Codes__c": [
+        "BR-014",
+        "BR-019",
+        "BR-022",
+        "BR-031",
+        "BR-044",
+        "BR-045",
+        "BR-052",
+        "BR-061",
+        "BR-075",
+        "BR-088"
+      ]
+    },
+    {
+      "Id": "001Hs0000001004",
+      "Client_ID__c": "BR-CL-8006",
+      "Name": "ST. LAWRENCE MARITIME TRUST",
+      "Segment__c": "Family Trust",
+      "Account_Number__c": "440-61920-19",
+      "Fee_Program__c": "Fee-Based Discretionary",
+      "Risk_Profile__c": "Balanced",
+      "Investment_Objective__c": "Growth & income",
+      "Time_Horizon__c": "10+ years",
+      "Investment_Knowledge__c": "Sophisticated",
+      "KYC_Last_Reviewed__c": "2026-05-16",
+      "Discretionary_Mandate_On_File__c": true,
+      "Primary_Rep_Code__c": "BR-088",
+      "Served_By_Rep_Codes__c": [
+        "BR-014",
+        "BR-019",
+        "BR-022",
+        "BR-031",
+        "BR-044",
+        "BR-045",
+        "BR-052",
+        "BR-061",
+        "BR-075",
+        "BR-088"
+      ]
+    },
+    {
+      "Id": "001Hs000000100F",
+      "Client_ID__c": "BR-CL-8007",
+      "Name": "KENSINGTON PRIVATE FOUNDATION",
+      "Segment__c": "Charitable Foundation",
+      "Account_Number__c": "440-72839-25",
+      "Fee_Program__c": "Fee-Based Discretionary",
+      "Risk_Profile__c": "Conservative",
+      "Investment_Objective__c": "Income & preservation",
+      "Time_Horizon__c": "5-10 years",
+      "Investment_Knowledge__c": "Sophisticated",
+      "KYC_Last_Reviewed__c": "2026-06-25",
+      "Discretionary_Mandate_On_File__c": true,
+      "Primary_Rep_Code__c": "BR-088",
+      "Served_By_Rep_Codes__c": [
+        "BR-014",
+        "BR-019",
+        "BR-022",
+        "BR-031",
+        "BR-044",
+        "BR-045",
+        "BR-052",
+        "BR-061",
+        "BR-075",
+        "BR-088"
+      ]
+    },
+    {
+      "Id": "001Hs000000100B",
+      "Client_ID__c": "BR-CL-8008",
+      "Name": "JEAN-LUC & CLAIRE BEAULIEU",
+      "Segment__c": "High-Net-Worth Joint",
+      "Account_Number__c": "440-83910-31",
+      "Fee_Program__c": "Advisory Commission",
+      "Risk_Profile__c": "Balanced",
+      "Investment_Objective__c": "Growth",
+      "Time_Horizon__c": "5-10 years",
+      "Investment_Knowledge__c": "Limited",
+      "KYC_Last_Reviewed__c": "2026-07-05",
+      "Discretionary_Mandate_On_File__c": false,
+      "Primary_Rep_Code__c": "BR-088",
+      "Served_By_Rep_Codes__c": [
+        "BR-014",
+        "BR-019",
+        "BR-022",
+        "BR-031",
+        "BR-044",
+        "BR-045",
+        "BR-052",
+        "BR-061",
+        "BR-075",
+        "BR-088"
+      ]
+    },
+    {
+      "Id": "001Hs000000100G",
+      "Client_ID__c": "BR-CL-8009",
+      "Name": "PACIFIC RIM LOGISTICS INC.",
+      "Segment__c": "Corporate Account",
+      "Account_Number__c": "440-94012-40",
+      "Fee_Program__c": "Fee-Based Managed",
+      "Risk_Profile__c": "Moderate",
+      "Investment_Objective__c": "Income",
+      "Time_Horizon__c": "3-5 years",
+      "Investment_Knowledge__c": "Limited",
+      "KYC_Last_Reviewed__c": "2026-05-20",
+      "Discretionary_Mandate_On_File__c": false,
+      "Primary_Rep_Code__c": "BR-031",
+      "Served_By_Rep_Codes__c": [
+        "BR-014",
+        "BR-019",
+        "BR-022",
+        "BR-031",
+        "BR-044",
+        "BR-045",
+        "BR-052",
+        "BR-061",
+        "BR-075",
+        "BR-088"
+      ]
+    },
+    {
+      "Id": "001Hs0000001005",
+      "Client_ID__c": "BR-CL-8010",
+      "Name": "WESTMOUNT HERITAGE ESTATES",
+      "Segment__c": "Estate / Trust",
+      "Account_Number__c": "440-10492-52",
+      "Fee_Program__c": "Fee-Based Discretionary",
+      "Risk_Profile__c": "Conservative",
+      "Investment_Objective__c": "Income & preservation",
+      "Time_Horizon__c": "3-5 years",
+      "Investment_Knowledge__c": "Sophisticated",
+      "KYC_Last_Reviewed__c": "2026-06-25",
+      "Discretionary_Mandate_On_File__c": true,
+      "Primary_Rep_Code__c": "BR-031",
+      "Served_By_Rep_Codes__c": [
+        "BR-014",
+        "BR-019",
+        "BR-022",
+        "BR-031",
+        "BR-044",
+        "BR-045",
+        "BR-052",
+        "BR-061",
+        "BR-075",
+        "BR-088"
+      ]
+    },
+    {
+      "Id": "001Hs000000100H",
+      "Client_ID__c": "BR-CL-8011",
+      "Name": "DR. RAJESH & ANITA MEHTA",
+      "Segment__c": "High-Net-Worth RRSP",
+      "Account_Number__c": "440-21503-63",
+      "Fee_Program__c": "Fee-Based Managed",
+      "Risk_Profile__c": "Growth",
+      "Investment_Objective__c": "Long-term growth",
+      "Time_Horizon__c": "10+ years",
+      "Investment_Knowledge__c": "Good",
+      "KYC_Last_Reviewed__c": "2026-05-11",
+      "Discretionary_Mandate_On_File__c": false,
+      "Primary_Rep_Code__c": "BR-044",
+      "Served_By_Rep_Codes__c": [
+        "BR-014",
+        "BR-019",
+        "BR-022",
+        "BR-031",
+        "BR-044",
+        "BR-045",
+        "BR-052",
+        "BR-061",
+        "BR-075",
+        "BR-088"
+      ]
+    },
+    {
+      "Id": "001Hs000000100A",
+      "Client_ID__c": "BR-CL-8012",
+      "Name": "PRAIRIE GRAIN COOPERATIVE FUND",
+      "Segment__c": "Institutional Reserve",
+      "Account_Number__c": "440-32614-74",
+      "Fee_Program__c": "Fee-Based Discretionary",
+      "Risk_Profile__c": "Conservative",
+      "Investment_Objective__c": "Capital preservation",
+      "Time_Horizon__c": "1-3 years",
+      "Investment_Knowledge__c": "Limited",
+      "KYC_Last_Reviewed__c": "2026-03-02",
+      "Discretionary_Mandate_On_File__c": true,
+      "Primary_Rep_Code__c": "BR-045",
+      "Served_By_Rep_Codes__c": [
+        "BR-014",
+        "BR-019",
+        "BR-022",
+        "BR-031",
+        "BR-044",
+        "BR-045",
+        "BR-052",
+        "BR-061",
+        "BR-075",
+        "BR-088"
+      ]
+    },
+    {
+      "Id": "001Hs0000001008",
+      "Client_ID__c": "BR-CL-8013",
+      "Name": "ATLANTIC OCEANIC VENTURES LP",
+      "Segment__c": "Corporate Margin",
+      "Account_Number__c": "440-43725-85",
+      "Fee_Program__c": "Advisory Commission",
+      "Risk_Profile__c": "Aggressive",
+      "Investment_Objective__c": "Speculation",
+      "Time_Horizon__c": "1-3 years",
+      "Investment_Knowledge__c": "Sophisticated",
+      "KYC_Last_Reviewed__c": "2026-02-04",
+      "Discretionary_Mandate_On_File__c": false,
+      "Primary_Rep_Code__c": "BR-019",
+      "Served_By_Rep_Codes__c": [
+        "BR-014",
+        "BR-019",
+        "BR-022",
+        "BR-031",
+        "BR-044",
+        "BR-045",
+        "BR-052",
+        "BR-061",
+        "BR-075",
+        "BR-088"
+      ]
+    },
+    {
+      "Id": "001Hs0000001007",
+      "Client_ID__c": "BR-CL-8014",
+      "Name": "VICTORIA PARK FAMILY OFFICE",
+      "Segment__c": "Multi-Family Office",
+      "Account_Number__c": "440-54836-96",
+      "Fee_Program__c": "Fee-Based Discretionary",
+      "Risk_Profile__c": "Growth",
+      "Investment_Objective__c": "Growth",
+      "Time_Horizon__c": "10+ years",
+      "Investment_Knowledge__c": "Good",
+      "KYC_Last_Reviewed__c": "2026-03-25",
+      "Discretionary_Mandate_On_File__c": true,
+      "Primary_Rep_Code__c": "BR-019",
+      "Served_By_Rep_Codes__c": [
+        "BR-014",
+        "BR-019",
+        "BR-022",
+        "BR-031",
+        "BR-044",
+        "BR-045",
+        "BR-052",
+        "BR-061",
+        "BR-075",
+        "BR-088"
+      ]
+    },
+    {
+      "Id": "001Hs000000100E",
+      "Client_ID__c": "BR-CL-8015",
+      "Name": "GREAT LAKES INFRASTRUCTURE CORP",
+      "Segment__c": "Corporate Treasury",
+      "Account_Number__c": "440-65947-07",
+      "Fee_Program__c": "Fee-Based Discretionary",
+      "Risk_Profile__c": "Conservative",
+      "Investment_Objective__c": "Capital preservation",
+      "Time_Horizon__c": "1-3 years",
+      "Investment_Knowledge__c": "Good",
+      "KYC_Last_Reviewed__c": "2026-05-03",
+      "Discretionary_Mandate_On_File__c": true,
+      "Primary_Rep_Code__c": "BR-088",
+      "Served_By_Rep_Codes__c": [
+        "BR-014",
+        "BR-019",
+        "BR-022",
+        "BR-031",
+        "BR-044",
+        "BR-045",
+        "BR-052",
+        "BR-061",
+        "BR-075",
+        "BR-088"
+      ]
+    },
+    {
+      "Id": "001Hs0000001002",
+      "Client_ID__c": "BR-CL-8016",
+      "Name": "CHÂTEAU FRONTENAC HOSPITALITY LP",
+      "Segment__c": "Corporate Margin",
+      "Account_Number__c": "440-76058-18",
+      "Fee_Program__c": "Advisory Commission",
+      "Risk_Profile__c": "Aggressive",
+      "Investment_Objective__c": "Speculation",
+      "Time_Horizon__c": "1-3 years",
+      "Investment_Knowledge__c": "Limited",
+      "KYC_Last_Reviewed__c": "2026-02-02",
+      "Discretionary_Mandate_On_File__c": false,
+      "Primary_Rep_Code__c": "BR-019",
+      "Served_By_Rep_Codes__c": [
+        "BR-014",
+        "BR-019",
+        "BR-022",
+        "BR-031",
+        "BR-044",
+        "BR-045",
+        "BR-052",
+        "BR-061",
+        "BR-075",
+        "BR-088"
+      ]
+    },
+    {
+      "Id": "001Hs000000100D",
+      "Client_ID__c": "BR-CL-8017",
+      "Name": "DR. EVELYN & MARK TREMBLAY-ROY",
+      "Segment__c": "High-Net-Worth Joint",
+      "Account_Number__c": "440-87169-29",
+      "Fee_Program__c": "Fee-Based Managed",
+      "Risk_Profile__c": "Balanced",
+      "Investment_Objective__c": "Growth",
+      "Time_Horizon__c": "5-10 years",
+      "Investment_Knowledge__c": "Sophisticated",
+      "KYC_Last_Reviewed__c": "2026-02-11",
+      "Discretionary_Mandate_On_File__c": false,
+      "Primary_Rep_Code__c": "BR-019",
+      "Served_By_Rep_Codes__c": [
+        "BR-014",
+        "BR-019",
+        "BR-022",
+        "BR-031",
+        "BR-044",
+        "BR-045",
+        "BR-052",
+        "BR-061",
+        "BR-075",
+        "BR-088"
+      ]
+    },
+    {
+      "Id": "001Hs000000100I",
+      "Client_ID__c": "BR-CL-8018",
+      "Name": "ROCKY MOUNTAIN ENERGY TRUST",
+      "Segment__c": "Institutional Trust",
+      "Account_Number__c": "440-98270-30",
+      "Fee_Program__c": "Fee-Based Discretionary",
+      "Risk_Profile__c": "Moderate",
+      "Investment_Objective__c": "Income",
+      "Time_Horizon__c": "5-10 years",
+      "Investment_Knowledge__c": "Good",
+      "KYC_Last_Reviewed__c": "2026-04-24",
+      "Discretionary_Mandate_On_File__c": true,
+      "Primary_Rep_Code__c": "BR-044",
+      "Served_By_Rep_Codes__c": [
+        "BR-014",
+        "BR-019",
+        "BR-022",
+        "BR-031",
+        "BR-044",
+        "BR-045",
+        "BR-052",
+        "BR-061",
+        "BR-075",
+        "BR-088"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "Id": "500Hs000000101D",
+      "CaseNumber": "PC-202607-1001",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Approved",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: SELL 50 CNQ.TO",
+      "Advisor_PRO_ID__c": "PRO-1006",
+      "Advisor_Name__c": "Sarah MacKinnon",
+      "Rep_Code__c": "BR-061",
+      "PRO_Account_Number__c": "866-55215-73",
+      "Client_ID__c": null,
+      "Symbol__c": "CNQ.TO",
+      "Side__c": "SELL",
+      "Requested_Quantity__c": 50,
+      "Approved_Quantity__c": 50,
+      "Valid_From__c": "2026-07-29",
+      "Valid_To__c": "2026-08-05",
+      "CreatedDate": "2026-07-29T08:51",
+      "ClosedDate": "2026-07-29T13:37",
+      "Decision_By__c": "M. Tremblay (Compliance)",
+      "Description": "Sarah MacKinnon requests approval to sell 50 CNQ.TO in personal account 866-55215-73. Advisor attests no pending client orders in CNQ.TO under BR-061.",
+      "Comments": [
+        {
+          "Id": "00aHs000000102F",
+          "CreatedBy": "Sarah MacKinnon",
+          "CreatedDate": "2026-07-29T09:17",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs000000102G",
+          "CreatedBy": "M. Tremblay (Compliance)",
+          "CreatedDate": "2026-07-29T14:03",
+          "CommentBody": "Restricted and watch lists checked — CNQ.TO clear. Approved for up to 50 shares, valid through 2026-08-05.",
+          "IsPublished": true
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000101O",
+      "CaseNumber": "PC-202607-1002",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Expired",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: SELL 25 ENB.TO",
+      "Advisor_PRO_ID__c": "PRO-1010",
+      "Advisor_Name__c": "Michael O'Connor",
+      "Rep_Code__c": "BR-052",
+      "PRO_Account_Number__c": "498-19681-65",
+      "Client_ID__c": null,
+      "Symbol__c": "ENB.TO",
+      "Side__c": "SELL",
+      "Requested_Quantity__c": 25,
+      "Approved_Quantity__c": 0,
+      "Valid_From__c": "2026-07-31",
+      "Valid_To__c": null,
+      "CreatedDate": "2026-07-31T09:33",
+      "ClosedDate": "2026-07-31T17:08",
+      "Decision_By__c": "M. Tremblay (Compliance)",
+      "Description": "Michael O'Connor requests approval to sell 25 ENB.TO in personal account 498-19681-65. Advisor attests no pending client orders in ENB.TO under BR-052.",
+      "Comments": [
+        {
+          "Id": "00aHs0000001031",
+          "CreatedBy": "Michael O'Connor",
+          "CreatedDate": "2026-07-31T09:50",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs0000001032",
+          "CreatedBy": "Michael O'Connor",
+          "CreatedDate": "2026-08-10T12:26",
+          "CommentBody": "Expired: no trade placed within the validity window.",
+          "IsPublished": false
+        }
+      ]
+    },
+    {
+      "Id": "500Hs0000001016",
+      "CaseNumber": "PC-202608-1006",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Withdrawn",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: BUY 150 BAM.TO",
+      "Advisor_PRO_ID__c": "PRO-1003",
+      "Advisor_Name__c": "Marc-André Tremblay",
+      "Rep_Code__c": "BR-031",
+      "PRO_Account_Number__c": "636-53870-44",
+      "Client_ID__c": null,
+      "Symbol__c": "BAM.TO",
+      "Side__c": "BUY",
+      "Requested_Quantity__c": 150,
+      "Approved_Quantity__c": 0,
+      "Valid_From__c": "2026-08-03",
+      "Valid_To__c": null,
+      "CreatedDate": "2026-08-03T09:34",
+      "ClosedDate": "2026-08-03T13:28",
+      "Decision_By__c": "S. Patel (Compliance Ops)",
+      "Description": "Marc-André Tremblay requests approval to buy 150 BAM.TO in personal account 636-53870-44. Advisor attests no pending client orders in BAM.TO under BR-031.",
+      "Comments": [
+        {
+          "Id": "00aHs0000001021",
+          "CreatedBy": "Marc-André Tremblay",
+          "CreatedDate": "2026-08-03T09:17",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs0000001022",
+          "CreatedBy": "Marc-André Tremblay",
+          "CreatedDate": "2026-08-11T12:10",
+          "CommentBody": "Withdrawn: no trade placed within the validity window.",
+          "IsPublished": false
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000100Y",
+      "CaseNumber": "PC-202608-1002",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Expired",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: BUY 25 TD.TO",
+      "Advisor_PRO_ID__c": "PRO-1001",
+      "Advisor_Name__c": "David Chen",
+      "Rep_Code__c": "BR-014",
+      "PRO_Account_Number__c": "339-52477-38",
+      "Client_ID__c": null,
+      "Symbol__c": "TD.TO",
+      "Side__c": "BUY",
+      "Requested_Quantity__c": 25,
+      "Approved_Quantity__c": 0,
+      "Valid_From__c": "2026-08-05",
+      "Valid_To__c": null,
+      "CreatedDate": "2026-08-05T11:12",
+      "ClosedDate": "2026-08-05T12:25",
+      "Decision_By__c": "A. Kontham (Lead Surveillance)",
+      "Description": "David Chen requests approval to buy 25 TD.TO in personal account 339-52477-38. Advisor attests no pending client orders in TD.TO under BR-014.",
+      "Comments": [
+        {
+          "Id": "00aHs000000101L",
+          "CreatedBy": "David Chen",
+          "CreatedDate": "2026-08-05T09:22",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs000000101M",
+          "CreatedBy": "David Chen",
+          "CreatedDate": "2026-08-13T12:38",
+          "CommentBody": "Expired: no trade placed within the validity window.",
+          "IsPublished": false
+        }
+      ]
+    },
+    {
+      "Id": "500Hs0000001001",
+      "CaseNumber": "PC-202608-1001",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Approved",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: BUY 100 TD.TO",
+      "Advisor_PRO_ID__c": "PRO-1001",
+      "Advisor_Name__c": "David Chen",
+      "Rep_Code__c": "BR-014",
+      "PRO_Account_Number__c": "606-58801-13",
+      "Client_ID__c": null,
+      "Symbol__c": "TD.TO",
+      "Side__c": "BUY",
+      "Requested_Quantity__c": 100,
+      "Approved_Quantity__c": 100,
+      "Valid_From__c": "2026-08-06",
+      "Valid_To__c": "2026-08-13",
+      "CreatedDate": "2026-08-06T08:35",
+      "ClosedDate": "2026-08-06T17:16",
+      "Decision_By__c": "M. Tremblay (Compliance)",
+      "Description": "David Chen requests approval to buy 100 TD.TO in personal account 606-58801-13. Advisor attests no pending client orders in TD.TO under BR-014.",
+      "Comments": [
+        {
+          "Id": "00aHs0000001001",
+          "CreatedBy": "David Chen",
+          "CreatedDate": "2026-08-06T09:11",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs0000001002",
+          "CreatedBy": "M. Tremblay (Compliance)",
+          "CreatedDate": "2026-08-06T14:02",
+          "CommentBody": "Restricted and watch lists checked — TD.TO clear. Approved for up to 100 shares, valid through 2026-08-13.",
+          "IsPublished": true
+        }
+      ]
+    },
+    {
+      "Id": "500Hs0000001013",
+      "CaseNumber": "PC-202608-1004",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Expired",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: BUY 50 MFC.TO",
+      "Advisor_PRO_ID__c": "PRO-1002",
+      "Advisor_Name__c": "Priya Patel-Sharma",
+      "Rep_Code__c": "BR-022",
+      "PRO_Account_Number__c": "302-96840-37",
+      "Client_ID__c": null,
+      "Symbol__c": "MFC.TO",
+      "Side__c": "BUY",
+      "Requested_Quantity__c": 50,
+      "Approved_Quantity__c": 0,
+      "Valid_From__c": "2026-08-07",
+      "Valid_To__c": null,
+      "CreatedDate": "2026-08-07T08:04",
+      "ClosedDate": "2026-08-07T13:42",
+      "Decision_By__c": "S. Patel (Compliance Ops)",
+      "Description": "Priya Patel-Sharma requests approval to buy 50 MFC.TO in personal account 302-96840-37. Advisor attests no pending client orders in MFC.TO under BR-022.",
+      "Comments": [
+        {
+          "Id": "00aHs000000101V",
+          "CreatedBy": "Priya Patel-Sharma",
+          "CreatedDate": "2026-08-07T09:15",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs000000101W",
+          "CreatedBy": "Priya Patel-Sharma",
+          "CreatedDate": "2026-08-17T12:35",
+          "CommentBody": "Expired: no trade placed within the validity window.",
+          "IsPublished": false
+        }
+      ]
+    },
+    {
+      "Id": "500Hs0000001014",
+      "CaseNumber": "PC-202608-1005",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Withdrawn",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: SELL 150 MFC.TO",
+      "Advisor_PRO_ID__c": "PRO-1003",
+      "Advisor_Name__c": "Marc-André Tremblay",
+      "Rep_Code__c": "BR-031",
+      "PRO_Account_Number__c": "725-11195-56",
+      "Client_ID__c": null,
+      "Symbol__c": "MFC.TO",
+      "Side__c": "SELL",
+      "Requested_Quantity__c": 150,
+      "Approved_Quantity__c": 0,
+      "Valid_From__c": "2026-08-07",
+      "Valid_To__c": null,
+      "CreatedDate": "2026-08-07T10:30",
+      "ClosedDate": "2026-08-07T16:47",
+      "Decision_By__c": "A. Kontham (Lead Surveillance)",
+      "Description": "Marc-André Tremblay requests approval to sell 150 MFC.TO in personal account 725-11195-56. Advisor attests no pending client orders in MFC.TO under BR-031.",
+      "Comments": [
+        {
+          "Id": "00aHs000000101X",
+          "CreatedBy": "Marc-André Tremblay",
+          "CreatedDate": "2026-08-07T09:00",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs000000101Y",
+          "CreatedBy": "Marc-André Tremblay",
+          "CreatedDate": "2026-08-17T12:56",
+          "CommentBody": "Withdrawn: no trade placed within the validity window.",
+          "IsPublished": false
+        }
+      ]
+    },
+    {
+      "Id": "500Hs0000001012",
+      "CaseNumber": "PC-202608-1003",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Expired",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: SELL 150 MFC.TO",
+      "Advisor_PRO_ID__c": "PRO-1002",
+      "Advisor_Name__c": "Priya Patel-Sharma",
+      "Rep_Code__c": "BR-022",
+      "PRO_Account_Number__c": "759-78213-45",
+      "Client_ID__c": null,
+      "Symbol__c": "MFC.TO",
+      "Side__c": "SELL",
+      "Requested_Quantity__c": 150,
+      "Approved_Quantity__c": 0,
+      "Valid_From__c": "2026-08-11",
+      "Valid_To__c": null,
+      "CreatedDate": "2026-08-11T09:18",
+      "ClosedDate": "2026-08-11T14:36",
+      "Decision_By__c": "M. Tremblay (Compliance)",
+      "Description": "Priya Patel-Sharma requests approval to sell 150 MFC.TO in personal account 759-78213-45. Advisor attests no pending client orders in MFC.TO under BR-022.",
+      "Comments": [
+        {
+          "Id": "00aHs000000101T",
+          "CreatedBy": "Priya Patel-Sharma",
+          "CreatedDate": "2026-08-11T09:57",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs000000101U",
+          "CreatedBy": "Priya Patel-Sharma",
+          "CreatedDate": "2026-08-19T12:47",
+          "CommentBody": "Expired: no trade placed within the validity window.",
+          "IsPublished": false
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000101K",
+      "CaseNumber": "PC-202608-1008",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Approved",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: BUY 25 SU.TO",
+      "Advisor_PRO_ID__c": "PRO-1009",
+      "Advisor_Name__c": "Elena Rostova",
+      "Rep_Code__c": "BR-088",
+      "PRO_Account_Number__c": "699-19515-49",
+      "Client_ID__c": null,
+      "Symbol__c": "SU.TO",
+      "Side__c": "BUY",
+      "Requested_Quantity__c": 25,
+      "Approved_Quantity__c": 25,
+      "Valid_From__c": "2026-08-11",
+      "Valid_To__c": "2026-08-18",
+      "CreatedDate": "2026-08-11T09:45",
+      "ClosedDate": "2026-08-11T15:15",
+      "Decision_By__c": "S. Patel (Compliance Ops)",
+      "Description": "Elena Rostova requests approval to buy 25 SU.TO in personal account 699-19515-49. Advisor attests no pending client orders in SU.TO under BR-088.",
+      "Comments": [
+        {
+          "Id": "00aHs000000102T",
+          "CreatedBy": "Elena Rostova",
+          "CreatedDate": "2026-08-11T09:14",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs000000102U",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-08-11T14:44",
+          "CommentBody": "Restricted and watch lists checked — SU.TO clear. Approved for up to 25 shares, valid through 2026-08-18.",
+          "IsPublished": true
+        }
+      ]
+    },
+    {
+      "Id": "500Hs0000001007",
+      "CaseNumber": "HX-202608-367",
+      "Type": "Holding Period Exemption",
+      "Status": "Approved",
+      "Priority": "Normal",
+      "Subject": "30-day hold exemption: BUY 100 APPLE INC COM",
+      "Advisor_PRO_ID__c": "PRO-1009",
+      "Advisor_Name__c": "Elena Rostova",
+      "Rep_Code__c": "BR-088",
+      "PRO_Account_Number__c": "314-27507-65",
+      "Client_ID__c": null,
+      "Symbol__c": "APPLE INC COM",
+      "Side__c": "BUY",
+      "Requested_Quantity__c": 100,
+      "Approved_Quantity__c": 100,
+      "Valid_From__c": "2026-08-14",
+      "Valid_To__c": "2026-08-21",
+      "CreatedDate": "2026-08-14T09:26",
+      "ClosedDate": "2026-08-14T15:17",
+      "Decision_By__c": "A. Kontham (Lead Surveillance)",
+      "Description": "Request to buy APPLE INC COM inside the 30-day minimum hold — documented financial hardship (home closing).",
+      "Comments": [
+        {
+          "Id": "00aHs000000100F",
+          "CreatedBy": "Elena Rostova",
+          "CreatedDate": "2026-08-14T09:29",
+          "CommentBody": "Hardship letter and closing documents uploaded.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs000000100G",
+          "CreatedBy": "A. Kontham (Lead Surveillance)",
+          "CreatedDate": "2026-08-14T15:13",
+          "CommentBody": "Exemption granted under policy 4.3 (hardship). One-time approval.",
+          "IsPublished": true
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000101E",
+      "CaseNumber": "PC-202608-1007",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Approved",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: BUY 25 CNQ.TO",
+      "Advisor_PRO_ID__c": "PRO-1006",
+      "Advisor_Name__c": "Sarah MacKinnon",
+      "Rep_Code__c": "BR-061",
+      "PRO_Account_Number__c": "573-72947-16",
+      "Client_ID__c": null,
+      "Symbol__c": "CNQ.TO",
+      "Side__c": "BUY",
+      "Requested_Quantity__c": 25,
+      "Approved_Quantity__c": 25,
+      "Valid_From__c": "2026-08-20",
+      "Valid_To__c": "2026-08-27",
+      "CreatedDate": "2026-08-20T10:33",
+      "ClosedDate": "2026-08-20T12:36",
+      "Decision_By__c": "M. Tremblay (Compliance)",
+      "Description": "Sarah MacKinnon requests approval to buy 25 CNQ.TO in personal account 573-72947-16. Advisor attests no pending client orders in CNQ.TO under BR-061.",
+      "Comments": [
+        {
+          "Id": "00aHs000000102H",
+          "CreatedBy": "Sarah MacKinnon",
+          "CreatedDate": "2026-08-20T09:05",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs000000102I",
+          "CreatedBy": "M. Tremblay (Compliance)",
+          "CreatedDate": "2026-08-20T14:32",
+          "CommentBody": "Restricted and watch lists checked — CNQ.TO clear. Approved for up to 25 shares, valid through 2026-08-27.",
+          "IsPublished": true
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000101M",
+      "CaseNumber": "PC-202608-1009",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Approved",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: BUY 300 CSU.TO",
+      "Advisor_PRO_ID__c": "PRO-1009",
+      "Advisor_Name__c": "Elena Rostova",
+      "Rep_Code__c": "BR-088",
+      "PRO_Account_Number__c": "825-37854-92",
+      "Client_ID__c": null,
+      "Symbol__c": "CSU.TO",
+      "Side__c": "BUY",
+      "Requested_Quantity__c": 300,
+      "Approved_Quantity__c": 300,
+      "Valid_From__c": "2026-08-25",
+      "Valid_To__c": "2026-09-01",
+      "CreatedDate": "2026-08-25T09:59",
+      "ClosedDate": "2026-08-25T13:31",
+      "Decision_By__c": "M. Tremblay (Compliance)",
+      "Description": "Elena Rostova requests approval to buy 300 CSU.TO in personal account 825-37854-92. Advisor attests no pending client orders in CSU.TO under BR-088.",
+      "Comments": [
+        {
+          "Id": "00aHs000000102X",
+          "CreatedBy": "Elena Rostova",
+          "CreatedDate": "2026-08-25T09:56",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs000000102Y",
+          "CreatedBy": "M. Tremblay (Compliance)",
+          "CreatedDate": "2026-08-25T14:18",
+          "CommentBody": "Restricted and watch lists checked — CSU.TO clear. Approved for up to 300 shares, valid through 2026-09-01.",
+          "IsPublished": true
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000101H",
+      "CaseNumber": "PC-202609-1009",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Expired",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: SELL 300 NVDA",
+      "Advisor_PRO_ID__c": "PRO-1007",
+      "Advisor_Name__c": "Robert Kowalski",
+      "Rep_Code__c": "BR-075",
+      "PRO_Account_Number__c": "572-51926-12",
+      "Client_ID__c": null,
+      "Symbol__c": "NVDA",
+      "Side__c": "SELL",
+      "Requested_Quantity__c": 300,
+      "Approved_Quantity__c": 0,
+      "Valid_From__c": "2026-09-02",
+      "Valid_To__c": null,
+      "CreatedDate": "2026-09-02T11:23",
+      "ClosedDate": "2026-09-02T17:30",
+      "Decision_By__c": "A. Kontham (Lead Surveillance)",
+      "Description": "Robert Kowalski requests approval to sell 300 NVDA in personal account 572-51926-12. Advisor attests no pending client orders in NVDA under BR-075.",
+      "Comments": [
+        {
+          "Id": "00aHs000000102N",
+          "CreatedBy": "Robert Kowalski",
+          "CreatedDate": "2026-09-02T09:33",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs000000102O",
+          "CreatedBy": "Robert Kowalski",
+          "CreatedDate": "2026-09-10T12:04",
+          "CommentBody": "Expired: no trade placed within the validity window.",
+          "IsPublished": false
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000101A",
+      "CaseNumber": "PC-202609-1007",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Expired",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: SELL 100 MSFT",
+      "Advisor_PRO_ID__c": "PRO-1004",
+      "Advisor_Name__c": "Jonathan Vance",
+      "Rep_Code__c": "BR-019",
+      "PRO_Account_Number__c": "737-71653-22",
+      "Client_ID__c": null,
+      "Symbol__c": "MSFT",
+      "Side__c": "SELL",
+      "Requested_Quantity__c": 100,
+      "Approved_Quantity__c": 0,
+      "Valid_From__c": "2026-09-03",
+      "Valid_To__c": null,
+      "CreatedDate": "2026-09-03T11:39",
+      "ClosedDate": "2026-09-03T17:28",
+      "Decision_By__c": "A. Kontham (Lead Surveillance)",
+      "Description": "Jonathan Vance requests approval to sell 100 MSFT in personal account 737-71653-22. Advisor attests no pending client orders in MSFT under BR-019.",
+      "Comments": [
+        {
+          "Id": "00aHs0000001029",
+          "CreatedBy": "Jonathan Vance",
+          "CreatedDate": "2026-09-03T09:25",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs000000102A",
+          "CreatedBy": "Jonathan Vance",
+          "CreatedDate": "2026-09-11T12:40",
+          "CommentBody": "Expired: no trade placed within the validity window.",
+          "IsPublished": false
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000101J",
+      "CaseNumber": "PC-202609-1010",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Withdrawn",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: BUY 100 MSFT",
+      "Advisor_PRO_ID__c": "PRO-1008",
+      "Advisor_Name__c": "Jean-François Gagnon",
+      "Rep_Code__c": "BR-045",
+      "PRO_Account_Number__c": "836-55785-71",
+      "Client_ID__c": null,
+      "Symbol__c": "MSFT",
+      "Side__c": "BUY",
+      "Requested_Quantity__c": 100,
+      "Approved_Quantity__c": 0,
+      "Valid_From__c": "2026-09-04",
+      "Valid_To__c": null,
+      "CreatedDate": "2026-09-04T08:39",
+      "ClosedDate": "2026-09-04T16:37",
+      "Decision_By__c": "S. Patel (Compliance Ops)",
+      "Description": "Jean-François Gagnon requests approval to buy 100 MSFT in personal account 836-55785-71. Advisor attests no pending client orders in MSFT under BR-045.",
+      "Comments": [
+        {
+          "Id": "00aHs000000102R",
+          "CreatedBy": "Jean-François Gagnon",
+          "CreatedDate": "2026-09-04T09:40",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs000000102S",
+          "CreatedBy": "Jean-François Gagnon",
+          "CreatedDate": "2026-09-14T12:35",
+          "CommentBody": "Withdrawn: no trade placed within the validity window.",
+          "IsPublished": false
+        }
+      ]
+    },
+    {
+      "Id": "500Hs0000001019",
+      "CaseNumber": "PC-202609-1006",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Withdrawn",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: SELL 100 BN.TO",
+      "Advisor_PRO_ID__c": "PRO-1004",
+      "Advisor_Name__c": "Jonathan Vance",
+      "Rep_Code__c": "BR-019",
+      "PRO_Account_Number__c": "384-20932-81",
+      "Client_ID__c": null,
+      "Symbol__c": "BN.TO",
+      "Side__c": "SELL",
+      "Requested_Quantity__c": 100,
+      "Approved_Quantity__c": 0,
+      "Valid_From__c": "2026-09-15",
+      "Valid_To__c": null,
+      "CreatedDate": "2026-09-15T11:28",
+      "ClosedDate": "2026-09-15T15:17",
+      "Decision_By__c": "A. Kontham (Lead Surveillance)",
+      "Description": "Jonathan Vance requests approval to sell 100 BN.TO in personal account 384-20932-81. Advisor attests no pending client orders in BN.TO under BR-019.",
+      "Comments": [
+        {
+          "Id": "00aHs0000001027",
+          "CreatedBy": "Jonathan Vance",
+          "CreatedDate": "2026-09-15T09:37",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs0000001028",
+          "CreatedBy": "Jonathan Vance",
+          "CreatedDate": "2026-09-23T12:44",
+          "CommentBody": "Withdrawn: no trade placed within the validity window.",
+          "IsPublished": false
+        }
+      ]
+    },
+    {
+      "Id": "500Hs0000001008",
+      "CaseNumber": "PC-202609-1002",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Approved",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: SELL 100 ENB.TO",
+      "Advisor_PRO_ID__c": "PRO-1009",
+      "Advisor_Name__c": "Elena Rostova",
+      "Rep_Code__c": "BR-088",
+      "PRO_Account_Number__c": "484-98433-74",
+      "Client_ID__c": null,
+      "Symbol__c": "ENB.TO",
+      "Side__c": "SELL",
+      "Requested_Quantity__c": 100,
+      "Approved_Quantity__c": 150,
+      "Valid_From__c": "2026-09-17",
+      "Valid_To__c": "2026-09-24",
+      "CreatedDate": "2026-09-17T09:25",
+      "ClosedDate": "2026-09-17T13:48",
+      "Decision_By__c": "S. Patel (Compliance Ops)",
+      "Description": "Elena Rostova requests approval to sell 100 ENB.TO in personal account 484-98433-74. Advisor attests no pending client orders in ENB.TO under BR-088.",
+      "Comments": [
+        {
+          "Id": "00aHs000000100H",
+          "CreatedBy": "Elena Rostova",
+          "CreatedDate": "2026-09-17T09:04",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs000000100I",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-09-17T14:52",
+          "CommentBody": "Restricted and watch lists checked — ENB.TO clear. Approved for up to 150 shares, valid through 2026-09-24.",
+          "IsPublished": true
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000101N",
+      "CaseNumber": "PC-202609-1011",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Expired",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: SELL 200 MSFT",
+      "Advisor_PRO_ID__c": "PRO-1010",
+      "Advisor_Name__c": "Michael O'Connor",
+      "Rep_Code__c": "BR-052",
+      "PRO_Account_Number__c": "498-19681-65",
+      "Client_ID__c": null,
+      "Symbol__c": "MSFT",
+      "Side__c": "SELL",
+      "Requested_Quantity__c": 200,
+      "Approved_Quantity__c": 0,
+      "Valid_From__c": "2026-09-21",
+      "Valid_To__c": null,
+      "CreatedDate": "2026-09-21T09:57",
+      "ClosedDate": "2026-09-21T17:41",
+      "Decision_By__c": "S. Patel (Compliance Ops)",
+      "Description": "Michael O'Connor requests approval to sell 200 MSFT in personal account 498-19681-65. Advisor attests no pending client orders in MSFT under BR-052.",
+      "Comments": [
+        {
+          "Id": "00aHs000000102Z",
+          "CreatedBy": "Michael O'Connor",
+          "CreatedDate": "2026-09-21T09:37",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs0000001030",
+          "CreatedBy": "Michael O'Connor",
+          "CreatedDate": "2026-09-29T12:16",
+          "CommentBody": "Expired: no trade placed within the validity window.",
+          "IsPublished": false
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000100Z",
+      "CaseNumber": "PC-202609-1004",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Approved",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: SELL 100 BIP-UN.TO",
+      "Advisor_PRO_ID__c": "PRO-1001",
+      "Advisor_Name__c": "David Chen",
+      "Rep_Code__c": "BR-014",
+      "PRO_Account_Number__c": "425-98762-36",
+      "Client_ID__c": null,
+      "Symbol__c": "BIP-UN.TO",
+      "Side__c": "SELL",
+      "Requested_Quantity__c": 100,
+      "Approved_Quantity__c": 100,
+      "Valid_From__c": "2026-09-21",
+      "Valid_To__c": "2026-09-28",
+      "CreatedDate": "2026-09-21T11:47",
+      "ClosedDate": "2026-09-21T17:31",
+      "Decision_By__c": "S. Patel (Compliance Ops)",
+      "Description": "David Chen requests approval to sell 100 BIP-UN.TO in personal account 425-98762-36. Advisor attests no pending client orders in BIP-UN.TO under BR-014.",
+      "Comments": [
+        {
+          "Id": "00aHs000000101N",
+          "CreatedBy": "David Chen",
+          "CreatedDate": "2026-09-21T09:26",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs000000101O",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-09-21T14:30",
+          "CommentBody": "Restricted and watch lists checked — BIP-UN.TO clear. Approved for up to 100 shares, valid through 2026-09-28.",
+          "IsPublished": true
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000101F",
+      "CaseNumber": "PC-202609-1008",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Expired",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: BUY 100 SU.TO",
+      "Advisor_PRO_ID__c": "PRO-1006",
+      "Advisor_Name__c": "Sarah MacKinnon",
+      "Rep_Code__c": "BR-061",
+      "PRO_Account_Number__c": "577-34985-66",
+      "Client_ID__c": null,
+      "Symbol__c": "SU.TO",
+      "Side__c": "BUY",
+      "Requested_Quantity__c": 100,
+      "Approved_Quantity__c": 0,
+      "Valid_From__c": "2026-09-22",
+      "Valid_To__c": null,
+      "CreatedDate": "2026-09-22T11:23",
+      "ClosedDate": "2026-09-22T14:55",
+      "Decision_By__c": "S. Patel (Compliance Ops)",
+      "Description": "Sarah MacKinnon requests approval to buy 100 SU.TO in personal account 577-34985-66. Advisor attests no pending client orders in SU.TO under BR-061.",
+      "Comments": [
+        {
+          "Id": "00aHs000000102J",
+          "CreatedBy": "Sarah MacKinnon",
+          "CreatedDate": "2026-09-22T09:24",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs000000102K",
+          "CreatedBy": "Sarah MacKinnon",
+          "CreatedDate": "2026-09-30T12:08",
+          "CommentBody": "Expired: no trade placed within the validity window.",
+          "IsPublished": false
+        }
+      ]
+    },
+    {
+      "Id": "500Hs0000001017",
+      "CaseNumber": "PC-202609-1005",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Withdrawn",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: BUY 200 CNR.TO",
+      "Advisor_PRO_ID__c": "PRO-1003",
+      "Advisor_Name__c": "Marc-André Tremblay",
+      "Rep_Code__c": "BR-031",
+      "PRO_Account_Number__c": "704-19772-70",
+      "Client_ID__c": null,
+      "Symbol__c": "CNR.TO",
+      "Side__c": "BUY",
+      "Requested_Quantity__c": 200,
+      "Approved_Quantity__c": 0,
+      "Valid_From__c": "2026-09-23",
+      "Valid_To__c": null,
+      "CreatedDate": "2026-09-23T09:01",
+      "ClosedDate": "2026-09-23T16:30",
+      "Decision_By__c": "S. Patel (Compliance Ops)",
+      "Description": "Marc-André Tremblay requests approval to buy 200 CNR.TO in personal account 704-19772-70. Advisor attests no pending client orders in CNR.TO under BR-031.",
+      "Comments": [
+        {
+          "Id": "00aHs0000001023",
+          "CreatedBy": "Marc-André Tremblay",
+          "CreatedDate": "2026-09-23T09:17",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs0000001024",
+          "CreatedBy": "Marc-André Tremblay",
+          "CreatedDate": "2026-10-01T12:28",
+          "CommentBody": "Withdrawn: no trade placed within the validity window.",
+          "IsPublished": false
+        }
+      ]
+    },
+    {
+      "Id": "500Hs0000001006",
+      "CaseNumber": "PC-202609-1001",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Approved",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: SELL 150 NVDA",
+      "Advisor_PRO_ID__c": "PRO-1005",
+      "Advisor_Name__c": "Émilie Bouchard",
+      "Rep_Code__c": "BR-044",
+      "PRO_Account_Number__c": "301-76998-98",
+      "Client_ID__c": null,
+      "Symbol__c": "NVDA",
+      "Side__c": "SELL",
+      "Requested_Quantity__c": 150,
+      "Approved_Quantity__c": 150,
+      "Valid_From__c": "2026-09-25",
+      "Valid_To__c": "2026-10-02",
+      "CreatedDate": "2026-09-25T11:33",
+      "ClosedDate": "2026-09-25T12:03",
+      "Decision_By__c": "M. Tremblay (Compliance)",
+      "Description": "Émilie Bouchard requests approval to sell 150 NVDA in personal account 301-76998-98. Advisor attests no pending client orders in NVDA under BR-044.",
+      "Comments": [
+        {
+          "Id": "00aHs000000100D",
+          "CreatedBy": "Émilie Bouchard",
+          "CreatedDate": "2026-09-25T09:00",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs000000100E",
+          "CreatedBy": "M. Tremblay (Compliance)",
+          "CreatedDate": "2026-09-25T14:18",
+          "CommentBody": "Restricted and watch lists checked — NVDA clear. Approved for up to 150 shares, valid through 2026-10-02.",
+          "IsPublished": true
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000100X",
+      "CaseNumber": "PC-202609-1003",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Withdrawn",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: SELL 25 ENB.TO",
+      "Advisor_PRO_ID__c": "PRO-1001",
+      "Advisor_Name__c": "David Chen",
+      "Rep_Code__c": "BR-014",
+      "PRO_Account_Number__c": "426-15724-81",
+      "Client_ID__c": null,
+      "Symbol__c": "ENB.TO",
+      "Side__c": "SELL",
+      "Requested_Quantity__c": 25,
+      "Approved_Quantity__c": 0,
+      "Valid_From__c": "2026-09-29",
+      "Valid_To__c": null,
+      "CreatedDate": "2026-09-29T11:21",
+      "ClosedDate": "2026-09-29T15:49",
+      "Decision_By__c": "S. Patel (Compliance Ops)",
+      "Description": "David Chen requests approval to sell 25 ENB.TO in personal account 426-15724-81. Advisor attests no pending client orders in ENB.TO under BR-014.",
+      "Comments": [
+        {
+          "Id": "00aHs000000101J",
+          "CreatedBy": "David Chen",
+          "CreatedDate": "2026-09-29T09:13",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs000000101K",
+          "CreatedBy": "David Chen",
+          "CreatedDate": "2026-10-07T12:58",
+          "CommentBody": "Withdrawn: no trade placed within the validity window.",
+          "IsPublished": false
+        }
+      ]
+    },
+    {
+      "Id": "500Hs0000001011",
+      "CaseNumber": "PC-202610-1007",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Expired",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: BUY 300 ENB.TO",
+      "Advisor_PRO_ID__c": "PRO-1002",
+      "Advisor_Name__c": "Priya Patel-Sharma",
+      "Rep_Code__c": "BR-022",
+      "PRO_Account_Number__c": "326-46051-35",
+      "Client_ID__c": null,
+      "Symbol__c": "ENB.TO",
+      "Side__c": "BUY",
+      "Requested_Quantity__c": 300,
+      "Approved_Quantity__c": 0,
+      "Valid_From__c": "2026-10-02",
+      "Valid_To__c": null,
+      "CreatedDate": "2026-10-02T11:40",
+      "ClosedDate": "2026-10-02T15:13",
+      "Decision_By__c": "S. Patel (Compliance Ops)",
+      "Description": "Priya Patel-Sharma requests approval to buy 300 ENB.TO in personal account 326-46051-35. Advisor attests no pending client orders in ENB.TO under BR-022.",
+      "Comments": [
+        {
+          "Id": "00aHs000000101R",
+          "CreatedBy": "Priya Patel-Sharma",
+          "CreatedDate": "2026-10-02T09:15",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs000000101S",
+          "CreatedBy": "Priya Patel-Sharma",
+          "CreatedDate": "2026-10-12T12:52",
+          "CommentBody": "Expired: no trade placed within the validity window.",
+          "IsPublished": false
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000101G",
+      "CaseNumber": "PC-202610-1012",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Approved",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: BUY 150 GOOGL",
+      "Advisor_PRO_ID__c": "PRO-1007",
+      "Advisor_Name__c": "Robert Kowalski",
+      "Rep_Code__c": "BR-075",
+      "PRO_Account_Number__c": "206-55732-41",
+      "Client_ID__c": null,
+      "Symbol__c": "GOOGL",
+      "Side__c": "BUY",
+      "Requested_Quantity__c": 150,
+      "Approved_Quantity__c": 150,
+      "Valid_From__c": "2026-10-05",
+      "Valid_To__c": "2026-10-12",
+      "CreatedDate": "2026-10-05T08:40",
+      "ClosedDate": "2026-10-05T12:09",
+      "Decision_By__c": "S. Patel (Compliance Ops)",
+      "Description": "Robert Kowalski requests approval to buy 150 GOOGL in personal account 206-55732-41. Advisor attests no pending client orders in GOOGL under BR-075.",
+      "Comments": [
+        {
+          "Id": "00aHs000000102L",
+          "CreatedBy": "Robert Kowalski",
+          "CreatedDate": "2026-10-05T09:51",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs000000102M",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-10-05T14:41",
+          "CommentBody": "Restricted and watch lists checked — GOOGL clear. Approved for up to 150 shares, valid through 2026-10-12.",
+          "IsPublished": true
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000101B",
+      "CaseNumber": "PC-202610-1010",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Expired",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: SELL 100 BAM.TO",
+      "Advisor_PRO_ID__c": "PRO-1005",
+      "Advisor_Name__c": "Émilie Bouchard",
+      "Rep_Code__c": "BR-044",
+      "PRO_Account_Number__c": "667-38292-69",
+      "Client_ID__c": null,
+      "Symbol__c": "BAM.TO",
+      "Side__c": "SELL",
+      "Requested_Quantity__c": 100,
+      "Approved_Quantity__c": 0,
+      "Valid_From__c": "2026-10-05",
+      "Valid_To__c": null,
+      "CreatedDate": "2026-10-05T10:46",
+      "ClosedDate": "2026-10-05T12:27",
+      "Decision_By__c": "A. Kontham (Lead Surveillance)",
+      "Description": "Émilie Bouchard requests approval to sell 100 BAM.TO in personal account 667-38292-69. Advisor attests no pending client orders in BAM.TO under BR-044.",
+      "Comments": [
+        {
+          "Id": "00aHs000000102B",
+          "CreatedBy": "Émilie Bouchard",
+          "CreatedDate": "2026-10-05T09:12",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs000000102C",
+          "CreatedBy": "Émilie Bouchard",
+          "CreatedDate": "2026-10-13T12:33",
+          "CommentBody": "Expired: no trade placed within the validity window.",
+          "IsPublished": false
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000101I",
+      "CaseNumber": "PC-202610-1013",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Approved",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: BUY 150 SU.TO",
+      "Advisor_PRO_ID__c": "PRO-1008",
+      "Advisor_Name__c": "Jean-François Gagnon",
+      "Rep_Code__c": "BR-045",
+      "PRO_Account_Number__c": "384-32999-38",
+      "Client_ID__c": null,
+      "Symbol__c": "SU.TO",
+      "Side__c": "BUY",
+      "Requested_Quantity__c": 150,
+      "Approved_Quantity__c": 150,
+      "Valid_From__c": "2026-10-07",
+      "Valid_To__c": "2026-10-14",
+      "CreatedDate": "2026-10-07T08:46",
+      "ClosedDate": "2026-10-07T16:02",
+      "Decision_By__c": "S. Patel (Compliance Ops)",
+      "Description": "Jean-François Gagnon requests approval to buy 150 SU.TO in personal account 384-32999-38. Advisor attests no pending client orders in SU.TO under BR-045.",
+      "Comments": [
+        {
+          "Id": "00aHs000000102P",
+          "CreatedBy": "Jean-François Gagnon",
+          "CreatedDate": "2026-10-07T09:08",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs000000102Q",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-10-07T14:32",
+          "CommentBody": "Restricted and watch lists checked — SU.TO clear. Approved for up to 150 shares, valid through 2026-10-14.",
+          "IsPublished": true
+        }
+      ]
+    },
+    {
+      "Id": "500Hs0000001004",
+      "CaseNumber": "PC-202610-1003",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Denied",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: SELL 300 SHOP.TO",
+      "Advisor_PRO_ID__c": "PRO-1003",
+      "Advisor_Name__c": "Marc-André Tremblay",
+      "Rep_Code__c": "BR-031",
+      "PRO_Account_Number__c": "422-68535-29",
+      "Client_ID__c": null,
+      "Symbol__c": "SHOP.TO",
+      "Side__c": "SELL",
+      "Requested_Quantity__c": 300,
+      "Approved_Quantity__c": 0,
+      "Valid_From__c": "2026-10-07",
+      "Valid_To__c": null,
+      "CreatedDate": "2026-10-07T08:55",
+      "ClosedDate": "2026-10-07T15:44",
+      "Decision_By__c": "A. Kontham (Lead Surveillance)",
+      "Description": "Marc-André Tremblay requests approval to sell 300 SHOP.TO in personal account 422-68535-29. Advisor attests no pending client orders in SHOP.TO under BR-031.",
+      "Comments": [
+        {
+          "Id": "00aHs0000001008",
+          "CreatedBy": "Marc-André Tremblay",
+          "CreatedDate": "2026-10-07T09:09",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs0000001009",
+          "CreatedBy": "A. Kontham (Lead Surveillance)",
+          "CreatedDate": "2026-10-07T13:03",
+          "CommentBody": "DENIED — SHOP.TO is on the restricted list (research coverage initiation pending). Do not trade until lifted.",
+          "IsPublished": true
+        },
+        {
+          "Id": "00aHs000000100A",
+          "CreatedBy": "Marc-André Tremblay",
+          "CreatedDate": "2026-10-07T16:16",
+          "CommentBody": "Acknowledged.",
+          "IsPublished": false
+        }
+      ]
+    },
+    {
+      "Id": "500Hs0000001010",
+      "CaseNumber": "PC-202610-1006",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Approved",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: BUY 200 BCE.TO",
+      "Advisor_PRO_ID__c": "PRO-1001",
+      "Advisor_Name__c": "David Chen",
+      "Rep_Code__c": "BR-014",
+      "PRO_Account_Number__c": "651-64259-56",
+      "Client_ID__c": null,
+      "Symbol__c": "BCE.TO",
+      "Side__c": "BUY",
+      "Requested_Quantity__c": 200,
+      "Approved_Quantity__c": 200,
+      "Valid_From__c": "2026-10-07",
+      "Valid_To__c": "2026-10-14",
+      "CreatedDate": "2026-10-07T09:21",
+      "ClosedDate": "2026-10-07T13:20",
+      "Decision_By__c": "A. Kontham (Lead Surveillance)",
+      "Description": "David Chen requests approval to buy 200 BCE.TO in personal account 651-64259-56. Advisor attests no pending client orders in BCE.TO under BR-014.",
+      "Comments": [
+        {
+          "Id": "00aHs000000101P",
+          "CreatedBy": "David Chen",
+          "CreatedDate": "2026-10-07T09:32",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs000000101Q",
+          "CreatedBy": "A. Kontham (Lead Surveillance)",
+          "CreatedDate": "2026-10-07T14:13",
+          "CommentBody": "Restricted and watch lists checked — BCE.TO clear. Approved for up to 200 shares, valid through 2026-10-14.",
+          "IsPublished": true
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000101L",
+      "CaseNumber": "PC-202610-1014",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Expired",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: SELL 200 CNQ.TO",
+      "Advisor_PRO_ID__c": "PRO-1009",
+      "Advisor_Name__c": "Elena Rostova",
+      "Rep_Code__c": "BR-088",
+      "PRO_Account_Number__c": "765-41087-27",
+      "Client_ID__c": null,
+      "Symbol__c": "CNQ.TO",
+      "Side__c": "SELL",
+      "Requested_Quantity__c": 200,
+      "Approved_Quantity__c": 0,
+      "Valid_From__c": "2026-10-08",
+      "Valid_To__c": null,
+      "CreatedDate": "2026-10-08T08:31",
+      "ClosedDate": "2026-10-08T14:51",
+      "Decision_By__c": "M. Tremblay (Compliance)",
+      "Description": "Elena Rostova requests approval to sell 200 CNQ.TO in personal account 765-41087-27. Advisor attests no pending client orders in CNQ.TO under BR-088.",
+      "Comments": [
+        {
+          "Id": "00aHs000000102V",
+          "CreatedBy": "Elena Rostova",
+          "CreatedDate": "2026-10-08T09:17",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs000000102W",
+          "CreatedBy": "Elena Rostova",
+          "CreatedDate": "2026-10-16T12:22",
+          "CommentBody": "Expired: no trade placed within the validity window.",
+          "IsPublished": false
+        }
+      ]
+    },
+    {
+      "Id": "500Hs0000001002",
+      "CaseNumber": "PC-202610-1001",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Denied",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: SELL 50 ENB.TO",
+      "Advisor_PRO_ID__c": "PRO-1001",
+      "Advisor_Name__c": "David Chen",
+      "Rep_Code__c": "BR-014",
+      "PRO_Account_Number__c": "789-62215-93",
+      "Client_ID__c": null,
+      "Symbol__c": "ENB.TO",
+      "Side__c": "SELL",
+      "Requested_Quantity__c": 50,
+      "Approved_Quantity__c": 0,
+      "Valid_From__c": "2026-10-08",
+      "Valid_To__c": null,
+      "CreatedDate": "2026-10-08T11:50",
+      "ClosedDate": "2026-10-08T12:39",
+      "Decision_By__c": "M. Tremblay (Compliance)",
+      "Description": "David Chen requests approval to sell 50 ENB.TO in personal account 789-62215-93. Advisor attests no pending client orders in ENB.TO under BR-014.",
+      "Comments": [
+        {
+          "Id": "00aHs0000001003",
+          "CreatedBy": "David Chen",
+          "CreatedDate": "2026-10-08T09:15",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs0000001004",
+          "CreatedBy": "M. Tremblay (Compliance)",
+          "CreatedDate": "2026-10-08T13:58",
+          "CommentBody": "DENIED — ENB.TO is on the restricted list (research coverage initiation pending). Do not trade until lifted.",
+          "IsPublished": true
+        },
+        {
+          "Id": "00aHs0000001005",
+          "CreatedBy": "David Chen",
+          "CreatedDate": "2026-10-08T16:42",
+          "CommentBody": "Acknowledged.",
+          "IsPublished": false
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000101P",
+      "CaseNumber": "PC-202610-1015",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Withdrawn",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: BUY 150 ENB.TO",
+      "Advisor_PRO_ID__c": "PRO-1010",
+      "Advisor_Name__c": "Michael O'Connor",
+      "Rep_Code__c": "BR-052",
+      "PRO_Account_Number__c": "515-94405-23",
+      "Client_ID__c": null,
+      "Symbol__c": "ENB.TO",
+      "Side__c": "BUY",
+      "Requested_Quantity__c": 150,
+      "Approved_Quantity__c": 0,
+      "Valid_From__c": "2026-10-09",
+      "Valid_To__c": null,
+      "CreatedDate": "2026-10-09T09:22",
+      "ClosedDate": "2026-10-09T16:25",
+      "Decision_By__c": "M. Tremblay (Compliance)",
+      "Description": "Michael O'Connor requests approval to buy 150 ENB.TO in personal account 515-94405-23. Advisor attests no pending client orders in ENB.TO under BR-052.",
+      "Comments": [
+        {
+          "Id": "00aHs0000001033",
+          "CreatedBy": "Michael O'Connor",
+          "CreatedDate": "2026-10-09T09:13",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs0000001034",
+          "CreatedBy": "Michael O'Connor",
+          "CreatedDate": "2026-10-19T12:15",
+          "CommentBody": "Withdrawn: no trade placed within the validity window.",
+          "IsPublished": false
+        }
+      ]
+    },
+    {
+      "Id": "500Hs0000001003",
+      "CaseNumber": "PC-202610-1002",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Approved",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: SELL 300 BAM.TO",
+      "Advisor_PRO_ID__c": "PRO-1002",
+      "Advisor_Name__c": "Priya Patel-Sharma",
+      "Rep_Code__c": "BR-022",
+      "PRO_Account_Number__c": "297-24351-94",
+      "Client_ID__c": null,
+      "Symbol__c": "BAM.TO",
+      "Side__c": "SELL",
+      "Requested_Quantity__c": 300,
+      "Approved_Quantity__c": 300,
+      "Valid_From__c": "2026-10-13",
+      "Valid_To__c": "2026-10-20",
+      "CreatedDate": "2026-10-13T08:15",
+      "ClosedDate": "2026-10-13T17:23",
+      "Decision_By__c": "A. Kontham (Lead Surveillance)",
+      "Description": "Priya Patel-Sharma requests approval to sell 300 BAM.TO in personal account 297-24351-94. Advisor attests no pending client orders in BAM.TO under BR-022.",
+      "Comments": [
+        {
+          "Id": "00aHs0000001006",
+          "CreatedBy": "Priya Patel-Sharma",
+          "CreatedDate": "2026-10-13T09:25",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs0000001007",
+          "CreatedBy": "A. Kontham (Lead Surveillance)",
+          "CreatedDate": "2026-10-13T14:33",
+          "CommentBody": "Restricted and watch lists checked — BAM.TO clear. Approved for up to 300 shares, valid through 2026-10-20.",
+          "IsPublished": true
+        }
+      ]
+    },
+    {
+      "Id": "500Hs0000001009",
+      "CaseNumber": "PC-202610-1005",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Approved",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: BUY 25 AMZN",
+      "Advisor_PRO_ID__c": "PRO-1009",
+      "Advisor_Name__c": "Elena Rostova",
+      "Rep_Code__c": "BR-088",
+      "PRO_Account_Number__c": "843-57060-93",
+      "Client_ID__c": null,
+      "Symbol__c": "AMZN",
+      "Side__c": "BUY",
+      "Requested_Quantity__c": 25,
+      "Approved_Quantity__c": 25,
+      "Valid_From__c": "2026-10-13",
+      "Valid_To__c": "2026-10-20",
+      "CreatedDate": "2026-10-13T10:05",
+      "ClosedDate": "2026-10-13T14:44",
+      "Decision_By__c": "S. Patel (Compliance Ops)",
+      "Description": "Elena Rostova requests approval to buy 25 AMZN in personal account 843-57060-93. Advisor attests no pending client orders in AMZN under BR-088.",
+      "Comments": [
+        {
+          "Id": "00aHs000000100J",
+          "CreatedBy": "Elena Rostova",
+          "CreatedDate": "2026-10-13T09:45",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs000000100K",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-10-13T14:26",
+          "CommentBody": "Restricted and watch lists checked — AMZN clear. Approved for up to 25 shares, valid through 2026-10-20.",
+          "IsPublished": true
+        }
+      ]
+    },
+    {
+      "Id": "500Hs0000001005",
+      "CaseNumber": "PC-202610-1004",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Approved",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: SELL 50 SHOP.TO",
+      "Advisor_PRO_ID__c": "PRO-1003",
+      "Advisor_Name__c": "Marc-André Tremblay",
+      "Rep_Code__c": "BR-031",
+      "PRO_Account_Number__c": "422-68535-29",
+      "Client_ID__c": null,
+      "Symbol__c": "SHOP.TO",
+      "Side__c": "SELL",
+      "Requested_Quantity__c": 50,
+      "Approved_Quantity__c": 50,
+      "Valid_From__c": "2026-10-14",
+      "Valid_To__c": "2026-10-21",
+      "CreatedDate": "2026-10-14T08:18",
+      "ClosedDate": "2026-10-14T13:23",
+      "Decision_By__c": "A. Kontham (Lead Surveillance)",
+      "Description": "Marc-André Tremblay requests approval to sell 50 SHOP.TO in personal account 422-68535-29. Advisor attests no pending client orders in SHOP.TO under BR-031.",
+      "Comments": [
+        {
+          "Id": "00aHs000000100B",
+          "CreatedBy": "Marc-André Tremblay",
+          "CreatedDate": "2026-10-14T09:15",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs000000100C",
+          "CreatedBy": "A. Kontham (Lead Surveillance)",
+          "CreatedDate": "2026-10-14T14:56",
+          "CommentBody": "Restricted and watch lists checked — SHOP.TO clear. Approved for up to 50 shares, valid through 2026-10-21.",
+          "IsPublished": true
+        }
+      ]
+    },
+    {
+      "Id": "500Hs0000001015",
+      "CaseNumber": "PC-202610-1008",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Expired",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: BUY 100 TD.TO",
+      "Advisor_PRO_ID__c": "PRO-1003",
+      "Advisor_Name__c": "Marc-André Tremblay",
+      "Rep_Code__c": "BR-031",
+      "PRO_Account_Number__c": "636-53870-44",
+      "Client_ID__c": null,
+      "Symbol__c": "TD.TO",
+      "Side__c": "BUY",
+      "Requested_Quantity__c": 100,
+      "Approved_Quantity__c": 0,
+      "Valid_From__c": "2026-10-20",
+      "Valid_To__c": null,
+      "CreatedDate": "2026-10-20T09:54",
+      "ClosedDate": "2026-10-20T16:16",
+      "Decision_By__c": "S. Patel (Compliance Ops)",
+      "Description": "Marc-André Tremblay requests approval to buy 100 TD.TO in personal account 636-53870-44. Advisor attests no pending client orders in TD.TO under BR-031.",
+      "Comments": [
+        {
+          "Id": "00aHs000000101Z",
+          "CreatedBy": "Marc-André Tremblay",
+          "CreatedDate": "2026-10-20T09:30",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs0000001020",
+          "CreatedBy": "Marc-André Tremblay",
+          "CreatedDate": "2026-10-28T12:25",
+          "CommentBody": "Expired: no trade placed within the validity window.",
+          "IsPublished": false
+        }
+      ]
+    },
+    {
+      "Id": "500Hs0000001018",
+      "CaseNumber": "PC-202610-1009",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Approved",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: BUY 150 AAPL",
+      "Advisor_PRO_ID__c": "PRO-1004",
+      "Advisor_Name__c": "Jonathan Vance",
+      "Rep_Code__c": "BR-019",
+      "PRO_Account_Number__c": "477-45114-67",
+      "Client_ID__c": null,
+      "Symbol__c": "AAPL",
+      "Side__c": "BUY",
+      "Requested_Quantity__c": 150,
+      "Approved_Quantity__c": 150,
+      "Valid_From__c": "2026-10-21",
+      "Valid_To__c": "2026-10-28",
+      "CreatedDate": "2026-10-21T08:44",
+      "ClosedDate": "2026-10-21T14:32",
+      "Decision_By__c": "S. Patel (Compliance Ops)",
+      "Description": "Jonathan Vance requests approval to buy 150 AAPL in personal account 477-45114-67. Advisor attests no pending client orders in AAPL under BR-019.",
+      "Comments": [
+        {
+          "Id": "00aHs0000001025",
+          "CreatedBy": "Jonathan Vance",
+          "CreatedDate": "2026-10-21T09:36",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs0000001026",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-10-21T14:45",
+          "CommentBody": "Restricted and watch lists checked — AAPL clear. Approved for up to 150 shares, valid through 2026-10-28.",
+          "IsPublished": true
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000101C",
+      "CaseNumber": "PC-202610-1011",
+      "Type": "PRO Pre-Clearance",
+      "Status": "Approved",
+      "Priority": "Normal",
+      "Subject": "Pre-clearance request: BUY 100 SU.TO",
+      "Advisor_PRO_ID__c": "PRO-1005",
+      "Advisor_Name__c": "Émilie Bouchard",
+      "Rep_Code__c": "BR-044",
+      "PRO_Account_Number__c": "291-14029-24",
+      "Client_ID__c": null,
+      "Symbol__c": "SU.TO",
+      "Side__c": "BUY",
+      "Requested_Quantity__c": 100,
+      "Approved_Quantity__c": 100,
+      "Valid_From__c": "2026-10-21",
+      "Valid_To__c": "2026-10-28",
+      "CreatedDate": "2026-10-21T09:07",
+      "ClosedDate": "2026-10-21T12:17",
+      "Decision_By__c": "A. Kontham (Lead Surveillance)",
+      "Description": "Émilie Bouchard requests approval to buy 100 SU.TO in personal account 291-14029-24. Advisor attests no pending client orders in SU.TO under BR-044.",
+      "Comments": [
+        {
+          "Id": "00aHs000000102D",
+          "CreatedBy": "Émilie Bouchard",
+          "CreatedDate": "2026-10-21T09:16",
+          "CommentBody": "Submitted via pre-clearance portal. Reason: portfolio rebalance.",
+          "IsPublished": false
+        },
+        {
+          "Id": "00aHs000000102E",
+          "CreatedBy": "A. Kontham (Lead Surveillance)",
+          "CreatedDate": "2026-10-21T14:13",
+          "CommentBody": "Restricted and watch lists checked — SU.TO clear. Approved for up to 100 shares, valid through 2026-10-28.",
+          "IsPublished": true
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000100G",
+      "CaseNumber": "OA-202611-246",
+      "Type": "Outside Account Disclosure",
+      "Status": "Open — Written Explanation Requested",
+      "Priority": "High",
+      "Subject": "Undisclosed outside account: BlueShore Financial Wealth",
+      "Advisor_PRO_ID__c": "PRO-1004",
+      "Advisor_Name__c": "Jonathan Vance",
+      "Rep_Code__c": "BR-019",
+      "PRO_Account_Number__c": "294-49676-26",
+      "Client_ID__c": null,
+      "Symbol__c": null,
+      "Side__c": null,
+      "Requested_Quantity__c": null,
+      "Approved_Quantity__c": null,
+      "Valid_From__c": null,
+      "Valid_To__c": null,
+      "CreatedDate": "2026-11-02T10:02",
+      "ClosedDate": null,
+      "Decision_By__c": "M. Tremblay (Compliance)",
+      "Description": "Statement for JONATHAN VANCE at BlueShore Financial Wealth (scanned_11_t2_copier_blueshore_financial_wealth.pdf) received for an account not disclosed on the master register.",
+      "Comments": [
+        {
+          "Id": "00aHs000000100X",
+          "CreatedBy": "M. Tremblay (Compliance)",
+          "CreatedDate": "2026-11-02T10:35",
+          "CommentBody": "Written explanation requested from registrant; duplicate statement arrangement to be confirmed.",
+          "IsPublished": true
+        },
+        {
+          "Id": "00aHs000000100Y",
+          "CreatedBy": "Jonathan Vance",
+          "CreatedDate": "2026-11-02T16:15",
+          "CommentBody": "Account opened by my spouse last year — I thought the branch manager had filed it.",
+          "IsPublished": false
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000100A",
+      "CaseNumber": "OA-202611-955",
+      "Type": "Outside Account Disclosure",
+      "Status": "Open — Written Explanation Requested",
+      "Priority": "High",
+      "Subject": "Undisclosed outside account: Wealthsimple Trade",
+      "Advisor_PRO_ID__c": "PRO-1007",
+      "Advisor_Name__c": "Robert Kowalski",
+      "Rep_Code__c": "BR-075",
+      "PRO_Account_Number__c": "306-53326-19",
+      "Client_ID__c": null,
+      "Symbol__c": null,
+      "Side__c": null,
+      "Requested_Quantity__c": null,
+      "Approved_Quantity__c": null,
+      "Valid_From__c": null,
+      "Valid_To__c": null,
+      "CreatedDate": "2026-11-02T10:14",
+      "ClosedDate": null,
+      "Decision_By__c": "M. Tremblay (Compliance)",
+      "Description": "Statement for ROBERT KOWALSKI at Wealthsimple Trade (plain_09_wealthsimple_trade.pdf) received for an account not disclosed on the master register.",
+      "Comments": [
+        {
+          "Id": "00aHs000000100L",
+          "CreatedBy": "M. Tremblay (Compliance)",
+          "CreatedDate": "2026-11-02T10:22",
+          "CommentBody": "Written explanation requested from registrant; duplicate statement arrangement to be confirmed.",
+          "IsPublished": true
+        },
+        {
+          "Id": "00aHs000000100M",
+          "CreatedBy": "Robert Kowalski",
+          "CreatedDate": "2026-11-02T16:46",
+          "CommentBody": "Account opened by my spouse last year — I thought the branch manager had filed it.",
+          "IsPublished": false
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000100B",
+      "CaseNumber": "OA-202611-139",
+      "Type": "Outside Account Disclosure",
+      "Status": "Open — Written Explanation Requested",
+      "Priority": "High",
+      "Subject": "Undisclosed outside account: Richardson Wealth",
+      "Advisor_PRO_ID__c": "PRO-1003",
+      "Advisor_Name__c": "Marc-André Tremblay",
+      "Rep_Code__c": "BR-031",
+      "PRO_Account_Number__c": "896-61989-51",
+      "Client_ID__c": null,
+      "Symbol__c": null,
+      "Side__c": null,
+      "Requested_Quantity__c": null,
+      "Approved_Quantity__c": null,
+      "Valid_From__c": null,
+      "Valid_To__c": null,
+      "CreatedDate": "2026-11-02T10:14",
+      "ClosedDate": null,
+      "Decision_By__c": "M. Tremblay (Compliance)",
+      "Description": "Statement for SOPHIE TREMBLAY at Richardson Wealth (plain_18_richardson_wealth.pdf) received for an account not disclosed on the master register.",
+      "Comments": [
+        {
+          "Id": "00aHs000000100N",
+          "CreatedBy": "M. Tremblay (Compliance)",
+          "CreatedDate": "2026-11-02T10:49",
+          "CommentBody": "Written explanation requested from registrant; duplicate statement arrangement to be confirmed.",
+          "IsPublished": true
+        },
+        {
+          "Id": "00aHs000000100O",
+          "CreatedBy": "Marc-André Tremblay",
+          "CreatedDate": "2026-11-02T16:35",
+          "CommentBody": "Account opened by my spouse last year — I thought the branch manager had filed it.",
+          "IsPublished": false
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000100C",
+      "CaseNumber": "OA-202611-351",
+      "Type": "Outside Account Disclosure",
+      "Status": "Open — Written Explanation Requested",
+      "Priority": "High",
+      "Subject": "Undisclosed outside account: CI Assante Wealth Management",
+      "Advisor_PRO_ID__c": "PRO-1009",
+      "Advisor_Name__c": "Elena Rostova",
+      "Rep_Code__c": "BR-088",
+      "PRO_Account_Number__c": "539-78427-84",
+      "Client_ID__c": null,
+      "Symbol__c": null,
+      "Side__c": null,
+      "Requested_Quantity__c": null,
+      "Approved_Quantity__c": null,
+      "Valid_From__c": null,
+      "Valid_To__c": null,
+      "CreatedDate": "2026-11-02T10:21",
+      "ClosedDate": null,
+      "Decision_By__c": "M. Tremblay (Compliance)",
+      "Description": "Statement for DMITRI ROSTOV at CI Assante Wealth Management (plain_26_ci_assante_wealth_management.pdf) received for an account not disclosed on the master register.",
+      "Comments": [
+        {
+          "Id": "00aHs000000100P",
+          "CreatedBy": "M. Tremblay (Compliance)",
+          "CreatedDate": "2026-11-02T10:15",
+          "CommentBody": "Written explanation requested from registrant; duplicate statement arrangement to be confirmed.",
+          "IsPublished": true
+        },
+        {
+          "Id": "00aHs000000100Q",
+          "CreatedBy": "Elena Rostova",
+          "CreatedDate": "2026-11-02T16:06",
+          "CommentBody": "Account opened by my spouse last year — I thought the branch manager had filed it.",
+          "IsPublished": false
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000100J",
+      "CaseNumber": "OA-202611-349",
+      "Type": "Outside Account Disclosure",
+      "Status": "Open — Written Explanation Requested",
+      "Priority": "High",
+      "Subject": "Undisclosed outside account: Public Investing",
+      "Advisor_PRO_ID__c": "PRO-1004",
+      "Advisor_Name__c": "Jonathan Vance",
+      "Rep_Code__c": "BR-019",
+      "PRO_Account_Number__c": "699-42872-53",
+      "Client_ID__c": null,
+      "Symbol__c": null,
+      "Side__c": null,
+      "Requested_Quantity__c": null,
+      "Approved_Quantity__c": null,
+      "Valid_From__c": null,
+      "Valid_To__c": null,
+      "CreatedDate": "2026-11-02T10:34",
+      "ClosedDate": null,
+      "Decision_By__c": "M. Tremblay (Compliance)",
+      "Description": "Statement for JONATHAN VANCE at Public Investing (scanned_39_t4_heavy_shadow_public_investing.pdf) received for an account not disclosed on the master register.",
+      "Comments": [
+        {
+          "Id": "00aHs0000001013",
+          "CreatedBy": "M. Tremblay (Compliance)",
+          "CreatedDate": "2026-11-02T10:14",
+          "CommentBody": "Written explanation requested from registrant; duplicate statement arrangement to be confirmed.",
+          "IsPublished": true
+        },
+        {
+          "Id": "00aHs0000001014",
+          "CreatedBy": "Jonathan Vance",
+          "CreatedDate": "2026-11-02T16:13",
+          "CommentBody": "Account opened by my spouse last year — I thought the branch manager had filed it.",
+          "IsPublished": false
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000100E",
+      "CaseNumber": "OA-202611-818",
+      "Type": "Outside Account Disclosure",
+      "Status": "Open — Written Explanation Requested",
+      "Priority": "High",
+      "Subject": "Undisclosed outside account: Nicola Wealth",
+      "Advisor_PRO_ID__c": "PRO-1002",
+      "Advisor_Name__c": "Priya Patel-Sharma",
+      "Rep_Code__c": "BR-022",
+      "PRO_Account_Number__c": "624-98242-39",
+      "Client_ID__c": null,
+      "Symbol__c": null,
+      "Side__c": null,
+      "Requested_Quantity__c": null,
+      "Approved_Quantity__c": null,
+      "Valid_From__c": null,
+      "Valid_To__c": null,
+      "CreatedDate": "2026-11-02T10:40",
+      "ClosedDate": null,
+      "Decision_By__c": "M. Tremblay (Compliance)",
+      "Description": "Statement for PRIYA PATEL-SHARMA at Nicola Wealth (plain_44_nicola_wealth.pdf) received for an account not disclosed on the master register.",
+      "Comments": [
+        {
+          "Id": "00aHs000000100T",
+          "CreatedBy": "M. Tremblay (Compliance)",
+          "CreatedDate": "2026-11-02T10:52",
+          "CommentBody": "Written explanation requested from registrant; duplicate statement arrangement to be confirmed.",
+          "IsPublished": true
+        },
+        {
+          "Id": "00aHs000000100U",
+          "CreatedBy": "Priya Patel-Sharma",
+          "CreatedDate": "2026-11-02T16:20",
+          "CommentBody": "Account opened by my spouse last year — I thought the branch manager had filed it.",
+          "IsPublished": false
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000100F",
+      "CaseNumber": "OA-202611-407",
+      "Type": "Outside Account Disclosure",
+      "Status": "Open — Written Explanation Requested",
+      "Priority": "High",
+      "Subject": "Undisclosed outside account: RBC Dominion Securities",
+      "Advisor_PRO_ID__c": "PRO-1008",
+      "Advisor_Name__c": "Jean-François Gagnon",
+      "Rep_Code__c": "BR-045",
+      "PRO_Account_Number__c": "437-95597-90",
+      "Client_ID__c": null,
+      "Symbol__c": null,
+      "Side__c": null,
+      "Requested_Quantity__c": null,
+      "Approved_Quantity__c": null,
+      "Valid_From__c": null,
+      "Valid_To__c": null,
+      "CreatedDate": "2026-11-02T10:47",
+      "ClosedDate": null,
+      "Decision_By__c": "M. Tremblay (Compliance)",
+      "Description": "Statement for JEAN-FRANÇOIS GAGNON at RBC Dominion Securities (scanned_02_t1_crisp_rbc_dominion_securities.pdf) received for an account not disclosed on the master register.",
+      "Comments": [
+        {
+          "Id": "00aHs000000100V",
+          "CreatedBy": "M. Tremblay (Compliance)",
+          "CreatedDate": "2026-11-02T10:05",
+          "CommentBody": "Written explanation requested from registrant; duplicate statement arrangement to be confirmed.",
+          "IsPublished": true
+        },
+        {
+          "Id": "00aHs000000100W",
+          "CreatedBy": "Jean-François Gagnon",
+          "CreatedDate": "2026-11-02T16:56",
+          "CommentBody": "Account opened by my spouse last year — I thought the branch manager had filed it.",
+          "IsPublished": false
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000100I",
+      "CaseNumber": "OA-202611-109",
+      "Type": "Outside Account Disclosure",
+      "Status": "Open — Written Explanation Requested",
+      "Priority": "High",
+      "Subject": "Undisclosed outside account: MogoTrade",
+      "Advisor_PRO_ID__c": "PRO-1008",
+      "Advisor_Name__c": "Jean-François Gagnon",
+      "Rep_Code__c": "BR-045",
+      "PRO_Account_Number__c": "498-13844-57",
+      "Client_ID__c": null,
+      "Symbol__c": null,
+      "Side__c": null,
+      "Requested_Quantity__c": null,
+      "Approved_Quantity__c": null,
+      "Valid_From__c": null,
+      "Valid_To__c": null,
+      "CreatedDate": "2026-11-02T10:47",
+      "ClosedDate": null,
+      "Decision_By__c": "M. Tremblay (Compliance)",
+      "Description": "Statement for JEAN-FRANÇOIS GAGNON at MogoTrade (scanned_30_t3_fax_streaks_mogotrade.pdf) received for an account not disclosed on the master register.",
+      "Comments": [
+        {
+          "Id": "00aHs0000001011",
+          "CreatedBy": "M. Tremblay (Compliance)",
+          "CreatedDate": "2026-11-02T10:46",
+          "CommentBody": "Written explanation requested from registrant; duplicate statement arrangement to be confirmed.",
+          "IsPublished": true
+        },
+        {
+          "Id": "00aHs0000001012",
+          "CreatedBy": "Jean-François Gagnon",
+          "CreatedDate": "2026-11-02T16:16",
+          "CommentBody": "Account opened by my spouse last year — I thought the branch manager had filed it.",
+          "IsPublished": false
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000100D",
+      "CaseNumber": "OA-202611-464",
+      "Type": "Outside Account Disclosure",
+      "Status": "Open — Written Explanation Requested",
+      "Priority": "High",
+      "Subject": "Undisclosed outside account: UBS Wealth Management Canada",
+      "Advisor_PRO_ID__c": "PRO-1006",
+      "Advisor_Name__c": "Sarah MacKinnon",
+      "Rep_Code__c": "BR-061",
+      "PRO_Account_Number__c": "837-86611-67",
+      "Client_ID__c": null,
+      "Symbol__c": null,
+      "Side__c": null,
+      "Requested_Quantity__c": null,
+      "Approved_Quantity__c": null,
+      "Valid_From__c": null,
+      "Valid_To__c": null,
+      "CreatedDate": "2026-11-02T10:48",
+      "ClosedDate": null,
+      "Decision_By__c": "M. Tremblay (Compliance)",
+      "Description": "Statement for SARAH MACKINNON at UBS Wealth Management Canada (plain_36_ubs_wealth_management_canada.pdf) received for an account not disclosed on the master register.",
+      "Comments": [
+        {
+          "Id": "00aHs000000100R",
+          "CreatedBy": "M. Tremblay (Compliance)",
+          "CreatedDate": "2026-11-02T10:00",
+          "CommentBody": "Written explanation requested from registrant; duplicate statement arrangement to be confirmed.",
+          "IsPublished": true
+        },
+        {
+          "Id": "00aHs000000100S",
+          "CreatedBy": "Sarah MacKinnon",
+          "CreatedDate": "2026-11-02T16:23",
+          "CommentBody": "Account opened by my spouse last year — I thought the branch manager had filed it.",
+          "IsPublished": false
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000100H",
+      "CaseNumber": "OA-202611-682",
+      "Type": "Outside Account Disclosure",
+      "Status": "Open — Written Explanation Requested",
+      "Priority": "High",
+      "Subject": "Undisclosed outside account: Canada Life Securities",
+      "Advisor_PRO_ID__c": "PRO-1001",
+      "Advisor_Name__c": "David Chen",
+      "Rep_Code__c": "BR-014",
+      "PRO_Account_Number__c": "425-98762-36",
+      "Client_ID__c": null,
+      "Symbol__c": null,
+      "Side__c": null,
+      "Requested_Quantity__c": null,
+      "Approved_Quantity__c": null,
+      "Valid_From__c": null,
+      "Valid_To__c": null,
+      "CreatedDate": "2026-11-02T10:56",
+      "ClosedDate": null,
+      "Decision_By__c": "M. Tremblay (Compliance)",
+      "Description": "Statement for MEI-LING CHEN at Canada Life Securities (scanned_21_t3_fax_streaks_canada_life_securities.pdf) received for an account not disclosed on the master register.",
+      "Comments": [
+        {
+          "Id": "00aHs000000100Z",
+          "CreatedBy": "M. Tremblay (Compliance)",
+          "CreatedDate": "2026-11-02T10:01",
+          "CommentBody": "Written explanation requested from registrant; duplicate statement arrangement to be confirmed.",
+          "IsPublished": true
+        },
+        {
+          "Id": "00aHs0000001010",
+          "CreatedBy": "David Chen",
+          "CreatedDate": "2026-11-02T16:41",
+          "CommentBody": "Account opened by my spouse last year — I thought the branch manager had filed it.",
+          "IsPublished": false
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000100P",
+      "CaseNumber": "OA-202611-531",
+      "Type": "Outside Account Disclosure",
+      "Status": "Open — Written Explanation Requested",
+      "Priority": "High",
+      "Subject": "Undisclosed outside account: BNP Paribas Gestion de Fortune",
+      "Advisor_PRO_ID__c": "PRO-1001",
+      "Advisor_Name__c": "David Chen",
+      "Rep_Code__c": "BR-014",
+      "PRO_Account_Number__c": "355-27544-38",
+      "Client_ID__c": null,
+      "Symbol__c": null,
+      "Side__c": null,
+      "Requested_Quantity__c": null,
+      "Approved_Quantity__c": null,
+      "Valid_From__c": null,
+      "Valid_To__c": null,
+      "CreatedDate": "2026-11-02T10:59",
+      "ClosedDate": null,
+      "Decision_By__c": "M. Tremblay (Compliance)",
+      "Description": "Statement for MEI-LING CHEN at BNP Paribas Gestion de Fortune (scanned_49_t5_unreadable_bnp_paribas_gestion_de_fortune.pdf) received for an account not disclosed on the master register.",
+      "Comments": [
+        {
+          "Id": "00aHs000000101A",
+          "CreatedBy": "M. Tremblay (Compliance)",
+          "CreatedDate": "2026-11-02T10:32",
+          "CommentBody": "Written explanation requested from registrant; duplicate statement arrangement to be confirmed.",
+          "IsPublished": true
+        },
+        {
+          "Id": "00aHs000000101B",
+          "CreatedBy": "David Chen",
+          "CreatedDate": "2026-11-02T16:51",
+          "CommentBody": "Account opened by my spouse last year — I thought the branch manager had filed it.",
+          "IsPublished": false
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000100O",
+      "CaseNumber": "RS-202611-364",
+      "Type": "Statement Rescan Request",
+      "Status": "Open — Awaiting Rescan",
+      "Priority": "Medium",
+      "Subject": "Rescan required: scanned_48_t5_unreadable_barclays_wealth_and_investment_management.pdf",
+      "Advisor_PRO_ID__c": "PRO-1001",
+      "Advisor_Name__c": "David Chen",
+      "Rep_Code__c": "BR-014",
+      "PRO_Account_Number__c": "388-48961-58",
+      "Client_ID__c": null,
+      "Symbol__c": null,
+      "Side__c": null,
+      "Requested_Quantity__c": null,
+      "Approved_Quantity__c": null,
+      "Valid_From__c": null,
+      "Valid_To__c": null,
+      "CreatedDate": "2026-11-02T11:14",
+      "ClosedDate": null,
+      "Decision_By__c": "S. Patel (Compliance Ops)",
+      "Description": "Scanned statement scanned_48_t5_unreadable_barclays_wealth_and_investment_management.pdf is unreadable (Tier 5 Unreadable (95.9%)). Original requested from Barclays Wealth & Investment Management.",
+      "Comments": [
+        {
+          "Id": "00aHs0000001019",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-11-02T11:24",
+          "CommentBody": "Chaser sent to registrant and brokerage.",
+          "IsPublished": true
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000100S",
+      "CaseNumber": "RS-202611-298",
+      "Type": "Statement Rescan Request",
+      "Status": "Open — Awaiting Rescan",
+      "Priority": "Medium",
+      "Subject": "Rescan required: scanned_50_t5_unreadable_societe_generale_private_banking.pdf",
+      "Advisor_PRO_ID__c": "PRO-1002",
+      "Advisor_Name__c": "Priya Patel-Sharma",
+      "Rep_Code__c": "BR-022",
+      "PRO_Account_Number__c": "680-98711-27",
+      "Client_ID__c": null,
+      "Symbol__c": null,
+      "Side__c": null,
+      "Requested_Quantity__c": null,
+      "Approved_Quantity__c": null,
+      "Valid_From__c": null,
+      "Valid_To__c": null,
+      "CreatedDate": "2026-11-02T11:15",
+      "ClosedDate": null,
+      "Decision_By__c": "S. Patel (Compliance Ops)",
+      "Description": "Scanned statement scanned_50_t5_unreadable_societe_generale_private_banking.pdf is unreadable (Tier 5 Unreadable (100.0%)). Original requested from Société Générale Private Banking.",
+      "Comments": [
+        {
+          "Id": "00aHs000000101E",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-11-02T11:21",
+          "CommentBody": "Chaser sent to registrant and brokerage.",
+          "IsPublished": true
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000100N",
+      "CaseNumber": "RS-202611-339",
+      "Type": "Statement Rescan Request",
+      "Status": "Open — Awaiting Rescan",
+      "Priority": "Medium",
+      "Subject": "Rescan required: scanned_47_t5_unreadable_citigroup_global_markets.pdf",
+      "Advisor_PRO_ID__c": "PRO-1010",
+      "Advisor_Name__c": "Michael O'Connor",
+      "Rep_Code__c": "BR-052",
+      "PRO_Account_Number__c": "249-42887-96",
+      "Client_ID__c": null,
+      "Symbol__c": null,
+      "Side__c": null,
+      "Requested_Quantity__c": null,
+      "Approved_Quantity__c": null,
+      "Valid_From__c": null,
+      "Valid_To__c": null,
+      "CreatedDate": "2026-11-02T11:17",
+      "ClosedDate": null,
+      "Decision_By__c": "S. Patel (Compliance Ops)",
+      "Description": "Scanned statement scanned_47_t5_unreadable_citigroup_global_markets.pdf is unreadable (Tier 5 Unreadable (93.9%)). Original requested from Citigroup Global Markets.",
+      "Comments": [
+        {
+          "Id": "00aHs0000001018",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-11-02T11:29",
+          "CommentBody": "Chaser sent to registrant and brokerage.",
+          "IsPublished": true
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000100K",
+      "CaseNumber": "RS-202611-356",
+      "Type": "Statement Rescan Request",
+      "Status": "Open — Awaiting Rescan",
+      "Priority": "Medium",
+      "Subject": "Rescan required: scanned_45_t5_unreadable_fifth_third_securities.pdf",
+      "Advisor_PRO_ID__c": "PRO-1009",
+      "Advisor_Name__c": "Elena Rostova",
+      "Rep_Code__c": "BR-088",
+      "PRO_Account_Number__c": "604-39601-73",
+      "Client_ID__c": null,
+      "Symbol__c": null,
+      "Side__c": null,
+      "Requested_Quantity__c": null,
+      "Approved_Quantity__c": null,
+      "Valid_From__c": null,
+      "Valid_To__c": null,
+      "CreatedDate": "2026-11-02T11:22",
+      "ClosedDate": null,
+      "Decision_By__c": "S. Patel (Compliance Ops)",
+      "Description": "Scanned statement scanned_45_t5_unreadable_fifth_third_securities.pdf is unreadable (Tier 5 Unreadable (89.8%)). Original requested from Fifth Third Securities.",
+      "Comments": [
+        {
+          "Id": "00aHs0000001015",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-11-02T11:53",
+          "CommentBody": "Chaser sent to registrant and brokerage.",
+          "IsPublished": true
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000100R",
+      "CaseNumber": "RS-202611-397",
+      "Type": "Statement Rescan Request",
+      "Status": "Open — Awaiting Rescan",
+      "Priority": "Medium",
+      "Subject": "Rescan required: scanned_50_t5_unreadable_societe_generale_private_banking.pdf",
+      "Advisor_PRO_ID__c": "PRO-1002",
+      "Advisor_Name__c": "Priya Patel-Sharma",
+      "Rep_Code__c": "BR-022",
+      "PRO_Account_Number__c": "444-87436-25",
+      "Client_ID__c": null,
+      "Symbol__c": null,
+      "Side__c": null,
+      "Requested_Quantity__c": null,
+      "Approved_Quantity__c": null,
+      "Valid_From__c": null,
+      "Valid_To__c": null,
+      "CreatedDate": "2026-11-02T11:30",
+      "ClosedDate": null,
+      "Decision_By__c": "S. Patel (Compliance Ops)",
+      "Description": "Scanned statement scanned_50_t5_unreadable_societe_generale_private_banking.pdf is unreadable (Tier 5 Unreadable (100.0%)). Original requested from Société Générale Private Banking.",
+      "Comments": [
+        {
+          "Id": "00aHs000000101D",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-11-02T11:39",
+          "CommentBody": "Chaser sent to registrant and brokerage.",
+          "IsPublished": true
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000100L",
+      "CaseNumber": "RS-202611-396",
+      "Type": "Statement Rescan Request",
+      "Status": "Open — Awaiting Rescan",
+      "Priority": "Medium",
+      "Subject": "Rescan required: scanned_46_t5_unreadable_wells_fargo_advisors.pdf",
+      "Advisor_PRO_ID__c": "PRO-1009",
+      "Advisor_Name__c": "Elena Rostova",
+      "Rep_Code__c": "BR-088",
+      "PRO_Account_Number__c": "735-63042-65",
+      "Client_ID__c": null,
+      "Symbol__c": null,
+      "Side__c": null,
+      "Requested_Quantity__c": null,
+      "Approved_Quantity__c": null,
+      "Valid_From__c": null,
+      "Valid_To__c": null,
+      "CreatedDate": "2026-11-02T11:31",
+      "ClosedDate": null,
+      "Decision_By__c": "S. Patel (Compliance Ops)",
+      "Description": "Scanned statement scanned_46_t5_unreadable_wells_fargo_advisors.pdf is unreadable (Tier 5 Unreadable (91.8%)). Original requested from Wells Fargo Advisors.",
+      "Comments": [
+        {
+          "Id": "00aHs0000001016",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-11-02T11:26",
+          "CommentBody": "Chaser sent to registrant and brokerage.",
+          "IsPublished": true
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000100M",
+      "CaseNumber": "RS-202611-978",
+      "Type": "Statement Rescan Request",
+      "Status": "Open — Awaiting Rescan",
+      "Priority": "Medium",
+      "Subject": "Rescan required: scanned_46_t5_unreadable_wells_fargo_advisors.pdf",
+      "Advisor_PRO_ID__c": "PRO-1009",
+      "Advisor_Name__c": "Elena Rostova",
+      "Rep_Code__c": "BR-088",
+      "PRO_Account_Number__c": "822-25751-87",
+      "Client_ID__c": null,
+      "Symbol__c": null,
+      "Side__c": null,
+      "Requested_Quantity__c": null,
+      "Approved_Quantity__c": null,
+      "Valid_From__c": null,
+      "Valid_To__c": null,
+      "CreatedDate": "2026-11-02T11:58",
+      "ClosedDate": null,
+      "Decision_By__c": "S. Patel (Compliance Ops)",
+      "Description": "Scanned statement scanned_46_t5_unreadable_wells_fargo_advisors.pdf is unreadable (Tier 5 Unreadable (91.8%)). Original requested from Wells Fargo Advisors.",
+      "Comments": [
+        {
+          "Id": "00aHs0000001017",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-11-02T11:35",
+          "CommentBody": "Chaser sent to registrant and brokerage.",
+          "IsPublished": true
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000100Q",
+      "CaseNumber": "RS-202611-240",
+      "Type": "Statement Rescan Request",
+      "Status": "Open — Awaiting Rescan",
+      "Priority": "Medium",
+      "Subject": "Rescan required: scanned_49_t5_unreadable_bnp_paribas_gestion_de_fortune.pdf",
+      "Advisor_PRO_ID__c": "PRO-1001",
+      "Advisor_Name__c": "David Chen",
+      "Rep_Code__c": "BR-014",
+      "PRO_Account_Number__c": "355-27544-38",
+      "Client_ID__c": null,
+      "Symbol__c": null,
+      "Side__c": null,
+      "Requested_Quantity__c": null,
+      "Approved_Quantity__c": null,
+      "Valid_From__c": null,
+      "Valid_To__c": null,
+      "CreatedDate": "2026-11-02T11:59",
+      "ClosedDate": null,
+      "Decision_By__c": "S. Patel (Compliance Ops)",
+      "Description": "Scanned statement scanned_49_t5_unreadable_bnp_paribas_gestion_de_fortune.pdf is unreadable (Tier 5 Unreadable (98.0%)). Original requested from BNP Paribas Gestion de Fortune.",
+      "Comments": [
+        {
+          "Id": "00aHs000000101C",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-11-02T11:53",
+          "CommentBody": "Chaser sent to registrant and brokerage.",
+          "IsPublished": true
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000100W",
+      "CaseNumber": "MS-202611-964",
+      "Type": "Missing Statement",
+      "Status": "Missing — Escalated to Branch Mgr",
+      "Priority": "High",
+      "Subject": "Missing statement: Charles Schwab (8401-9920-33)",
+      "Advisor_PRO_ID__c": "PRO-1009",
+      "Advisor_Name__c": "Elena Rostova",
+      "Rep_Code__c": "BR-088",
+      "PRO_Account_Number__c": "8401-9920-33",
+      "Client_ID__c": null,
+      "Symbol__c": null,
+      "Side__c": null,
+      "Requested_Quantity__c": null,
+      "Approved_Quantity__c": null,
+      "Valid_From__c": null,
+      "Valid_To__c": null,
+      "CreatedDate": "2026-11-03T09:28",
+      "ClosedDate": null,
+      "Decision_By__c": "S. Patel (Compliance Ops)",
+      "Description": "October statement for ELENA ROSTOVA at Charles Schwab not received by the surveillance cut-off.",
+      "Comments": [
+        {
+          "Id": "00aHs000000101I",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-11-03T09:37",
+          "CommentBody": "Status per register: Missing — Escalated to Branch Mgr.",
+          "IsPublished": true
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000100T",
+      "CaseNumber": "MS-202611-825",
+      "Type": "Missing Statement",
+      "Status": "Missing — Chaser Sent",
+      "Priority": "High",
+      "Subject": "Missing statement: Questrade (514-88392-01)",
+      "Advisor_PRO_ID__c": "PRO-1002",
+      "Advisor_Name__c": "Priya Patel-Sharma",
+      "Rep_Code__c": "BR-022",
+      "PRO_Account_Number__c": "514-88392-01",
+      "Client_ID__c": null,
+      "Symbol__c": null,
+      "Side__c": null,
+      "Requested_Quantity__c": null,
+      "Approved_Quantity__c": null,
+      "Valid_From__c": null,
+      "Valid_To__c": null,
+      "CreatedDate": "2026-11-03T09:44",
+      "ClosedDate": null,
+      "Decision_By__c": "S. Patel (Compliance Ops)",
+      "Description": "October statement for PRIYA PATEL-SHARMA at Questrade not received by the surveillance cut-off.",
+      "Comments": [
+        {
+          "Id": "00aHs000000101F",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-11-03T09:18",
+          "CommentBody": "Status per register: Missing — Chaser Sent.",
+          "IsPublished": true
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000100U",
+      "CaseNumber": "MS-202611-569",
+      "Type": "Missing Statement",
+      "Status": "Missing — 2nd Notice",
+      "Priority": "High",
+      "Subject": "Missing statement: Interactive Brokers Canada (U9481029)",
+      "Advisor_PRO_ID__c": "PRO-1004",
+      "Advisor_Name__c": "Jonathan Vance",
+      "Rep_Code__c": "BR-019",
+      "PRO_Account_Number__c": "U9481029",
+      "Client_ID__c": null,
+      "Symbol__c": null,
+      "Side__c": null,
+      "Requested_Quantity__c": null,
+      "Approved_Quantity__c": null,
+      "Valid_From__c": null,
+      "Valid_To__c": null,
+      "CreatedDate": "2026-11-03T09:58",
+      "ClosedDate": null,
+      "Decision_By__c": "S. Patel (Compliance Ops)",
+      "Description": "October statement for JONATHAN VANCE at Interactive Brokers Canada not received by the surveillance cut-off.",
+      "Comments": [
+        {
+          "Id": "00aHs000000101G",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-11-03T09:40",
+          "CommentBody": "Status per register: Missing — 2nd Notice.",
+          "IsPublished": true
+        }
+      ]
+    },
+    {
+      "Id": "500Hs000000100V",
+      "CaseNumber": "MS-202611-372",
+      "Type": "Missing Statement",
+      "Status": "Missing — Chaser Sent",
+      "Priority": "High",
+      "Subject": "Missing statement: RBC Direct Investing (772-19402-11)",
+      "Advisor_PRO_ID__c": "PRO-1007",
+      "Advisor_Name__c": "Robert Kowalski",
+      "Rep_Code__c": "BR-075",
+      "PRO_Account_Number__c": "772-19402-11",
+      "Client_ID__c": null,
+      "Symbol__c": null,
+      "Side__c": null,
+      "Requested_Quantity__c": null,
+      "Approved_Quantity__c": null,
+      "Valid_From__c": null,
+      "Valid_To__c": null,
+      "CreatedDate": "2026-11-03T09:58",
+      "ClosedDate": null,
+      "Decision_By__c": "S. Patel (Compliance Ops)",
+      "Description": "October statement for ROBERT KOWALSKI at RBC Direct Investing not received by the surveillance cut-off.",
+      "Comments": [
+        {
+          "Id": "00aHs000000101H",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-11-03T09:07",
+          "CommentBody": "Status per register: Missing — Chaser Sent.",
+          "IsPublished": true
+        }
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "Id": "00THs0000001009",
+      "Subject": "Quarterly portfolio review — PRAIRIE GRAIN COOPERATIVE FUND",
+      "Type": "Meeting",
+      "TaskSubtype": "Event",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-07-07",
+      "OwnerName": "Jean-François Gagnon",
+      "Advisor_PRO_ID__c": "PRO-1008",
+      "Rep_Code__c": "BR-045",
+      "Client_ID__c": "BR-CL-8012",
+      "Client_Name__c": "PRAIRIE GRAIN COOPERATIVE FUND",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Reviewed performance and asset mix with PRAIRIE GRAIN COOPERATIVE FUND. No changes to objective (Capital preservation).",
+      "Comments": [
+        {
+          "Id": "0D7Hs0000001009",
+          "CreatedBy": "Jean-François Gagnon",
+          "CreatedDate": "2026-07-07T12:50",
+          "CommentBody": "Meeting notes filed; next review in 90 days."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000100V",
+      "Subject": "Quarterly portfolio review — CHÂTEAU FRONTENAC HOSPITALITY LP",
+      "Type": "Meeting",
+      "TaskSubtype": "Event",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-07-16",
+      "OwnerName": "Sarah MacKinnon",
+      "Advisor_PRO_ID__c": "PRO-1006",
+      "Rep_Code__c": "BR-061",
+      "Client_ID__c": "BR-CL-8016",
+      "Client_Name__c": "CHÂTEAU FRONTENAC HOSPITALITY LP",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Reviewed performance and asset mix with CHÂTEAU FRONTENAC HOSPITALITY LP. No changes to objective (Speculation).",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000100V",
+          "CreatedBy": "Sarah MacKinnon",
+          "CreatedDate": "2026-07-16T08:35",
+          "CommentBody": "Meeting notes filed; next review in 90 days."
+        }
+      ]
+    },
+    {
+      "Id": "00THs0000001014",
+      "Subject": "Quarterly portfolio review — ST. LAWRENCE MARITIME TRUST",
+      "Type": "Meeting",
+      "TaskSubtype": "Event",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-07-16",
+      "OwnerName": "Robert Kowalski",
+      "Advisor_PRO_ID__c": "PRO-1007",
+      "Rep_Code__c": "BR-075",
+      "Client_ID__c": "BR-CL-8006",
+      "Client_Name__c": "ST. LAWRENCE MARITIME TRUST",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Reviewed performance and asset mix with ST. LAWRENCE MARITIME TRUST. No changes to objective (Growth & income).",
+      "Comments": [
+        {
+          "Id": "0D7Hs0000001014",
+          "CreatedBy": "Robert Kowalski",
+          "CreatedDate": "2026-07-16T17:32",
+          "CommentBody": "Meeting notes filed; next review in 90 days."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000101N",
+      "Subject": "Quarterly portfolio review — MAPLE LEAF PENSION PLAN",
+      "Type": "Meeting",
+      "TaskSubtype": "Event",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-07-22",
+      "OwnerName": "David Chen",
+      "Advisor_PRO_ID__c": "PRO-1001",
+      "Rep_Code__c": "BR-014",
+      "Client_ID__c": "BR-CL-8001",
+      "Client_Name__c": "MAPLE LEAF PENSION PLAN",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Reviewed performance and asset mix with MAPLE LEAF PENSION PLAN. No changes to objective (Balanced growth & income).",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000101N",
+          "CreatedBy": "David Chen",
+          "CreatedDate": "2026-07-22T12:56",
+          "CommentBody": "Meeting notes filed; next review in 90 days."
+        }
+      ]
+    },
+    {
+      "Id": "00THs0000001010",
+      "Subject": "Quarterly portfolio review — GREAT LAKES INFRASTRUCTURE CORP",
+      "Type": "Meeting",
+      "TaskSubtype": "Event",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-07-23",
+      "OwnerName": "David Chen",
+      "Advisor_PRO_ID__c": "PRO-1001",
+      "Rep_Code__c": "BR-014",
+      "Client_ID__c": "BR-CL-8015",
+      "Client_Name__c": "GREAT LAKES INFRASTRUCTURE CORP",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Reviewed performance and asset mix with GREAT LAKES INFRASTRUCTURE CORP. No changes to objective (Capital preservation).",
+      "Comments": [
+        {
+          "Id": "0D7Hs0000001010",
+          "CreatedBy": "David Chen",
+          "CreatedDate": "2026-07-23T09:06",
+          "CommentBody": "Meeting notes filed; next review in 90 days."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000100X",
+      "Subject": "Quarterly portfolio review — ATLANTIC OCEANIC VENTURES LP",
+      "Type": "Meeting",
+      "TaskSubtype": "Event",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-07-24",
+      "OwnerName": "Elena Rostova",
+      "Advisor_PRO_ID__c": "PRO-1009",
+      "Rep_Code__c": "BR-088",
+      "Client_ID__c": "BR-CL-8013",
+      "Client_Name__c": "ATLANTIC OCEANIC VENTURES LP",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Reviewed performance and asset mix with ATLANTIC OCEANIC VENTURES LP. No changes to objective (Speculation).",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000100X",
+          "CreatedBy": "Elena Rostova",
+          "CreatedDate": "2026-07-24T14:30",
+          "CommentBody": "Meeting notes filed; next review in 90 days."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000101E",
+      "Subject": "KYC refresh — KENSINGTON PRIVATE FOUNDATION",
+      "Type": "KYC Update",
+      "TaskSubtype": "Task",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-07-29",
+      "OwnerName": "Priya Patel-Sharma",
+      "Advisor_PRO_ID__c": "PRO-1002",
+      "Rep_Code__c": "BR-022",
+      "Client_ID__c": "BR-CL-8007",
+      "Client_Name__c": "KENSINGTON PRIVATE FOUNDATION",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Annual KYC refresh. Risk profile confirmed as Conservative; horizon 5-10 years.",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000101E",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-07-30T15:20",
+          "CommentBody": "KYC form received and validated."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000101I",
+      "Subject": "Quarterly portfolio review — MARGARET & THOMAS STERLING",
+      "Type": "Meeting",
+      "TaskSubtype": "Event",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-07-29",
+      "OwnerName": "Robert Kowalski",
+      "Advisor_PRO_ID__c": "PRO-1007",
+      "Rep_Code__c": "BR-075",
+      "Client_ID__c": "BR-CL-8005",
+      "Client_Name__c": "MARGARET & THOMAS STERLING",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Reviewed performance and asset mix with MARGARET & THOMAS STERLING. No changes to objective (Growth).",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000101I",
+          "CreatedBy": "Robert Kowalski",
+          "CreatedDate": "2026-07-29T12:48",
+          "CommentBody": "Meeting notes filed; next review in 90 days."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000100A",
+      "Subject": "KYC refresh — ONTARIO HEALTHCARE ENDOWMENT",
+      "Type": "KYC Update",
+      "TaskSubtype": "Task",
+      "Status": "Open",
+      "Priority": "Normal",
+      "ActivityDate": "2026-07-30",
+      "OwnerName": "Marc-André Tremblay",
+      "Advisor_PRO_ID__c": "PRO-1003",
+      "Rep_Code__c": "BR-031",
+      "Client_ID__c": "BR-CL-8002",
+      "Client_Name__c": "ONTARIO HEALTHCARE ENDOWMENT",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Annual KYC refresh. Risk profile confirmed as Moderate; horizon 10+ years.",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000100A",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-07-31T14:25",
+          "CommentBody": "KYC form received and validated."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000100T",
+      "Subject": "Quarterly portfolio review — DR. ARTHUR & HELEN FINCH",
+      "Type": "Meeting",
+      "TaskSubtype": "Event",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-07-30",
+      "OwnerName": "Sarah MacKinnon",
+      "Advisor_PRO_ID__c": "PRO-1006",
+      "Rep_Code__c": "BR-061",
+      "Client_ID__c": "BR-CL-8003",
+      "Client_Name__c": "DR. ARTHUR & HELEN FINCH",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Reviewed performance and asset mix with DR. ARTHUR & HELEN FINCH. No changes to objective (Growth).",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000100T",
+          "CreatedBy": "Sarah MacKinnon",
+          "CreatedDate": "2026-07-30T08:04",
+          "CommentBody": "Meeting notes filed; next review in 90 days."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000100R",
+      "Subject": "Client instruction: BUY 1,500 BN.TO",
+      "Type": "Client Instruction",
+      "TaskSubtype": "Call",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-08-03",
+      "OwnerName": "Jean-François Gagnon",
+      "Advisor_PRO_ID__c": "PRO-1008",
+      "Rep_Code__c": "BR-045",
+      "Client_ID__c": "BR-CL-8010",
+      "Client_Name__c": "WESTMOUNT HERITAGE ESTATES",
+      "Symbol__c": "BN.TO",
+      "Side__c": "BUY",
+      "Solicited__c": false,
+      "Description": "Inbound call from WESTMOUNT HERITAGE ESTATES. Client independently requested to buy 1,500 BN.TO. Unsolicited — no recommendation made. Order entered as instructed.",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000100R",
+          "CreatedBy": "Jean-François Gagnon",
+          "CreatedDate": "2026-08-03T10:41",
+          "CommentBody": "Recorded line reference attached; client confirmed instruction."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000100C",
+      "Subject": "Quarterly portfolio review — MAPLE LEAF PENSION PLAN",
+      "Type": "Meeting",
+      "TaskSubtype": "Event",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-08-04",
+      "OwnerName": "Elena Rostova",
+      "Advisor_PRO_ID__c": "PRO-1009",
+      "Rep_Code__c": "BR-088",
+      "Client_ID__c": "BR-CL-8001",
+      "Client_Name__c": "MAPLE LEAF PENSION PLAN",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Reviewed performance and asset mix with MAPLE LEAF PENSION PLAN. No changes to objective (Balanced growth & income).",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000100C",
+          "CreatedBy": "Elena Rostova",
+          "CreatedDate": "2026-08-04T14:00",
+          "CommentBody": "Meeting notes filed; next review in 90 days."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000100P",
+      "Subject": "Quarterly portfolio review — MAPLE LEAF PENSION PLAN",
+      "Type": "Meeting",
+      "TaskSubtype": "Event",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-08-06",
+      "OwnerName": "Elena Rostova",
+      "Advisor_PRO_ID__c": "PRO-1009",
+      "Rep_Code__c": "BR-088",
+      "Client_ID__c": "BR-CL-8001",
+      "Client_Name__c": "MAPLE LEAF PENSION PLAN",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Reviewed performance and asset mix with MAPLE LEAF PENSION PLAN. No changes to objective (Balanced growth & income).",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000100P",
+          "CreatedBy": "Elena Rostova",
+          "CreatedDate": "2026-08-06T11:06",
+          "CommentBody": "Meeting notes filed; next review in 90 days."
+        }
+      ]
+    },
+    {
+      "Id": "00THs0000001015",
+      "Subject": "Quarterly portfolio review — MAPLE LEAF PENSION PLAN",
+      "Type": "Meeting",
+      "TaskSubtype": "Event",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-08-06",
+      "OwnerName": "Elena Rostova",
+      "Advisor_PRO_ID__c": "PRO-1009",
+      "Rep_Code__c": "BR-088",
+      "Client_ID__c": "BR-CL-8001",
+      "Client_Name__c": "MAPLE LEAF PENSION PLAN",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Reviewed performance and asset mix with MAPLE LEAF PENSION PLAN. No changes to objective (Balanced growth & income).",
+      "Comments": [
+        {
+          "Id": "0D7Hs0000001015",
+          "CreatedBy": "Elena Rostova",
+          "CreatedDate": "2026-08-06T08:03",
+          "CommentBody": "Meeting notes filed; next review in 90 days."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000101C",
+      "Subject": "KYC refresh — NORTHERN HORIZON HOLDINGS LTD.",
+      "Type": "KYC Update",
+      "TaskSubtype": "Task",
+      "Status": "Open",
+      "Priority": "Normal",
+      "ActivityDate": "2026-08-06",
+      "OwnerName": "Sarah MacKinnon",
+      "Advisor_PRO_ID__c": "PRO-1006",
+      "Rep_Code__c": "BR-061",
+      "Client_ID__c": "BR-CL-8004",
+      "Client_Name__c": "NORTHERN HORIZON HOLDINGS LTD.",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Annual KYC refresh. Risk profile confirmed as Conservative; horizon 1-3 years.",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000101C",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-08-07T09:37",
+          "CommentBody": "KYC form received and validated."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000101M",
+      "Subject": "KYC refresh — KENSINGTON PRIVATE FOUNDATION",
+      "Type": "KYC Update",
+      "TaskSubtype": "Task",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-08-12",
+      "OwnerName": "Marc-André Tremblay",
+      "Advisor_PRO_ID__c": "PRO-1003",
+      "Rep_Code__c": "BR-031",
+      "Client_ID__c": "BR-CL-8007",
+      "Client_Name__c": "KENSINGTON PRIVATE FOUNDATION",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Annual KYC refresh. Risk profile confirmed as Conservative; horizon 5-10 years.",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000101M",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-08-13T16:35",
+          "CommentBody": "KYC form received and validated."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000100H",
+      "Subject": "Quarterly portfolio review — ATLANTIC OCEANIC VENTURES LP",
+      "Type": "Meeting",
+      "TaskSubtype": "Event",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-08-14",
+      "OwnerName": "Jonathan Vance",
+      "Advisor_PRO_ID__c": "PRO-1004",
+      "Rep_Code__c": "BR-019",
+      "Client_ID__c": "BR-CL-8013",
+      "Client_Name__c": "ATLANTIC OCEANIC VENTURES LP",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Reviewed performance and asset mix with ATLANTIC OCEANIC VENTURES LP. No changes to objective (Speculation).",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000100H",
+          "CreatedBy": "Jonathan Vance",
+          "CreatedDate": "2026-08-14T15:51",
+          "CommentBody": "Meeting notes filed; next review in 90 days."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000101P",
+      "Subject": "KYC refresh — VICTORIA PARK FAMILY OFFICE",
+      "Type": "KYC Update",
+      "TaskSubtype": "Task",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-08-14",
+      "OwnerName": "Michael O'Connor",
+      "Advisor_PRO_ID__c": "PRO-1010",
+      "Rep_Code__c": "BR-052",
+      "Client_ID__c": "BR-CL-8014",
+      "Client_Name__c": "VICTORIA PARK FAMILY OFFICE",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Annual KYC refresh. Risk profile confirmed as Growth; horizon 10+ years.",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000101P",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-08-17T12:37",
+          "CommentBody": "KYC form received and validated."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000100B",
+      "Subject": "KYC refresh — MARGARET & THOMAS STERLING",
+      "Type": "KYC Update",
+      "TaskSubtype": "Task",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-08-17",
+      "OwnerName": "Michael O'Connor",
+      "Advisor_PRO_ID__c": "PRO-1010",
+      "Rep_Code__c": "BR-052",
+      "Client_ID__c": "BR-CL-8005",
+      "Client_Name__c": "MARGARET & THOMAS STERLING",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Annual KYC refresh. Risk profile confirmed as Balanced; horizon 5-10 years.",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000100B",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-08-18T10:56",
+          "CommentBody": "KYC form received and validated."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000100G",
+      "Subject": "Client instruction: SELL 250 BAM.TO",
+      "Type": "Client Instruction",
+      "TaskSubtype": "Call",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-08-17",
+      "OwnerName": "Robert Kowalski",
+      "Advisor_PRO_ID__c": "PRO-1007",
+      "Rep_Code__c": "BR-075",
+      "Client_ID__c": "BR-CL-8011",
+      "Client_Name__c": "DR. RAJESH & ANITA MEHTA",
+      "Symbol__c": "BAM.TO",
+      "Side__c": "SELL",
+      "Solicited__c": false,
+      "Description": "Inbound call from DR. RAJESH & ANITA MEHTA. Client independently requested to sell 250 BAM.TO. Unsolicited — no recommendation made. Order entered as instructed.",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000100G",
+          "CreatedBy": "Robert Kowalski",
+          "CreatedDate": "2026-08-17T10:27",
+          "CommentBody": "Recorded line reference attached; client confirmed instruction."
+        }
+      ]
+    },
+    {
+      "Id": "00THs0000001019",
+      "Subject": "KYC refresh — JEAN-LUC & CLAIRE BEAULIEU",
+      "Type": "KYC Update",
+      "TaskSubtype": "Task",
+      "Status": "Open",
+      "Priority": "Normal",
+      "ActivityDate": "2026-08-17",
+      "OwnerName": "Elena Rostova",
+      "Advisor_PRO_ID__c": "PRO-1009",
+      "Rep_Code__c": "BR-088",
+      "Client_ID__c": "BR-CL-8008",
+      "Client_Name__c": "JEAN-LUC & CLAIRE BEAULIEU",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Annual KYC refresh. Risk profile confirmed as Balanced; horizon 5-10 years.",
+      "Comments": [
+        {
+          "Id": "0D7Hs0000001019",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-08-18T17:40",
+          "CommentBody": "KYC form received and validated."
+        }
+      ]
+    },
+    {
+      "Id": "00THs0000001013",
+      "Subject": "KYC refresh — MAPLE LEAF PENSION PLAN",
+      "Type": "KYC Update",
+      "TaskSubtype": "Task",
+      "Status": "Open",
+      "Priority": "Normal",
+      "ActivityDate": "2026-08-18",
+      "OwnerName": "Marc-André Tremblay",
+      "Advisor_PRO_ID__c": "PRO-1003",
+      "Rep_Code__c": "BR-031",
+      "Client_ID__c": "BR-CL-8001",
+      "Client_Name__c": "MAPLE LEAF PENSION PLAN",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Annual KYC refresh. Risk profile confirmed as Moderate; horizon 10+ years.",
+      "Comments": [
+        {
+          "Id": "0D7Hs0000001013",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-08-19T16:19",
+          "CommentBody": "KYC form received and validated."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000100E",
+      "Subject": "KYC refresh — PACIFIC RIM LOGISTICS INC.",
+      "Type": "KYC Update",
+      "TaskSubtype": "Task",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-08-19",
+      "OwnerName": "Priya Patel-Sharma",
+      "Advisor_PRO_ID__c": "PRO-1002",
+      "Rep_Code__c": "BR-022",
+      "Client_ID__c": "BR-CL-8009",
+      "Client_Name__c": "PACIFIC RIM LOGISTICS INC.",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Annual KYC refresh. Risk profile confirmed as Moderate; horizon 3-5 years.",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000100E",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-08-20T11:01",
+          "CommentBody": "KYC form received and validated."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000101O",
+      "Subject": "Quarterly portfolio review — PACIFIC RIM LOGISTICS INC.",
+      "Type": "Meeting",
+      "TaskSubtype": "Event",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-08-24",
+      "OwnerName": "Priya Patel-Sharma",
+      "Advisor_PRO_ID__c": "PRO-1002",
+      "Rep_Code__c": "BR-022",
+      "Client_ID__c": "BR-CL-8009",
+      "Client_Name__c": "PACIFIC RIM LOGISTICS INC.",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Reviewed performance and asset mix with PACIFIC RIM LOGISTICS INC.. No changes to objective (Income).",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000101O",
+          "CreatedBy": "Priya Patel-Sharma",
+          "CreatedDate": "2026-08-24T11:12",
+          "CommentBody": "Meeting notes filed; next review in 90 days."
+        }
+      ]
+    },
+    {
+      "Id": "00THs0000001018",
+      "Subject": "KYC refresh — VICTORIA PARK FAMILY OFFICE",
+      "Type": "KYC Update",
+      "TaskSubtype": "Task",
+      "Status": "Open",
+      "Priority": "Normal",
+      "ActivityDate": "2026-08-25",
+      "OwnerName": "David Chen",
+      "Advisor_PRO_ID__c": "PRO-1001",
+      "Rep_Code__c": "BR-014",
+      "Client_ID__c": "BR-CL-8014",
+      "Client_Name__c": "VICTORIA PARK FAMILY OFFICE",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Annual KYC refresh. Risk profile confirmed as Growth; horizon 10+ years.",
+      "Comments": [
+        {
+          "Id": "0D7Hs0000001018",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-08-26T11:11",
+          "CommentBody": "KYC form received and validated."
+        }
+      ]
+    },
+    {
+      "Id": "00THs0000001007",
+      "Subject": "Client instruction: SELL 300 ATD.TO",
+      "Type": "Client Instruction",
+      "TaskSubtype": "Call",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-08-27",
+      "OwnerName": "Jean-François Gagnon",
+      "Advisor_PRO_ID__c": "PRO-1008",
+      "Rep_Code__c": "BR-045",
+      "Client_ID__c": "BR-CL-8012",
+      "Client_Name__c": "PRAIRIE GRAIN COOPERATIVE FUND",
+      "Symbol__c": "ATD.TO",
+      "Side__c": "SELL",
+      "Solicited__c": false,
+      "Description": "Inbound call from PRAIRIE GRAIN COOPERATIVE FUND. Client independently requested to sell 300 ATD.TO. Unsolicited — no recommendation made. Order entered as instructed.",
+      "Comments": [
+        {
+          "Id": "0D7Hs0000001007",
+          "CreatedBy": "Jean-François Gagnon",
+          "CreatedDate": "2026-08-27T10:06",
+          "CommentBody": "Recorded line reference attached; client confirmed instruction."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000100Y",
+      "Subject": "Quarterly portfolio review — KENSINGTON PRIVATE FOUNDATION",
+      "Type": "Meeting",
+      "TaskSubtype": "Event",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-08-27",
+      "OwnerName": "Elena Rostova",
+      "Advisor_PRO_ID__c": "PRO-1009",
+      "Rep_Code__c": "BR-088",
+      "Client_ID__c": "BR-CL-8007",
+      "Client_Name__c": "KENSINGTON PRIVATE FOUNDATION",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Reviewed performance and asset mix with KENSINGTON PRIVATE FOUNDATION. No changes to objective (Income & preservation).",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000100Y",
+          "CreatedBy": "Elena Rostova",
+          "CreatedDate": "2026-08-27T09:39",
+          "CommentBody": "Meeting notes filed; next review in 90 days."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000101D",
+      "Subject": "KYC refresh — JEAN-LUC & CLAIRE BEAULIEU",
+      "Type": "KYC Update",
+      "TaskSubtype": "Task",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-08-27",
+      "OwnerName": "Priya Patel-Sharma",
+      "Advisor_PRO_ID__c": "PRO-1002",
+      "Rep_Code__c": "BR-022",
+      "Client_ID__c": "BR-CL-8008",
+      "Client_Name__c": "JEAN-LUC & CLAIRE BEAULIEU",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Annual KYC refresh. Risk profile confirmed as Balanced; horizon 5-10 years.",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000101D",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-08-28T12:39",
+          "CommentBody": "KYC form received and validated."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000101R",
+      "Subject": "KYC refresh — GREAT LAKES INFRASTRUCTURE CORP",
+      "Type": "KYC Update",
+      "TaskSubtype": "Task",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-08-28",
+      "OwnerName": "Marc-André Tremblay",
+      "Advisor_PRO_ID__c": "PRO-1003",
+      "Rep_Code__c": "BR-031",
+      "Client_ID__c": "BR-CL-8015",
+      "Client_Name__c": "GREAT LAKES INFRASTRUCTURE CORP",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Annual KYC refresh. Risk profile confirmed as Conservative; horizon 1-3 years.",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000101R",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-08-31T14:54",
+          "CommentBody": "KYC form received and validated."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000100D",
+      "Subject": "Quarterly portfolio review — MAPLE LEAF PENSION PLAN",
+      "Type": "Meeting",
+      "TaskSubtype": "Event",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-09-01",
+      "OwnerName": "Jean-François Gagnon",
+      "Advisor_PRO_ID__c": "PRO-1008",
+      "Rep_Code__c": "BR-045",
+      "Client_ID__c": "BR-CL-8001",
+      "Client_Name__c": "MAPLE LEAF PENSION PLAN",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Reviewed performance and asset mix with MAPLE LEAF PENSION PLAN. No changes to objective (Balanced growth & income).",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000100D",
+          "CreatedBy": "Jean-François Gagnon",
+          "CreatedDate": "2026-09-01T12:05",
+          "CommentBody": "Meeting notes filed; next review in 90 days."
+        }
+      ]
+    },
+    {
+      "Id": "00THs0000001016",
+      "Subject": "Quarterly portfolio review — GREAT LAKES INFRASTRUCTURE CORP",
+      "Type": "Meeting",
+      "TaskSubtype": "Event",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-09-01",
+      "OwnerName": "Jean-François Gagnon",
+      "Advisor_PRO_ID__c": "PRO-1008",
+      "Rep_Code__c": "BR-045",
+      "Client_ID__c": "BR-CL-8015",
+      "Client_Name__c": "GREAT LAKES INFRASTRUCTURE CORP",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Reviewed performance and asset mix with GREAT LAKES INFRASTRUCTURE CORP. No changes to objective (Capital preservation).",
+      "Comments": [
+        {
+          "Id": "0D7Hs0000001016",
+          "CreatedBy": "Jean-François Gagnon",
+          "CreatedDate": "2026-09-01T12:43",
+          "CommentBody": "Meeting notes filed; next review in 90 days."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000100W",
+      "Subject": "Client instruction: SELL 150 TRP.TO",
+      "Type": "Client Instruction",
+      "TaskSubtype": "Call",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-09-02",
+      "OwnerName": "Elena Rostova",
+      "Advisor_PRO_ID__c": "PRO-1009",
+      "Rep_Code__c": "BR-088",
+      "Client_ID__c": "BR-CL-8013",
+      "Client_Name__c": "ATLANTIC OCEANIC VENTURES LP",
+      "Symbol__c": "TRP.TO",
+      "Side__c": "SELL",
+      "Solicited__c": false,
+      "Description": "Inbound call from ATLANTIC OCEANIC VENTURES LP. Client independently requested to sell 150 TRP.TO. Unsolicited — no recommendation made. Order entered as instructed.",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000100W",
+          "CreatedBy": "Elena Rostova",
+          "CreatedDate": "2026-09-02T10:16",
+          "CommentBody": "Recorded line reference attached; client confirmed instruction."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000100U",
+      "Subject": "KYC refresh — ONTARIO HEALTHCARE ENDOWMENT",
+      "Type": "KYC Update",
+      "TaskSubtype": "Task",
+      "Status": "Open",
+      "Priority": "Normal",
+      "ActivityDate": "2026-09-03",
+      "OwnerName": "David Chen",
+      "Advisor_PRO_ID__c": "PRO-1001",
+      "Rep_Code__c": "BR-014",
+      "Client_ID__c": "BR-CL-8002",
+      "Client_Name__c": "ONTARIO HEALTHCARE ENDOWMENT",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Annual KYC refresh. Risk profile confirmed as Moderate; horizon 10+ years.",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000100U",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-09-04T15:04",
+          "CommentBody": "KYC form received and validated."
+        }
+      ]
+    },
+    {
+      "Id": "00THs0000001012",
+      "Subject": "KYC refresh — ST. LAWRENCE MARITIME TRUST",
+      "Type": "KYC Update",
+      "TaskSubtype": "Task",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-09-04",
+      "OwnerName": "Jean-François Gagnon",
+      "Advisor_PRO_ID__c": "PRO-1008",
+      "Rep_Code__c": "BR-045",
+      "Client_ID__c": "BR-CL-8006",
+      "Client_Name__c": "ST. LAWRENCE MARITIME TRUST",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Annual KYC refresh. Risk profile confirmed as Balanced; horizon 10+ years.",
+      "Comments": [
+        {
+          "Id": "0D7Hs0000001012",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-09-07T10:41",
+          "CommentBody": "KYC form received and validated."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000100K",
+      "Subject": "KYC refresh — DR. RAJESH & ANITA MEHTA",
+      "Type": "KYC Update",
+      "TaskSubtype": "Task",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-09-08",
+      "OwnerName": "David Chen",
+      "Advisor_PRO_ID__c": "PRO-1001",
+      "Rep_Code__c": "BR-014",
+      "Client_ID__c": "BR-CL-8011",
+      "Client_Name__c": "DR. RAJESH & ANITA MEHTA",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Annual KYC refresh. Risk profile confirmed as Growth; horizon 10+ years.",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000100K",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-09-09T14:53",
+          "CommentBody": "KYC form received and validated."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000100M",
+      "Subject": "Quarterly portfolio review — ONTARIO HEALTHCARE ENDOWMENT",
+      "Type": "Meeting",
+      "TaskSubtype": "Event",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-09-09",
+      "OwnerName": "Priya Patel-Sharma",
+      "Advisor_PRO_ID__c": "PRO-1002",
+      "Rep_Code__c": "BR-022",
+      "Client_ID__c": "BR-CL-8002",
+      "Client_Name__c": "ONTARIO HEALTHCARE ENDOWMENT",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Reviewed performance and asset mix with ONTARIO HEALTHCARE ENDOWMENT. No changes to objective (Long-term growth).",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000100M",
+          "CreatedBy": "Priya Patel-Sharma",
+          "CreatedDate": "2026-09-09T15:09",
+          "CommentBody": "Meeting notes filed; next review in 90 days."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000100O",
+      "Subject": "Client instruction: BUY 250 BCE.TO",
+      "Type": "Client Instruction",
+      "TaskSubtype": "Call",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-09-10",
+      "OwnerName": "Émilie Bouchard",
+      "Advisor_PRO_ID__c": "PRO-1005",
+      "Rep_Code__c": "BR-044",
+      "Client_ID__c": "BR-CL-8014",
+      "Client_Name__c": "VICTORIA PARK FAMILY OFFICE",
+      "Symbol__c": "BCE.TO",
+      "Side__c": "BUY",
+      "Solicited__c": false,
+      "Description": "Inbound call from VICTORIA PARK FAMILY OFFICE. Client independently requested to buy 250 BCE.TO. Unsolicited — no recommendation made. Order entered as instructed.",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000100O",
+          "CreatedBy": "Émilie Bouchard",
+          "CreatedDate": "2026-09-10T10:03",
+          "CommentBody": "Recorded line reference attached; client confirmed instruction."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000100L",
+      "Subject": "Quarterly portfolio review — DR. ARTHUR & HELEN FINCH",
+      "Type": "Meeting",
+      "TaskSubtype": "Event",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-09-15",
+      "OwnerName": "Sarah MacKinnon",
+      "Advisor_PRO_ID__c": "PRO-1006",
+      "Rep_Code__c": "BR-061",
+      "Client_ID__c": "BR-CL-8003",
+      "Client_Name__c": "DR. ARTHUR & HELEN FINCH",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Reviewed performance and asset mix with DR. ARTHUR & HELEN FINCH. No changes to objective (Growth).",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000100L",
+          "CreatedBy": "Sarah MacKinnon",
+          "CreatedDate": "2026-09-15T11:09",
+          "CommentBody": "Meeting notes filed; next review in 90 days."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000100J",
+      "Subject": "Client instruction: SELL 2,000 ATD.TO",
+      "Type": "Client Instruction",
+      "TaskSubtype": "Call",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-09-16",
+      "OwnerName": "David Chen",
+      "Advisor_PRO_ID__c": "PRO-1001",
+      "Rep_Code__c": "BR-014",
+      "Client_ID__c": "BR-CL-8016",
+      "Client_Name__c": "CHÂTEAU FRONTENAC HOSPITALITY LP",
+      "Symbol__c": "ATD.TO",
+      "Side__c": "SELL",
+      "Solicited__c": false,
+      "Description": "Inbound call from CHÂTEAU FRONTENAC HOSPITALITY LP. Client independently requested to sell 2,000 ATD.TO. Unsolicited — no recommendation made. Order entered as instructed.",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000100J",
+          "CreatedBy": "David Chen",
+          "CreatedDate": "2026-09-16T10:37",
+          "CommentBody": "Recorded line reference attached; client confirmed instruction."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000100Q",
+      "Subject": "KYC refresh — DR. RAJESH & ANITA MEHTA",
+      "Type": "KYC Update",
+      "TaskSubtype": "Task",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-09-17",
+      "OwnerName": "David Chen",
+      "Advisor_PRO_ID__c": "PRO-1001",
+      "Rep_Code__c": "BR-014",
+      "Client_ID__c": "BR-CL-8011",
+      "Client_Name__c": "DR. RAJESH & ANITA MEHTA",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Annual KYC refresh. Risk profile confirmed as Growth; horizon 10+ years.",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000100Q",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-09-18T17:03",
+          "CommentBody": "KYC form received and validated."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000100Z",
+      "Subject": "Quarterly portfolio review — DR. ARTHUR & HELEN FINCH",
+      "Type": "Meeting",
+      "TaskSubtype": "Event",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-09-17",
+      "OwnerName": "David Chen",
+      "Advisor_PRO_ID__c": "PRO-1001",
+      "Rep_Code__c": "BR-014",
+      "Client_ID__c": "BR-CL-8003",
+      "Client_Name__c": "DR. ARTHUR & HELEN FINCH",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Reviewed performance and asset mix with DR. ARTHUR & HELEN FINCH. No changes to objective (Growth).",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000100Z",
+          "CreatedBy": "David Chen",
+          "CreatedDate": "2026-09-17T17:38",
+          "CommentBody": "Meeting notes filed; next review in 90 days."
+        }
+      ]
+    },
+    {
+      "Id": "00THs0000001008",
+      "Subject": "Quarterly portfolio review — PACIFIC RIM LOGISTICS INC.",
+      "Type": "Meeting",
+      "TaskSubtype": "Event",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-09-21",
+      "OwnerName": "Jonathan Vance",
+      "Advisor_PRO_ID__c": "PRO-1004",
+      "Rep_Code__c": "BR-019",
+      "Client_ID__c": "BR-CL-8009",
+      "Client_Name__c": "PACIFIC RIM LOGISTICS INC.",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Reviewed performance and asset mix with PACIFIC RIM LOGISTICS INC.. No changes to objective (Income).",
+      "Comments": [
+        {
+          "Id": "0D7Hs0000001008",
+          "CreatedBy": "Jonathan Vance",
+          "CreatedDate": "2026-09-21T12:32",
+          "CommentBody": "Meeting notes filed; next review in 90 days."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000101L",
+      "Subject": "Quarterly portfolio review — NORTHERN HORIZON HOLDINGS LTD.",
+      "Type": "Meeting",
+      "TaskSubtype": "Event",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-09-22",
+      "OwnerName": "Jonathan Vance",
+      "Advisor_PRO_ID__c": "PRO-1004",
+      "Rep_Code__c": "BR-019",
+      "Client_ID__c": "BR-CL-8004",
+      "Client_Name__c": "NORTHERN HORIZON HOLDINGS LTD.",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Reviewed performance and asset mix with NORTHERN HORIZON HOLDINGS LTD.. No changes to objective (Capital preservation).",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000101L",
+          "CreatedBy": "Jonathan Vance",
+          "CreatedDate": "2026-09-22T10:35",
+          "CommentBody": "Meeting notes filed; next review in 90 days."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000100S",
+      "Subject": "Quarterly portfolio review — DR. EVELYN & MARK TREMBLAY-ROY",
+      "Type": "Meeting",
+      "TaskSubtype": "Event",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-09-28",
+      "OwnerName": "Priya Patel-Sharma",
+      "Advisor_PRO_ID__c": "PRO-1002",
+      "Rep_Code__c": "BR-022",
+      "Client_ID__c": "BR-CL-8017",
+      "Client_Name__c": "DR. EVELYN & MARK TREMBLAY-ROY",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Reviewed performance and asset mix with DR. EVELYN & MARK TREMBLAY-ROY. No changes to objective (Growth).",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000100S",
+          "CreatedBy": "Priya Patel-Sharma",
+          "CreatedDate": "2026-09-28T13:10",
+          "CommentBody": "Meeting notes filed; next review in 90 days."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000101Q",
+      "Subject": "Quarterly portfolio review — GREAT LAKES INFRASTRUCTURE CORP",
+      "Type": "Meeting",
+      "TaskSubtype": "Event",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-09-28",
+      "OwnerName": "Michael O'Connor",
+      "Advisor_PRO_ID__c": "PRO-1010",
+      "Rep_Code__c": "BR-052",
+      "Client_ID__c": "BR-CL-8015",
+      "Client_Name__c": "GREAT LAKES INFRASTRUCTURE CORP",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Reviewed performance and asset mix with GREAT LAKES INFRASTRUCTURE CORP. No changes to objective (Capital preservation).",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000101Q",
+          "CreatedBy": "Michael O'Connor",
+          "CreatedDate": "2026-09-28T13:21",
+          "CommentBody": "Meeting notes filed; next review in 90 days."
+        }
+      ]
+    },
+    {
+      "Id": "00THs0000001017",
+      "Subject": "KYC refresh — JEAN-LUC & CLAIRE BEAULIEU",
+      "Type": "KYC Update",
+      "TaskSubtype": "Task",
+      "Status": "Open",
+      "Priority": "Normal",
+      "ActivityDate": "2026-09-29",
+      "OwnerName": "Priya Patel-Sharma",
+      "Advisor_PRO_ID__c": "PRO-1002",
+      "Rep_Code__c": "BR-022",
+      "Client_ID__c": "BR-CL-8008",
+      "Client_Name__c": "JEAN-LUC & CLAIRE BEAULIEU",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Annual KYC refresh. Risk profile confirmed as Balanced; horizon 5-10 years.",
+      "Comments": [
+        {
+          "Id": "0D7Hs0000001017",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-09-30T11:47",
+          "CommentBody": "KYC form received and validated."
+        }
+      ]
+    },
+    {
+      "Id": "00THs0000001011",
+      "Subject": "Quarterly portfolio review — JEAN-LUC & CLAIRE BEAULIEU",
+      "Type": "Meeting",
+      "TaskSubtype": "Event",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-09-30",
+      "OwnerName": "David Chen",
+      "Advisor_PRO_ID__c": "PRO-1001",
+      "Rep_Code__c": "BR-014",
+      "Client_ID__c": "BR-CL-8008",
+      "Client_Name__c": "JEAN-LUC & CLAIRE BEAULIEU",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Reviewed performance and asset mix with JEAN-LUC & CLAIRE BEAULIEU. No changes to objective (Growth).",
+      "Comments": [
+        {
+          "Id": "0D7Hs0000001011",
+          "CreatedBy": "David Chen",
+          "CreatedDate": "2026-09-30T16:02",
+          "CommentBody": "Meeting notes filed; next review in 90 days."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000100I",
+      "Subject": "Client instruction: SELL 1,000 BN.TO",
+      "Type": "Client Instruction",
+      "TaskSubtype": "Call",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-10-01",
+      "OwnerName": "Michael O'Connor",
+      "Advisor_PRO_ID__c": "PRO-1010",
+      "Rep_Code__c": "BR-052",
+      "Client_ID__c": "BR-CL-8005",
+      "Client_Name__c": "MARGARET & THOMAS STERLING",
+      "Symbol__c": "BN.TO",
+      "Side__c": "SELL",
+      "Solicited__c": false,
+      "Description": "Inbound call from MARGARET & THOMAS STERLING. Client independently requested to sell 1,000 BN.TO. Unsolicited — no recommendation made. Order entered as instructed.",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000100I",
+          "CreatedBy": "Michael O'Connor",
+          "CreatedDate": "2026-10-01T10:03",
+          "CommentBody": "Recorded line reference attached; client confirmed instruction."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000101K",
+      "Subject": "KYC refresh — PRAIRIE GRAIN COOPERATIVE FUND",
+      "Type": "KYC Update",
+      "TaskSubtype": "Task",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-10-01",
+      "OwnerName": "Michael O'Connor",
+      "Advisor_PRO_ID__c": "PRO-1010",
+      "Rep_Code__c": "BR-052",
+      "Client_ID__c": "BR-CL-8012",
+      "Client_Name__c": "PRAIRIE GRAIN COOPERATIVE FUND",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Annual KYC refresh. Risk profile confirmed as Conservative; horizon 1-3 years.",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000101K",
+          "CreatedBy": "S. Patel (Compliance Ops)",
+          "CreatedDate": "2026-10-02T12:14",
+          "CommentBody": "KYC form received and validated."
+        }
+      ]
+    },
+    {
+      "Id": "00THs0000001002",
+      "Subject": "Client instruction: SELL 200 RY.TO",
+      "Type": "Client Instruction",
+      "TaskSubtype": "Call",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-10-02",
+      "OwnerName": "Marc-André Tremblay",
+      "Advisor_PRO_ID__c": "PRO-1003",
+      "Rep_Code__c": "BR-031",
+      "Client_ID__c": "BR-CL-8002",
+      "Client_Name__c": "ONTARIO HEALTHCARE ENDOWMENT",
+      "Symbol__c": "RY.TO",
+      "Side__c": "SELL",
+      "Solicited__c": false,
+      "Description": "Inbound call from ONTARIO HEALTHCARE ENDOWMENT. Client independently requested to sell 200 RY.TO. Unsolicited — no recommendation made. Order entered as instructed.",
+      "Comments": [
+        {
+          "Id": "0D7Hs0000001002",
+          "CreatedBy": "Marc-André Tremblay",
+          "CreatedDate": "2026-10-02T10:36",
+          "CommentBody": "Recorded line reference attached; client confirmed instruction."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000101F",
+      "Subject": "Quarterly portfolio review — ONTARIO HEALTHCARE ENDOWMENT",
+      "Type": "Meeting",
+      "TaskSubtype": "Event",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-10-02",
+      "OwnerName": "Jonathan Vance",
+      "Advisor_PRO_ID__c": "PRO-1004",
+      "Rep_Code__c": "BR-019",
+      "Client_ID__c": "BR-CL-8002",
+      "Client_Name__c": "ONTARIO HEALTHCARE ENDOWMENT",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Reviewed performance and asset mix with ONTARIO HEALTHCARE ENDOWMENT. No changes to objective (Long-term growth).",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000101F",
+          "CreatedBy": "Jonathan Vance",
+          "CreatedDate": "2026-10-02T09:40",
+          "CommentBody": "Meeting notes filed; next review in 90 days."
+        }
+      ]
+    },
+    {
+      "Id": "00THs0000001005",
+      "Subject": "Call report: KENSINGTON PRIVATE FOUNDATION — SU.TO",
+      "Type": "Call Report",
+      "TaskSubtype": "Call",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-10-05",
+      "OwnerName": "Robert Kowalski",
+      "Advisor_PRO_ID__c": "PRO-1007",
+      "Rep_Code__c": "BR-075",
+      "Client_ID__c": "BR-CL-8007",
+      "Client_Name__c": "KENSINGTON PRIVATE FOUNDATION",
+      "Symbol__c": "SU.TO",
+      "Side__c": "BUY",
+      "Solicited__c": true,
+      "Description": "Reviewed KENSINGTON PRIVATE FOUNDATION portfolio against IPS (Conservative / Income & preservation). Recommended to buy SU.TO to bring sector weight back to target. Client agreed.",
+      "Comments": [
+        {
+          "Id": "0D7Hs0000001005",
+          "CreatedBy": "Robert Kowalski",
+          "CreatedDate": "2026-10-05T15:36",
+          "CommentBody": "Suitability documented; trade ticket marked solicited."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000101G",
+      "Subject": "Client instruction: SELL 300 BN.TO",
+      "Type": "Client Instruction",
+      "TaskSubtype": "Call",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-10-05",
+      "OwnerName": "Elena Rostova",
+      "Advisor_PRO_ID__c": "PRO-1009",
+      "Rep_Code__c": "BR-088",
+      "Client_ID__c": "BR-CL-8016",
+      "Client_Name__c": "CHÂTEAU FRONTENAC HOSPITALITY LP",
+      "Symbol__c": "BN.TO",
+      "Side__c": "SELL",
+      "Solicited__c": false,
+      "Description": "Inbound call from CHÂTEAU FRONTENAC HOSPITALITY LP. Client independently requested to sell 300 BN.TO. Unsolicited — no recommendation made. Order entered as instructed.",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000101G",
+          "CreatedBy": "Elena Rostova",
+          "CreatedDate": "2026-10-05T10:21",
+          "CommentBody": "Recorded line reference attached; client confirmed instruction."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000101J",
+      "Subject": "Client instruction: BUY 2,000 MFC.TO",
+      "Type": "Client Instruction",
+      "TaskSubtype": "Call",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-10-07",
+      "OwnerName": "Michael O'Connor",
+      "Advisor_PRO_ID__c": "PRO-1010",
+      "Rep_Code__c": "BR-052",
+      "Client_ID__c": "BR-CL-8018",
+      "Client_Name__c": "ROCKY MOUNTAIN ENERGY TRUST",
+      "Symbol__c": "MFC.TO",
+      "Side__c": "BUY",
+      "Solicited__c": false,
+      "Description": "Inbound call from ROCKY MOUNTAIN ENERGY TRUST. Client independently requested to buy 2,000 MFC.TO. Unsolicited — no recommendation made. Order entered as instructed.",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000101J",
+          "CreatedBy": "Michael O'Connor",
+          "CreatedDate": "2026-10-07T10:47",
+          "CommentBody": "Recorded line reference attached; client confirmed instruction."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000101H",
+      "Subject": "Client instruction: SELL 200 GOOGL",
+      "Type": "Client Instruction",
+      "TaskSubtype": "Call",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-10-13",
+      "OwnerName": "Robert Kowalski",
+      "Advisor_PRO_ID__c": "PRO-1007",
+      "Rep_Code__c": "BR-075",
+      "Client_ID__c": "BR-CL-8010",
+      "Client_Name__c": "WESTMOUNT HERITAGE ESTATES",
+      "Symbol__c": "GOOGL",
+      "Side__c": "SELL",
+      "Solicited__c": false,
+      "Description": "Inbound call from WESTMOUNT HERITAGE ESTATES. Client independently requested to sell 200 GOOGL. Unsolicited — no recommendation made. Order entered as instructed.",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000101H",
+          "CreatedBy": "Robert Kowalski",
+          "CreatedDate": "2026-10-13T10:51",
+          "CommentBody": "Recorded line reference attached; client confirmed instruction."
+        }
+      ]
+    },
+    {
+      "Id": "00THs0000001003",
+      "Subject": "Client instruction: BUY 2,500 SHOP.TO",
+      "Type": "Client Instruction",
+      "TaskSubtype": "Call",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-10-14",
+      "OwnerName": "Marc-André Tremblay",
+      "Advisor_PRO_ID__c": "PRO-1003",
+      "Rep_Code__c": "BR-031",
+      "Client_ID__c": "BR-CL-8015",
+      "Client_Name__c": "GREAT LAKES INFRASTRUCTURE CORP",
+      "Symbol__c": "SHOP.TO",
+      "Side__c": "BUY",
+      "Solicited__c": false,
+      "Description": "Inbound call from GREAT LAKES INFRASTRUCTURE CORP. Client independently requested to buy 2,500 SHOP.TO. Unsolicited — no recommendation made. Order entered as instructed.",
+      "Comments": [
+        {
+          "Id": "0D7Hs0000001003",
+          "CreatedBy": "Marc-André Tremblay",
+          "CreatedDate": "2026-10-14T10:29",
+          "CommentBody": "Recorded line reference attached; client confirmed instruction."
+        }
+      ]
+    },
+    {
+      "Id": "00THs0000001006",
+      "Subject": "Client instruction: SELL 750 AMZN",
+      "Type": "Client Instruction",
+      "TaskSubtype": "Call",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-10-14",
+      "OwnerName": "Jean-François Gagnon",
+      "Advisor_PRO_ID__c": "PRO-1008",
+      "Rep_Code__c": "BR-045",
+      "Client_ID__c": "BR-CL-8010",
+      "Client_Name__c": "WESTMOUNT HERITAGE ESTATES",
+      "Symbol__c": "AMZN",
+      "Side__c": "SELL",
+      "Solicited__c": false,
+      "Description": "Inbound call from WESTMOUNT HERITAGE ESTATES. Client independently requested to sell 750 AMZN. Unsolicited — no recommendation made. Order entered as instructed.",
+      "Comments": [
+        {
+          "Id": "0D7Hs0000001006",
+          "CreatedBy": "Jean-François Gagnon",
+          "CreatedDate": "2026-10-14T10:59",
+          "CommentBody": "Recorded line reference attached; client confirmed instruction."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000100F",
+      "Subject": "Quarterly portfolio review — PACIFIC RIM LOGISTICS INC.",
+      "Type": "Meeting",
+      "TaskSubtype": "Event",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-10-15",
+      "OwnerName": "Marc-André Tremblay",
+      "Advisor_PRO_ID__c": "PRO-1003",
+      "Rep_Code__c": "BR-031",
+      "Client_ID__c": "BR-CL-8009",
+      "Client_Name__c": "PACIFIC RIM LOGISTICS INC.",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Reviewed performance and asset mix with PACIFIC RIM LOGISTICS INC.. No changes to objective (Income).",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000100F",
+          "CreatedBy": "Marc-André Tremblay",
+          "CreatedDate": "2026-10-15T08:12",
+          "CommentBody": "Meeting notes filed; next review in 90 days."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000101A",
+      "Subject": "Quarterly portfolio review — DR. RAJESH & ANITA MEHTA",
+      "Type": "Meeting",
+      "TaskSubtype": "Event",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-10-16",
+      "OwnerName": "Elena Rostova",
+      "Advisor_PRO_ID__c": "PRO-1009",
+      "Rep_Code__c": "BR-088",
+      "Client_ID__c": "BR-CL-8011",
+      "Client_Name__c": "DR. RAJESH & ANITA MEHTA",
+      "Symbol__c": null,
+      "Side__c": null,
+      "Solicited__c": null,
+      "Description": "Reviewed performance and asset mix with DR. RAJESH & ANITA MEHTA. No changes to objective (Long-term growth).",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000101A",
+          "CreatedBy": "Elena Rostova",
+          "CreatedDate": "2026-10-16T13:01",
+          "CommentBody": "Meeting notes filed; next review in 90 days."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000100N",
+      "Subject": "Client instruction: BUY 250 GOOGL",
+      "Type": "Client Instruction",
+      "TaskSubtype": "Call",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-10-20",
+      "OwnerName": "Marc-André Tremblay",
+      "Advisor_PRO_ID__c": "PRO-1003",
+      "Rep_Code__c": "BR-031",
+      "Client_ID__c": "BR-CL-8009",
+      "Client_Name__c": "PACIFIC RIM LOGISTICS INC.",
+      "Symbol__c": "GOOGL",
+      "Side__c": "BUY",
+      "Solicited__c": false,
+      "Description": "Inbound call from PACIFIC RIM LOGISTICS INC.. Client independently requested to buy 250 GOOGL. Unsolicited — no recommendation made. Order entered as instructed.",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000100N",
+          "CreatedBy": "Marc-André Tremblay",
+          "CreatedDate": "2026-10-20T10:40",
+          "CommentBody": "Recorded line reference attached; client confirmed instruction."
+        }
+      ]
+    },
+    {
+      "Id": "00THs0000001001",
+      "Subject": "Client instruction: BUY 2,500 BCE.TO",
+      "Type": "Client Instruction",
+      "TaskSubtype": "Call",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-10-28",
+      "OwnerName": "David Chen",
+      "Advisor_PRO_ID__c": "PRO-1001",
+      "Rep_Code__c": "BR-014",
+      "Client_ID__c": "BR-CL-8008",
+      "Client_Name__c": "JEAN-LUC & CLAIRE BEAULIEU",
+      "Symbol__c": "BCE.TO",
+      "Side__c": "BUY",
+      "Solicited__c": false,
+      "Description": "Inbound call from JEAN-LUC & CLAIRE BEAULIEU. Client independently requested to buy 2,500 BCE.TO. Unsolicited — no recommendation made. Order entered as instructed.",
+      "Comments": [
+        {
+          "Id": "0D7Hs0000001001",
+          "CreatedBy": "David Chen",
+          "CreatedDate": "2026-10-28T10:35",
+          "CommentBody": "Recorded line reference attached; client confirmed instruction."
+        }
+      ]
+    },
+    {
+      "Id": "00THs000000101B",
+      "Subject": "Client instruction: SELL 500 CNQ.TO",
+      "Type": "Client Instruction",
+      "TaskSubtype": "Call",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-10-28",
+      "OwnerName": "Marc-André Tremblay",
+      "Advisor_PRO_ID__c": "PRO-1003",
+      "Rep_Code__c": "BR-031",
+      "Client_ID__c": "BR-CL-8001",
+      "Client_Name__c": "MAPLE LEAF PENSION PLAN",
+      "Symbol__c": "CNQ.TO",
+      "Side__c": "SELL",
+      "Solicited__c": false,
+      "Description": "Inbound call from MAPLE LEAF PENSION PLAN. Client independently requested to sell 500 CNQ.TO. Unsolicited — no recommendation made. Order entered as instructed.",
+      "Comments": [
+        {
+          "Id": "0D7Hs000000101B",
+          "CreatedBy": "Marc-André Tremblay",
+          "CreatedDate": "2026-10-28T10:24",
+          "CommentBody": "Recorded line reference attached; client confirmed instruction."
+        }
+      ]
+    },
+    {
+      "Id": "00THs0000001004",
+      "Subject": "Call report: DR. EVELYN & MARK TREMBLAY-ROY — CNR.TO",
+      "Type": "Call Report",
+      "TaskSubtype": "Call",
+      "Status": "Completed",
+      "Priority": "Normal",
+      "ActivityDate": "2026-10-30",
+      "OwnerName": "Marc-André Tremblay",
+      "Advisor_PRO_ID__c": "PRO-1003",
+      "Rep_Code__c": "BR-031",
+      "Client_ID__c": "BR-CL-8017",
+      "Client_Name__c": "DR. EVELYN & MARK TREMBLAY-ROY",
+      "Symbol__c": "CNR.TO",
+      "Side__c": "BUY",
+      "Solicited__c": true,
+      "Description": "Reviewed DR. EVELYN & MARK TREMBLAY-ROY portfolio against IPS (Balanced / Growth). Recommended to buy CNR.TO to bring sector weight back to target. Client agreed.",
+      "Comments": [
+        {
+          "Id": "0D7Hs0000001004",
+          "CreatedBy": "Marc-André Tremblay",
+          "CreatedDate": "2026-10-30T15:41",
+          "CommentBody": "Suitability documented; trade ticket marked solicited."
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "Id": "069Hs0000001002",
+      "Title": "Branch file note",
+      "ParentType": "Advisor",
+      "ParentId": "005Hs0000001003",
+      "Owner": "Luc Bergeron (Directeur de succursale)",
+      "Advisor_PRO_ID__c": "PRO-1003",
+      "Client_ID__c": null,
+      "CreatedDate": "2026-06-12T09:54",
+      "Body": "Marc-André Tremblay mentioned an account at Richardson Wealth during annual review; told branch manager verbally, no compliance filing seen."
+    },
+    {
+      "Id": "069Hs0000001006",
+      "Title": "Branch file note",
+      "ParentType": "Advisor",
+      "ParentId": "005Hs0000001008",
+      "Owner": "Isabelle Roy (Directrice de succursale)",
+      "Advisor_PRO_ID__c": "PRO-1008",
+      "Client_ID__c": null,
+      "CreatedDate": "2026-06-12T10:52",
+      "Body": "Jean-François Gagnon mentioned an account at RBC Dominion Securities during annual review; told branch manager verbally, no compliance filing seen."
+    },
+    {
+      "Id": "069Hs0000001007",
+      "Title": "Branch file note",
+      "ParentType": "Advisor",
+      "ParentId": "005Hs0000001004",
+      "Owner": "Catherine Ng (Branch Manager)",
+      "Advisor_PRO_ID__c": "PRO-1004",
+      "Client_ID__c": null,
+      "CreatedDate": "2026-06-12T11:46",
+      "Body": "Jonathan Vance mentioned an account at BlueShore Financial Wealth during annual review; told branch manager verbally, no compliance filing seen."
+    },
+    {
+      "Id": "069Hs000000100B",
+      "Title": "Branch file note",
+      "ParentType": "Advisor",
+      "ParentId": "005Hs0000001001",
+      "Owner": "Catherine Ng (Branch Manager)",
+      "Advisor_PRO_ID__c": "PRO-1001",
+      "Client_ID__c": null,
+      "CreatedDate": "2026-06-12T12:35",
+      "Body": "David Chen mentioned an account at BNP Paribas Gestion de Fortune during annual review; told branch manager verbally, no compliance filing seen."
+    },
+    {
+      "Id": "069Hs0000001003",
+      "Title": "Branch file note",
+      "ParentType": "Advisor",
+      "ParentId": "005Hs0000001009",
+      "Owner": "Grace Liu (Branch Manager)",
+      "Advisor_PRO_ID__c": "PRO-1009",
+      "Client_ID__c": null,
+      "CreatedDate": "2026-06-12T12:38",
+      "Body": "Elena Rostova mentioned an account at CI Assante Wealth Management during annual review; told branch manager verbally, no compliance filing seen."
+    },
+    {
+      "Id": "069Hs0000001009",
+      "Title": "Branch file note",
+      "ParentType": "Advisor",
+      "ParentId": "005Hs0000001008",
+      "Owner": "Isabelle Roy (Directrice de succursale)",
+      "Advisor_PRO_ID__c": "PRO-1008",
+      "Client_ID__c": null,
+      "CreatedDate": "2026-06-12T12:43",
+      "Body": "Jean-François Gagnon mentioned an account at MogoTrade during annual review; told branch manager verbally, no compliance filing seen."
+    },
+    {
+      "Id": "069Hs0000001001",
+      "Title": "Branch file note",
+      "ParentType": "Advisor",
+      "ParentId": "005Hs0000001007",
+      "Owner": "Dana Whitford (Branch Manager)",
+      "Advisor_PRO_ID__c": "PRO-1007",
+      "Client_ID__c": null,
+      "CreatedDate": "2026-06-12T14:03",
+      "Body": "Robert Kowalski mentioned an account at Wealthsimple Trade during annual review; told branch manager verbally, no compliance filing seen."
+    },
+    {
+      "Id": "069Hs0000001008",
+      "Title": "Branch file note",
+      "ParentType": "Advisor",
+      "ParentId": "005Hs0000001001",
+      "Owner": "Catherine Ng (Branch Manager)",
+      "Advisor_PRO_ID__c": "PRO-1001",
+      "Client_ID__c": null,
+      "CreatedDate": "2026-06-12T14:35",
+      "Body": "David Chen mentioned an account at Canada Life Securities during annual review; told branch manager verbally, no compliance filing seen."
+    },
+    {
+      "Id": "069Hs000000100A",
+      "Title": "Branch file note",
+      "ParentType": "Advisor",
+      "ParentId": "005Hs0000001004",
+      "Owner": "Catherine Ng (Branch Manager)",
+      "Advisor_PRO_ID__c": "PRO-1004",
+      "Client_ID__c": null,
+      "CreatedDate": "2026-06-12T16:36",
+      "Body": "Jonathan Vance mentioned an account at Public Investing during annual review; told branch manager verbally, no compliance filing seen."
+    },
+    {
+      "Id": "069Hs0000001004",
+      "Title": "Branch file note",
+      "ParentType": "Advisor",
+      "ParentId": "005Hs0000001006",
+      "Owner": "Ian MacLeod (Branch Manager)",
+      "Advisor_PRO_ID__c": "PRO-1006",
+      "Client_ID__c": null,
+      "CreatedDate": "2026-06-12T16:58",
+      "Body": "Sarah MacKinnon mentioned an account at UBS Wealth Management Canada during annual review; told branch manager verbally, no compliance filing seen."
+    },
+    {
+      "Id": "069Hs0000001005",
+      "Title": "Branch file note",
+      "ParentType": "Advisor",
+      "ParentId": "005Hs0000001002",
+      "Owner": "Catherine Ng (Branch Manager)",
+      "Advisor_PRO_ID__c": "PRO-1002",
+      "Client_ID__c": null,
+      "CreatedDate": "2026-06-12T17:15",
+      "Body": "Priya Patel-Sharma mentioned an account at Nicola Wealth during annual review; told branch manager verbally, no compliance filing seen."
+    },
+    {
+      "Id": "069Hs000000100H",
+      "Title": "Fee discussion",
+      "ParentType": "Client",
+      "ParentId": "001Hs0000001009",
+      "Owner": "Jonathan Vance",
+      "Advisor_PRO_ID__c": "PRO-1004",
+      "Client_ID__c": "BR-CL-8001",
+      "CreatedDate": "2026-07-15T15:18",
+      "Body": "MAPLE LEAF PENSION PLAN asked about the Fee-Based Discretionary fee schedule; sent the fee disclosure document."
+    },
+    {
+      "Id": "069Hs000000100G",
+      "Title": "Fee discussion",
+      "ParentType": "Client",
+      "ParentId": "001Hs0000001003",
+      "Owner": "Jonathan Vance",
+      "Advisor_PRO_ID__c": "PRO-1004",
+      "Client_ID__c": "BR-CL-8004",
+      "CreatedDate": "2026-07-21T14:56",
+      "Body": "NORTHERN HORIZON HOLDINGS LTD. asked about the Fee-Based Discretionary fee schedule; sent the fee disclosure document."
+    },
+    {
+      "Id": "069Hs000000100M",
+      "Title": "Fee discussion",
+      "ParentType": "Client",
+      "ParentId": "001Hs000000100A",
+      "Owner": "David Chen",
+      "Advisor_PRO_ID__c": "PRO-1001",
+      "Client_ID__c": "BR-CL-8012",
+      "CreatedDate": "2026-07-22T09:56",
+      "Body": "PRAIRIE GRAIN COOPERATIVE FUND asked about the Fee-Based Discretionary fee schedule; sent the fee disclosure document."
+    },
+    {
+      "Id": "069Hs000000100Z",
+      "Title": "Pre-clearance review note",
+      "ParentType": "Case",
+      "ParentId": "500Hs000000101D",
+      "Owner": "A. Kontham (Lead Surveillance)",
+      "Advisor_PRO_ID__c": "PRO-1006",
+      "Client_ID__c": null,
+      "CreatedDate": "2026-07-29T08:54",
+      "Body": "Checked CNQ.TO against client order book for BR-061 before decision — no open client orders at the time."
+    },
+    {
+      "Id": "069Hs000000101A",
+      "Title": "Pre-clearance review note",
+      "ParentType": "Case",
+      "ParentId": "500Hs000000100Y",
+      "Owner": "S. Patel (Compliance Ops)",
+      "Advisor_PRO_ID__c": "PRO-1001",
+      "Client_ID__c": null,
+      "CreatedDate": "2026-08-05T13:18",
+      "Body": "Checked TD.TO against client order book for BR-014 before decision — no open client orders at the time."
+    },
+    {
+      "Id": "069Hs0000001013",
+      "Title": "Pre-clearance review note",
+      "ParentType": "Case",
+      "ParentId": "500Hs0000001001",
+      "Owner": "M. Tremblay (Compliance)",
+      "Advisor_PRO_ID__c": "PRO-1001",
+      "Client_ID__c": null,
+      "CreatedDate": "2026-08-06T10:56",
+      "Body": "Checked TD.TO against client order book for BR-014 before decision — no open client orders at the time."
+    },
+    {
+      "Id": "069Hs000000100I",
+      "Title": "Fee discussion",
+      "ParentType": "Client",
+      "ParentId": "001Hs0000001006",
+      "Owner": "Émilie Bouchard",
+      "Advisor_PRO_ID__c": "PRO-1005",
+      "Client_ID__c": "BR-CL-8002",
+      "CreatedDate": "2026-08-10T17:34",
+      "Body": "ONTARIO HEALTHCARE ENDOWMENT asked about the Fee-Based Discretionary fee schedule; sent the fee disclosure document."
+    },
+    {
+      "Id": "069Hs0000001010",
+      "Title": "Pre-clearance review note",
+      "ParentType": "Case",
+      "ParentId": "500Hs0000001012",
+      "Owner": "M. Tremblay (Compliance)",
+      "Advisor_PRO_ID__c": "PRO-1002",
+      "Client_ID__c": null,
+      "CreatedDate": "2026-08-11T09:23",
+      "Body": "Checked MFC.TO against client order book for BR-022 before decision — no open client orders at the time."
+    },
+    {
+      "Id": "069Hs000000100J",
+      "Title": "Fee discussion",
+      "ParentType": "Client",
+      "ParentId": "001Hs0000001005",
+      "Owner": "Jean-François Gagnon",
+      "Advisor_PRO_ID__c": "PRO-1008",
+      "Client_ID__c": "BR-CL-8010",
+      "CreatedDate": "2026-08-11T15:26",
+      "Body": "WESTMOUNT HERITAGE ESTATES asked about the Fee-Based Discretionary fee schedule; sent the fee disclosure document."
+    },
+    {
+      "Id": "069Hs000000101H",
+      "Title": "Call follow-up",
+      "ParentType": "Task",
+      "ParentId": "00THs000000100G",
+      "Owner": "Robert Kowalski",
+      "Advisor_PRO_ID__c": "PRO-1007",
+      "Client_ID__c": "BR-CL-8011",
+      "CreatedDate": "2026-08-17T09:03",
+      "Body": "Follow-up with DR. RAJESH & ANITA MEHTA confirmed the BAM.TO order details."
+    },
+    {
+      "Id": "069Hs0000001016",
+      "Title": "Pre-clearance review note",
+      "ParentType": "Case",
+      "ParentId": "500Hs000000101E",
+      "Owner": "S. Patel (Compliance Ops)",
+      "Advisor_PRO_ID__c": "PRO-1006",
+      "Client_ID__c": null,
+      "CreatedDate": "2026-08-20T15:41",
+      "Body": "Checked CNQ.TO against client order book for BR-061 before decision — no open client orders at the time."
+    },
+    {
+      "Id": "069Hs000000100L",
+      "Title": "Fee discussion",
+      "ParentType": "Client",
+      "ParentId": "001Hs000000100B",
+      "Owner": "Robert Kowalski",
+      "Advisor_PRO_ID__c": "PRO-1007",
+      "Client_ID__c": "BR-CL-8008",
+      "CreatedDate": "2026-08-26T13:43",
+      "Body": "JEAN-LUC & CLAIRE BEAULIEU asked about the Advisory Commission fee schedule; sent the fee disclosure document."
+    },
+    {
+      "Id": "069Hs000000100O",
+      "Title": "Fee discussion",
+      "ParentType": "Client",
+      "ParentId": "001Hs000000100H",
+      "Owner": "Sarah MacKinnon",
+      "Advisor_PRO_ID__c": "PRO-1006",
+      "Client_ID__c": "BR-CL-8011",
+      "CreatedDate": "2026-08-27T13:49",
+      "Body": "DR. RAJESH & ANITA MEHTA asked about the Fee-Based Managed fee schedule; sent the fee disclosure document."
+    },
+    {
+      "Id": "069Hs000000100C",
+      "Title": "Fee discussion",
+      "ParentType": "Client",
+      "ParentId": "001Hs0000001005",
+      "Owner": "Robert Kowalski",
+      "Advisor_PRO_ID__c": "PRO-1007",
+      "Client_ID__c": "BR-CL-8010",
+      "CreatedDate": "2026-08-28T10:52",
+      "Body": "WESTMOUNT HERITAGE ESTATES asked about the Fee-Based Discretionary fee schedule; sent the fee disclosure document."
+    },
+    {
+      "Id": "069Hs000000100X",
+      "Title": "Annual attestation",
+      "ParentType": "Advisor",
+      "ParentId": "005Hs0000001009",
+      "Owner": "Grace Liu (Branch Manager)",
+      "Advisor_PRO_ID__c": "PRO-1009",
+      "Client_ID__c": null,
+      "CreatedDate": "2026-09-04T09:35",
+      "Body": "Elena Rostova completed the 2026 personal trading attestation. Duplicate statements confirmed for disclosed accounts."
+    },
+    {
+      "Id": "069Hs000000100R",
+      "Title": "Annual attestation",
+      "ParentType": "Advisor",
+      "ParentId": "005Hs0000001003",
+      "Owner": "Luc Bergeron (Directeur de succursale)",
+      "Advisor_PRO_ID__c": "PRO-1003",
+      "Client_ID__c": null,
+      "CreatedDate": "2026-09-06T12:25",
+      "Body": "Marc-André Tremblay completed the 2026 personal trading attestation. Duplicate statements confirmed for disclosed accounts."
+    },
+    {
+      "Id": "069Hs000000100T",
+      "Title": "Annual attestation",
+      "ParentType": "Advisor",
+      "ParentId": "005Hs0000001005",
+      "Owner": "Isabelle Roy (Directrice de succursale)",
+      "Advisor_PRO_ID__c": "PRO-1005",
+      "Client_ID__c": null,
+      "CreatedDate": "2026-09-08T08:35",
+      "Body": "Émilie Bouchard completed the 2026 personal trading attestation. Duplicate statements confirmed for disclosed accounts."
+    },
+    {
+      "Id": "069Hs000000100Q",
+      "Title": "Annual attestation",
+      "ParentType": "Advisor",
+      "ParentId": "005Hs0000001002",
+      "Owner": "Catherine Ng (Branch Manager)",
+      "Advisor_PRO_ID__c": "PRO-1002",
+      "Client_ID__c": null,
+      "CreatedDate": "2026-09-09T17:03",
+      "Body": "Priya Patel-Sharma completed the 2026 personal trading attestation. Duplicate statements confirmed for disclosed accounts."
+    },
+    {
+      "Id": "069Hs000000101D",
+      "Title": "Call follow-up",
+      "ParentType": "Task",
+      "ParentId": "00THs000000100O",
+      "Owner": "Émilie Bouchard",
+      "Advisor_PRO_ID__c": "PRO-1005",
+      "Client_ID__c": "BR-CL-8014",
+      "CreatedDate": "2026-09-10T14:21",
+      "Body": "Follow-up with VICTORIA PARK FAMILY OFFICE confirmed the BCE.TO order details."
+    },
+    {
+      "Id": "069Hs000000100V",
+      "Title": "Annual attestation",
+      "ParentType": "Advisor",
+      "ParentId": "005Hs0000001007",
+      "Owner": "Dana Whitford (Branch Manager)",
+      "Advisor_PRO_ID__c": "PRO-1007",
+      "Client_ID__c": null,
+      "CreatedDate": "2026-09-11T15:16",
+      "Body": "Robert Kowalski completed the 2026 personal trading attestation. Duplicate statements confirmed for disclosed accounts."
+    },
+    {
+      "Id": "069Hs000000100E",
+      "Title": "Fee discussion",
+      "ParentType": "Client",
+      "ParentId": "001Hs000000100A",
+      "Owner": "Jean-François Gagnon",
+      "Advisor_PRO_ID__c": "PRO-1008",
+      "Client_ID__c": "BR-CL-8012",
+      "CreatedDate": "2026-09-14T12:44",
+      "Body": "PRAIRIE GRAIN COOPERATIVE FUND asked about the Fee-Based Discretionary fee schedule; sent the fee disclosure document."
+    },
+    {
+      "Id": "069Hs000000101J",
+      "Title": "Call follow-up",
+      "ParentType": "Task",
+      "ParentId": "00THs000000100J",
+      "Owner": "David Chen",
+      "Advisor_PRO_ID__c": "PRO-1001",
+      "Client_ID__c": "BR-CL-8016",
+      "CreatedDate": "2026-09-16T09:07",
+      "Body": "Follow-up with CHÂTEAU FRONTENAC HOSPITALITY LP confirmed the ATD.TO order details."
+    },
+    {
+      "Id": "069Hs000000100Y",
+      "Title": "Annual attestation",
+      "ParentType": "Advisor",
+      "ParentId": "005Hs000000100A",
+      "Owner": "Paul Desrosiers (Branch Manager)",
+      "Advisor_PRO_ID__c": "PRO-1010",
+      "Client_ID__c": null,
+      "CreatedDate": "2026-09-18T12:32",
+      "Body": "Michael O'Connor completed the 2026 personal trading attestation. Duplicate statements confirmed for disclosed accounts."
+    },
+    {
+      "Id": "069Hs000000100U",
+      "Title": "Annual attestation",
+      "ParentType": "Advisor",
+      "ParentId": "005Hs0000001006",
+      "Owner": "Ian MacLeod (Branch Manager)",
+      "Advisor_PRO_ID__c": "PRO-1006",
+      "Client_ID__c": null,
+      "CreatedDate": "2026-09-18T12:41",
+      "Body": "Sarah MacKinnon completed the 2026 personal trading attestation. Duplicate statements confirmed for disclosed accounts."
+    },
+    {
+      "Id": "069Hs000000100W",
+      "Title": "Annual attestation",
+      "ParentType": "Advisor",
+      "ParentId": "005Hs0000001008",
+      "Owner": "Isabelle Roy (Directrice de succursale)",
+      "Advisor_PRO_ID__c": "PRO-1008",
+      "Client_ID__c": null,
+      "CreatedDate": "2026-09-19T14:28",
+      "Body": "Jean-François Gagnon completed the 2026 personal trading attestation. Duplicate statements confirmed for disclosed accounts."
+    },
+    {
+      "Id": "069Hs000000100P",
+      "Title": "Annual attestation",
+      "ParentType": "Advisor",
+      "ParentId": "005Hs0000001001",
+      "Owner": "Catherine Ng (Branch Manager)",
+      "Advisor_PRO_ID__c": "PRO-1001",
+      "Client_ID__c": null,
+      "CreatedDate": "2026-09-21T10:39",
+      "Body": "David Chen completed the 2026 personal trading attestation. Duplicate statements confirmed for disclosed accounts."
+    },
+    {
+      "Id": "069Hs000000100S",
+      "Title": "Annual attestation",
+      "ParentType": "Advisor",
+      "ParentId": "005Hs0000001004",
+      "Owner": "Catherine Ng (Branch Manager)",
+      "Advisor_PRO_ID__c": "PRO-1004",
+      "Client_ID__c": null,
+      "CreatedDate": "2026-09-21T15:14",
+      "Body": "Jonathan Vance completed the 2026 personal trading attestation. Duplicate statements confirmed for disclosed accounts."
+    },
+    {
+      "Id": "069Hs000000100F",
+      "Title": "Fee discussion",
+      "ParentType": "Client",
+      "ParentId": "001Hs0000001008",
+      "Owner": "Michael O'Connor",
+      "Advisor_PRO_ID__c": "PRO-1010",
+      "Client_ID__c": "BR-CL-8013",
+      "CreatedDate": "2026-09-25T14:23",
+      "Body": "ATLANTIC OCEANIC VENTURES LP asked about the Advisory Commission fee schedule; sent the fee disclosure document."
+    },
+    {
+      "Id": "069Hs000000100D",
+      "Title": "Fee discussion",
+      "ParentType": "Client",
+      "ParentId": "001Hs000000100F",
+      "Owner": "David Chen",
+      "Advisor_PRO_ID__c": "PRO-1001",
+      "Client_ID__c": "BR-CL-8007",
+      "CreatedDate": "2026-09-28T08:06",
+      "Body": "KENSINGTON PRIVATE FOUNDATION asked about the Fee-Based Discretionary fee schedule; sent the fee disclosure document."
+    },
+    {
+      "Id": "069Hs0000001018",
+      "Title": "Pre-clearance review note",
+      "ParentType": "Case",
+      "ParentId": "500Hs000000100X",
+      "Owner": "M. Tremblay (Compliance)",
+      "Advisor_PRO_ID__c": "PRO-1001",
+      "Client_ID__c": null,
+      "CreatedDate": "2026-09-29T11:32",
+      "Body": "Checked ENB.TO against client order book for BR-014 before decision — no open client orders at the time."
+    },
+    {
+      "Id": "069Hs0000001014",
+      "Title": "Pre-clearance review note",
+      "ParentType": "Case",
+      "ParentId": "500Hs0000001011",
+      "Owner": "A. Kontham (Lead Surveillance)",
+      "Advisor_PRO_ID__c": "PRO-1002",
+      "Client_ID__c": null,
+      "CreatedDate": "2026-10-02T15:49",
+      "Body": "Checked ENB.TO against client order book for BR-022 before decision — no open client orders at the time."
+    },
+    {
+      "Id": "069Hs000000100K",
+      "Title": "Fee discussion",
+      "ParentType": "Client",
+      "ParentId": "001Hs0000001008",
+      "Owner": "David Chen",
+      "Advisor_PRO_ID__c": "PRO-1001",
+      "Client_ID__c": "BR-CL-8013",
+      "CreatedDate": "2026-10-05T12:21",
+      "Body": "ATLANTIC OCEANIC VENTURES LP asked about the Advisory Commission fee schedule; sent the fee disclosure document."
+    },
+    {
+      "Id": "069Hs000000101F",
+      "Title": "Call follow-up",
+      "ParentType": "Task",
+      "ParentId": "00THs000000101G",
+      "Owner": "Elena Rostova",
+      "Advisor_PRO_ID__c": "PRO-1009",
+      "Client_ID__c": "BR-CL-8016",
+      "CreatedDate": "2026-10-05T15:00",
+      "Body": "Follow-up with CHÂTEAU FRONTENAC HOSPITALITY LP confirmed the BN.TO order details."
+    },
+    {
+      "Id": "069Hs0000001011",
+      "Title": "Pre-clearance review note",
+      "ParentType": "Case",
+      "ParentId": "500Hs000000101I",
+      "Owner": "M. Tremblay (Compliance)",
+      "Advisor_PRO_ID__c": "PRO-1008",
+      "Client_ID__c": null,
+      "CreatedDate": "2026-10-07T11:51",
+      "Body": "Checked SU.TO against client order book for BR-045 before decision — no open client orders at the time."
+    },
+    {
+      "Id": "069Hs000000101E",
+      "Title": "Call follow-up",
+      "ParentType": "Task",
+      "ParentId": "00THs000000101J",
+      "Owner": "Michael O'Connor",
+      "Advisor_PRO_ID__c": "PRO-1010",
+      "Client_ID__c": "BR-CL-8018",
+      "CreatedDate": "2026-10-07T14:26",
+      "Body": "Follow-up with ROCKY MOUNTAIN ENERGY TRUST confirmed the MFC.TO order details."
+    },
+    {
+      "Id": "069Hs0000001015",
+      "Title": "Pre-clearance review note",
+      "ParentType": "Case",
+      "ParentId": "500Hs0000001004",
+      "Owner": "S. Patel (Compliance Ops)",
+      "Advisor_PRO_ID__c": "PRO-1003",
+      "Client_ID__c": null,
+      "CreatedDate": "2026-10-07T14:42",
+      "Body": "Checked SHOP.TO against client order book for BR-031 before decision — no open client orders at the time."
+    },
+    {
+      "Id": "069Hs0000001017",
+      "Title": "Pre-clearance review note",
+      "ParentType": "Case",
+      "ParentId": "500Hs000000101P",
+      "Owner": "M. Tremblay (Compliance)",
+      "Advisor_PRO_ID__c": "PRO-1010",
+      "Client_ID__c": null,
+      "CreatedDate": "2026-10-09T12:31",
+      "Body": "Checked ENB.TO against client order book for BR-052 before decision — no open client orders at the time."
+    },
+    {
+      "Id": "069Hs000000100N",
+      "Title": "Fee discussion",
+      "ParentType": "Client",
+      "ParentId": "001Hs0000001001",
+      "Owner": "Marc-André Tremblay",
+      "Advisor_PRO_ID__c": "PRO-1003",
+      "Client_ID__c": "BR-CL-8005",
+      "CreatedDate": "2026-10-09T17:34",
+      "Body": "MARGARET & THOMAS STERLING asked about the Fee-Based Managed fee schedule; sent the fee disclosure document."
+    },
+    {
+      "Id": "069Hs0000001019",
+      "Title": "Pre-clearance review note",
+      "ParentType": "Case",
+      "ParentId": "500Hs0000001005",
+      "Owner": "S. Patel (Compliance Ops)",
+      "Advisor_PRO_ID__c": "PRO-1003",
+      "Client_ID__c": null,
+      "CreatedDate": "2026-10-14T16:14",
+      "Body": "Checked SHOP.TO against client order book for BR-031 before decision — no open client orders at the time."
+    },
+    {
+      "Id": "069Hs000000101I",
+      "Title": "Call follow-up",
+      "ParentType": "Task",
+      "ParentId": "00THs0000001003",
+      "Owner": "Marc-André Tremblay",
+      "Advisor_PRO_ID__c": "PRO-1003",
+      "Client_ID__c": "BR-CL-8015",
+      "CreatedDate": "2026-10-14T17:24",
+      "Body": "Follow-up with GREAT LAKES INFRASTRUCTURE CORP confirmed the SHOP.TO order details."
+    },
+    {
+      "Id": "069Hs000000101G",
+      "Title": "Call follow-up",
+      "ParentType": "Task",
+      "ParentId": "00THs000000100N",
+      "Owner": "Marc-André Tremblay",
+      "Advisor_PRO_ID__c": "PRO-1003",
+      "Client_ID__c": "BR-CL-8009",
+      "CreatedDate": "2026-10-20T13:28",
+      "Body": "Follow-up with PACIFIC RIM LOGISTICS INC. confirmed the GOOGL order details."
+    },
+    {
+      "Id": "069Hs0000001012",
+      "Title": "Pre-clearance review note",
+      "ParentType": "Case",
+      "ParentId": "500Hs0000001018",
+      "Owner": "S. Patel (Compliance Ops)",
+      "Advisor_PRO_ID__c": "PRO-1004",
+      "Client_ID__c": null,
+      "CreatedDate": "2026-10-21T12:29",
+      "Body": "Checked AAPL against client order book for BR-019 before decision — no open client orders at the time."
+    },
+    {
+      "Id": "069Hs000000101C",
+      "Title": "Call follow-up",
+      "ParentType": "Task",
+      "ParentId": "00THs000000101B",
+      "Owner": "Marc-André Tremblay",
+      "Advisor_PRO_ID__c": "PRO-1003",
+      "Client_ID__c": "BR-CL-8001",
+      "CreatedDate": "2026-10-28T11:37",
+      "Body": "Follow-up with MAPLE LEAF PENSION PLAN confirmed the CNQ.TO order details."
+    },
+    {
+      "Id": "069Hs000000101K",
+      "Title": "Call follow-up",
+      "ParentType": "Task",
+      "ParentId": "00THs0000001001",
+      "Owner": "David Chen",
+      "Advisor_PRO_ID__c": "PRO-1001",
+      "Client_ID__c": "BR-CL-8008",
+      "CreatedDate": "2026-10-28T17:46",
+      "Body": "Follow-up with JEAN-LUC & CLAIRE BEAULIEU confirmed the BCE.TO order details."
+    },
+    {
+      "Id": "069Hs000000101B",
+      "Title": "Call follow-up",
+      "ParentType": "Task",
+      "ParentId": "00THs0000001004",
+      "Owner": "Marc-André Tremblay",
+      "Advisor_PRO_ID__c": "PRO-1003",
+      "Client_ID__c": "BR-CL-8017",
+      "CreatedDate": "2026-10-30T08:40",
+      "Body": "Follow-up with DR. EVELYN & MARK TREMBLAY-ROY confirmed the CNR.TO order details."
+    }
+  ]
+}
